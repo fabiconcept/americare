@@ -2,7 +2,7 @@
 
 ## Pages:
 - Home page
-- Why AmeriCare? /
+- Why AmeriCare
 - Careers
 - Services
 - Contact us
