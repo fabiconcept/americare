@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
-import { Inter, Sacramento } from "next/font/google";
-import "./globals.css";
+import { Raleway } from "next/font/google";
+import "./stylesheets/globals.css";
+import "./stylesheets/animations.css";
 import NavigationCoponent from "./components/navigation";
 import clsx from "clsx";
 
-const FontFamily = Sacramento({ subsets: ["latin"], weight: "400" });
+const FontFamily = Raleway({ subsets: ["latin"], weight: "500" });
 
 export const metadata: Metadata = {
     title: "Create Next App",

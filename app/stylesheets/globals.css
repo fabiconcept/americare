@@ -1,0 +1,18 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+.smooth-menu {
+  transition: 1s ease;
+}
+
+.smooth {
+  transition: 0.25s ease;
+}

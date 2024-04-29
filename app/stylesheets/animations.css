@@ -1,0 +1,30 @@
+.animate-dangle {
+    animation-delay: 10s;
+    animation: dangle 2.25s ease forwards infinite;
+}
+
+@keyframes dangle {
+    from{
+        transform: rotate(-6deg);
+    }
+    50%{
+        transform: rotate(12deg);
+    }
+    to{
+        transform: rotate(-6deg);
+    }
+}
+
+
+.floating {  
+    animation-name: floating;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+}
+ 
+@keyframes floating {
+    0% { transform: translate(0,  0px); }
+    50%  { transform: translate(0, 15px); }
+    100%   { transform: translate(0, -0px); }    
+}

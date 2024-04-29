@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import { useInView } from "react-intersection-observer";
-import Lenis from '@studio-freight/lenis'
+import Lenis from '@studio-freight/lenis';
 import Image from "next/image";
 
 export default function Container() {
@@ -12,7 +12,7 @@ export default function Container() {
     const [itemScale, setItemScale] = useState<string>("scale(1)");
 
     useEffect(() => {
-        const lenis = new Lenis()
+        const lenis = new Lenis();
         function raf(time:number) {
             lenis.raf(time)
             requestAnimationFrame(raf)
@@ -38,7 +38,6 @@ export default function Container() {
 
     return (
         <>
-            <div ref={containerRef} className="h-[300vh] relative">
                 <div className="top-0 h-screen grid place-items-center bg-white/25 sticky text-4xl overflow-hidden">
                     <Image
                         src={"https://americare.sirv.com/online-marketing-hIgeoQjS_iE-unsplash.jpg"}
@@ -50,7 +49,6 @@ export default function Container() {
                         className="w-screen"
                     />
                 </div>
-            </div>
             <div className="h-screen"></div>
         </>
     )
