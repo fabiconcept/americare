@@ -48,30 +48,26 @@ export default function NavigationCoponent() {
                 transition={{ duration: 0.25 }}
             >
 
-                <div ref={mainContainerRef} className={clsx(FontFamily.className, "p-12 px-32 text-white bg-[#222222] rounded-b-[3rem] w-full shadow-xl")}>
+                <div ref={mainContainerRef} className={clsx(FontFamily.className, "p-3 text-white bg-[#222222] rounded-b-[3rem] w-full shadow-xl")}>
                     <div className={clsx(
-                        "flex gap-24 justify-center capitalize font-thin",
+                        "flex gap-24 justify-center capitalize font-thin p-6 px-32",
                         isNavOpen ? "animate-entrance" : ""
                     )}>
                         <div className="flex gap-10 items-center hover:animate-pulse cursor-pointer">
                             <span className="max-xl:text-5xl sm:text-3xl opacity-50">Units</span>
-                            <div className="h-[2px] w-[3vw] bg-white"></div>
                         </div>
                         <div className="flex gap-10 items-center hover:animate-pulse cursor-pointer">
                             <span className="max-xl:text-5xl sm:text-3xl opacity-50">facilities</span>
-                            <div className="h-[2px] w-[3vw] bg-white"></div>
                         </div>
                         <div className="flex gap-10 items-center hover:animate-pulse cursor-pointer">
                             <span className="max-xl:text-5xl sm:text-3xl opacity-50">About</span>
-                            <div className="h-[2px] w-[3vw] bg-white"></div>
                         </div>
                         <div className="flex gap-10 items-center hover:animate-pulse cursor-pointer">
                             <span className="max-xl:text-5xl sm:text-3xl opacity-50">Contact</span>
-                            <div className="h-[2px] w-[3vw] bg-white"></div>
                         </div>
                     </div>
                     <div className={clsx(
-                        "flex",
+                        "flex  p-4 pb-0 pt-8",
                         isNavOpen ? "animate-entrance" : ""
                     )}>
                         <span>Let&apos;s Discuss Your Needs</span>
