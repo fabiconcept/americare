@@ -11,6 +11,7 @@ const FontFamily = Macondo({ subsets: ["latin"], weight: "400" });
 
 export default function HeroSection() {
     const [itemScale, setItemScale] = useState<number>(1);
+    const [itemMove, setItemMove] = useState<number>(14);
     const [itemOpacity, setItemOpacity] = useState<string>("1");
 
     useEffect(() => {
@@ -30,6 +31,10 @@ export default function HeroSection() {
             const scrollTop = window.scrollY;
             if (inViewContainer) {
                 setItemScale((scrollTop * 0.0005) + 1);
+                const adjustY = 14 - (10 * (scrollTop * 0.0015));
+                if (adjustY > 0) {
+                    setItemMove(adjustY);
+                };
                 setItemOpacity(`${1-(scrollTop * 0.005)}`);
             }
         };
@@ -42,7 +47,6 @@ export default function HeroSection() {
         <div ref={containerRef} className="h-[300vh] relative">
             <div 
                 className="h-screen w-full sticky top-0 gird place-items-center overflow-hidden"
-                
             >
                 <div className="absolute top-0 left-0 flex justify-between items-center">
 
@@ -78,7 +82,7 @@ export default function HeroSection() {
                             style={{ transform: `scale(${itemScale < 1.2 ? itemScale : 1.2})` }}
                         >
                             <span className={clsx(
-                                "xl:text-[10rem] sm:text-[8rem]",
+                                "text-[10vw]",
                                 FontFamily.className
                             )}>AmeriCare</span>
                             <Image
@@ -89,18 +93,23 @@ export default function HeroSection() {
                                 priority
                                 className="absolute bottom-2 left-6 w-14"
                             />
-                            <p className="xl:text-5xl sm:text-3xl opacity-60 translate-x-24">
+                            <p className="text-[2.65vw] opacity-60 translate-x-24">
                                 Compassionate Care, Right at Home
                             </p>
                         </div>
                     </div>
                 </div>
 
-                <div className="absolute bottom-10 right-24 text-lg text-white z-40 max-w-md p-4 rounded-lg bg-white/10 hover:bg-black/25 smooth backdrop-blur-md border border-white/25 floating after:h-24 after:w-24 after:rounded-full after:absolute after:-top-5 after:-left-5 after:bg-green-600/10 after:border after:border-green-600/10 after:-z-10">
-                    <span>
-                        At AmeriCare, we specialize in providing compassionate and dedicated home
-                        healthcare services for both the young and the elderly.
-                    </span>
+                <div 
+                    className="absolute bottom-10 right-24 text-lg text-white z-40 max-w-md "
+                    style={{ transform: `translateY(${itemMove}rem)` }}
+                >
+                    <div className="p-4 rounded-lg bg-white/10 hover:bg-black/25 smooth backdrop-blur-md border border-white/25 animate-floating after:h-24 after:w-24 after:rounded-full after:absolute after:-top-5 after:-left-5 after:bg-green-600/10 after:border after:border-green-600/10 after:-z-10">
+                        <span>
+                            At AmeriCare, we specialize in providing compassionate and dedicated home
+                            healthcare services for both the young and the elderly.
+                        </span>
+                    </div>
                 </div>
             </div>
         </div>

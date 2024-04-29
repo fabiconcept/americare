@@ -5,7 +5,6 @@ import { useAnimation, Variants, motion } from "framer-motion";
 import { useEffect, useMemo, useRef, useState } from "react";
 
 import { Macondo } from "next/font/google";
-import Image from "next/image";
 const FontFamily = Macondo({ subsets: ["latin"], weight: "400" });
 
 
@@ -50,23 +49,32 @@ export default function NavigationCoponent() {
             >
 
                 <div ref={mainContainerRef} className={clsx(FontFamily.className, "p-12 px-32 text-white bg-[#222222] rounded-b-[3rem] w-full shadow-xl")}>
-                    <div className="flex gap-24 justify-center capitalize font-thin">
+                    <div className={clsx(
+                        "flex gap-24 justify-center capitalize font-thin",
+                        isNavOpen ? "animate-entrance" : ""
+                    )}>
                         <div className="flex gap-10 items-center hover:animate-pulse cursor-pointer">
-                            <span className="text-5xl opacity-50">Units</span>
-                            <div className="h-[2px] w-20 bg-white"></div>
+                            <span className="max-xl:text-5xl sm:text-3xl opacity-50">Units</span>
+                            <div className="h-[2px] w-[3vw] bg-white"></div>
                         </div>
                         <div className="flex gap-10 items-center hover:animate-pulse cursor-pointer">
-                            <span className="text-5xl opacity-50">facilities</span>
-                            <div className="h-[2px] w-20 bg-white"></div>
+                            <span className="max-xl:text-5xl sm:text-3xl opacity-50">facilities</span>
+                            <div className="h-[2px] w-[3vw] bg-white"></div>
                         </div>
                         <div className="flex gap-10 items-center hover:animate-pulse cursor-pointer">
-                            <span className="text-5xl opacity-50">About</span>
-                            <div className="h-[2px] w-20 bg-white"></div>
+                            <span className="max-xl:text-5xl sm:text-3xl opacity-50">About</span>
+                            <div className="h-[2px] w-[3vw] bg-white"></div>
                         </div>
                         <div className="flex gap-10 items-center hover:animate-pulse cursor-pointer">
-                            <span className="text-5xl opacity-50">Contact</span>
-                            <div className="h-[2px] w-20 bg-white"></div>
+                            <span className="max-xl:text-5xl sm:text-3xl opacity-50">Contact</span>
+                            <div className="h-[2px] w-[3vw] bg-white"></div>
                         </div>
+                    </div>
+                    <div className={clsx(
+                        "flex",
+                        isNavOpen ? "animate-entrance" : ""
+                    )}>
+                        <span>Let&apos;s Discuss Your Needs</span>
                     </div>
                 </div>
                 <div onClick={handleClick} className="p-3 px-5 bg-[#222222] rounded-b-xl cursor-pointer grid gap-1 shadow-xl">
