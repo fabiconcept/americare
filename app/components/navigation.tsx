@@ -5,6 +5,7 @@ import { useAnimation, Variants, motion } from "framer-motion";
 import { useEffect, useMemo, useRef, useState } from "react";
 
 import { Macondo } from "next/font/google";
+import DisappearingComponent from "./DisappearingComponent ";
 const FontFamily = Macondo({ subsets: ["latin"], weight: "400" });
 
 
@@ -73,6 +74,7 @@ export default function NavigationCoponent() {
                         <span>Let&apos;s Discuss Your Needs</span>
                     </div>
                 </div>
+                
                 <div onClick={handleClick} className="p-3 px-5 bg-[#222222] rounded-b-xl cursor-pointer grid gap-1 shadow-xl">
                     <div className={clsx(
                         "h-[2px] bg-white smooth-menu",
@@ -88,11 +90,15 @@ export default function NavigationCoponent() {
                     )}></div>
                 </div>
 
-                {!!(!isNavOpen) && <div className="pointer-events-none select-none text-white flex flex-col gap-2 items-center py-6 animate-bounce mix-blend-multiply">
-                    <span className="animate-dangle opacity-60">
-                        Click to Navigate
-                    </span>
-                </div>}
+                {!!(!isNavOpen) && 
+                    <DisappearingComponent>
+                        <div className="pointer-events-none select-none text-white flex flex-col gap-2 items-center py-6 animate-bounce mix-blend-multiply">
+                            <span className="animate-dangle opacity-60">
+                                Click to Navigate
+                            </span>
+                        </div>
+                    </DisappearingComponent>
+                }
             </motion.div>
         </div>
     )
