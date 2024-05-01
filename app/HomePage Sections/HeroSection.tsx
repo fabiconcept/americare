@@ -57,7 +57,7 @@ export default function HeroSection() {
                 )}
             />
 
-            <div className="fixed top-5 right-9 z-[60] rounded-[3rem] shadow cursor-pointer px-8 py-4 bg-white border border-black/25 active:scale-90 smooth select-none active:opacity-50">
+            <div className="fixed top-5 sm:right-9 right-4 z-[60] rounded-[3rem] shadow cursor-pointer px-8 py-4 bg-white border border-black/25 active:scale-90 smooth select-none active:opacity-50">
                 Contact us
             </div>
             <div ref={containerRef} className="h-[330vh] relative">
@@ -84,29 +84,33 @@ export default function HeroSection() {
                             height={1728}
                             width={3072}
                             priority
-                            className="w-screen lg:object-fill lg:h-auto h-full object-cover absolute top-0 left-0 z-30"
+                            className="w-screen lg:object-fill lg:h-auto h-[60vh] object-cover absolute bottom-0 left-0 z-30"
                         />
 
                         <div
-                            className="absolute sm:top-1/3 top-1/4 left-1/2 -translate-x-1/2 -translate-y-[70%] text-white text-5xl font-semibold scale-110 text-center"
+                            className="absolute sm:top-1/3 top-1/4 left-1/2 -translate-x-1/2 sm:-translate-y-[90%] text-white text-5xl font-semibold scale-110 text-center"
                         >
                             <div
-                                className="relative sm:translate-y-0 -translate-y-6"
+                                className="relative"
                                 style={{ transform: `scale(${itemScale < 1.2 ? itemScale : 1.2})` }}
                             >
                                 <span className={clsx(
-                                    "text-[9vw] flex gap-2",
+                                    "sm:text-[9vw] text-[13vw] flex gap-2",
                                     FontFamily.className
                                 )}>
                                     AmeriCare
                                     {<Image
-                                        src={"https://americare.sirv.com/icons/logo-alone-black.svg"}
+                                        src={"https://americare.sirv.com/icons/logo-alone-colour.svg"}
                                         alt="AmeriCare Logo"
                                         height={300}
                                         width={300}
                                         priority
+                                        style={{ 
+                                            transform: `translateX(${itemMove*2}rem)`,
+                                            opacity: `${(5 - (itemMove*2)) * 0.25}`
+                                        }}
                                         className={clsx(
-                                            "w-[5vw] invert",
+                                            "w-[5vw] sm:block hidden",
                                         )}
                                     />}
                                 </span>
@@ -116,7 +120,7 @@ export default function HeroSection() {
                                     height={200}
                                     width={200}
                                     priority
-                                    className="absolute bottom-2 left-6 w-14"
+                                    className="absolute sm:bottom-2 -bottom-3 sm:left-6 -left-3 w-14"
                                 />
                                 <p className="text-[2.5vw] opacity-60 sm:translate-x-24">
                                     Compassionate Care, Right at Home
@@ -126,8 +130,11 @@ export default function HeroSection() {
                     </div>
 
                     <div
-                        className="absolute bottom-10 sm:right-24 text-lg text-white z-40 sm:max-w-md max-w-[20rem]"
-                        style={{ transform: `translateY(${itemMove}rem)` }}
+                        className="absolute sm:bottom-10 sm:right-24 text-lg text-white z-40 sm:max-w-md max-w-[90vw]"
+                        style={{ 
+                            transform: `translateY(${itemMove}rem)`,
+                            opacity: `${(5-itemMove)*0.25}`
+                        }}
                     >
                         <div className="p-4 w-full rounded-lg bg-white/10 hover:bg-black/25 smooth backdrop-blur-md border border-white/25 animate-floating after:h-24 after:w-24 after:rounded-full after:absolute after:-top-5 after:-left-5 after:bg-green-600/10 after:border after:border-green-600/10 after:-z-10">
                             <span>
