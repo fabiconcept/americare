@@ -63,7 +63,7 @@ export default function HeroSection() {
             <div className="fixed top-5 sm:right-9 right-4 z-[60] rounded-[3rem] shadow cursor-pointer px-8 py-4 bg-white border border-black/25 active:scale-90 smooth select-none active:opacity-50">
                 Contact us
             </div>
-            <div ref={containerRef} id="top" className="h-[330vh] relative">
+            <div ref={containerRef} id="top" className="h-[330vh] relative z-10">
                 <div
                     className="h-screen w-full sticky top-0 grid place-items-center overflow-hidden"
                 >
