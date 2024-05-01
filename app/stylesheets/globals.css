@@ -9,6 +9,10 @@
   }
 }
 
+body {
+  scroll-behavior: smooth;
+}
+
 .smooth-menu {
   transition: 1s ease;
 }

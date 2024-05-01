@@ -7,6 +7,7 @@ import Image from "next/image";
 import { Macondo } from "next/font/google";
 import clsx from "clsx";
 import { FaAngleUp } from "react-icons/fa6";
+import Link from "next/link";
 
 const FontFamily = Macondo({ subsets: ["latin"], weight: "400" });
 
@@ -62,7 +63,7 @@ export default function HeroSection() {
             <div className="fixed top-5 sm:right-9 right-4 z-[60] rounded-[3rem] shadow cursor-pointer px-8 py-4 bg-white border border-black/25 active:scale-90 smooth select-none active:opacity-50">
                 Contact us
             </div>
-            <div ref={containerRef} className="h-[330vh] relative">
+            <div ref={containerRef} id="top" className="h-[330vh] relative">
                 <div
                     className="h-screen w-full sticky top-0 grid place-items-center overflow-hidden"
                 >
@@ -149,9 +150,9 @@ export default function HeroSection() {
             </div>
 
             {!inViewContainer && <div className="animate-entrance fixed bottom-4 right-4 z-50">
-                <div title="Go to top" className="smooth h-12 w-12 bg-white rounded-lg border border-black/50 grid place-items-center shadow-lg active:scale-90 cursor-pointer active:opacity-50 active:-rotate-6">
+                <Link href={"#top"} title="Go to top" className="smooth h-12 w-12 bg-white rounded-lg border border-black/50 grid place-items-center shadow-lg active:scale-90 cursor-pointer active:opacity-50 active:-rotate-6">
                     <FaAngleUp />
-                </div>
+                </Link>
             </div>}
         </>
     )

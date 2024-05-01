@@ -1,7 +1,7 @@
 import clsx from "clsx";
 import React, { useEffect, useState } from "react";
 
-const DisappearingComponent = ({ children, delay = 3000 }: { children: React.ReactNode, delay?: number }) => {
+const DisappearingComponent = ({ children, delay = 5000 }: { children: React.ReactNode, delay?: number }) => {
     const [isVisible, setIsVisible] = useState(true);
 
     useEffect(() => {
