@@ -6,6 +6,8 @@ import Lenis from '@studio-freight/lenis';
 import Image from "next/image";
 import { Macondo } from "next/font/google";
 import clsx from "clsx";
+import { FaAngleUp } from "react-icons/fa6";
+
 const FontFamily = Macondo({ subsets: ["latin"], weight: "400" });
 
 
@@ -145,6 +147,12 @@ export default function HeroSection() {
                     </div>
                 </div>
             </div>
+
+            {!inViewContainer && <div className="animate-entrance fixed bottom-4 right-4 z-50">
+                <div title="Go to top" className="smooth h-12 w-12 bg-white rounded-lg border border-black/50 grid place-items-center shadow-lg active:scale-90 cursor-pointer active:opacity-50 active:-rotate-6">
+                    <FaAngleUp />
+                </div>
+            </div>}
         </>
     )
 }
