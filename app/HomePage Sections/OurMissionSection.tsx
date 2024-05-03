@@ -6,14 +6,14 @@ const FontFamily = Macondo({ subsets: ["latin"], weight: "400" });
 
 export default function OurMissionSection() {
     return (
-        <div className="py-32 sm:px-32 xl:px-80 relative z-10 bg-white">
+        <div className="py-32 px-[12.5vw] relative z-10 bg-white">
             <div className="mb-12">
-                <h1 className={clsx(FontFamily.className, "text-8xl text-[#6fad45]")}>AmeriCare</h1>
+                <h1 className={clsx(FontFamily.className, "sm:text-[4vw] text-5xl text-[#6fad45]")}>Our Mission</h1>
                 <p className="opacity-60 text-[0.97rem]">Compassionate Care, Right at Home</p>
             </div>
 
-            <div className="flex gap-12">
-                <p className="xl:max-w-3xl max-w-xl xl:text-5xl text-4xl leading-[3rem] opacity-80 relative">
+            <div className="flex gap-12 flex-wrap">
+                <p className="min-w-[20rem] flex-[2] xl:text-5xl text-4xl leading-[3rem] opacity-80 relative">
                     <Image
                         src={"https://americare.sirv.com/icons/quote-icon.svg"}
                         alt="Quote icon"
@@ -39,7 +39,7 @@ export default function OurMissionSection() {
                     />
                 </p>
 
-                <p className="max-w-md opacity-70">
+                <p className="min-w-[20rem] flex-1 opacity-70">
                     We understand the unique needs and challenges that children and seniors face, and we&apos;re here to provide the highest level of care and support. Our approach is holistic encompassing mental and physical health to support the entire family through our a leading to the best outcomes.
                 </p>
             </div>

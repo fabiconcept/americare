@@ -19,7 +19,7 @@ export default function RootLayout({
 }>) {
     return (
         <html lang="en">
-            <body className={clsx(FontFamily.className, "relative")}>
+            <body className={clsx(FontFamily.className, "overflow-x-hidden")}>
                 <NavigationCoponent />
                 {children}
             </body>
