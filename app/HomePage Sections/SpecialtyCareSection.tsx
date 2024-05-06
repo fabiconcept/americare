@@ -1,7 +1,7 @@
 import Image from "next/image";
 import clsx from "clsx"
 
-export default function CompanionshipSection() {
+export default function SpecialtyCareSection() {
     return (
         <div className="py-12 sm:px-[12.5vw] px-6 grid place-items-center bg-white relative sm:min-h-[fit-content] md:max-h-[65rem]">
             <Image
@@ -27,7 +27,7 @@ export default function CompanionshipSection() {
                                 )}
                             />
                             <span>
-                                Specialty Care offers expert support for Alzheimer’s, dementia, Parkinson&apos;, ALS, and similar conditions.
+                            Our Specialty Care offers expert support for Alzheimer&apos;s, dementia, Parkinson&apos;s, ALS, and similar conditions.
                             </span>
                             <Image
                                 src={"https://americare.sirv.com/icons/quote-icon.svg"}
@@ -53,17 +53,18 @@ export default function CompanionshipSection() {
                 <div className="min-w-[20rem] flex-1 flex flex-col gap-12">
                     <span className="opacity-70 flex flex-col gap-4">
                         <span>
-                            Companionship is a fundamental aspect of emotional well-being. Our Companionship services are designed to provide not only practical assistance but also meaningful human connection.
+                            For clients with unique healthcare requirements, AmeriCare offers Specialty Care services that are tailored to address specific conditions and challenges. Whether you or your loved one is dealing with Alzheimer&apos;s, dementia, Parkinson&apos;s disease, ALS, or any other specialized medical condition, our expert caregivers are trained to provide the specialized care and support you need.
                         </span>
                         <span>
-                            Our caregivers are more than just helpers; they are friendly faces, listeners, and companions who provide the warmth of social interaction. Whether it&apos;s engaging in conversation, playing games, or simply sharing a meal, we believe that companionship is vital to enhancing the overall quality of life for our clients.
+                            We understand the nuances of each condition and work closely with you and your healthcare team to develop a care plan that ensures
+                            the highest level of comfort, safety, and quality of life
                         </span>
                         <span>
-                            Loneliness should never be a concern when you choose AmeriCare for your home healthcare needs.
+                            Our goal is to make living with these conditions as manageable and comfortable as possible, all within the familiar surroundings of home.
                         </span>
                     </span>
                     <Image
-                        src={"https://americare.sirv.com/vlad-sargu-ItphH2lGzuI-unsplash.jpg"}
+                        src={"https://americare.sirv.com/icons/cdc-T9SwaYf6g40-unsplash.jpg"}
                         alt={"Nurse photo 001"}
                         height={8008}
                         width={12112}
