@@ -6,7 +6,7 @@ import Lenis from '@studio-freight/lenis';
 import Image from "next/image";
 import { Macondo } from "next/font/google";
 import clsx from "clsx";
-import { FaAngleUp } from "react-icons/fa6";
+import { FaAngleDown, FaAngleUp } from "react-icons/fa6";
 import Link from "next/link";
 
 const FontFamily = Macondo({ subsets: ["latin"], weight: "400" });
@@ -145,6 +145,11 @@ export default function HeroSection() {
                                 healthcare services for both the young and the elderly.
                             </span>
                         </div>
+                    </div>
+
+                    <div className="absolute bottom-6 left-6 z-50 flex items-center flex-col text-white text-lg">
+                        <span>Scroll Down</span>
+                        <FaAngleDown className="animate-bounce" />
                     </div>
                 </div>
             </div>

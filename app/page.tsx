@@ -1,6 +1,7 @@
 import BackgroundLayer from "./HomePage Sections/BackgroundLayer";
-import HolePunchSection from "./HomePage Sections/HolePunchSection";
-import Services from "./HomePage Sections/Services";
+import SkilledNursingSection from "./HomePage Sections/SkilledNursingSection";
+import PersonalCareSection from "./HomePage Sections/PersonalCareSection";
+import CompanionshipSection from "./HomePage Sections/CompanionshipSection";
 import HeroSection from "./HomePage Sections/HeroSection";
 import OurMissionSection from "./HomePage Sections/OurMissionSection";
 
@@ -10,9 +11,10 @@ export default function page() {
             <BackgroundLayer />
             <HeroSection />
             <OurMissionSection />
-            <HolePunchSection />
-            <Services />
-            <div className="h-[100vh]"></div>
+            <SkilledNursingSection />
+            <PersonalCareSection />
+            <CompanionshipSection />
+            {/* <div className="h-[100vh] bg-white"></div> */}
         </>
     )
 }
