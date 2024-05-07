@@ -3,6 +3,7 @@ import SkilledNursingSection from "./HomePage Sections/SkilledNursingSection";
 import PersonalCareSection from "./HomePage Sections/PersonalCareSection";
 import CompanionshipSection from "./HomePage Sections/CompanionshipSection";
 import SpecialtyCareSection from "./HomePage Sections/SpecialtyCareSection";
+import OurServicesSection from "./HomePage Sections/OurServicesSection";
 import HeroSection from "./HomePage Sections/HeroSection";
 import OurMissionSection from "./HomePage Sections/OurMissionSection";
 
@@ -16,6 +17,7 @@ export default function page() {
             <PersonalCareSection />
             <CompanionshipSection />
             <SpecialtyCareSection />
+            <OurServicesSection />
             {/* <div className="h-[100vh] bg-white"></div> */}
         </>
     )

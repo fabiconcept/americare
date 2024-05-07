@@ -20,3 +20,10 @@ body {
 .smooth {
   transition: 0.25s ease;
 }
+
+.grid-bg {
+  background-color: #fdfdfe90;
+  opacity: 0.1;
+  background-image: linear-gradient(#c1c1c1 1.8px, transparent 1.8px), linear-gradient(to right, #c1c1c1 1.8px, #fdfdfe 1.8px);
+  background-size: 36px 36px;
+}
