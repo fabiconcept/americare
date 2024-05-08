@@ -1,11 +1,12 @@
 import BackgroundLayer from "./HomePage Sections/BackgroundLayer";
-import SkilledNursingSection from "./HomePage Sections/SkilledNursingSection";
-import PersonalCareSection from "./HomePage Sections/PersonalCareSection";
-import CompanionshipSection from "./HomePage Sections/CompanionshipSection";
-import SpecialtyCareSection from "./HomePage Sections/SpecialtyCareSection";
-import OurServicesSection from "./HomePage Sections/OurServicesSection";
+import ServicesOfferedSection from "./HomePage Sections/ServicesOfferedSection";
 import HeroSection from "./HomePage Sections/HeroSection";
 import OurMissionSection from "./HomePage Sections/OurMissionSection";
+import { ServiceOffered } from "@/lib/ServiceOffered";
+import OurServicesSection from "./HomePage Sections/OurServicesSection";
+import JoinTeamSection from "./HomePage Sections/JoinTeamSection";
+
+
 
 export default function page() {
     return (
@@ -13,12 +14,23 @@ export default function page() {
             <BackgroundLayer />
             <HeroSection />
             <OurMissionSection />
-            <SkilledNursingSection />
-            <PersonalCareSection />
-            <CompanionshipSection />
-            <SpecialtyCareSection />
+            <>
+                {ServiceOffered.map(({ blob, btnText, btnUrl, description, imgAlt, imgSrc, title }, index) => (
+                    <ServicesOfferedSection
+                        blob={blob}
+                        btnText={btnText}
+                        btnUrl={btnUrl}
+                        description={description}
+                        imgAlt={imgAlt}
+                        imgSrc={imgSrc}
+                        title={title}
+                        key={index}
+                    />
+                ))}
+            </>
+
             <OurServicesSection />
-            {/* <div className="h-[100vh] bg-white"></div> */}
+            <JoinTeamSection />
         </>
     )
 }

@@ -1,11 +1,10 @@
 import { OurServicesList } from "@/lib/OurServicesList";
 import ServiceItem from "./components/ServiceItem";
-import clsx from "clsx";
 import CustomBtn from "../components/CustomBtn";
 
 export default function OurServicesSection() {
     return (
-        <section className="bg-white py-12">
+        <section className="bg-white py-12 shadow-lg">
             <h1 className="sm:px-[12.5vw] mb-3 px-3 text-center text-[#6fad45] sm:text-[4vw] text-5xl">
                 Our services
             </h1>
@@ -19,7 +18,7 @@ export default function OurServicesSection() {
                         isOdd={index % 2 === 0}
                     />
                 ))}
-                <div className="grid place-items-center">
+                <div className="grid place-items-center p-8">
                     <CustomBtn 
                         customClass=""
                         linkHref="#"

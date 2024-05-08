@@ -17,8 +17,8 @@ export default function NavigationCoponent() {
 
     
     const topVariants = useMemo((): Variants =>( {
-        visible: { top: "0" },
-        hidden: { top: topPosition },
+        visible: { top: "0", pointerEvents: "all" },
+        hidden: { top: topPosition, pointerEvents: "none" },
     }), [topPosition]);
 
     useEffect(() => {
@@ -40,7 +40,7 @@ export default function NavigationCoponent() {
         setIsNavOpen(!isNavOpen);
     }
     return (
-        <div className="fixed left-0 top-0 z-50 w-full overflow-hidden">
+        <div className="fixed left-0 top-0 z-50 w-full overflow-hidden h-fit">
             <motion.div 
                 className="w-full flex flex-col items-center relative"
                 animate={controls}

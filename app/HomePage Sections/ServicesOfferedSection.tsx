@@ -4,7 +4,17 @@ import Image from "next/image";
 import { Parallax, } from "react-parallax";
 import CustomBtn from "../components/CustomBtn";
 
-export default function SkilledNursingSection() {
+interface SectionProp { 
+    title: string, 
+    blob: string, 
+    description: { __html: string | TrustedHTML } | undefined, 
+    imgSrc: string, 
+    imgAlt: string ,
+    btnText: string, 
+    btnUrl: string
+}
+
+export default function ServicesOfferedSection({blob, btnText, btnUrl, description, imgAlt, imgSrc, title}: SectionProp) {
     return (
         <div className="bg-white relative  sm:h-[100vh] sm:min-h-[fit-content] md:max-h-[65rem]">
             <Image
@@ -21,7 +31,9 @@ export default function SkilledNursingSection() {
                     <>
                         <div className="flex gap-12 flex-wrap p-6 relative z-10 mix-blend-multiply">
                             <div className="min-w-[20rem] flex-[2] flex flex-col gap-8 2xl:text-7xl sm:text-6xl text-5xl relative z-10">
-                                <span className="text-[#6fad45] font-semibold">Premier In-Home Nursing Care</span>
+                                <span className="text-[#6fad45] font-semibold">
+                                    {title}
+                                </span>
                                 <div>
                                     <div className="relative 2xl:text-5xl sm:text-4xl text-3xl">
                                         <Image
@@ -35,7 +47,7 @@ export default function SkilledNursingSection() {
                                             )}
                                         />
                                         <span>
-                                            We offer skilled nursing care at home, providing medication, wound, and post-surgical support.
+                                            {blob}
                                         </span>
                                         <Image
                                             src={"https://americare.sirv.com/icons/quote-icon.svg"}
@@ -65,22 +77,15 @@ export default function SkilledNursingSection() {
                                 </div>
                                 <CustomBtn
                                     customClass="text-base"
-                                    linkHref="#"
-                                    text="Learn more"
+                                    linkHref={btnUrl}
+                                    text={btnText}
                                 />
                             </div>
                             <div className="min-w-[20rem] flex-1 flex flex-col gap-12">
-                                <span className="opacity-70 flex flex-col gap-4">
-                                    <span>
-                                        Our Skilled Nursing services at AmeriCare are designed to provide the highest level of medical care within the comfort of your home. Our team of registered nurses and licensed practical nurses are highly trained to meet the specific needs of our clients, whether they are children with complex medical conditions or elderly adults requiring post-operative care.
-                                    </span>
-                                    <span>
-                                        From medication management and wound care to disease management and post-surgical support, our skilled nurses ensure that you or your loved one receives the best possible care to promote healing, recovery, and overall well-being.
-                                    </span>
-                                </span>
+                                <span className="opacity-70 flex flex-col gap-4" dangerouslySetInnerHTML={description}></span>
                                 <Image
-                                    src={"https://americare.sirv.com/rusty-watson-yIGinlYA6t8-unsplash.jpg"}
-                                    alt={"Nurse photo 001"}
+                                    src={imgSrc}
+                                    alt={imgAlt}
                                     height={4600}
                                     width={7360}
                                     priority
