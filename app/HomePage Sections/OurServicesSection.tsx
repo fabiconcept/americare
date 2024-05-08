@@ -1,5 +1,7 @@
 import { OurServicesList } from "@/lib/OurServicesList";
 import ServiceItem from "./components/ServiceItem";
+import clsx from "clsx";
+import CustomBtn from "../components/CustomBtn";
 
 export default function OurServicesSection() {
     return (
@@ -8,7 +10,7 @@ export default function OurServicesSection() {
                 Our services
             </h1>
             <p className="text-center opacity-60 mb-5 max-w-[15rem] text-lg mx-auto">Services we can offer you</p>
-            <div className="grid grid-cols-[repeat(auto-fill,minmax(25rem,1fr))] sm:px-[3vw] px-3">
+            <div className="grid 2xl:grid-cols-[repeat(auto-fill,minmax(30rem,1fr))] grid-cols-[repeat(auto-fill,minmax(25rem,1fr))] sm:px-[3vw] px-3">
                 {OurServicesList.map((serviceItem, index)=>(
                     <ServiceItem 
                         key={index}
@@ -18,7 +20,11 @@ export default function OurServicesSection() {
                     />
                 ))}
                 <div className="grid place-items-center">
-                    <div className="smooth py-4 px-12 hover:text-white cursor-pointer active:scale-90 hover:bg-[#6fad45] bg-transparent text-[#6fad45] border-[#6fad45] w-fit select-none border-2 border-dashed hover:border-transparent">Learn more</div>
+                    <CustomBtn 
+                        customClass=""
+                        linkHref="#"
+                        text="Learn more"
+                    />
                 </div>
             </div>
         </section>

@@ -21,6 +21,22 @@ body {
   transition: 0.25s ease;
 }
 
+.smooth-after::after {
+  transition: 0.25s ease;
+}
+
+.hover-bg:hover {
+  background-color: #f0f7ec;
+  background-size: 26px 26px;
+  background-image: repeating-linear-gradient(0deg, #cde2bebc, #cde2bebc 1.3px, #f0f7ec 1.3px, #f0f7ec);
+}
+
+.hover-bg-odd:hover {
+  background-color: #cde2bebc;
+  background-size: 26px 26px;
+  background-image: repeating-linear-gradient(0deg, #f0f7ec, #f0f7ec 1.3px, #cde2bebc 1.3px, #cde2bebc);
+}
+
 .grid-bg {
   background-color: #fdfdfe90;
   opacity: 0.1;

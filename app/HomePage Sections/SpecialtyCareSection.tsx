@@ -1,5 +1,6 @@
 import Image from "next/image";
 import clsx from "clsx"
+import CustomBtn from "../components/CustomBtn";
 
 export default function SpecialtyCareSection() {
     return (
@@ -47,6 +48,11 @@ export default function SpecialtyCareSection() {
                             width={1920}
                             priority
                             className="md:w-[90%] sm:px-6 pt-7  opacity-50"
+                        />
+                        <CustomBtn
+                            customClass="text-base"
+                            linkHref="#"
+                            text="Learn more"
                         />
                     </div>
                 </div>
