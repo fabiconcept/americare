@@ -84,7 +84,7 @@ export const ServiceOffered: SectionProp[] = [
         </span>
       `
     },
-    imgSrc: "https://americare.sirv.com/cdc-GnLuuG9crEY-unsplash.jpg",
+    imgSrc: "https://americare.sirv.com/logan-weaver-lgnwvr-lK0l9pzxLps-unsplash.jpg",
     imgAlt: "Nurse photo 001",
     btnText: "Learn more",
     btnUrl: "#"
