@@ -17,7 +17,7 @@ export default function JoinTeamSection() {
                 <div className="w-fit mt-3 mx-auto pt-5">
                     <CustomBtn
                         customClass="text-base"
-                        linkHref={""}
+                        linkHref={"/careers"}
                         text={"Join us"}
                     />
                 </div>
