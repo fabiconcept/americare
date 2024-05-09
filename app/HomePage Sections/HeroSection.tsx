@@ -60,7 +60,10 @@ export default function HeroSection() {
                 )}
             />
 
-            <div className="fixed top-5 sm:right-9 right-4 z-[60] rounded-[3rem] shadow cursor-pointer px-8 py-4 bg-white border border-black/25 active:scale-90 smooth select-none active:opacity-50">
+            <div className={clsx(
+                "fixed top-5 sm:right-9 right-4 z-[60] shadow cursor-pointer px-8 py-4 border active:scale-90 smooth select-none active:opacity-50",
+                inViewContainer ? "hover:bg-white border-2 border-dotted text-white hover:text-[#6fad45]" : "bg-white hover:text-white hover:border-transparent hover:bg-[#6fad45] border-black/25"
+            )}>
                 Contact us
             </div>
             <div ref={containerRef} id="top" className="h-[330vh] relative z-10">
@@ -78,7 +81,7 @@ export default function HeroSection() {
                             className="w-screen lg:object-fill lg:h-auto h-full object-cover"
                         />
                         <div
-                            className="absolute h-full w-full top-0 left-0 bg-black/20 backdrop-blur-[1px] z-10"
+                            className="absolute h-full pointer-events-none w-full top-0 left-0 bg-black/20 backdrop-blur-[1px] z-10"
                             style={{ opacity: itemOpacity }}
                         ></div>
                         <Image
@@ -103,7 +106,7 @@ export default function HeroSection() {
                                 )}>
                                     AmeriCare
                                     {<Image
-                                        src={"https://americare.sirv.com/icons/logo-alone-colour.svg"}
+                                        src={"https://americare.sirv.com/icons/logo-alone-black.svg"}
                                         alt="AmeriCare Logo"
                                         height={300}
                                         width={300}
@@ -113,7 +116,7 @@ export default function HeroSection() {
                                             opacity: `${(5 - (itemMove*2)) * 0.25}`
                                         }}
                                         className={clsx(
-                                            "w-[5vw] sm:block hidden",
+                                            "w-[5vw] sm:block hidden invert",
                                         )}
                                     />}
                                 </span>

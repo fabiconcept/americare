@@ -21,6 +21,12 @@ body {
   transition: 0.25s ease;
 }
 
+img {
+  -webkit-user-select: none;
+  user-select: none;
+  pointer-events: none;
+}
+
 *::selection{
   background-color: #6fad45;
   color: #fff;
