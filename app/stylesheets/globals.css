@@ -21,6 +21,11 @@ body {
   transition: 0.25s ease;
 }
 
+*::selection{
+  background-color: #6fad45;
+  color: #fff;
+}
+
 .smooth-after::after {
   transition: 0.25s ease;
 }
