@@ -43,7 +43,7 @@ export default function ServicesOfferedSection({blob, btnText, btnUrl, descripti
                                             width={300}
                                             priority
                                             className={clsx(
-                                                "w-[8vw] smooth absolute -top-[2.5vw] -left-[4.2vw] -rotate-3 -z-[1]"
+                                                "w-[8vw] smooth absolute -top-[3.25vw] -left-[6vw] -rotate-3 -z-[1]"
                                             )}
                                         />
                                         <span>

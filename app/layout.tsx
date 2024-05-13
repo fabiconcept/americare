@@ -4,7 +4,7 @@ import "./stylesheets/globals.css";
 import "./stylesheets/animations.css";
 import NavigationCoponent from "./components/navigation";
 import clsx from "clsx";
-import FooterSection from "./HomePage Sections/FooterSection";
+import FooterSection from "./components/FooterSection";
 
 const FontFamily = Raleway({ subsets: ["latin"], weight: "500" });
 
