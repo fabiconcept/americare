@@ -22,12 +22,12 @@ export default function TopSection() {
                 </span>
             </div>
 
-            <div className="grid sm:grid-cols-3 grid-cols-1 sm:px-[5vw] px-6 gap-8 justify-center">
+            <div className="grid md:grid-cols-3 grid-cols-1 sm:px-[5vw] px-6 gap-8 justify-center">
                 <div className="flex flex-col items-end gap-2">
                     <span className="text-right py-1 px-3 rounded-3xl border border-black/25 text-sm peer-hover:bg-[#6fad45]">We offer</span>
                     <div className="w-full flex flex-col h-full shadow-lg group smooth hover:-translate-y-1">
                         <div className="py-2 px-4 border border-dashed border-[#6fad45]/50 bg-black/5 backdrop-blur text-lg font-semibold">Compassionate Care</div>
-                        <div className="flex-1 py-2 px-4 bg-white border border-dashed border-transparent group-hover:border-t-transparent smooth group-hover:border-[#6fad45]/50">
+                        <div className="flex-1 py-2 px-4 border border-dashed border-transparent group-hover:border-t-transparent smooth group-hover:border-[#6fad45]/50 bg-[#F0F7EC] hover-bg">
                             At AmeriCare, we provide more than just medical services. Our compassionate caregivers offer genuine companionship, understanding, and emotional support to our clients and their families.
                         </div>
                     </div>
@@ -36,7 +36,7 @@ export default function TopSection() {
                     <span className="text-right py-1 px-3 rounded-3xl border border-black/25 text-sm peer-hover:bg-[#6fad45]">We offer</span>
                     <div className="w-full flex flex-col h-full shadow-lg group smooth hover:-translate-y-1">
                         <div className="py-2 px-4 border border-dashed border-[#6fad45]/50 bg-black/5 backdrop-blur text-lg font-semibold">Personalized Approach</div>
-                        <div className="flex-1 py-2 px-4 bg-white border border-dashed border-transparent group-hover:border-t-transparent smooth group-hover:border-[#6fad45]/50">
+                        <div className="flex-1 py-2 px-4 border border-dashed border-transparent group-hover:border-t-transparent smooth group-hover:border-[#6fad45]/50 bg-[#CDE2BE] hover-bg-odd">
                             We understand that every individual has unique needs. That's why we take the time to assess each client thoroughly and create personalized care plans tailored to their specific requirements.
                         </div>
 
@@ -46,7 +46,7 @@ export default function TopSection() {
                     <span className="text-right py-1 px-3 rounded-3xl border border-black/25 text-sm peer-hover:bg-[#6fad45]">We offer</span>
                     <div className="w-full flex flex-col h-full shadow-lg group smooth hover:-translate-y-1">
                         <div className="py-2 px-4 border border-dashed border-[#6fad45]/50 bg-black/5 backdrop-blur text-lg font-semibold">Experienced Team</div>
-                        <div className="flex-1 py-2 px-4 bg-white border border-dashed border-transparent group-hover:border-t-transparent smooth group-hover:border-[#6fad45]/50">
+                        <div className="flex-1 py-2 px-4 border border-dashed border-transparent group-hover:border-t-transparent smooth group-hover:border-[#6fad45]/50 bg-[#F0F7EC] hover-bg">
                             Our team consists of highly trained and experienced healthcare professionals dedicated to providing the highest quality of care. With AmeriCare, you can trust that you're in capable hands.
                         </div>
 
