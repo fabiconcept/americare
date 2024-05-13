@@ -62,7 +62,7 @@ export default function HeroSection() {
 
             <div className={clsx(
                 "fixed top-5 sm:right-9 right-4 z-[60] shadow cursor-pointer px-8 py-4 border active:scale-90 smooth select-none active:opacity-50",
-                inViewContainer ? "hover:bg-white border-2 border-dotted text-white hover:text-[#6fad45]" : "bg-white hover:text-white hover:border-transparent hover:bg-[#6fad45] border-black/25"
+                inViewContainer ? "hover:bg-white border-2 border-dotted text-white hover:text-primary" : "bg-white hover:text-white hover:border-transparent hover:bg-primary border-black/25"
             )}>
                 Contact us
             </div>

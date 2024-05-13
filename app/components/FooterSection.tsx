@@ -31,7 +31,7 @@ export default function FooterSection() {
                             text="Join our team"
                         />
                         <CustomBtn
-                            customClass="after:h-[105%] after:w-[105%] opacity-100 after:bg-[#6fad45] text-white"
+                            customClass="after:h-[105%] after:w-[105%] opacity-100 after:bg-primary text-white"
                             linkHref="#"
                             text="Contact us"
                         />
@@ -47,35 +47,35 @@ export default function FooterSection() {
 
                         <div>
                             <span className="mt-6 flex gap-1 group">
-                                    <FaPhoneSquareAlt className="text-3xl smooth group-hover:text-[#6fad45]" />
-                                Call <Link className="text-[#6fad45]" href={"tel:+1770656-9593"}>(770) 656-9593</Link> For A Free Consultation!
+                                    <FaPhoneSquareAlt className="text-3xl smooth group-hover:text-primary" />
+                                Call <Link className="text-primary" href={"tel:+1770656-9593"}>(770) 656-9593</Link> For A Free Consultation!
                             </span>
                             <span className="mt-3 flex gap-1 group">
-                                <FaMailBulk className="text-3xl smooth group-hover:text-[#6fad45]" />
-                                Email: <Link className="text-[#6fad45]" href={"mailto:contact@americareinhome.com"}>contact@americareinhome.com</Link>.
+                                <FaMailBulk className="text-3xl smooth group-hover:text-primary" />
+                                Email: <Link className="text-primary" href={"mailto:contact@americareinhome.com"}>contact@americareinhome.com</Link>.
                             </span>
                         </div>
                     </div>
 
                     <div className="grid gap-3 max-md:text-lg text-white">
-                        <Link className="min-w-[10rem] sm:px-3 hover:text-[#6fad45] smooth hover:font-semibold" href="#">About</Link>
-                        <Link className="min-w-[10rem] sm:px-3 hover:text-[#6fad45] smooth hover:font-semibold" href="#">Services</Link>
-                        <Link className="min-w-[10rem] sm:px-3 hover:text-[#6fad45] smooth hover:font-semibold" href="#">Career</Link>
-                        <Link className="min-w-[10rem] sm:px-3 hover:text-[#6fad45] smooth hover:font-semibold" href="#">Contact</Link>
+                        <Link className="min-w-[10rem] sm:px-3 hover:text-primary smooth hover:font-semibold" href="#">About</Link>
+                        <Link className="min-w-[10rem] sm:px-3 hover:text-primary smooth hover:font-semibold" href="#">Services</Link>
+                        <Link className="min-w-[10rem] sm:px-3 hover:text-primary smooth hover:font-semibold" href="#">Career</Link>
+                        <Link className="min-w-[10rem] sm:px-3 hover:text-primary smooth hover:font-semibold" href="#">Contact</Link>
                     </div>
 
                     <div className="grid sm:grid-cols-1 gap-3 sm:min-w-fit min-w-full grid-cols-4 text-white">
                         <Link href={"#"}>
-                            <FaFacebookF className="text-3xl hover:text-[#6fad45]" />
+                            <FaFacebookF className="text-3xl hover:text-primary" />
                         </Link>
                         <Link href={"#"}>
-                            <FaLinkedin className="text-3xl hover:text-[#6fad45]" />
+                            <FaLinkedin className="text-3xl hover:text-primary" />
                         </Link>
                         <Link href={"#"}>
-                            <FaMailBulk className="text-3xl hover:text-[#6fad45]" />
+                            <FaMailBulk className="text-3xl hover:text-primary" />
                         </Link>
                         <Link href={"#"}>
-                            <FaPhoneSquareAlt className="text-3xl hover:text-[#6fad45]" />
+                            <FaPhoneSquareAlt className="text-3xl hover:text-primary" />
                         </Link>
                     </div>
                 </div>

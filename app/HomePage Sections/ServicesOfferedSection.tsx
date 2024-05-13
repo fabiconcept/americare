@@ -31,7 +31,7 @@ export default function ServicesOfferedSection({blob, btnText, btnUrl, descripti
                     <>
                         <div className="flex gap-12 flex-wrap p-6 relative z-10 mix-blend-multiply">
                             <div className="min-w-[20rem] flex-[2] flex flex-col gap-8 2xl:text-7xl sm:text-6xl text-5xl relative z-10">
-                                <span className="text-[#6fad45] font-semibold">
+                                <span className="text-primary font-semibold">
                                     {title}
                                 </span>
                                 <div>

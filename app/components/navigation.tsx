@@ -88,7 +88,7 @@ export default function NavigationCoponent() {
                     isNavOpen ? "w-6 rotate-[30deg] -translate-y-[6px] translate-x-[10px]" : "w-12",
                 )}></div>
                 {!!(!isNavOpen) &&
-                    <DisappearingComponent classMode="absolute -bottom-16 left-1/2 -translate-x-1/2">
+                    <DisappearingComponent classMode="absolute -bottom-16 left-1/2 -translate-x-1/2 pointer-events-none">
                         <div className="pointer-events-none text-shadow whitespace-nowrap select-none text-white flex flex-col gap-2 items-center py-6 animate-bounce mix-blend-multiply">
                             <span className="animate-dangle opacity-60">
                                 Click to Navigate
