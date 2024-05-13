@@ -55,3 +55,7 @@ img {
   background-image: linear-gradient(#c1c1c1 1.8px, transparent 1.8px), linear-gradient(to right, #c1c1c1 1.8px, #fdfdfe 1.8px);
   background-size: 36px 36px;
 }
+
+.text-shadow {
+  text-shadow: 0.1em 0.1em #000;
+}

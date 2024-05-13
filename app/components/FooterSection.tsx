@@ -8,7 +8,7 @@ import { FaMailBulk, FaPhoneSquare, FaPhoneSquareAlt } from "react-icons/fa";
 export default function FooterSection() {
     return (
         <div className={clsx(
-            "bg-white text-white sm:text-xl text-base"
+            "bg-white/90 text-white sm:text-xl text-base"
         )}>
             <div className="pt-12 pb-6 sm:px-[5vw] px-5 bg-[#222222] rounded-t-[3rem]">
 

@@ -4,7 +4,7 @@ import Image from "next/image";
 
 export default function WhyUsPage() {
     return (
-        <div>
+        <>
             <Image
                 src={"https://americare.sirv.com/icons/logo-alone-colour.svg"}
                 alt="AmeriCare Logo"
@@ -21,9 +21,11 @@ export default function WhyUsPage() {
             )}>
                 Contact us
             </div>
-            
-            <TopSection />
 
-        </div>
+            <div className="relative z-10">
+                <TopSection />
+
+            </div>
+        </>
     )
 }

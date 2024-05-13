@@ -5,6 +5,7 @@ import "./stylesheets/animations.css";
 import NavigationCoponent from "./components/navigation";
 import clsx from "clsx";
 import FooterSection from "./components/FooterSection";
+import BackgroundLayer from "./HomePage Sections/BackgroundLayer";
 
 const FontFamily = Raleway({ subsets: ["latin"], weight: "500" });
 
@@ -21,6 +22,7 @@ export default function RootLayout({
     return (
         <html lang="en">
             <body className={clsx(FontFamily.className, "overflow-x-hidden")}>
+                <BackgroundLayer />
                 <NavigationCoponent />
                 {children}
                 <FooterSection />

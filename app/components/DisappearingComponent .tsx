@@ -1,7 +1,7 @@
 import clsx from "clsx";
 import React, { useEffect, useState } from "react";
 
-const DisappearingComponent = ({ children, delay = 5000 }: { children: React.ReactNode, delay?: number }) => {
+const DisappearingComponent = ({ children, delay = 5000, classMode = "" }: { children: React.ReactNode, delay?: number, classMode: string }) => {
     const [isVisible, setIsVisible] = useState(true);
 
     useEffect(() => {
@@ -12,6 +12,7 @@ const DisappearingComponent = ({ children, delay = 5000 }: { children: React.Rea
     return (
         <div className={clsx(
             "smooth",
+            classMode,
             isVisible ? "opacity-100" : "opacity-0"
         )}>
             {children}

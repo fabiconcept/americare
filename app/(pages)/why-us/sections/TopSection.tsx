@@ -2,7 +2,7 @@ import { FaQuestion } from "react-icons/fa6";
 
 export default function TopSection() {
     return (
-        <section className="min-h-screen h-fit">
+        <section className="min-h-screen h-fit bg-white/90">
             <div className="p-[10rem] text-center flex flex-col items-center">
                 <span className="flex items-center">
                     <FaQuestion className="scale-x-[-1] scale-y-[-1] opacity-80" />
