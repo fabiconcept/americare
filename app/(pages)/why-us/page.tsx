@@ -1,5 +1,6 @@
 import clsx from "clsx";
 import TopSection from "./sections/TopSection";
+import OurMissionSection from "./sections/OurMissionSection";
 import Image from "next/image";
 
 export default function WhyUsPage() {
@@ -24,6 +25,7 @@ export default function WhyUsPage() {
 
             <div className="relative z-10">
                 <TopSection />
+                <OurMissionSection />
 
             </div>
         </>
