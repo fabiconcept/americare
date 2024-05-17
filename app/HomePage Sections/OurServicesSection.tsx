@@ -4,7 +4,7 @@ import CustomBtn from "../components/CustomBtn";
 
 export default function OurServicesSection() {
     return (
-        <section className="bg-white py-12 shadow-lg">
+        <section className="bg-white py-12 shadow-lg dark:bg-darkBg dark:text-white">
             <h1 className="sm:px-[12.5vw] mb-3 px-3 text-center text-primary sm:text-[4vw] text-5xl">
                 Our services
             </h1>

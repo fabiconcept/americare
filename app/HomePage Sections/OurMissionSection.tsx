@@ -7,7 +7,7 @@ const FontFamily = Macondo({ subsets: ["latin"], weight: "400" });
 export default function OurMissionSection() {
     return (
         <>
-            <div className="py-12 sm:px-[12.5vw] px-3 relative z-10 bg-white">
+            <div className="py-12 sm:px-[12.5vw] px-3 relative z-10 dark:bg-darkBg dark:text-white bg-white">
                 <div className="mb-12">
                     <h1 className={clsx(FontFamily.className, "sm:text-[4vw] text-5xl text-primary font-semibold")}>Our Mission</h1>
                     <p className="opacity-60 text-[0.97rem] font-semibold">Compassionate Care, Right at Home</p>
@@ -22,7 +22,7 @@ export default function OurMissionSection() {
                             width={300}
                             priority
                             className={clsx(
-                                "w-[8vw] smooth absolute -top-[2.5vw] -left-[4.2vw] -rotate-3 -z-[1]"
+                                "w-[8vw] smooth absolute -top-[2.5vw] -left-[4.2vw] -rotate-3 -z-[1] dark:opacity-40"
                             )}
                         />
                         <span>
@@ -35,7 +35,7 @@ export default function OurMissionSection() {
                             width={300}
                             priority
                             className={clsx(
-                                "w-[8vw] smooth absolute -bottom-[2.5vw] rotate-3 mix-blend-lighten scale-x-[-1] -right-[2vw] -z-[1]"
+                                "w-[8vw] smooth absolute -bottom-[2.5vw] rotate-3 mix-blend-lighten scale-x-[-1] -right-[2vw] -z-[1] dark:opacity-40"
                             )}
                         />
                     </p>
@@ -45,13 +45,20 @@ export default function OurMissionSection() {
                     </p>
                 </div>
             </div>
-            <div>
+            <div className="relative">
                 <Image
                     src={"https://americare.sirv.com/icons/hole-punch.png"}
                     alt={"Hole Punch"}
                     height={1920}
                     width={1200}
-                    className="w-full -mt-1 brightness-105"
+                    className="w-full -mt-1 brightness-105 dark:invisible"
+                />
+                <Image
+                    src={"https://americare.sirv.com/icons/hole-punch-dark.png"}
+                    alt={"Hole Punch"}
+                    height={1920}
+                    width={1200}
+                    className="w-full h-[110%] object-cover -mt-1 brightness-100 absolute top-0 left-0 brigh"
                 />
             </div>
         </>

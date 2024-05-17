@@ -49,6 +49,7 @@ img {
   background-image: repeating-linear-gradient(0deg, #f0f7ec, #f0f7ec 1.3px, #cde2bebc 1.3px, #cde2bebc);
 }
 
+
 .grid-bg {
   background-color: #fdfdfe90;
   opacity: 0.1;
@@ -58,4 +59,17 @@ img {
 
 .text-shadow {
   text-shadow: 0.1em 0.1em #000;
+}
+
+/* for Dark mode */
+@media (prefers-color-scheme: dark) {
+  .hover-bg-odd:hover {
+    background-color: transparent;
+  }
+  
+  .hover-bg:hover {
+    background-color: #f0f7ec;
+    background-size: 26px 26px;
+    background-image: repeating-linear-gradient(0deg, #cde2be84, #cde2be84 1.3px, #f0f7ecca 1.3px, #f0f7ecca);
+  }
 }
