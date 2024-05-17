@@ -3,7 +3,7 @@ import Image from "next/image";
 
 export default function TopSection() {
     return (
-        <section className="min-h-screen h-fit bg-white/90 pb-[5rem]">
+        <section className="dark:bg-darkBg dark:text-white min-h-screen h-fit bg-white/90 pb-[5rem]">
             <div className="sm:px-[10rem] px-4 pt-[6rem] pb-[2rem] text-center flex flex-col items-center">
                 <span className="flex items-center">
                     <FaQuestion className="scale-x-[-1] scale-y-[-1] opacity-80" />
@@ -33,9 +33,9 @@ export default function TopSection() {
                         className="w-[20rem] -mb-32"
                     />
                     <span className="text-right self-end py-1 px-3 rounded-3xl border border-black/25 text-sm">We offer</span>
-                    <div className="w-full flex flex-col h-full shadow-lg group smooth hover:-translate-y-1 bg-white">
+                    <div className="w-full flex flex-col h-full shadow-lg group smooth hover:-translate-y-1 dark:bg-darkBg">
                         <div className="py-2 px-4 border border-dashed border-primary bg-black/5 backdrop-blur text-lg font-semibold">Compassionate Care</div>
-                        <div className="flex-1 py-2 px-4 border border-dashed border-transparent group-hover:border-t-transparent smooth group-hover:border-primary bg-[#F0F7EC] hover-bg">
+                        <div className="flex-1 py-2 px-4 border border-dashed border-transparent group-hover:border-t-transparent smooth group-hover:border-primary  dark:bg-[#F0F7EC]/25 hover:dark:bg-[#F0F7EC]/10 bg-[#F0F7EC] hover-bg hover:text-darkBg">
                             At AmeriCare, we provide more than just medical services. Our compassionate caregivers offer genuine companionship, understanding, and emotional support to our clients and their families.
                         </div>
                     </div>
@@ -49,9 +49,9 @@ export default function TopSection() {
                         className="w-[20rem] -mb-12"
                     />
                     <span className="text-right self-end py-1 px-3 rounded-3xl border border-black/25 text-sm">We offer</span>
-                    <div className="w-full flex flex-col h-full shadow-lg group smooth hover:-translate-y-1 bg-white">
+                    <div className="w-full flex flex-col h-full shadow-lg group smooth hover:-translate-y-1 dark:bg-darkBg bg-white">
                         <div className="py-2 px-4 border border-dashed border-primary bg-black/5 backdrop-blur text-lg font-semibold">Personalized Approach</div>
-                        <div className="flex-1 py-2 px-4 border border-dashed border-transparent group-hover:border-t-transparent smooth group-hover:border-primary bg-[#CDE2BE] hover-bg-odd">
+                        <div className="flex-1 py-2 px-4 border border-dashed border-transparent group-hover:border-t-transparent smooth group-hover:border-primary dark:bg-[#CDE2BE]/25 hover:dark:bg-[#CDE2BE]/10 bg-[#CDE2BE] hover-bg-odd">
                             We understand that every individual has unique needs. That&apos;s why we take the time to assess each client thoroughly and create personalized care plans tailored to their specific requirements.
                         </div>
 
@@ -66,9 +66,9 @@ export default function TopSection() {
                         className="w-[15rem] -mb-32"
                     />
                     <span className="text-right py-1 px-3 self-end rounded-3xl border border-black/25 text-sm">We offer</span>
-                    <div className="w-full flex flex-col h-full shadow-lg group smooth hover:-translate-y-1 bg-white">
+                    <div className="w-full flex flex-col h-full shadow-lg group smooth hover:-translate-y-1 dark:bg-darkBg">
                         <div className="py-2 px-4 border border-dashed border-primary bg-black/5 backdrop-blur text-lg font-semibold">Experienced Team</div>
-                        <div className="flex-1 py-2 px-4 border border-dashed border-transparent group-hover:border-t-transparent smooth group-hover:border-primary bg-[#F0F7EC] hover-bg">
+                        <div className="flex-1 py-2 px-4 border border-dashed border-transparent group-hover:border-t-transparent smooth group-hover:border-primary dark:bg-[#F0F7EC]/25 hover:dark:bg-[#F0F7EC]/10 bg-[#F0F7EC] hover-bg hover:text-darkBg">
                             Our team consists of highly trained and experienced healthcare professionals dedicated to providing the highest quality of care. With AmeriCare, you can trust that you&apos;re in capable hands.
                         </div>
 

@@ -7,7 +7,7 @@ const FontFamily = Macondo({ subsets: ["latin"], weight: "400" });
 export default function OurMissionSection() {
     return (
         <>
-            <div className="grid place-items-center sm:py-24 py-12 sm:px-[12.5vw] px-6 relative z-10 bg-white">
+            <div className="dark:bg-darkBg dark:text-white grid place-items-center sm:py-24 py-12 sm:px-[12.5vw] px-6 relative z-10 bg-white">
                 <div>
                     <div className="mb-12">
                         <h1 className={clsx(FontFamily.className, "sm:text-[4vw] text-5xl text-primary font-semibold")}>Our Mission</h1>
@@ -23,7 +23,7 @@ export default function OurMissionSection() {
                                 width={300}
                                 priority
                                 className={clsx(
-                                    "w-[8vw] smooth absolute -top-[2.5vw] -left-[6vw] -rotate-3 -z-[1]"
+                                    "w-[8vw] opacity-40 smooth absolute -top-[2.5vw] -left-[6vw] -rotate-3 -z-[1]"
                                 )}
                             />
                             <span>
@@ -36,7 +36,7 @@ export default function OurMissionSection() {
                                 width={300}
                                 priority
                                 className={clsx(
-                                    "w-[8vw] smooth absolute -bottom-[2.5vw] rotate-3 mix-blend-lighten scale-x-[-1] -right-[2vw] -z-[1]"
+                                    "w-[8vw] opacity-40 smooth absolute -bottom-[2.5vw] rotate-3 mix-blend-lighten scale-x-[-1] -right-[2vw] -z-[1]"
                                 )}
                             />
                         </p>

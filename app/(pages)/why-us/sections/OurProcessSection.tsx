@@ -5,7 +5,7 @@ import clsx from "clsx";
 
 export default function OurProcessSection() {
     return (
-        <section className={clsx("bg-white sm:py-24 py-12")}>
+        <section className={clsx("dark:bg-darkBg dark:text-white bg-white sm:py-24 py-12")}>
             <h1 className={clsx("sm:px-[12.5vw] sm:font-normal font-semibold mb-3 px-6 text-center text-primary sm:text-[4vw] text-5xl")}>
                 Our Process
             </h1>
