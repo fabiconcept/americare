@@ -1,8 +1,9 @@
 "use client"
+import { isValidName, isValidEmail, isValidPhone, splitText } from "@/lib";
 import useDebounce from "@/lib/Hooks/UseDebounce";
 import clsx from "clsx";
 import { Macondo } from "next/font/google";
-import { ChangeEvent, useRef, useState } from "react";
+import { ChangeEvent, useEffect, useRef, useState } from "react";
 import { FaUser, FaEnvelope, FaPhone, FaList, FaPaperclip, FaAngleDown, FaStar, FaAsterisk } from "react-icons/fa6";
 
 const FontFamily = Macondo({ subsets: ["latin"], weight: "400" });
@@ -12,6 +13,20 @@ enum Positions {
     Companion = 1,
     HomeMarker = 2,
     PersonalCareWorker = 3,
+}
+enum ErrorState {
+    IDLE =  "idle",
+    GOOD = "good",
+    BAD = "bad"
+}
+
+interface ErrorStateObj {
+    status: ErrorState;
+    error: string;
+}
+
+interface ErrorObj {
+    [key: string]: ErrorStateObj; // Index signature
 }
 
 export default function FormSection() {
@@ -30,6 +45,18 @@ export default function FormSection() {
     const [positions, setPositions] = useState<Positions>(Positions.None);
     const [attachFile, setAttachFile] = useState<File | null>(null);
 
+    const coverLengthWordCound = coverLetterText.length > 0 ? splitText(coverLetterText).length : 0;
+
+    const [errorObj, setErrorObj] = useState<ErrorObj>({
+        firstName: { error: "", status: ErrorState.IDLE },
+        lastName: { error: "", status: ErrorState.IDLE },
+        email: { error: "", status: ErrorState.IDLE },
+        phone: { error: "", status: ErrorState.IDLE },
+        position: { error: "", status: ErrorState.IDLE },
+        attachFile: {error: "", status: ErrorState.IDLE},
+        coverLetter: { error: "", status: ErrorState.IDLE },
+    });
+
     // Debounced Variables
     const debounceFirstNameText = useDebounce(firstNameText);
     const debounceLastNameText = useDebounce(lastNameText);
@@ -37,9 +64,84 @@ export default function FormSection() {
     const debouncePhoneText = useDebounce(phoneText);
     const debounceCoverLetterText = useDebounce(coverLetterText);
 
+    // Validate first name
+    useEffect(() => {
+        if(!debounceFirstNameText) {
+            setErrorObj((prev)=>({...prev, firstName: {error: "", status: ErrorState.IDLE}}));
+            return;
+        }
+
+        if (!isValidName(debounceFirstNameText)) {
+            setErrorObj((prev)=>({...prev, firstName: {error: "Invalid first name", status: ErrorState.BAD}}));
+            return;
+        }
+
+        setErrorObj((prev)=>({...prev, firstName: {error: "", status: ErrorState.GOOD}}));
+    }, [debounceFirstNameText]);
+
+    // Validate last name
+    useEffect(() => {
+        if(!debounceLastNameText) {
+            setErrorObj((prev)=>({...prev, lastName: {error: "", status: ErrorState.IDLE}}));
+            return;
+        }
+
+        if (!isValidName(debounceLastNameText)) {
+            setErrorObj((prev)=>({...prev, lastName: {error: "Invalid last name", status: ErrorState.BAD}}));
+            return;
+        }
+        setErrorObj((prev)=>({...prev, lastName: {error: "", status: ErrorState.GOOD}}));
+    }, [debounceLastNameText]);
+    
+    // Validate Email address
+    useEffect(() => {
+        if(!debounceEmailText) {
+            setErrorObj((prev)=>({...prev, email: {error: "", status: ErrorState.IDLE}}));
+            return;
+        }
+
+        if (!isValidEmail(debounceEmailText)) {
+            setErrorObj((prev)=>({...prev, email: {error: "Invalid email address", status: ErrorState.BAD}}));
+            return;
+        }
+
+        setErrorObj((prev)=>({...prev, email: {error: "", status: ErrorState.GOOD}}));
+    }, [debounceEmailText]);
+     
+    // Validate Phone
+    useEffect(() => {
+        if(!debouncePhoneText) {
+            setErrorObj((prev)=>({...prev, phone: {error: "", status: ErrorState.IDLE}}));
+            return;
+        }
+
+        if (!isValidPhone(debouncePhoneText)) {
+            setErrorObj((prev)=>({...prev, phone: {error: "Invalid phone number", status: ErrorState.BAD}}));
+            return;
+        }
+
+        setErrorObj((prev)=>({...prev, phone: {error: "", status: ErrorState.GOOD}}));
+    }, [debouncePhoneText]);
+ 
+    // Validate Cover letter
+    useEffect(() => {
+        if(!debouncePhoneText) {
+            setErrorObj((prev)=>({...prev, phone: {error: "", status: ErrorState.IDLE}}));
+            return;
+        }
+
+        if (!isValidPhone(debouncePhoneText)) {
+            setErrorObj((prev)=>({...prev, phone: {error: "Invalid phone number", status: ErrorState.BAD}}));
+            return;
+        }
+
+        setErrorObj((prev)=>({...prev, phone: {error: "", status: ErrorState.GOOD}}));
+    }, [debouncePhoneText]);
 
 
+    const handleFileChange = (e: FileList | null) => { 
 
+    }
 
     return (
         <form action="" className="dark:bg-darkBg dark:text-white py-12 sm:px-[12.5vw] px-6 relative bg-white">
@@ -59,10 +161,17 @@ export default function FormSection() {
                 {/* Form input area */}
                 <div className="grid grid-cols-[repeat(auto-fill,minmax(clamp(20rem,35vw,40rem),1fr))] sm:gap-[2rem_1rem] gap-4">
                     {/* first name */}
-                    <div className="flex flex-col gap-2">
-                        <span className="flex gap-1 sm:text-base text-sm">First name <span className="text-primary">:</span> <sup className="text-red-600 sm:text-sm text-xs"><FaAsterisk /></sup></span>
-                        <div className="relative smooth rounded-xl overflow-hidden border-2 border-white/10 group focus-within:border-white/50">
-                            <FaUser className="group-focus-within:opacity-100 opacity-50 absolute top-1/2 -translate-y-1/2 pointer-events-none select-none left-4 peer-placeholder-shown:opacity-50" />
+                    <div className="flex flex-col gap-2 capitalize">
+                        <span className="flex gap-1 sm:text-base text-sm">First name <span className="text-primary">:</span> <sup className="text-red-600 sm:text-sm text-xs"><FaAsterisk /></sup> <span className="text-red-500"> {errorObj.firstName.error}</span></span>
+                        <div className={clsx(
+                            "relative smooth rounded-xl overflow-hidden", 
+                            errorObj.firstName.status === ErrorState.BAD ?"border-2 border-red-500": "border-2 border-white/10 group focus-within:border-white/50"
+                        )}>
+                            <FaUser className={clsx(
+                                "absolute top-1/2 -translate-y-1/2 pointer-events-none select-none left-4 peer-placeholder-shown:opacity-50",
+                                errorObj.firstName.status === ErrorState.BAD ? "text-red-600 opacity-100" : "group-focus-within:opacity-100 opacity-50 "
+                                )} 
+                            />
                             <input 
                                 type="text" 
                                 placeholder="John"
@@ -78,10 +187,17 @@ export default function FormSection() {
                         </div>
                     </div>
                     {/* last name */}
-                    <div className="flex flex-col gap-2">
-                        <span className="flex gap-1 sm:text-base text-sm">Last name <span className="text-primary">:</span> <sup className="text-red-600 sm:text-sm text-xs"><FaAsterisk /></sup></span>
-                        <div className="relative smooth rounded-xl overflow-hidden border-2 border-white/10 group focus-within:border-white/50">
-                            <FaUser className="group-focus-within:opacity-100 opacity-50 absolute top-1/2 -translate-y-1/2 pointer-events-none select-none left-4 peer-placeholder-shown:opacity-50" />
+                    <div className="flex flex-col gap-2 capitalize">
+                        <span className="flex gap-1 sm:text-base text-sm">Last name <span className="text-primary">:</span> <sup className="text-red-600 sm:text-sm text-xs"><FaAsterisk /></sup> <span className="text-red-500"> {errorObj.phone.error}</span></span>
+                        <div className={clsx(
+                            "relative smooth rounded-xl overflow-hidden", 
+                            errorObj.lastName.status === ErrorState.BAD ?"border-2 border-red-500": "border-2 border-white/10 group focus-within:border-white/50"
+                        )}>
+                            <FaUser className={clsx(
+                                "absolute top-1/2 -translate-y-1/2 pointer-events-none select-none left-4 peer-placeholder-shown:opacity-50",
+                                errorObj.lastName.status === ErrorState.BAD ? "text-red-600 opacity-100" : "group-focus-within:opacity-100 opacity-50 "
+                                )} 
+                            />
                             <input 
                                 type="text" 
                                 placeholder="Doe"
@@ -99,9 +215,16 @@ export default function FormSection() {
                     </div>
                     {/* Email */}
                     <div className="flex flex-col gap-2">
-                        <span className="flex gap-1 sm:text-base text-sm">E-mail <span className="text-primary">:</span> <sup className="text-red-600 sm:text-sm text-xs"><FaAsterisk /></sup></span>
-                        <div className="relative smooth rounded-xl overflow-hidden border-2 border-white/10 group focus-within:border-white/50">
-                            <FaEnvelope className="group-focus-within:opacity-100 opacity-50 absolute top-1/2 -translate-y-1/2 pointer-events-none select-none left-4 peer-placeholder-shown:opacity-50" />
+                        <span className="flex gap-1 sm:text-base text-sm">E-mail <span className="text-primary">:</span> <sup className="text-red-600 sm:text-sm text-xs"><FaAsterisk /></sup> <span className="text-red-500"> {errorObj.email.error}</span></span>
+                        <div className={clsx(
+                            "relative smooth rounded-xl overflow-hidden", 
+                            errorObj.email.status === ErrorState.BAD ?"border-2 border-red-500": "border-2 border-white/10 group focus-within:border-white/50"
+                        )}>
+                            <FaEnvelope className={clsx(
+                                "absolute top-1/2 -translate-y-1/2 pointer-events-none select-none left-4 peer-placeholder-shown:opacity-50",
+                                errorObj.email.status === ErrorState.BAD ? "text-red-600 opacity-100" : "group-focus-within:opacity-100 opacity-50 "
+                                )} 
+                            />
                             <input 
                                 type="text" 
                                 placeholder="example@gmail.com"
@@ -118,9 +241,16 @@ export default function FormSection() {
                     </div>
                     {/* phone number */}
                     <div className="flex flex-col gap-2">
-                        <span className="flex gap-1 sm:text-base text-sm">Phone number <span className="text-primary">:</span> <sup className="text-red-600 sm:text-sm text-xs"><FaAsterisk /></sup></span>
-                        <div className="relative smooth rounded-xl overflow-hidden border-2 border-white/10 group focus-within:border-white/50">
-                            <FaPhone className="group-focus-within:opacity-100 opacity-50 absolute top-1/2 -translate-y-1/2 pointer-events-none select-none left-4 peer-placeholder-shown:opacity-50" />
+                        <span className="flex gap-1 sm:text-base text-sm">Phone number <span className="text-primary">:</span> <sup className="text-red-600 sm:text-sm text-xs"><FaAsterisk /></sup> <span className="text-red-500"> {errorObj.phone.error}</span></span>
+                        <div className={clsx(
+                            "relative smooth rounded-xl overflow-hidden", 
+                            errorObj.phone.status === ErrorState.BAD ?"border-2 border-red-500": "border-2 border-white/10 group focus-within:border-white/50"
+                        )}>
+                            <FaPhone className={clsx(
+                                "absolute top-1/2 -translate-y-1/2 pointer-events-none select-none left-4 peer-placeholder-shown:opacity-50",
+                                errorObj.phone.status === ErrorState.BAD ? "text-red-600 opacity-100" : "group-focus-within:opacity-100 opacity-50 "
+                                )} 
+                            />
                             <input 
                                 type="text" 
                                 placeholder="(555) 555 5555"
@@ -138,9 +268,16 @@ export default function FormSection() {
                     </div>
                     {/* Position applying for */}
                     <div className="flex flex-col gap-2">
-                        <span className="flex gap-1 sm:text-base text-sm">Position applying for <span className="text-primary">:</span> <sup className="text-red-600 sm:text-sm text-xs"><FaAsterisk /></sup></span>
-                        <div className="relative smooth rounded-xl overflow-hidden border-2 border-white/10 group focus-within:border-white/50">
-                            <FaList className="group-focus-within:opacity-100 opacity-50 absolute top-1/2 -translate-y-1/2 pointer-events-none select-none left-4 peer-placeholder-shown:opacity-50" />
+                        <span className="flex gap-1 sm:text-base text-sm">Position applying for <span className="text-primary">:</span> <sup className="text-red-600 sm:text-sm text-xs"><FaAsterisk /></sup> <span className="text-red-500"> {errorObj.position.error}</span></span>
+                        <div className={clsx(
+                            "relative smooth rounded-xl overflow-hidden", 
+                            errorObj.position.status === ErrorState.BAD ?"border-2 border-red-500": "border-2 border-white/10 group focus-within:border-white/50"
+                        )}>
+                            <FaList className={clsx(
+                                "absolute top-1/2 -translate-y-1/2 pointer-events-none select-none left-4 peer-placeholder-shown:opacity-50",
+                                errorObj.position.status === ErrorState.BAD ? "text-red-600 opacity-100" : "group-focus-within:opacity-100 opacity-50 "
+                                )} 
+                            />
                             <select 
                                 className={clsx(
                                     "peer",
@@ -163,9 +300,17 @@ export default function FormSection() {
                     </div>
                     {/* Attach resume */}
                     <div className="flex flex-col gap-2">
-                        <span className="flex gap-1 sm:text-base text-sm">Attach resume <span className="text-primary">:</span> <sup className="text-red-600 sm:text-sm text-xs"><FaAsterisk /></sup></span>
-                        <div className="relative smooth rounded-xl overflow-hidden border-2 border-white/10 group focus-within:border-white/50 flex gap-2">
-                            <FaPaperclip className="group-focus-within:opacity-100 opacity-50 absolute top-1/2 -translate-y-1/2 pointer-events-none select-none left-4 peer-placeholder-shown:opacity-50" />
+                        <span className="flex gap-1 sm:text-base text-sm">Attach resume <span className="text-primary">:</span> <sup className="text-red-600 sm:text-sm text-xs"><FaAsterisk /></sup> <span className="text-red-500"> {errorObj.attachFile.error}</span></span>
+                        <div className={clsx(
+                            "relative smooth rounded-xl overflow-hidden",
+                            errorObj.attachFile.status === ErrorState.BAD ? "border-2 border-red-500" : "border-2 border-white/10 group focus-within:border-white/50",
+                            "flex gap-2"
+                        )}>
+                            <FaPaperclip className={clsx(
+                                "absolute top-1/2 -translate-y-1/2 pointer-events-none select-none left-4 peer-placeholder-shown:opacity-50",
+                                errorObj.attachFile.status === ErrorState.BAD ? "text-red-600 opacity-100" : "group-focus-within:opacity-100 opacity-50 "
+                                )} 
+                            />
                             <div
                                 className={clsx(
                                     "peer",
@@ -179,7 +324,9 @@ export default function FormSection() {
                             <input 
                                 type="file" 
                                 hidden 
+                                accept=".pdf"
                                 ref={fileUploadRef}
+                                onChange={(e: ChangeEvent<HTMLInputElement>) => handleFileChange(e.target.files)}
                             />
                             <span className="z-20 absolute top-1/2 -translate-y-1/2 select-none right-3 px-3 py-2  bg-primary/10 rounded-xl cursor-pointer hover:bg-primary/50 smooth active:scale-90 border dark:border-white/10 hover:dark:border-white/25 border-darkBg/10 hover:border-darkBg/25" onClick={handleClickFileUplaod}>Import file</span>
                         </div>
@@ -187,14 +334,26 @@ export default function FormSection() {
                 </div>
                 {/* Cover letter */}
                 <div className="flex flex-col gap-2 mt-6">
-                    <span className="flex gap-1 sm:text-base text-sm">Cover letter <span className="text-primary">:</span> <sup className="text-red-600 sm:text-sm text-xs"><FaAsterisk /></sup></span>
-                    <div className="relative smooth rounded-xl overflow-hidden border-2 border-white/10 group focus-within:border-white/50">
+                    <p className="flex items-center justify-between">
+                        <span className="flex gap-1 sm:text-base text-sm">Cover letter <span className="text-primary">:</span> <sup className="text-red-600 sm:text-sm text-xs"><FaAsterisk /></sup> <span className="text-red-500"> {errorObj.coverLetter.error}</span></span>
+
+                        <span className={clsx(
+                            "",
+                            coverLengthWordCound > 300 ? "text-red-600": ""
+                        )}>
+                            {coverLengthWordCound}/300
+                        </span>
+                    </p>
+                    <div className={clsx(
+                        "relative smooth rounded-xl overflow-hidden",
+                        errorObj.coverLetter.status ===ErrorState.BAD ? "border-2 border-red-500" : "border-2 border-white/10 group focus-within:border-white/50"
+                    )}>
                         <textarea 
                             className ={clsx(
                                 "peer",
                                 "dark:bg-white/5 bg-darkBg/5",
                                 "bg-transparent",
-                                "w-full py-4 px-8 sm:text-lg resize-none outline-none",
+                                "w-full py-4 px-8 sm:text-lg resize-none outline-none h-[calc(10lh+2rem)]",
                             )}
                             placeholder="Enter cover letter"
                             rows={4}
