@@ -26,7 +26,7 @@ export default function OurVisionSection() {
                                     "w-[8vw] opacity-40 smooth absolute -top-[2.5vw] -left-[6vw] -rotate-3 -z-[1]"
                                 )}
                             />
-                            <span>
+                            <span className="sm:text-left text-center">
                                 To lead in compassionate, reliable home healthcare, fostering healthier, happier, and independent living.
                             </span>
                             <Image

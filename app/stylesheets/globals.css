@@ -64,12 +64,14 @@ img {
 /* for Dark mode */
 @media (prefers-color-scheme: dark) {
   .hover-bg-odd:hover {
-    background-color: transparent;
+    background-color: unset;
+    background-size: unset;
+    background-image: unset;
   }
   
   .hover-bg:hover {
-    background-color: #f0f7ec;
-    background-size: 26px 26px;
-    background-image: repeating-linear-gradient(0deg, #cde2be84, #cde2be84 1.3px, #f0f7ecca 1.3px, #f0f7ecca);
+    background-color: unset;
+    background-size: unset;
+    background-image: unset;
   }
 }

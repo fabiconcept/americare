@@ -18,8 +18,8 @@ export default function AboutUsSection() {
                 </div>
 
                 <div className="flex gap-12 flex-wrap">
-                    <p className="flex flex-col sm:gap-4 gap-2 relative text-lg">
-                        <span className="sm:text-2xl text-xl">
+                    <p className="flex flex-col sm:gap-4 gap-2 relative sm:text-lg">
+                        <span className="sm:text-2xl md:text-xl text-base">
                             At AmeriCare, we believe that care is more than a service; it&apos;s a heartfelt commitment to improving the lives of the elderly and medically fragile children. 
                             <span className="opacity-70"> Founded in 2021, our journey began with a simple yet profound mission—to bring comfort, healing, and compassion to those who need it most.</span>
                         </span>

@@ -26,7 +26,7 @@ export default function OurMissionSection() {
                                     "w-[8vw] opacity-40 smooth absolute -top-[2.5vw] -left-[6vw] -rotate-3 -z-[1]"
                                 )}
                             />
-                            <span>
+                            <span className="sm:text-left text-center">
                                 Our mission is to ensure the well-being and happiness of every member of your family, from the youngest to the oldest.
                             </span>
                             <Image

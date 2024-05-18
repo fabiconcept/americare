@@ -16,7 +16,7 @@ interface SectionProp {
 
 export default function ServicesOfferedSection({blob, btnText, btnUrl, description, imgAlt, imgSrc, title}: SectionProp) {
     return (
-        <div className="dark:bg-darkBg dark:text-white bg-white relative  sm:h-[100vh] sm:min-h-[fit-content] md:max-h-[65rem]">
+        <div className="dark:bg-darkBg dark:text-white bg-white relative sm:h-[100vh] sm:min-h-[fit-content] md:max-h-[65rem]">
             <Image
                 src={"https://americare.sirv.com/icons/bbblurry.svg"}
                 alt={"blur shape"}
@@ -25,17 +25,17 @@ export default function ServicesOfferedSection({blob, btnText, btnUrl, descripti
                 className="w-[70rem] absolute -top-[20rem] -left-[20rem] dark:opacity-50"
             />
             <Parallax
-                className="py-12 sm:px-[12.5vw] px-6 grid place-items-center"
+                className="py-12 sm:px-[12.5vw] px-3 grid place-items-center"
                 strength={500}
                 renderLayer={(percentage) => (
                     <>
                         <div className="flex gap-12 flex-wrap p-6 relative z-10 dark:mix-blend-screen mix-blend-multiply">
-                            <div className="min-w-[20rem] flex-[2] flex flex-col gap-8 2xl:text-7xl sm:text-6xl text-5xl relative z-10">
-                                <span className="text-primary font-semibold">
+                            <div className="min-w-[20rem] flex-[2] flex flex-col gap-8relative z-10">
+                                <span className="text-primary font-semibold 2xl:text-7xl sm:text-6xl text-4xl pb-3">
                                     {title}
                                 </span>
-                                <div>
-                                    <div className="relative 2xl:text-5xl sm:text-4xl text-3xl">
+                                <div className="pt-3">
+                                    <div className="relative 2xl:text-5xl sm:text-4xl text-2xl sm:leading-[3rem] sm:text-left text-center text-balance">
                                         <Image
                                             src={"https://americare.sirv.com/icons/quote-icon.svg"}
                                             alt="Quote icon"
@@ -60,20 +60,34 @@ export default function ServicesOfferedSection({blob, btnText, btnUrl, descripti
                                             )}
                                         />
                                     </div>
-                                    <Image
-                                        src={"https://americare.sirv.com/icons/healt-tray.jpg"}
-                                        alt={"Nurse photo 002"}
-                                        height={480}
-                                        width={1920}
-                                        priority
-                                        className={clsx(
-                                            "md:w-[90%] sm:px-6 pt-7  opacity-50 smooth dark:invert",
-                                        )}
+                                    <div className="relative">
+                                        <Image
+                                            src={"https://americare.sirv.com/icons/healt-tray.jpg"}
+                                            alt={"Nurse photo 002"}
+                                            height={480}
+                                            width={1920}
+                                            priority
+                                            className={clsx(
+                                                "sm:visible invisible",
+                                                "md:w-[90%] sm:px-6 pt-7  opacity-50 smooth dark:invert",
+                                            )}
 
-                                        style={{
-                                            transform: `translateY(${percentage * 2}rem)`
-                                        }}
-                                    />
+                                            style={{
+                                                transform: `translateY(${percentage * 2}rem)`
+                                            }}
+                                        />
+                                        <Image
+                                            src={"https://americare.sirv.com/icons/healt-tray.jpg"}
+                                            alt={"Nurse photo 002"}
+                                            height={480}
+                                            width={1920}
+                                            priority
+                                            className={clsx(
+                                                "sm:invisible visible absolute top-0 left-0",
+                                                "md:w-[90%] sm:px-6 pt-7  opacity-50 smooth dark:invert",
+                                            )}
+                                        />
+                                    </div>
                                 </div>
                                 <CustomBtn
                                     customClass="text-base"

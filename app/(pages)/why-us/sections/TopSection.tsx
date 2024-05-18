@@ -4,7 +4,7 @@ import Image from "next/image";
 export default function TopSection() {
     return (
         <section className="dark:bg-darkBg dark:text-white min-h-screen h-fit bg-white/90 pb-[5rem]">
-            <div className="sm:px-[10rem] px-4 pt-[6rem] pb-[2rem] text-center flex flex-col items-center">
+            <div className="sm:px-[10rem] px-4 pt-[10rem] pb-[2rem] text-center flex flex-col items-center">
                 <span className="flex items-center">
                     <FaQuestion className="scale-x-[-1] scale-y-[-1] opacity-80" />
                     <span className="whitespace-nowrap">
@@ -23,7 +23,7 @@ export default function TopSection() {
                 </span>
             </div>
 
-            <div className="grid md:grid-cols-3 grid-cols-1 sm:px-[5vw] px-6 gap-8 justify-center">
+            <div className="grid md:grid-cols-3 grid-cols-1 sm:px-[6.25vw] px-6 gap-8 justify-center">
                 <div className="flex flex-col items-center gap-2">
                     <Image
                         src={"https://americare.sirv.com/doc01.png"}
