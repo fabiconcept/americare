@@ -3,7 +3,8 @@ import { isValidName, isValidEmail, isValidPhone, splitText } from "@/lib";
 import useDebounce from "@/lib/Hooks/UseDebounce";
 import clsx from "clsx";
 import { Macondo } from "next/font/google";
-import { ChangeEvent, useEffect, useRef, useState } from "react";
+import { ChangeEvent, FormEvent, useEffect, useMemo, useRef, useState } from "react";
+import toast from "react-hot-toast";
 import { FaUser, FaEnvelope, FaPhone, FaList, FaPaperclip, FaAngleDown, FaStar, FaAsterisk } from "react-icons/fa6";
 
 const FontFamily = Macondo({ subsets: ["latin"], weight: "400" });
@@ -64,6 +65,14 @@ export default function FormSection() {
     const debouncePhoneText = useDebounce(phoneText);
     const debounceCoverLetterText = useDebounce(coverLetterText);
 
+    const goodToGo = useMemo(() => {
+               const result = Object.keys(errorObj).every((key) => 
+            errorObj[key as keyof ErrorObj].status === ErrorState.GOOD
+        );
+
+        return result
+    }, [errorObj]);
+
     // Validate first name
     useEffect(() => {
         if(!debounceFirstNameText) {
@@ -122,29 +131,87 @@ export default function FormSection() {
 
         setErrorObj((prev)=>({...prev, phone: {error: "", status: ErrorState.GOOD}}));
     }, [debouncePhoneText]);
+    
+    // Validate Phone
+    useEffect(() => {
+        if(positions === Positions.None) {
+            setErrorObj((prev)=>({...prev, position: {error: "", status: ErrorState.IDLE}}));
+            return;
+        }
+
+        setErrorObj((prev)=>({...prev, position: {error: "", status: ErrorState.GOOD}}));
+    }, [positions]);
  
     // Validate Cover letter
     useEffect(() => {
-        if(!debouncePhoneText) {
-            setErrorObj((prev)=>({...prev, phone: {error: "", status: ErrorState.IDLE}}));
+        if(!debounceCoverLetterText) {
+            setErrorObj((prev)=>({...prev, coverLetter: {error: "", status: ErrorState.IDLE}}));
             return;
         }
 
-        if (!isValidPhone(debouncePhoneText)) {
-            setErrorObj((prev)=>({...prev, phone: {error: "Invalid phone number", status: ErrorState.BAD}}));
+        if (coverLengthWordCound < 100) {
+            setErrorObj((prev)=>({...prev, coverLetter: {error: "Cover letter is too short!", status: ErrorState.BAD}}));
             return;
         }
 
-        setErrorObj((prev)=>({...prev, phone: {error: "", status: ErrorState.GOOD}}));
-    }, [debouncePhoneText]);
+        if (coverLengthWordCound > 500) {
+            setErrorObj((prev)=>({...prev, coverLetter: {error: "Cover letter is too long!", status: ErrorState.BAD}}));
+            return;
+        }
+
+        setErrorObj((prev)=>({...prev, coverLetter: {error: "", status: ErrorState.GOOD}}));
+    }, [debounceCoverLetterText, coverLengthWordCound]);
 
 
     const handleFileChange = (e: FileList | null) => { 
+        if(!e) {
+            setErrorObj((prev)=>({...prev, attachFile: {error: "Please select a PDF file!", status: ErrorState.BAD}}));
+            return;
+        }
 
+        const file = e[0];
+        const maxSize = 10 * 1024 * 1024;
+
+        if (file.size > maxSize) {
+            setErrorObj((prev)=>({...prev, attachFile: {error: "File is too large!", status: ErrorState.BAD}}));
+            return;
+        }
+
+        if (file.type !=="application/pdf") {
+            setErrorObj((prev)=>({...prev, attachFile: {error: "Please upload a PDF!", status: ErrorState.BAD}}));
+            return;
+        }
+
+        setErrorObj((prev)=>({...prev, attachFile: {error: "", status: ErrorState.GOOD}}));
+        setAttachFile(file);
+    }
+
+    
+    const performSubmit = async () => { 
+        const payload = {
+            firstName: debounceFirstNameText,
+            lastName: debounceLastNameText,
+            email: debounceEmailText,
+            phone: debouncePhoneText,
+            position: positions,
+            attachFile: attachFile,
+            coverLetter: debounceCoverLetterText,
+        }
+    }
+
+    const handleSubmit = (e: FormEvent) => { 
+        e.preventDefault();
+        const promise = performSubmit();
+
+        toast.promise(promise, {
+            error: "Opps! Failed to submit application",
+            loading: "Submitting application...",
+            success: "Application submitted ✨✔🚀"
+        })
     }
 
     return (
-        <form action="" className="dark:bg-darkBg dark:text-white py-12 sm:px-[12.5vw] px-6 relative bg-white">
+        <form action="" onSubmit={handleSubmit} className="dark:bg-darkBg dark:text-white py-12 sm:px-[12.5vw] px-6 relative bg-white">
             <div className="sm:mb-12 mb-8">
                 <h1 className={clsx(FontFamily.className, "2xl:text-[3vw] sm:text-5xl text-4xl text-primary font-semibold")}>
                     Online application
@@ -181,6 +248,8 @@ export default function FormSection() {
                                     "bg-transparent",
                                     "w-full py-4 px-12 sm:text-lg",
                                 )}
+                                name="firstName"
+                                required
                                 value={firstNameText}
                                 onChange={(e: ChangeEvent<HTMLInputElement>)=>setFirstNameText(e.target.value)}
                             />
@@ -207,7 +276,8 @@ export default function FormSection() {
                                     "bg-transparent",
                                     "w-full py-4 px-12 sm:text-lg",
                                 )}
-
+                                name="lastName"
+                                required
                                 value={lastNameText}
                                 onChange={(e: ChangeEvent<HTMLInputElement>)=>setLastNameText(e.target.value)}
                             />
@@ -226,7 +296,7 @@ export default function FormSection() {
                                 )} 
                             />
                             <input 
-                                type="text" 
+                                type="email" 
                                 placeholder="example@gmail.com"
                                 className={clsx(
                                     "peer",
@@ -234,6 +304,8 @@ export default function FormSection() {
                                     "bg-transparent",
                                     "w-full py-4 px-12 sm:text-lg",
                                 )}
+                                name="email"
+                                required
                                 value={emailText}
                                 onChange={(e: ChangeEvent<HTMLInputElement>)=>setEmailText(e.target.value)}
                             />
@@ -260,7 +332,8 @@ export default function FormSection() {
                                     "bg-transparent",
                                     "w-full py-4 px-12 sm:text-lg",
                                 )}
-
+                                name="phoneNumber"
+                                required
                                 value={phoneText}
                                 onChange={(e: ChangeEvent<HTMLInputElement>)=>setPhoneText(e.target.value)}
                             />
@@ -285,7 +358,8 @@ export default function FormSection() {
                                     "bg-transparent appearance-none",
                                     "w-full py-4 px-12 sm:text-lg",
                                 )}
-
+                                name="position"
+                                required
                                 value={positions}
                                 onChange={(e: ChangeEvent<HTMLSelectElement>)=>setPositions(Number(e.target.value) as Positions)}
                             >
@@ -319,13 +393,17 @@ export default function FormSection() {
                                     "w-full py-4 px-14 sm:text-lg",
                                 )}
                             >
-                                <p className="max-w-[70%] truncate">No file selected</p>
+                                <p className="max-w-[70%] truncate">
+                                    {attachFile ? attachFile.name : "No file selected"}
+                                </p>
                             </div>
                             <input 
                                 type="file" 
                                 hidden 
                                 accept=".pdf"
                                 ref={fileUploadRef}
+                                name="file"
+                                required
                                 onChange={(e: ChangeEvent<HTMLInputElement>) => handleFileChange(e.target.files)}
                             />
                             <span className="z-20 absolute top-1/2 -translate-y-1/2 select-none right-3 px-3 py-2  bg-primary/10 rounded-xl cursor-pointer hover:bg-primary/50 smooth active:scale-90 border dark:border-white/10 hover:dark:border-white/25 border-darkBg/10 hover:border-darkBg/25" onClick={handleClickFileUplaod}>Import file</span>
@@ -339,9 +417,9 @@ export default function FormSection() {
 
                         <span className={clsx(
                             "",
-                            coverLengthWordCound > 300 ? "text-red-600": ""
+                            coverLengthWordCound > 500 ? "text-red-600" : ""
                         )}>
-                            {coverLengthWordCound}/300
+                            {coverLengthWordCound}/500
                         </span>
                     </p>
                     <div className={clsx(
@@ -353,27 +431,36 @@ export default function FormSection() {
                                 "peer",
                                 "dark:bg-white/5 bg-darkBg/5",
                                 "bg-transparent",
-                                "w-full py-4 px-8 sm:text-lg resize-none outline-none h-[calc(10lh+2rem)]",
+                                "w-full py-4 px-8 sm:text-lg resize-none outline-none min-h-[calc(2lh+2rem)] max-h-[calc(4lh+2rem)]",
                             )}
+                            name="coverLetter"
+                            required
                             placeholder="Enter cover letter"
-                            rows={4}
+                            rows={2}
                             value={coverLetterText}
                             onChange={(e: ChangeEvent<HTMLTextAreaElement>) => setCoverLetterText(e.target.value)}
                         ></textarea>
                     </div>
                 </div>
                 {/* Submit button */}
-                <div className="flex flex-col gap-2 mt-6 group">
+                {<div className="flex flex-col gap-2 mt-6 group sm:w-fit">
                     <button
                         className={clsx(
-                            "smooth active:scale-90",
-                            "border-2 border-primary border-dashed hover:border-dotted text-primary bg-transparent hover:bg-primary hover:text-white",
+                            "smooth border-2 border-dashed",
+                            "border-primary text-primary bg-transparent",
+                            goodToGo ? "grayscale-0 hover:bg-primary hover:text-white hover:border-dotted active:scale-90" : "grayscale cursor-not-allowed",
                             "sm:w-fit py-4 px-8 sm:text-lg rounded-lg outline-none",
                         )}
+
+                        type={goodToGo ? "submit" : "button"}
                     >
-                        <span className="flex gap-2 items-center justify-center">Send application <FaStar className="group-hover:text-yellow-300" /></span>
+                        {goodToGo ? 
+                            <span className="flex gap-2 items-center justify-center">Send application <FaStar className="group-hover:text-yellow-300" /></span> 
+                            : 
+                            <span className="flex gap-2 items-center justify-center">Fill the form</span>
+                        }
                     </button>
-                </div>
+                </div>}
 
             </section>
         </form>
