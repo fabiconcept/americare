@@ -10,7 +10,7 @@ export default function FooterSection() {
         <div className={clsx(
             "dark:bg-darkBg bg-white/90 text-white sm:text-xl text-base"
         )}>
-            <div className="pt-12 pb-6 sm:px-[5vw] px-5 bg-[#222222] rounded-t-[3rem]">
+            <div className="pt-12 pb-6 sm:px-[5vw] px-5 bg-themeBlack rounded-t-[3rem]">
 
                 <div className="border-b border-b-white/25 pb-6 flex flex-wrap justify-between gap-4 items-center">
                     <Image
@@ -26,12 +26,12 @@ export default function FooterSection() {
 
                     <div className="flex gap-2 sm:mx-0 mx-auto">
                         <CustomBtn
-                            customClass=""
+                            customClass="dark:border-themeBlack border-themeBlack bg-black/10"
                             linkHref="/careers"
                             text="Join our team"
                         />
                         <CustomBtn
-                            customClass="after:h-[105%] after:w-[105%] opacity-100 after:bg-primary text-white"
+                            customClass="after:h-[105%] after:w-[105%] opacity-100 after:bg-primary text-white dark:border-themeBlack border-themeBlack"
                             linkHref="#"
                             text="Contact us"
                         />

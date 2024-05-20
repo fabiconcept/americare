@@ -8,6 +8,13 @@ export default function OurCaregivers() {
     return (
         <>
             <div className="dark:bg-darkBg dark:text-white grid place-items-center sm:py-24 py-12 sm:px-[12.5vw] px-6 relative z-10 bg-white">
+                <Image
+                    src={"https://americare.sirv.com/icons/bbblurry.svg"}
+                    alt={"blur shape"}
+                    height={800}
+                    width={800}
+                    className="w-[70rem] absolute -top-[20rem] -left-[20rem] dark:opacity-50"
+                />
                 <div>
                     <div className="mb-12">
                         <h1 className={clsx(FontFamily.className, "sm:text-[4vw] text-5xl text-primary font-semibold")}>Our caregivers</h1>

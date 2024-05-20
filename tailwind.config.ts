@@ -17,6 +17,7 @@ const config: Config = {
         primary: "#6fad45",
         secondary: "#359BA7",
         darkBg: "#040D12",
+        themeBlack: "#222222",
       }
     },
   },

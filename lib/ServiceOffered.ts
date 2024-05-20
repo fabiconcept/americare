@@ -23,7 +23,7 @@ export const ServiceOffered: SectionProp[] = [
     imgSrc: "https://americare.sirv.com/rusty-watson-yIGinlYA6t8-unsplash.jpg",
     imgAlt: "Nurse photo 001",
     btnText: "Learn more",
-    btnUrl: "#"
+    btnUrl: "/services"
   },
   {
     title: "Specialty Care Services",
@@ -44,7 +44,7 @@ export const ServiceOffered: SectionProp[] = [
     imgSrc: "https://americare.sirv.com/logan-weaver-lgnwvr-lK0l9pzxLps-unsplash.jpg",
     imgAlt: "Nurse photo 001",
     btnText: "Learn more",
-    btnUrl: "#"
+    btnUrl: "/services"
   },
   {
     title: "Personal Care Services",
@@ -63,10 +63,10 @@ export const ServiceOffered: SectionProp[] = [
             </span>
       `
     },
-    imgSrc: "https://americare.sirv.com/cdc-GnLuuG9crEY-unsplash.jpg",
-    imgAlt: "Nurse photo 001",
+    imgSrc: "https://americare.sirv.com/gallery/pexels-kampus-7551583.jpg",
+    imgAlt: "Personal Care Services",
     btnText: "Learn more",
-    btnUrl: "#"
+    btnUrl: "/services"
   },
   {
     title: "Companionship Services",
@@ -87,6 +87,6 @@ export const ServiceOffered: SectionProp[] = [
     imgSrc: "https://americare.sirv.com/vlad-sargu-ItphH2lGzuI-unsplash.jpg",
     imgAlt: "companion image",
     btnText: "Learn more",
-    btnUrl: "#"
+    btnUrl: "/services"
   }
 ];

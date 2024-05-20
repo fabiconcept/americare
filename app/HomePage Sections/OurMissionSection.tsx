@@ -7,7 +7,7 @@ const FontFamily = Macondo({ subsets: ["latin"], weight: "400" });
 export default function OurMissionSection() {
     return (
         <>
-            <div className="py-12 sm:px-[12.5vw] px-6 relative z-10 dark:bg-darkBg dark:text-white bg-white">
+            <div className="py-24 sm:px-[12.5vw] px-6 relative z-10 dark:bg-darkBg dark:text-white bg-white">
                 <div className="mb-12">
                     <h1 className={clsx(FontFamily.className, "sm:text-[4vw] text-5xl text-primary font-semibold")}>Our Mission</h1>
                     <p className="opacity-60 text-[0.97rem] font-semibold">Compassionate Care, Right at Home</p>

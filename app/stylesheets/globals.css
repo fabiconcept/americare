@@ -74,4 +74,10 @@ img {
     background-size: unset;
     background-image: unset;
   }
+
+  *::selection{
+    color: #040D12;
+    text-shadow: 0px 0.1em #d6d6d6;
+  }
+  
 }

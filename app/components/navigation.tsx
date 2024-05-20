@@ -49,22 +49,22 @@ export default function NavigationCoponent() {
             transition={{ duration: 0.25 }}
         >
 
-            <div ref={mainContainerRef} className={clsx(FontFamily.className, "p-3 text-white bg-[#222222] rounded-b-[3rem] w-full shadow-xl")}>
+            <div ref={mainContainerRef} className={clsx("p-3 text-white bg-[#222222] rounded-b-[3rem] w-[100dvw] shadow-xl")}>
                 <div className={clsx(
                     "flex gap-24 justify-center capitalize font-thin p-6 px-32",
                     isNavOpen ? "animate-entrance" : ""
                 )}>
-                    <div className="flex gap-10 items-center hover:animate-pulse cursor-pointer">
-                        <Link href={"/"} className="max-xl:text-5xl sm:text-3xl opacity-50">Home</Link>
+                    <div className="flex gap-10 items-center cursor-pointer smooth">
+                        <Link onClick={handleClick} href={"/"} className="sm:text-3xl hover:opacity-100 active:scale-90 smooth opacity-50"><span className="__className_ed243a">H</span><span className="text-2xl">ome</span></Link>
                     </div>
-                    <div className="flex gap-10 items-center hover:animate-pulse cursor-pointer">
-                        <Link href={"/why-us"} className="max-xl:text-5xl sm:text-3xl opacity-50">Why americare</Link>
+                    <div className="flex gap-10 items-center cursor-pointer smooth">
+                        <Link onClick={handleClick} href={"/why-us"} className="sm:text-3xl hover:opacity-100 active:scale-90 smooth opacity-50"><span className="__className_ed243a">W</span><span className="text-2xl">hy americare</span></Link>
                     </div>
-                    <div className="flex gap-10 items-center hover:animate-pulse cursor-pointer">
-                        <Link href={"/services"} className="max-xl:text-5xl sm:text-3xl opacity-50">Services</Link>
+                    <div className="flex gap-10 items-center cursor-pointer smooth">
+                        <Link onClick={handleClick} href={"/services"} className="sm:text-3xl hover:opacity-100 active:scale-90 smooth opacity-50"><span className="__className_ed243a">S</span><span className="text-2xl">ervices</span></Link>
                     </div>
-                    <div className="flex gap-10 items-center hover:animate-pulse cursor-pointer">
-                        <Link href={"/careers"} className="max-xl:text-5xl sm:text-3xl opacity-50">Career</Link>
+                    <div className="flex gap-10 items-center cursor-pointer smooth">
+                        <Link onClick={handleClick} href={"/careers"} className="sm:text-3xl hover:opacity-100 active:scale-90 smooth opacity-50"><span className="__className_ed243a">C</span><span className="text-2xl">areer</span></Link>
                     </div>
                 </div>
                 <div className={clsx(

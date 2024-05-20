@@ -24,7 +24,8 @@ export default function WhyUsPage() {
             </Link>
 
             <div className={clsx(
-                "dark:text-white fixed top-5 sm:right-9 right-4 z-[60] shadow cursor-pointer px-8 py-4 border active:scale-90 smooth select-none active:opacity-50",
+                "fixed top-5 sm:right-9 right-4 z-[60] shadow cursor-pointer px-8 py-4 active:scale-90 smooth select-none active:opacity-50",
+                "bg-transparent outline-2 outline-dashed text-primary outline-primary hover:text-white hover:bg-primary border-4 dark:border-darkBg rounded-xl"
             )}>
                 Contact us
             </div>

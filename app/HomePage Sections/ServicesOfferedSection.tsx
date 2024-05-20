@@ -16,7 +16,7 @@ interface SectionProp {
 
 export default function ServicesOfferedSection({blob, btnText, btnUrl, description, imgAlt, imgSrc, title}: SectionProp) {
     return (
-        <div className="dark:bg-darkBg dark:text-white bg-white relative sm:h-[100vh] sm:min-h-[fit-content] md:max-h-[65rem]">
+        <div className="dark:bg-darkBg sm:py-12 py-6 dark:text-white bg-white relative 2xl:box-border box-content sm:h-[100vh] sm:min-h-[fit-content] md:max-h-[70rem]">
             <Image
                 src={"https://americare.sirv.com/icons/bbblurry.svg"}
                 alt={"blur shape"}

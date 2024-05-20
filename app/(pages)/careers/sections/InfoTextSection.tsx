@@ -1,6 +1,3 @@
-import clsx from "clsx";
-import Image from "next/image";
-
 export default function InfoTextSection() {
     return (
         <div className="dark:bg-darkBg dark:text-white pb-12 sm:px-[12.5vw] px-6 relative z-10 bg-white">

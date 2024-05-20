@@ -3,6 +3,7 @@ import { isValidName, isValidEmail, isValidPhone, splitText } from "@/lib";
 import useDebounce from "@/lib/Hooks/UseDebounce";
 import clsx from "clsx";
 import { Macondo } from "next/font/google";
+import Image from "next/image";
 import { ChangeEvent, FormEvent, useEffect, useMemo, useRef, useState } from "react";
 import toast from "react-hot-toast";
 import { FaUser, FaEnvelope, FaPhone, FaList, FaPaperclip, FaAngleDown, FaStar, FaAsterisk } from "react-icons/fa6";
@@ -212,6 +213,13 @@ export default function FormSection() {
 
     return (
         <form action="" onSubmit={handleSubmit} className="dark:bg-darkBg dark:text-white py-12 sm:px-[12.5vw] px-6 relative bg-white">
+            <Image
+                src={"https://americare.sirv.com/icons/bbblurry.svg"}
+                alt={"blur shape"}
+                height={800}
+                width={800}
+                className="w-[70rem] absolute -top-[20rem] -left-[20rem] dark:opacity-25"
+            />
             <div className="sm:mb-12 mb-8">
                 <h1 className={clsx(FontFamily.className, "2xl:text-[3vw] sm:text-5xl text-4xl text-primary font-semibold")}>
                     Online application
@@ -343,7 +351,7 @@ export default function FormSection() {
                     <div className="flex flex-col gap-2">
                         <span className="flex gap-1 sm:text-base text-sm">Position applying for <span className="text-primary">:</span> <sup className="text-red-600 sm:text-sm text-xs"><FaAsterisk /></sup> <span className="text-red-500"> {errorObj.position.error}</span></span>
                         <div className={clsx(
-                            "relative smooth rounded-xl overflow-hidden", 
+                            "relative smooth rounded-xl overflow-hidden cursor-pointer", 
                             errorObj.position.status === ErrorState.BAD ?"border-2 border-red-500": "border-2 border-white/10 group focus-within:border-white/50"
                         )}>
                             <FaList className={clsx(
@@ -352,6 +360,7 @@ export default function FormSection() {
                                 )} 
                             />
                             <select 
+                                title="Select positon"
                                 className={clsx(
                                     "peer",
                                     "dark:bg-white/5 bg-darkBg/5",

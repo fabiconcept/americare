@@ -6,8 +6,9 @@ import Lenis from '@studio-freight/lenis';
 import Image from "next/image";
 import { Macondo } from "next/font/google";
 import clsx from "clsx";
-import { FaAngleDown, FaAngleUp } from "react-icons/fa6";
+import { FaAngleDown } from "react-icons/fa6";
 import Link from "next/link";
+import ScrollToTop from "react-scroll-to-top";
 
 const FontFamily = Macondo({ subsets: ["latin"], weight: "400" });
 
@@ -48,6 +49,7 @@ export default function HeroSection() {
 
     return (
         <>
+            <ScrollToTop smooth className="grid place-items-center hover:bg-primary active:scale-90 smooth" style={{zIndex: 100}} />
             <Image
                 src={"https://americare.sirv.com/icons/logo-alone-colour.svg"}
                 alt="AmeriCare Logo"
@@ -61,8 +63,8 @@ export default function HeroSection() {
             />
 
             <div className={clsx(
-                "fixed top-5 sm:right-9 right-4 z-[60] shadow cursor-pointer px-8 py-4 border active:scale-90 smooth select-none active:opacity-50",
-                inViewContainer ? "hover:bg-white border-2 border-dotted text-white hover:text-primary" : "bg-white hover:text-white hover:border-transparent hover:bg-primary border-black/25"
+                "fixed top-5 sm:right-9 right-4 z-[60] shadow cursor-pointer rounded-xl px-8 py-4 border-4 dark:border-darkBg active:scale-90 smooth select-none active:opacity-50",
+                inViewContainer ? "hover:bg-white border-2 border-dotted text-white hover:text-primary" : "bg-transparent outline-2 outline-dashed text-primary outline-primary hover:text-white hover:bg-primary"
             )}>
                 Contact us
             </div>
@@ -156,12 +158,6 @@ export default function HeroSection() {
                     </div>
                 </div>
             </div>
-
-            {!inViewContainer && <div className="animate-entrance fixed bottom-4 right-4 z-50">
-                <Link href={"#top"} title="Go to top" className="smooth h-12 w-12 bg-white rounded-lg border border-black/50 grid place-items-center shadow-lg active:scale-90 cursor-pointer active:opacity-50 active:-rotate-6">
-                    <FaAngleUp />
-                </Link>
-            </div>}
         </>
     )
 }
