@@ -6,6 +6,7 @@ import { useEffect, useMemo, useRef, useState } from "react";
 
 import { Macondo } from "next/font/google";
 import DisappearingComponent from "./DisappearingComponent ";
+import Link from "next/link";
 const FontFamily = Macondo({ subsets: ["latin"], weight: "400" });
 
 
@@ -54,16 +55,16 @@ export default function NavigationCoponent() {
                     isNavOpen ? "animate-entrance" : ""
                 )}>
                     <div className="flex gap-10 items-center hover:animate-pulse cursor-pointer">
-                        <span className="max-xl:text-5xl sm:text-3xl opacity-50">Units</span>
+                        <Link href={"/"} className="max-xl:text-5xl sm:text-3xl opacity-50">Home</Link>
                     </div>
                     <div className="flex gap-10 items-center hover:animate-pulse cursor-pointer">
-                        <span className="max-xl:text-5xl sm:text-3xl opacity-50">facilities</span>
+                        <Link href={"/why-us"} className="max-xl:text-5xl sm:text-3xl opacity-50">Why americare</Link>
                     </div>
                     <div className="flex gap-10 items-center hover:animate-pulse cursor-pointer">
-                        <span className="max-xl:text-5xl sm:text-3xl opacity-50">About</span>
+                        <Link href={"/services"} className="max-xl:text-5xl sm:text-3xl opacity-50">Services</Link>
                     </div>
                     <div className="flex gap-10 items-center hover:animate-pulse cursor-pointer">
-                        <span className="max-xl:text-5xl sm:text-3xl opacity-50">Contact</span>
+                        <Link href={"/careers"} className="max-xl:text-5xl sm:text-3xl opacity-50">Career</Link>
                     </div>
                 </div>
                 <div className={clsx(

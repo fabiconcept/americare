@@ -97,7 +97,7 @@ export default function HeroSection() {
                             className="absolute sm:top-1/3 top-1/4 left-1/2 -translate-x-1/2 sm:-translate-y-[90%] text-white text-5xl font-semibold scale-110 text-center"
                         >
                             <div
-                                className="relative"
+                                className="relative delay-75 smooth"
                                 style={{ transform: `scale(${itemScale < 1.2 ? itemScale : 1.2})` }}
                             >
                                 <span className={clsx(
@@ -116,7 +116,7 @@ export default function HeroSection() {
                                             opacity: `${(5 - (itemMove*2)) * 0.25}`
                                         }}
                                         className={clsx(
-                                            "w-[5vw] sm:block hidden invert",
+                                            "w-[5vw] sm:block hidden invert delay-100 smooth",
                                         )}
                                     />}
                                 </span>

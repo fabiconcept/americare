@@ -41,7 +41,7 @@ export const ServiceOffered: SectionProp[] = [
         </span>
         `
     },
-    imgSrc: "https://americare.sirv.com/icons/cdc-T9SwaYf6g40-unsplash.jpg",
+    imgSrc: "https://americare.sirv.com/logan-weaver-lgnwvr-lK0l9pzxLps-unsplash.jpg",
     imgAlt: "Nurse photo 001",
     btnText: "Learn more",
     btnUrl: "#"
@@ -84,8 +84,8 @@ export const ServiceOffered: SectionProp[] = [
         </span>
       `
     },
-    imgSrc: "https://americare.sirv.com/logan-weaver-lgnwvr-lK0l9pzxLps-unsplash.jpg",
-    imgAlt: "Nurse photo 001",
+    imgSrc: "https://americare.sirv.com/vlad-sargu-ItphH2lGzuI-unsplash.jpg",
+    imgAlt: "companion image",
     btnText: "Learn more",
     btnUrl: "#"
   }

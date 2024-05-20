@@ -30,7 +30,7 @@ export default function ServicesOfferedSection({blob, btnText, btnUrl, descripti
                 renderLayer={(percentage) => (
                     <>
                         <div className="flex gap-12 flex-wrap p-6 relative z-10 dark:mix-blend-screen mix-blend-multiply">
-                            <div className="min-w-[20rem] flex-[2] flex flex-col gap-8relative z-10">
+                            <div className="min-w-[20rem] flex-[2] flex flex-col gap-8 relative z-10">
                                 <span className="text-primary font-semibold 2xl:text-7xl sm:text-6xl text-4xl pb-3">
                                     {title}
                                 </span>

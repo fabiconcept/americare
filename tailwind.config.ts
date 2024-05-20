@@ -1,22 +1,10 @@
 import type { Config } from "tailwindcss";
-import {nextui} from '@nextui-org/theme';
 
 const config: Config = {
   content: [
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
-    ...[
-      "./node_modules/@nextui-org/theme/dist/components/autocomplete.js",
-      "./node_modules/@nextui-org/theme/dist/components/button.js",
-      "./node_modules/@nextui-org/theme/dist/components/ripple.js",
-      "./node_modules/@nextui-org/theme/dist/components/spinner.js",
-      "./node_modules/@nextui-org/theme/dist/components/input.js",
-      "./node_modules/@nextui-org/theme/dist/components/listbox.js",
-      "./node_modules/@nextui-org/theme/dist/components/divider.js",
-      "./node_modules/@nextui-org/theme/dist/components/popover.js",
-      "./node_modules/@nextui-org/theme/dist/components/scroll-shadow.js",
-    ],
   ],
   theme: {
     extend: {
@@ -32,6 +20,5 @@ const config: Config = {
       }
     },
   },
-  plugins: [nextui()],
 };
 export default config;
