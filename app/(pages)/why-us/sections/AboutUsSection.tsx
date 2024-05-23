@@ -56,14 +56,14 @@ export default function AboutUsSection() {
                     alt={"Hole Punch"}
                     height={1920}
                     width={1200}
-                    className="w-full -mt-1 brightness-105 dark:invisible"
+                    className="w-full -mt-1 brightness-105 dark:invisible visible"
                 />
                 <Image
                     src={"https://americare.sirv.com/icons/hole-punch-dark.png"}
                     alt={"Hole Punch"}
                     height={1920}
                     width={1200}
-                    className="w-full h-[110%] object-cover -mt-1 brightness-100 absolute top-0 left-0 brigh"
+                    className="invisible dark:visible w-full h-[110%] object-cover -mt-1 brightness-100 absolute top-0 left-0 brigh"
                 />
             </div>
         </>

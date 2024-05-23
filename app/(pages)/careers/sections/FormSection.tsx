@@ -240,10 +240,10 @@ export default function FormSection() {
                         <span className="flex gap-1 sm:text-base text-sm">First name <span className="text-primary">:</span> <sup className="text-red-600 sm:text-sm text-xs"><FaAsterisk /></sup> <span className="text-red-500"> {errorObj.firstName.error}</span></span>
                         <div className={clsx(
                             "relative smooth rounded-xl overflow-hidden", 
-                            errorObj.firstName.status === ErrorState.BAD ?"border-2 border-red-500": "border-2 border-white/10 group focus-within:border-white/50"
+                            errorObj.firstName.status === ErrorState.BAD ?"border-2 border-red-500": "border-2 dark:border-white/10 border-primary/10 group dark:focus-within:border-white/50 focus-within:border-primary/70"
                         )}>
                             <FaUser className={clsx(
-                                "absolute top-1/2 -translate-y-1/2 pointer-events-none select-none left-4 peer-placeholder-shown:opacity-50",
+                                "absolute top-1/2 -translate-y-1/2 pointer-events-none select-none left-4 peer-placeholder-shown:opacity-50 smooth",
                                 errorObj.firstName.status === ErrorState.BAD ? "text-red-600 opacity-100" : "group-focus-within:opacity-100 opacity-50 "
                                 )} 
                             />
@@ -252,7 +252,7 @@ export default function FormSection() {
                                 placeholder="John"
                                 className={clsx(
                                     "peer",
-                                    "dark:bg-white/5 bg-darkBg/5",
+                                    "dark:bg-white/5 bg-primary/5 outline-none",
                                     "bg-transparent",
                                     "w-full py-4 px-12 sm:text-lg",
                                 )}
@@ -268,10 +268,10 @@ export default function FormSection() {
                         <span className="flex gap-1 sm:text-base text-sm">Last name <span className="text-primary">:</span> <sup className="text-red-600 sm:text-sm text-xs"><FaAsterisk /></sup> <span className="text-red-500"> {errorObj.phone.error}</span></span>
                         <div className={clsx(
                             "relative smooth rounded-xl overflow-hidden", 
-                            errorObj.lastName.status === ErrorState.BAD ?"border-2 border-red-500": "border-2 border-white/10 group focus-within:border-white/50"
+                            errorObj.lastName.status === ErrorState.BAD ?"border-2 border-red-500": "border-2 dark:border-white/10 border-primary/10 group dark:focus-within:border-white/50 focus-within:border-primary/70"
                         )}>
                             <FaUser className={clsx(
-                                "absolute top-1/2 -translate-y-1/2 pointer-events-none select-none left-4 peer-placeholder-shown:opacity-50",
+                                "absolute top-1/2 -translate-y-1/2 pointer-events-none select-none left-4 peer-placeholder-shown:opacity-50 smooth",
                                 errorObj.lastName.status === ErrorState.BAD ? "text-red-600 opacity-100" : "group-focus-within:opacity-100 opacity-50 "
                                 )} 
                             />
@@ -280,7 +280,7 @@ export default function FormSection() {
                                 placeholder="Doe"
                                 className={clsx(
                                     "peer",
-                                    "dark:bg-white/5 bg-darkBg/5",
+                                    "dark:bg-white/5 bg-primary/5 outline-none",
                                     "bg-transparent",
                                     "w-full py-4 px-12 sm:text-lg",
                                 )}
@@ -296,10 +296,10 @@ export default function FormSection() {
                         <span className="flex gap-1 sm:text-base text-sm">E-mail <span className="text-primary">:</span> <sup className="text-red-600 sm:text-sm text-xs"><FaAsterisk /></sup> <span className="text-red-500"> {errorObj.email.error}</span></span>
                         <div className={clsx(
                             "relative smooth rounded-xl overflow-hidden", 
-                            errorObj.email.status === ErrorState.BAD ?"border-2 border-red-500": "border-2 border-white/10 group focus-within:border-white/50"
+                            errorObj.email.status === ErrorState.BAD ?"border-2 border-red-500": "border-2 dark:border-white/10 border-primary/10 group dark:focus-within:border-white/50 focus-within:border-primary/70"
                         )}>
                             <FaEnvelope className={clsx(
-                                "absolute top-1/2 -translate-y-1/2 pointer-events-none select-none left-4 peer-placeholder-shown:opacity-50",
+                                "absolute top-1/2 -translate-y-1/2 pointer-events-none select-none left-4 peer-placeholder-shown:opacity-50 smooth",
                                 errorObj.email.status === ErrorState.BAD ? "text-red-600 opacity-100" : "group-focus-within:opacity-100 opacity-50 "
                                 )} 
                             />
@@ -308,7 +308,7 @@ export default function FormSection() {
                                 placeholder="example@gmail.com"
                                 className={clsx(
                                     "peer",
-                                    "dark:bg-white/5 bg-darkBg/5",
+                                    "dark:bg-white/5 bg-primary/5 outline-none",
                                     "bg-transparent",
                                     "w-full py-4 px-12 sm:text-lg",
                                 )}
@@ -324,10 +324,10 @@ export default function FormSection() {
                         <span className="flex gap-1 sm:text-base text-sm">Phone number <span className="text-primary">:</span> <sup className="text-red-600 sm:text-sm text-xs"><FaAsterisk /></sup> <span className="text-red-500"> {errorObj.phone.error}</span></span>
                         <div className={clsx(
                             "relative smooth rounded-xl overflow-hidden", 
-                            errorObj.phone.status === ErrorState.BAD ?"border-2 border-red-500": "border-2 border-white/10 group focus-within:border-white/50"
+                            errorObj.phone.status === ErrorState.BAD ?"border-2 border-red-500": "border-2 dark:border-white/10 border-primary/10 group dark:focus-within:border-white/50 focus-within:border-primary/70"
                         )}>
                             <FaPhone className={clsx(
-                                "absolute top-1/2 -translate-y-1/2 pointer-events-none select-none left-4 peer-placeholder-shown:opacity-50",
+                                "absolute top-1/2 -translate-y-1/2 pointer-events-none select-none left-4 peer-placeholder-shown:opacity-50 smooth",
                                 errorObj.phone.status === ErrorState.BAD ? "text-red-600 opacity-100" : "group-focus-within:opacity-100 opacity-50 "
                                 )} 
                             />
@@ -336,7 +336,7 @@ export default function FormSection() {
                                 placeholder="(555) 555 5555"
                                 className={clsx(
                                     "peer",
-                                    "dark:bg-white/5 bg-darkBg/5",
+                                    "dark:bg-white/5 bg-primary/5 outline-none",
                                     "bg-transparent",
                                     "w-full py-4 px-12 sm:text-lg",
                                 )}
@@ -352,10 +352,10 @@ export default function FormSection() {
                         <span className="flex gap-1 sm:text-base text-sm">Position applying for <span className="text-primary">:</span> <sup className="text-red-600 sm:text-sm text-xs"><FaAsterisk /></sup> <span className="text-red-500"> {errorObj.position.error}</span></span>
                         <div className={clsx(
                             "relative smooth rounded-xl overflow-hidden cursor-pointer", 
-                            errorObj.position.status === ErrorState.BAD ?"border-2 border-red-500": "border-2 border-white/10 group focus-within:border-white/50"
+                            errorObj.position.status === ErrorState.BAD ?"border-2 border-red-500": "border-2 dark:border-white/10 border-primary/10 group dark:focus-within:border-white/50 focus-within:border-primary/70"
                         )}>
                             <FaList className={clsx(
-                                "absolute top-1/2 -translate-y-1/2 pointer-events-none select-none left-4 peer-placeholder-shown:opacity-50",
+                                "absolute top-1/2 -translate-y-1/2 pointer-events-none select-none left-4 peer-placeholder-shown:opacity-50 smooth",
                                 errorObj.position.status === ErrorState.BAD ? "text-red-600 opacity-100" : "group-focus-within:opacity-100 opacity-50 "
                                 )} 
                             />
@@ -363,7 +363,7 @@ export default function FormSection() {
                                 title="Select positon"
                                 className={clsx(
                                     "peer",
-                                    "dark:bg-white/5 bg-darkBg/5",
+                                    "dark:bg-white/5 bg-primary/5 outline-none",
                                     "bg-transparent appearance-none",
                                     "w-full py-4 px-12 sm:text-lg",
                                 )}
@@ -386,18 +386,18 @@ export default function FormSection() {
                         <span className="flex gap-1 sm:text-base text-sm">Attach resume <span className="text-primary">:</span> <sup className="text-red-600 sm:text-sm text-xs"><FaAsterisk /></sup> <span className="text-red-500"> {errorObj.attachFile.error}</span></span>
                         <div className={clsx(
                             "relative smooth rounded-xl overflow-hidden",
-                            errorObj.attachFile.status === ErrorState.BAD ? "border-2 border-red-500" : "border-2 border-white/10 group focus-within:border-white/50",
+                            errorObj.attachFile.status === ErrorState.BAD ? "border-2 border-red-500" : "border-2 dark:border-white/10 border-primary/10 group dark:focus-within:border-white/50 focus-within:border-primary/70",
                             "flex gap-2"
                         )}>
                             <FaPaperclip className={clsx(
-                                "absolute top-1/2 -translate-y-1/2 pointer-events-none select-none left-4 peer-placeholder-shown:opacity-50",
+                                "absolute top-1/2 -translate-y-1/2 pointer-events-none select-none left-4 peer-placeholder-shown:opacity-50 smooth",
                                 errorObj.attachFile.status === ErrorState.BAD ? "text-red-600 opacity-100" : "group-focus-within:opacity-100 opacity-50 "
                                 )} 
                             />
                             <div
                                 className={clsx(
                                     "peer",
-                                    "dark:bg-white/5 bg-darkBg/5",
+                                    "dark:bg-white/5 bg-primary/5 outline-none",
                                     "bg-transparent",
                                     "w-full py-4 px-14 sm:text-lg",
                                 )}
@@ -433,12 +433,12 @@ export default function FormSection() {
                     </p>
                     <div className={clsx(
                         "relative smooth rounded-xl overflow-hidden",
-                        errorObj.coverLetter.status ===ErrorState.BAD ? "border-2 border-red-500" : "border-2 border-white/10 group focus-within:border-white/50"
+                        errorObj.coverLetter.status ===ErrorState.BAD ? "border-2 border-red-500" : "border-2 dark:border-white/10 border-primary/10 group dark:focus-within:border-white/50 focus-within:border-primary/70"
                     )}>
                         <textarea 
                             className ={clsx(
                                 "peer",
-                                "dark:bg-white/5 bg-darkBg/5",
+                                "dark:bg-white/5 bg-primary/5 outline-none",
                                 "bg-transparent",
                                 "w-full py-4 px-8 sm:text-lg resize-none outline-none min-h-[calc(2lh+2rem)] max-h-[calc(4lh+2rem)]",
                             )}

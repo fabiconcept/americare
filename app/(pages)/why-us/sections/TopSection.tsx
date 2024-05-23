@@ -18,7 +18,7 @@ export default function TopSection() {
                     </span>
                     <h1
                         className="text-primary font-semibold 2xl:max-w-[55vw] sm:max-[75vw] text-balance p-3 2xl:text-7xl sm:text-6xl text-4xl">
-                        Where <span className="px-4 rounded-[5rem] border border-white/10 dark:bg-white/10 bg-darkBg/10 hover:-translate-y-2 hover:dark:bg-white/15 hover:bg-darkBg/15 smooth">Compassion</span> Meets <span className="px-4 rounded-[5rem] border border-white/10 dark:bg-white/10 bg-darkBg/10 hover:-translate-y-2 hover:dark:bg-white/15 hover:bg-darkBg/15 smooth">Care Excellence</span>
+                        Where <span className="px-4 rounded-[5rem] border dark:border-white/10 border-primary/25 dark:bg-white/10 bg-primary/10 hover:-translate-y-2 hover:dark:bg-white/15 hover:bg-primary/25 smooth">Compassion</span> Meets <span className="px-4 rounded-[5rem] border dark:border-white/10 border-primary/25 dark:bg-white/10 bg-primary/10 hover:-translate-y-2 hover:dark:bg-white/15 hover:bg-primary/25 smooth">Care Excellence</span>
                     </h1>
                     <span className="flex items-center flex-col">
                         <span>

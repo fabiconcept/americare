@@ -26,12 +26,12 @@ export default function FooterSection() {
 
                     <div className="flex gap-2 sm:mx-0 mx-auto">
                         <CustomBtn
-                            customClass="dark:border-themeBlack border-themeBlack bg-black/10"
+                            customClass="border-[#222222] bg-black/10"
                             linkHref="/careers"
                             text="Join our team"
                         />
                         <CustomBtn
-                            customClass="after:h-[105%] after:w-[105%] opacity-100 after:bg-primary text-white dark:border-themeBlack border-themeBlack"
+                            customClass="after:h-[105%] after:w-[105%] opacity-100 after:bg-primary text-white border-[#222222]"
                             linkHref="#"
                             text="Contact us"
                         />
