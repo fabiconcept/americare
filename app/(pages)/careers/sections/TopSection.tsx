@@ -20,7 +20,7 @@ export default function TopSection() {
                     </h1>
                     <span className="flex items-center flex-col mt-6">
                         <span>
-                            <span className="opacity-70">Our philosophy is simple; </span><span>hire a team of diverse, passionate people and foster a culture that empowers you to do your best work.</span>
+                            <span className="opacity-70">Our philosophy is simple: </span><span>hire a team of diverse, passionate people and foster a culture that empowers you to do your best work.</span>
                         </span>
                     </span>
                 </div>

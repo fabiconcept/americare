@@ -27,7 +27,7 @@ export const ServiceOffered: SectionProp[] = [
   },
   {
     title: "Specialty Care Services",
-    blob: "Our Specialty Care offers expert support for Alzheimer's, dementia, Parkinson's, ALS, and similar conditions.",
+    blob: "Our Specialty Care offers expert support for Alzheimer’s, Dementia, Parkinson’s, ALS, and similar conditions.",
     description: {
         __html: `
         <span>
@@ -48,7 +48,7 @@ export const ServiceOffered: SectionProp[] = [
   },
   {
     title: "Personal Care Services",
-    blob: "Our Personal Care services help you stay safe at home with daily activity assistance.",
+    blob: "Our Personal Care Services help you thrive at home with daily activity assistance.",
     description: {
         __html: `
         

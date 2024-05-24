@@ -1,6 +1,5 @@
 "use client"
 import ScrollToTop from "react-scroll-to-top";
-import { FaQuestion } from "react-icons/fa6";
 import Image from "next/image";
 
 export default function TopSection() {
@@ -10,15 +9,13 @@ export default function TopSection() {
             <section className="dark:bg-darkBg dark:text-white  h-fit bg-white/90 pb-[5rem]">
                 <div className="sm:px-[10rem] px-4 pt-[10rem] pb-[2rem] text-center flex flex-col items-center">
                     <span className="flex items-center">
-                        <FaQuestion className="scale-x-[-1] scale-y-[-1] opacity-35" />
                         <span className="whitespace-nowrap">
                             Why AmeriCare
                         </span>
-                        <FaQuestion className="opacity-35" />
                     </span>
                     <h1
                         className="text-primary font-semibold 2xl:max-w-[55vw] sm:max-[75vw] text-balance p-3 2xl:text-7xl sm:text-6xl text-4xl">
-                        Where <span className="px-4 rounded-[5rem] border dark:border-white/10 border-primary/25 dark:bg-white/10 bg-primary/10 hover:-translate-y-2 hover:dark:bg-white/15 hover:bg-primary/25 smooth">Compassion</span> Meets <span className="px-4 rounded-[5rem] border dark:border-white/10 border-primary/25 dark:bg-white/10 bg-primary/10 hover:-translate-y-2 hover:dark:bg-white/15 hover:bg-primary/25 smooth">Care Excellence</span>
+                        Where <span className="px-4 rounded-[5rem] border dark:border-white/10 border-primary/25 dark:bg-white/10 bg-primary/10 hover:-translate-y-2 hover:dark:bg-white/15 hover:bg-primary/25 smooth">Compassion</span> Meets <span className="px-4 rounded-[5rem] border dark:border-white/10 border-primary/25 dark:bg-white/10 bg-primary/10 hover:-translate-y-2 hover:dark:bg-white/15 hover:bg-primary/25 smooth">Excellent Care</span>
                     </h1>
                     <span className="flex items-center flex-col">
                         <span>

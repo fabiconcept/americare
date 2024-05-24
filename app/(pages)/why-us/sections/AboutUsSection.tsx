@@ -37,16 +37,6 @@ export default function AboutUsSection() {
                             Mr. Wilkinson&apos;s educational pursuits led him to the College of William and Mary, where he earned a degree in Biology. It was during this time that he recognized the transformative impact healthcare could have on individuals and families.
                             His journey continued at Mercer University, where he earned a Master&apos;s in Public Health. Along this path, Mr.Wilkinson encountered stories that would shape the very essence of AmeriCare.
                         </span>
-                        <span className="opacity-70">
-                            One such story was that of Ms. Davis, an elderly woman yearning for companionship and support. He witnessed firsthand the isolation that can accompany aging and realized that true care extended beyond medical attention—it meant providing genuine companionship, understanding, and a listening ear.
-                        </span>
-                        <span className="opacity-70">
-                            Mr.Wilkinson also crossed paths with the Johnson family, who tirelessly cared for their daughter, Sarah, a medically fragile child. Sarah&apos;s resilience and her family&apos;s unwavering love were inspiring. Calvin recognized the incredible strength and dedication that these families exhibited daily.  These stories became the foundation of AmeriCare—a company that strives to redefine healthcare by focusing not just on physical needs but also on emotional well-being.  AmeriCare is more than a healthcare provider; it is a promise to deliver compassionate,
-                            honest, and dependable home healthcare services.
-                        </span>
-                        <span className="opacity-70">
-                            Our story is a testament to the power of empathy, integrity, and unwavering commitment to making a difference in the lives of those who need it most. AmeriCare is an invitation to be part of a community where care begins with compassion.
-                        </span>
                     </p>
                 </div>
             </div>
