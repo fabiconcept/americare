@@ -68,7 +68,7 @@ export default function HeroSection() {
             )}>
                 Contact us
             </div>
-            <div ref={containerRef} id="top" className="h-[330vh] relative z-10">
+            <div ref={containerRef} id="top" className="h-[330vh] relative z-10 bg-white">
                 <div
                     className="h-screen w-full sticky top-0 grid place-items-center overflow-hidden"
                 >
@@ -80,20 +80,20 @@ export default function HeroSection() {
                             width={3072}
                             priority
                             style={{ transform: `scale(${itemScale})` }}
-                            className="w-screen lg:object-fill lg:h-auto h-full object-cover"
+                            className="w-screen lg:object-fill lg:h-auto h-full object-cover opacity-70"
                         />
                         <div
                             className="absolute h-full pointer-events-none w-full top-0 left-0 bg-black/20 backdrop-blur-[1px] z-10"
                             style={{ opacity: itemOpacity }}
                         ></div>
-                        <Image
-                            src={"https://americare.sirv.com/parallax/main-couple.png"}
-                            alt="background-couple"
+                        {/* <Image
+                            src={"https://americare.sirv.com/parallax/happy-people.png"}
+                            alt="background-png"
                             height={1728}
                             width={3072}
                             priority
-                            className="w-screen lg:object-fill lg:h-auto h-[60vh] object-cover absolute bottom-0 left-0 z-30"
-                        />
+                            className="w-[80vw] lg:object-fill lg:h-auto h-[60vh] object-cover absolute bottom-[15rem] left-1/2 -translate-x-1/2 z-30"
+                        /> */}
 
                         <div
                             className="absolute sm:top-1/3 top-1/4 left-1/2 -translate-x-1/2 sm:-translate-y-[90%] text-white text-5xl font-semibold scale-110 text-center"
