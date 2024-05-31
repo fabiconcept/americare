@@ -4,13 +4,13 @@ import { useEffect, useState } from "react";
 import { useInView } from "react-intersection-observer";
 import Lenis from '@studio-freight/lenis';
 import Image from "next/image";
-import { Macondo } from "next/font/google";
+import { Playfair_Display } from "next/font/google";
 import clsx from "clsx";
 import { FaAngleDown } from "react-icons/fa6";
 import Link from "next/link";
 import ScrollToTop from "react-scroll-to-top";
 
-const FontFamily = Macondo({ subsets: ["latin"], weight: "400" });
+const FontFamily = Playfair_Display({ subsets: ["latin"], weight: "600" });
 
 
 export default function HeroSection() {
@@ -86,17 +86,17 @@ export default function HeroSection() {
                             className="absolute h-full pointer-events-none w-full top-0 left-0 bg-black/20 backdrop-blur-[1px] z-10"
                             style={{ opacity: itemOpacity }}
                         ></div>
-                        {/* <Image
-                            src={"https://americare.sirv.com/parallax/happy-people.png"}
+                        <Image
+                            src={"https://americare.sirv.com/parallax/happy-group.png"}
                             alt="background-png"
                             height={1728}
                             width={3072}
                             priority
-                            className="w-[80vw] lg:object-fill lg:h-auto h-[60vh] object-cover absolute bottom-[15rem] left-1/2 -translate-x-1/2 z-30"
-                        /> */}
+                            className="w-[80vw] lg:object-fill lg:h-auto h-[60vh] object-cover absolute bottom-[12rem] left-1/2 -translate-x-1/2 z-30"
+                        />
 
                         <div
-                            className="absolute sm:top-1/3 top-1/4 left-1/2 -translate-x-1/2 sm:-translate-y-[90%] text-white text-5xl font-semibold scale-110 text-center"
+                            className="absolute 2xl:top-1/3 sm:top-[31%] top-1/4 left-1/2 -translate-x-1/2 sm:-translate-y-[90%] text-white text-5xl font-semibold scale-110 text-center"
                         >
                             <div
                                 className="relative delay-75 smooth"
@@ -130,8 +130,9 @@ export default function HeroSection() {
                                     priority
                                     className="absolute sm:bottom-2 -bottom-3 sm:left-6 -left-3 w-14"
                                 />
-                                <p className="text-[2.5vw] opacity-60 sm:translate-x-24">
-                                    Compassionate Care, Right at Home
+                                <p className="text-[2.25vw] mt-2 sm:translate-x-20 flex w-fit flex-col">
+                                    <span className="opacity-60">Compassionate Care, Right at Home</span>
+                                    <span className="text-[color-mix(in_srgb,rgb(111,173,69)_20%,white_30%)]">With Us, You&apos;ll Never Walk Alone</span>
                                 </p>
                             </div>
                         </div>
