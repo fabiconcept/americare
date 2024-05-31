@@ -132,7 +132,7 @@ export default function HeroSection() {
                                 />
                                 <p className="text-[2.25vw] mt-2 sm:translate-x-20 flex w-fit flex-col">
                                     <span className="opacity-60">Compassionate Care, Right at Home</span>
-                                    <span className="text-[color-mix(in_srgb,rgb(111,173,69)_20%,white_30%)]">With Us, You&apos;ll Never Walk Alone</span>
+                                    <span className="opacity-60">With Us, You&apos;ll Never Walk Alone</span>
                                 </p>
                             </div>
                         </div>
