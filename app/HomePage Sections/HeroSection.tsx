@@ -57,7 +57,7 @@ export default function HeroSection() {
                 width={300}
                 priority
                 className={clsx(
-                    "w-16 smooth fixed top-5 left-9 z-[60]",
+                    "w-16 smooth fixed top-5 md:left-9 left-4 z-[60]",
                     inViewContainer && "invert brightness-0"
                 )}
             />
@@ -86,32 +86,24 @@ export default function HeroSection() {
                             className="absolute h-full pointer-events-none w-full top-0 left-0 bg-black/20 backdrop-blur-[1px] z-10"
                             style={{ opacity: itemOpacity }}
                         ></div>
-                        <Image
-                            src={"https://americare.sirv.com/parallax/happy-group.png"}
-                            alt="background-png"
-                            height={1728}
-                            width={3072}
-                            priority
-                            className="w-[80vw] lg:object-fill lg:h-auto h-[60vh] object-cover absolute bottom-[12rem] left-1/2 -translate-x-1/2 z-30"
-                        />
-
+                        
                         <div
-                            className="absolute 2xl:top-1/3 sm:top-[31%] top-1/4 left-1/2 -translate-x-1/2 sm:-translate-y-[90%] text-white text-5xl font-semibold scale-110 text-center"
+                            className="absolute 2xl:top-1/3 sm:top-[31%] top-1/3 left-1/2 -translate-x-1/2 md:-translate-y-[90%] -translate-y-[90%] text-white text-5xl font-semibold scale-110 text-center"
                         >
                             <div
                                 className="relative delay-75 smooth"
                                 style={{ transform: `scale(${itemScale < 1.2 ? itemScale : 1.2})` }}
                             >
                                 <span className={clsx(
-                                    "sm:text-[9vw] text-[13vw] flex gap-2",
+                                    "sm:text-[7vw] text-[13vw] flex gap-2 items-end",
                                     FontFamily.className
                                 )}>
                                     AmeriCare
                                     {<Image
                                         src={"https://americare.sirv.com/icons/logo-alone-black.svg"}
                                         alt="AmeriCare Logo"
-                                        height={300}
-                                        width={300}
+                                        height={250}
+                                        width={250}
                                         priority
                                         style={{ 
                                             transform: `translateX(${itemMove*2}rem)`,
@@ -128,9 +120,9 @@ export default function HeroSection() {
                                     height={200}
                                     width={200}
                                     priority
-                                    className="absolute sm:bottom-2 -bottom-3 sm:left-6 -left-3 w-14"
+                                    className="absolute sm:bottom-2 -bottom-3 sm:left-6 left-1 w-14"
                                 />
-                                <p className="text-[2.25vw] mt-2 sm:translate-x-20 flex w-fit flex-col">
+                                <p className="md:text-[2vw] text-[3.25vw] mt-2 md:ml-0 ml-4 sm:translate-x-20 flex w-fit flex-col">
                                     <span className="opacity-60">Compassionate Care, Right at Home</span>
                                     <span className="opacity-60">With Us, You&apos;ll Never Walk Alone</span>
                                 </p>
@@ -139,19 +131,29 @@ export default function HeroSection() {
                     </div>
 
                     <div
-                        className="absolute sm:bottom-10 sm:right-24 text-lg text-white z-40 sm:max-w-md max-w-[90vw]"
+                        className="absolute lg:bottom-10 lg:right-24 text-lg text-white z-40 sm:max-w-md max-w-[90vw]"
                         style={{ 
                             transform: `translateY(${itemMove}rem)`,
                             opacity: `${(5-itemMove)*0.25}`
                         }}
                     >
-                        <div className="p-4 w-full rounded-lg bg-white/10 hover:bg-black/25 smooth backdrop-blur-md border border-white/25 animate-floating after:h-24 after:w-24 after:rounded-full after:absolute after:-top-5 after:-left-5 after:bg-green-600/10 after:border after:border-green-600/10 after:-z-10">
+                        <div className="p-4 w-full shadow-lg rounded-lg text-white lg:bg-white/10 bg-primary/30 lg:hover:bg-primary/25 hover:bg-primary/50 hover:animate-none smooth backdrop-blur-lg border-2 border-white/50 animate-floating after:h-24 after:w-24 after:rounded-full after:absolute after:-top-5 after:-left-5 after:bg-primary/25 after:border after:border-primary/25 after:-z-10">
                             <span>
                                 At AmeriCare, we specialize in providing compassionate and dedicated home
                                 healthcare services for both the young and the elderly.
                             </span>
                         </div>
                     </div>
+
+                    <Image
+                            src={"https://americare.sirv.com/parallax/happy-group.png"}
+                            alt="background-png"
+                            height={1728}
+                            width={3072}
+                            priority
+                            className="w-full md:min-h-auto md:h-[90vh] min-h-[80vh] object-cover absolute bottom-0 left-1/2 -translate-x-1/2 z-30"
+                        />
+
 
                     <div className="absolute bottom-6 left-6 z-50 flex items-center flex-col text-white text-lg">
                         <span>Scroll Down</span>

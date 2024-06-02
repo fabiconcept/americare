@@ -23,7 +23,7 @@ export default function RootLayout({
         <html lang="en">
             <body className={clsx(FontFamily.className, "overflow-x-hidden")}>
                 <BackgroundLayer />
-                <NavigationCoponent />
+                {/* <NavigationCoponent /> */}
                 {children}
                 <FooterSection />
             </body>

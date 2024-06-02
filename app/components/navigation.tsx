@@ -42,7 +42,7 @@ export default function NavigationCoponent() {
     }
     return (
         <motion.div
-            className="w-full flex flex-col items-center fixed left-0 top-0 z-50 h-fit"
+            className="w-[dvw] flex flex-col items-center fixed left-0 top-0 z-50 h-fit"
             animate={controls}
             // initial="hidden"
             variants={topVariants}
