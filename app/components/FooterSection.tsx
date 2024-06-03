@@ -3,14 +3,14 @@ import clsx from "clsx";
 import CustomBtn from "./CustomBtn";
 import Link from "next/link";
 import { FaFacebookF, FaLinkedin } from "react-icons/fa6";
-import { FaMailBulk, FaPhoneSquare, FaPhoneSquareAlt } from "react-icons/fa";
+import { FaMailBulk, FaPhoneSquareAlt } from "react-icons/fa";
 
 export default function FooterSection() {
     return (
         <div className={clsx(
             "dark:bg-darkBg bg-white/90 text-white sm:text-xl text-sm"
         )}>
-            <div className="pt-12 pb-6 sm:px-[5vw] px-5 bg-themeBlack rounded-t-[3rem]">
+            <div className="pt-12 pb-6 sm:px-[5vw] px-5 bg-themeBlack sm:rounded-t-[3rem] rounded-t-3xl">
 
                 <div className="border-b border-b-white/25 pb-6 flex flex-wrap justify-between gap-4 items-center">
                     <Image

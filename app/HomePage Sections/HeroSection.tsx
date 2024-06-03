@@ -155,9 +155,27 @@ export default function HeroSection() {
                         />
 
 
-                    <div className="absolute bottom-6 left-6 z-50 flex items-center flex-col text-white text-lg">
-                        <span>Scroll Down</span>
-                        <FaAngleDown className="animate-bounce" />
+                    <div className="absolute sm:bottom-6 bottom-1/2 sm:left-6 sm:-translate-x-0 -translate-x-1/2 left-1/2 drop-shadow-xl z-50 text-white text-lg">
+                        <div
+                            className="sm:hidden flex items-center flex-col delay-300 smooth"
+                            style={{
+                                transform: `translateY(calc(-${itemMove}rem + 14rem))`,
+                                opacity: `${(2 + itemMove)-6}`
+                            }}
+                        >
+                            <span>Scroll Down</span>
+                            <FaAngleDown className="animate-bounce" />
+                        </div>
+                        <div
+                            className="sm:flex hidden items-center flex-col"
+                            style={{
+                                transform: `translateY(calc(-${itemMove}rem + 14rem))`,
+                                opacity: `${(2 + itemMove)-6}`
+                            }}
+                        >
+                            <span>Scroll Down</span>
+                            <FaAngleDown className="animate-bounce" />
+                        </div>
                     </div>
                 </div>
             </div>
