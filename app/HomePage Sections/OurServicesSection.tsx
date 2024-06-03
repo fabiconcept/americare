@@ -9,7 +9,7 @@ export default function OurServicesSection() {
                 Our services
             </h1>
             <p className="text-center opacity-60 mb-5 max-w-[15rem] text-lg mx-auto">Services we can offer you</p>
-            <div className="grid 2xl:grid-cols-[repeat(auto-fill,minmax(30rem,1fr))] grid-cols-[repeat(auto-fill,minmax(20rem,1fr))] sm:px-[3vw] px-3">
+            <div className="grid 2xl:grid-cols-[repeat(auto-fill,minmax(30rem,1fr))] grid-cols-[repeat(auto-fill,minmax(15rem,1fr))] sm:px-[3vw] px-3">
                 {OurServicesList.map((serviceItem, index)=>{
                     if((OurServicesList.length-1) === index) {
                         return (<>

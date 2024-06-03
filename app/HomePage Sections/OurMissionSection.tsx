@@ -14,7 +14,7 @@ export default function OurMissionSection() {
                 </div>
 
                 <div className="flex gap-12 flex-wrap">
-                    <p className="min-w-[20rem] flex-[2] 2xl:text-4xl sm:text-3xl text-2xl sm:leading-[2.5rem] sm:text-left text-center opacity-80 relative">
+                    <p className="min-w-[20rem] flex-[2] 2xl:text-4xl sm:text-3xl text-lg sm:leading-[2.5rem] opacity-80 relative text-primary">
                         <Image
                             src={"https://americare.sirv.com/icons/quote-icon.svg"}
                             alt="Quote icon"

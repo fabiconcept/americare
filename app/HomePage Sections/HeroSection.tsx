@@ -68,7 +68,7 @@ export default function HeroSection() {
             )}>
                 Contact us
             </div>
-            <div ref={containerRef} id="top" className="h-[330vh] relative z-10 bg-white">
+            <div ref={containerRef} id="top" className="sm:h-[330vh] h-[200vh] relative z-10 bg-white">
                 <div
                     className="h-screen w-full sticky top-0 grid place-items-center overflow-hidden"
                 >
@@ -131,7 +131,7 @@ export default function HeroSection() {
                     </div>
 
                     <div
-                        className="absolute lg:bottom-10 lg:right-24 text-lg text-white z-40 sm:max-w-md max-w-[90vw]"
+                        className="absolute lg:bottom-10 lg:right-24 sm:text-lg text-sm text-white z-40 sm:max-w-md max-w-[90vw]"
                         style={{ 
                             transform: `translateY(${itemMove}rem)`,
                             opacity: `${(5-itemMove)*0.25}`

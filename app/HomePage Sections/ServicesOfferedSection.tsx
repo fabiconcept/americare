@@ -25,17 +25,17 @@ export default function ServicesOfferedSection({blob, btnText, btnUrl, descripti
                 className="w-[70rem] absolute -top-[20rem] -left-[20rem] dark:opacity-50"
             />
             <Parallax
-                className="py-12 sm:px-[12.5vw] px-3 grid place-items-center"
+                className="py-12 sm:px-[12.5vw] px-1 grid place-items-center"
                 strength={500}
                 renderLayer={(percentage) => (
                     <>
                         <div className="flex gap-12 flex-wrap p-6 relative z-10 dark:mix-blend-screen mix-blend-multiply">
-                            <div className="min-w-[20rem] flex-[2] flex flex-col gap-8 relative z-10">
+                            <div className="sm:min-w-[20rem] min-w-[15rem] flex-[2] flex flex-col gap-8 relative z-10">
                                 <span className="text-primary font-semibold 2xl:text-7xl sm:text-6xl text-4xl pb-3">
                                     {title}
                                 </span>
                                 <div className="pt-3">
-                                    <div className="relative 2xl:text-5xl sm:text-4xl text-2xl sm:leading-[3rem] sm:text-left text-center text-balance">
+                                    <div className="relative 2xl:text-5xl sm:text-4xl text-base sm:leading-[3rem] text-balance">
                                         <Image
                                             src={"https://americare.sirv.com/icons/quote-icon.svg"}
                                             alt="Quote icon"
@@ -95,8 +95,8 @@ export default function ServicesOfferedSection({blob, btnText, btnUrl, descripti
                                     text={btnText}
                                 />
                             </div>
-                            <div className="min-w-[20rem] flex-1 flex flex-col gap-12">
-                                <span className="opacity-70 flex flex-col gap-4" dangerouslySetInnerHTML={description}></span>
+                            <div className="sm:min-w-[20rem] min-w-[15rem] flex-1 flex flex-col gap-12">
+                                <span className="opacity-70 flex flex-col gap-4 sm:text-base text-sm" dangerouslySetInnerHTML={description}></span>
                                 <Image
                                     src={imgSrc}
                                     alt={imgAlt}

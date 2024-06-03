@@ -21,7 +21,7 @@ export default function RootLayout({
 }>) {
     return (
         <html lang="en">
-            <body className={clsx(FontFamily.className, "overflow-x-hidden")}>
+            <body className={clsx(FontFamily.className, "overflow-x-hidden sm:text-base text-sm")}>
                 <BackgroundLayer />
                 {/* <NavigationCoponent /> */}
                 {children}

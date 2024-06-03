@@ -8,7 +8,7 @@ import { FaMailBulk, FaPhoneSquare, FaPhoneSquareAlt } from "react-icons/fa";
 export default function FooterSection() {
     return (
         <div className={clsx(
-            "dark:bg-darkBg bg-white/90 text-white sm:text-xl text-base"
+            "dark:bg-darkBg bg-white/90 text-white sm:text-xl text-sm"
         )}>
             <div className="pt-12 pb-6 sm:px-[5vw] px-5 bg-themeBlack rounded-t-[3rem]">
 
@@ -46,35 +46,35 @@ export default function FooterSection() {
                         </div>
 
                         <div>
-                            <span className="mt-6 flex gap-1 group">
+                            <span className="mt-6 flex gap-1 group items-end">
                                     <FaPhoneSquareAlt className="text-3xl smooth group-hover:text-primary" />
                                 Call <Link className="text-primary" href={"tel:+1770656-9593"}>(770) 656-9593</Link> For A Free Consultation!
                             </span>
-                            <span className="mt-3 flex gap-1 group">
+                            <span className="mt-3 flex gap-1 group items-end">
                                 <FaMailBulk className="text-3xl smooth group-hover:text-primary" />
                                 Email: <Link className="text-primary" href={"mailto:contact@americareinhome.com"}>contact@americareinhome.com</Link>.
                             </span>
                         </div>
                     </div>
 
-                    <div className="grid gap-3 max-md:text-lg text-white">
-                        <Link className="min-w-[10rem] sm:px-3 hover:text-primary smooth hover:font-semibold" href="#">About</Link>
-                        <Link className="min-w-[10rem] sm:px-3 hover:text-primary smooth hover:font-semibold" href="#">Services</Link>
-                        <Link className="min-w-[10rem] sm:px-3 hover:text-primary smooth hover:font-semibold" href="#">Career</Link>
-                        <Link className="min-w-[10rem] sm:px-3 hover:text-primary smooth hover:font-semibold" href="#">Contact</Link>
+                    <div className="grid gap-3 max-md:text-base sm:my-0 my-4 text-white">
+                        <Link className="min-w-[10rem] sm:px-3 sm:hover:text-primary max-sm:text-primary smooth hover:font-semibold" href="#">About</Link>
+                        <Link className="min-w-[10rem] sm:px-3 sm:hover:text-primary max-sm:text-primary smooth hover:font-semibold" href="#">Services</Link>
+                        <Link className="min-w-[10rem] sm:px-3 sm:hover:text-primary max-sm:text-primary smooth hover:font-semibold" href="#">Career</Link>
+                        <Link className="min-w-[10rem] sm:px-3 sm:hover:text-primary max-sm:text-primary smooth hover:font-semibold" href="#">Contact</Link>
                     </div>
 
                     <div className="grid sm:grid-cols-1 gap-3 sm:min-w-fit min-w-full grid-cols-4 text-white">
-                        <Link href={"#"}>
+                        <Link href={"#"} className="grid place-items-center">
                             <FaFacebookF className="text-3xl hover:text-primary" />
                         </Link>
-                        <Link href={"#"}>
+                        <Link href={"#"} className="grid place-items-center">
                             <FaLinkedin className="text-3xl hover:text-primary" />
                         </Link>
-                        <Link href={"#"}>
+                        <Link href={"#"} className="grid place-items-center">
                             <FaMailBulk className="text-3xl hover:text-primary" />
                         </Link>
-                        <Link href={"#"}>
+                        <Link href={"#"} className="grid place-items-center">
                             <FaPhoneSquareAlt className="text-3xl hover:text-primary" />
                         </Link>
                     </div>
