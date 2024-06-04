@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { Raleway } from "next/font/google";
 import "./stylesheets/globals.css";
 import "./stylesheets/animations.css";
-import NavigationCoponent from "./components/navigation";
 import clsx from "clsx";
 import FooterSection from "./components/FooterSection";
 import BackgroundLayer from "./HomePage Sections/BackgroundLayer";
@@ -23,7 +22,6 @@ export default function RootLayout({
         <html lang="en">
             <body className={clsx(FontFamily.className, "overflow-x-hidden sm:text-base text-sm")}>
                 <BackgroundLayer />
-                {/* <NavigationCoponent /> */}
                 {children}
                 <FooterSection />
             </body>

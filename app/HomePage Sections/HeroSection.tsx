@@ -9,6 +9,7 @@ import clsx from "clsx";
 import { FaAngleDown } from "react-icons/fa6";
 import Link from "next/link";
 import ScrollToTop from "react-scroll-to-top";
+import NavigationComponent from "../components/NavSection";
 
 const FontFamily = Playfair_Display({ subsets: ["latin"], weight: "600" });
 
@@ -50,24 +51,8 @@ export default function HeroSection() {
     return (
         <>
             <ScrollToTop smooth className="grid place-items-center hover:bg-primary active:scale-90 smooth" style={{zIndex: 100}} />
-            <Image
-                src={"https://americare.sirv.com/icons/logo-alone-colour.svg"}
-                alt="AmeriCare Logo"
-                height={300}
-                width={300}
-                priority
-                className={clsx(
-                    "w-16 smooth fixed top-5 md:left-9 left-4 z-[60]",
-                    inViewContainer && "invert brightness-0"
-                )}
-            />
-
-            <div className={clsx(
-                "fixed top-5 sm:right-9 right-4 z-[60] shadow cursor-pointer rounded-xl px-8 py-4 border-4 dark:border-darkBg border-white active:scale-90 smooth select-none active:opacity-50",
-                inViewContainer ? "hover:bg-white border-2 border-dotted text-white hover:text-primary" : "bg-transparent outline-2 outline-dashed text-primary outline-primary hover:text-white hover:bg-primary"
-            )}>
-                Contact us
-            </div>
+            <NavigationComponent inViewContainer={inViewContainer} variation="home" />
+            
             <div ref={containerRef} id="top" className="sm:h-[330vh] h-[200vh] relative z-10 bg-white">
                 <div
                     className="h-screen w-full sticky top-0 grid place-items-center overflow-hidden"
@@ -168,10 +153,6 @@ export default function HeroSection() {
                         </div>
                         <div
                             className="sm:flex hidden items-center flex-col"
-                            style={{
-                                transform: `translateY(calc(-${itemMove}rem + 14rem))`,
-                                opacity: `${(2 + itemMove)-6}`
-                            }}
                         >
                             <span>Scroll Down</span>
                             <FaAngleDown className="animate-bounce" />
