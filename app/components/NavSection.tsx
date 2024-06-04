@@ -30,7 +30,7 @@ export default function NavigationComponent({ variation, inViewContainer }: { va
 
     return (
         <div className={clsx(
-            "grid md:grid-cols-[1fr_auto_1fr] grid-cols-2 items-center fixed top-0 left-0 z-50 w-screen py-5 sm:px-9 px-4",
+            "grid md:grid-cols-[1fr_auto_1fr] grid-cols-[auto_1fr] items-center fixed top-0 left-0 z-50 w-screen py-5 sm:px-9 px-4",
             inViewContainer ? "": "backdrop-blur bg-white/5"
         )}>
             <Link href={"/"}>
@@ -91,12 +91,12 @@ export default function NavigationComponent({ variation, inViewContainer }: { va
                 >
                     <div className={clsx(
                         "top-0 origin-left absolute left-0 w-9 h-[3px] smooth",
-                        isNavOpen ? "rotate-45 translate-x-1 -translate-y-1 bg-primary": "bg-black"
+                        isNavOpen ? "rotate-45 translate-x-1 -translate-y-1 bg-primary": "dark:bg-white bg-black"
                     )}></div>
-                    <div className={clsx("left-0 w-9 h-[3px] smooth", isNavOpen ? "bg-primary translate-x-5 scale-x-[1.5]": "bg-black")}></div>
+                    <div className={clsx("left-0 w-9 h-[3px] smooth", isNavOpen ? "bg-primary translate-x-5 scale-x-[1.5]": "dark:bg-white bg-black")}></div>
                     <div className={clsx(
                         "bottom-0 origin-right absolute left-0 w-9 h-[3px] smooth",
-                        isNavOpen ? "-rotate-45 -translate-x-2 -translate-y-5 bg-primary": "bg-black"
+                        isNavOpen ? "-rotate-45 -translate-x-2 -translate-y-5 bg-primary": "dark:bg-white bg-black"
                     )}></div>
                 </div>
             </div>
