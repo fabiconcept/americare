@@ -84,7 +84,7 @@ export default function NavigationComponent({ variation, inViewContainer }: { va
 
                 <div className={clsx(
                     "md:hidden h-5 place-items-center grid gap-2 cursor-pointer active:scale-90 smooth relative",
-                    inViewContainer && "invert"
+                    inViewContainer && "invert brightness-0"
                 )}
 
                 onClick={handleClick}
