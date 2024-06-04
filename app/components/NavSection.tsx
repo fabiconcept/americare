@@ -77,6 +77,7 @@ export default function NavigationComponent({ variation, inViewContainer }: { va
                 <CustomBtn
                     text="Contact us"
                     linkHref="#"
+                    noBorder={inViewContainer}
                     customClass={clsx(
                         inViewContainer ? "border-transparent outline-white text-white" : ""
                     )}
