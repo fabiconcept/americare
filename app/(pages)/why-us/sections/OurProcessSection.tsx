@@ -12,7 +12,7 @@ export default function OurProcessSection() {
             <p className="opacity-50 mb-5 sm:text-base text-sm mx-auto sm:px-[12.5vw] px-6">
                 AmeriCare&apos;s commitment to excellence is reflected in our structured and comprehensive four-step process, tailored to meet the unique needs of each client in the home healthcare industry:
             </p>
-            <div className="grid 2xl:grid-cols-[repeat(auto-fill,minmax(30rem,1fr))] grid-cols-[repeat(auto-fill,minmax(25rem,1fr))] sm:px-[3vw] px-3">
+            <div className="grid 2xl:grid-cols-[repeat(auto-fill,minmax(30rem,1fr))] sm:grid-cols-[repeat(auto-fill,minmax(25rem,1fr))] sm:px-[3vw] px-2">
                 {OurProcessList.map((processItem, index)=>(
                     <ProcessItem 
                         key={index}
