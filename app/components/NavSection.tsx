@@ -115,7 +115,7 @@ export default function NavigationComponent({ variation, inViewContainer }: { va
                 transition={{ duration: 0.25 }}
                 animate={controls}
                 initial={"hidden"}
-                className="fixed smooth top-0 right-0 z-[49] h-screen w-screen dark:bg-balck/50 bg-white/50 backdrop-blur-md md:hidden grid place-items-center"
+                className="fixed smooth top-0 right-0 z-[49] h-screen w-screen dark:bg-black/50 bg-white/50 backdrop-blur-md md:hidden grid place-items-center dark:text-white text-black"
             >
                 <div className="grid gap-3 text-xl">
                 <Link className={clsx(
