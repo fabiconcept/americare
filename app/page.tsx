@@ -6,8 +6,6 @@ import { ServiceOffered } from "@/lib/ServiceOffered";
 import OurServicesSection from "./HomePage Sections/OurServicesSection";
 import JoinTeamSection from "./HomePage Sections/JoinTeamSection";
 
-
-
 export default function page() {
     return (
         <>
