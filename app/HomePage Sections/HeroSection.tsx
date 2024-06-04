@@ -53,7 +53,7 @@ export default function HeroSection() {
             <ScrollToTop smooth className="grid place-items-center hover:bg-primary active:scale-90 smooth" style={{zIndex: 100}} />
             <NavigationComponent inViewContainer={inViewContainer} variation="home" />
             
-            <div ref={containerRef} id="top" className="sm:h-[330vh] h-[200vh] relative z-10 bg-white">
+            <div ref={containerRef} id="top" className="sm:h-[330vh] h-[250vh] relative z-10 bg-white">
                 <div
                     className="h-screen w-full sticky top-0 grid place-items-center overflow-hidden"
                 >
@@ -144,8 +144,8 @@ export default function HeroSection() {
                         <div
                             className="sm:hidden flex items-center flex-col delay-300 smooth"
                             style={{
-                                transform: `translateY(calc(-${itemMove}rem + 14rem))`,
-                                opacity: `${(2 + itemMove)-6}`
+                                transform: `translateY(calc(-${itemMove}rem + 18rem))`,
+                                opacity: `${(2 + itemMove)-8}`
                             }}
                         >
                             <span>Scroll Down</span>
