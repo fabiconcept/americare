@@ -64,10 +64,10 @@ export default function OurCaregivers() {
 
                         <p className="min-w-[20rem] flex-1 opacity-70 flex flex-col gap-4">
                             <span>
-                                We understand that the quality of care depends on the training and education our caregivers receive. This is why all of our caregivers are experienced and skilled in handling your loved ones’ particular needs. We pride ourselves on hiring people for their compassion, experience, and flexibility.
+                                We understand that the quality of care depends on the training and education our caregivers receive. This is why all of our caregivers are experienced and skilled in handling your loved ones&apos; particular needs. We pride ourselves on hiring people for their compassion, experience, and flexibility.
                             </span>
                             <span>
-                                However, we know this isn’t all it takes to provide the best care possible. Caregivers also need excellent skills and competency, which come from comprehensive training. Trained caregivers provide the highest quality of care, recognize when medical care is needed, and help clients avoid injury around the home.
+                                However, we know this isn&apos;t all it takes to provide the best care possible. Caregivers also need excellent skills and competency, which come from comprehensive training. Trained caregivers provide the highest quality of care, recognize when medical care is needed, and help clients avoid injury around the home.
                             </span>
                             <span>
                                 Ultimately, our focus is on ensuring our caregivers are well-trained so they can offer the best care, meeting the specific needs of your loved ones with both skill and compassion.
