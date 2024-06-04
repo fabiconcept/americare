@@ -73,7 +73,7 @@ export default function HeroSection() {
                         ></div>
                         
                         <div
-                            className="absolute 2xl:top-1/3 sm:top-[31%] top-1/3 left-1/2 -translate-x-1/2 md:-translate-y-[90%] -translate-y-[90%] text-white text-5xl font-semibold scale-110 text-center"
+                            className="absolute 2xl:top-1/3 sm:top-[31%] top-[35%] left-1/2 -translate-x-1/2 md:-translate-y-[90%] -translate-y-[90%] text-white text-5xl font-semibold scale-110 text-center"
                         >
                             <div
                                 className="relative delay-75 smooth"
