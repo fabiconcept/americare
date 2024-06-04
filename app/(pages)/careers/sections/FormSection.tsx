@@ -2,13 +2,13 @@
 import { isValidName, isValidEmail, isValidPhone, splitText } from "@/lib";
 import useDebounce from "@/lib/Hooks/UseDebounce";
 import clsx from "clsx";
-import { Macondo } from "next/font/google";
+import { Playfair_Display } from "next/font/google";
 import Image from "next/image";
 import { ChangeEvent, FormEvent, useEffect, useMemo, useRef, useState } from "react";
 import toast from "react-hot-toast";
 import { FaUser, FaEnvelope, FaPhone, FaList, FaPaperclip, FaAngleDown, FaStar, FaAsterisk } from "react-icons/fa6";
 
-const FontFamily = Macondo({ subsets: ["latin"], weight: "400" });
+const FontFamily = Playfair_Display({ subsets: ["latin"], weight: "600" });
 
 enum Positions {
     None = 0,
@@ -222,7 +222,7 @@ export default function FormSection() {
             />
             <div className="sm:mb-12 mb-8">
                 <h1 className={clsx(FontFamily.className, "2xl:text-[3vw] sm:text-5xl text-4xl text-primary font-semibold")}>
-                    Online application
+                    Online Application
                 </h1>
                 <p className="sm:text-base text-sm py-3 grid">
                     <span>This section is your chance to shine! </span>
