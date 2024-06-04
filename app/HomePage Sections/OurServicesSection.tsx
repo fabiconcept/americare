@@ -13,14 +13,14 @@ export default function OurServicesSection() {
                 {OurServicesList.map((serviceItem, index)=>{
                     if((OurServicesList.length-1) === index) {
                         return (<>
-                        <div className="sm:block hidden"></div>
+                        <div key={"aaec1"} className="sm:block hidden"></div>
                             <ServiceItem
                                 key={index}
                                 title={serviceItem.title}
                                 content={serviceItem.content}
                                 isOdd={false}
                             />
-                        <div className="sm:block hidden"></div>
+                        <div key={"ecaee19"} className="sm:block hidden"></div>
                         </>)
                     }
                     return (<ServiceItem 

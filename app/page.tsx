@@ -13,7 +13,7 @@ export default function page() {
             <HeroSection />
             <OurMissionSection />
             <>
-                {ServiceOffered.map(({ blob, btnText, btnUrl, description, imgAlt, imgSrc, title }, index) => (
+                {ServiceOffered.map(({ blob, btnText, btnUrl, description, imgAlt, imgSrc, title }) => (
                     <ServicesOfferedSection
                         blob={blob}
                         btnText={btnText}
@@ -22,7 +22,7 @@ export default function page() {
                         imgAlt={imgAlt}
                         imgSrc={imgSrc}
                         title={title}
-                        key={index}
+                        key={title}
                     />
                 ))}
             </>

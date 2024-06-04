@@ -25,7 +25,7 @@ export default function ServicesOfferedSection({blob, btnText, btnUrl, descripti
                 alt={"blur shape"}
                 height={800}
                 width={800}
-                className="sm:w-[70rem] w-[80rem] absolute sm:-top-[20rem] -top-[8rem] sm:-left-[20rem] -left-[12rem] dark:opacity-50 max-md:dark:opacity-25"
+                className="sm:w-[70rem] w-[100rem] absolute sm:-top-[20rem] -top-[8rem] sm:-left-[20rem] -left-[6rem] dark:opacity-50"
             />
             <Parallax
                 className="sm:py-12 py-6 sm:px-[12.5vw] px-1 grid place-items-center"
