@@ -29,7 +29,7 @@ export default function HeroSection() {
         requestAnimationFrame(raf);
     }, []);
 
-    const [containerRef, inViewContainer] = useInView({ threshold: 0.25 });
+    const [containerRef, inViewContainer] = useInView({ threshold: 0.15 });
 
     useEffect(() => {
         const handleScroll = () => {
