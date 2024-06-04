@@ -54,27 +54,27 @@ export default function NavigationComponent({ variation, inViewContainer }: { va
                 </Link>
 
                 <div className={clsx(
-                    "md:flex hidden items-end gap-1 h-fit",
+                    "md:flex hidden items-end gap-1 h-fit dark:text-white text-black 2xl:text-lg",
                     variation && inViewContainer ? "text-white" : ""
                 )}>
                     <Link className={clsx(
-                        "px-5 origin-right py-2 border-b-2 whitespace-nowrap active:-rotate-6 hover:text-primary smooth",
+                        "px-7 origin-right py-2 border-b-2 whitespace-nowrap active:-rotate-6 hover:text-primary smooth",
                         pathname === "/" ? (inViewContainer ? "font-semibold -rotate-6 border-b-black/70 text-black" : "font-semibold -rotate-6 border-b-primary/70 text-primary") : "border-b-transparent hover:border-b-primary/25"
                     )} href={"/"}>Home</Link>
                     <Link className={clsx(
-                        "px-5 origin-right py-2 border-b-2 whitespace-nowrap active:-rotate-3 hover:text-primary smooth",
+                        "px-7 origin-right py-2 border-b-2 whitespace-nowrap active:-rotate-3 hover:text-primary smooth",
                         pathname === "/services" ? (inViewContainer ? "font-semibold -rotate-3 border-b-black/70 text-black" : "font-semibold -rotate-3 border-b-primary/70 text-primary") : "border-b-transparent hover:border-b-primary/25"
                     )} href={"/services"}>Services</Link>
                     <Link className={clsx(
-                        "px-5 origin-left py-2 border-b-2 whitespace-nowrap hover:text-primary smooth",
+                        "px-7 origin-left py-2 border-b-2 whitespace-nowrap hover:text-primary smooth",
                         pathname === "/why-us" ? (inViewContainer ? "font-semibold border-b-black/70 text-black" : "font-semibold border-b-primary/70 text-primary") : "border-b-transparent hover:border-b-primary/25"
                     )} href={"/why-us"}>Why Americare</Link>
                     <Link className={clsx(
-                        "px-5 origin-left py-2 border-b-2 whitespace-nowrap active:rotate-3 hover:text-primary smooth",
+                        "px-7 origin-left py-2 border-b-2 whitespace-nowrap active:rotate-3 hover:text-primary smooth",
                         false ? (inViewContainer ? "font-semibold rotate-3 border-b-black/70 text-black" : "font-semibold rotate-3 border-b-primary/70 text-primary") : "border-b-transparent hover:border-b-primary/25"
                     )} href={""}>Testimonials</Link>
                     <Link className={clsx(
-                        "px-5 origin-left py-2 border-b-2 whitespace-nowrap active:rotate-6 hover:text-primary smooth",
+                        "px-7 origin-left py-2 border-b-2 whitespace-nowrap active:rotate-6 hover:text-primary smooth",
                         pathname === "/careers" ? (inViewContainer ? "font-semibold rotate-6 border-b-black/70 text-black" : "font-semibold rotate-6 border-b-primary/70 text-primary") : "border-b-transparent hover:border-b-primary/25"
                     )} href={"/careers"}>Career</Link>
                 </div>
@@ -119,7 +119,7 @@ export default function NavigationComponent({ variation, inViewContainer }: { va
             >
                 <div className="grid gap-3 text-xl">
                 <Link className={clsx(
-                        "px-5 origin-right py-2 border-b-2 whitespace-nowrap active:-rotate-6 hover:text-primary smooth",
+                        "px-7 origin-right py-2 border-b-2 whitespace-nowrap active:-rotate-6 hover:text-primary smooth",
                         pathname === "/" ? (inViewContainer ? "font-semibold -rotate-6 border-b-black/70 text-black" : "font-semibold -rotate-6 border-b-primary/70 text-primary") : "border-b-transparent hover:border-b-primary/25"
                     )} href={"/"}>Home</Link>
                     <Link className={clsx(
