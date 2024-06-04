@@ -26,13 +26,15 @@ export default function FooterSection() {
 
                     <div className="flex gap-2 sm:mx-0 mx-auto">
                         <CustomBtn
-                            customClass="border-[#222222] bg-black/10"
+                            customClass="bg-black/10"
                             linkHref="/careers"
                             text="Join our team"
+                            noBorder={true}
                         />
                         <CustomBtn
-                            customClass="after:h-[105%] after:w-[105%] opacity-100 after:bg-primary text-white border-[#222222]"
+                            customClass="after:h-[105%] after:w-[105%] opacity-100 after:bg-primary text-white"
                             linkHref="#"
+                            noBorder={true}
                             text="Contact us"
                         />
                     </div>
@@ -46,9 +48,9 @@ export default function FooterSection() {
                         </div>
 
                         <div>
-                            <span className="mt-6 flex gap-1 group items-end">
+                            <span className="mt-6 flex gap-1 group items-end flex-wrap">
                                     <FaPhoneSquareAlt className="text-3xl smooth group-hover:text-primary" />
-                                Call <Link className="text-primary" href={"tel:+1770656-9593"}>(770) 656-9593</Link> For A Free Consultation!
+                                Call <Link className="text-primary" href={"tel:+1770656-9593"}>(770) 656-9593</Link> <span className="whitespace-normal">For</span> <span className="whitespace-normal">A</span> <span className="whitespace-normal">Free</span> <span className="whitespace-normal">Consultation!</span>
                             </span>
                             <span className="mt-3 flex gap-1 group items-end">
                                 <FaMailBulk className="text-3xl smooth group-hover:text-primary" />

@@ -6,7 +6,7 @@ export default function TopSection() {
     return (
         <>
         <ScrollToTop smooth className="grid place-items-center hover:bg-primary active:scale-90 smooth" style={{zIndex: 100}} />
-            <div className="dark:bg-darkBg dark:mix-blend-screen dark:text-white bg-white pt-[10rem] pb-[6rem]">
+            <div className="dark:bg-darkBg dark:text-white bg-white pt-[10rem] pb-[6rem]">
                 <div className="sm:px-[10rem] px-4 pb-[2rem] text-center flex flex-col items-center">
                     <span className="flex items-center gap-2">
                         <FaPlus className="opacity-35" />
@@ -31,7 +31,7 @@ export default function TopSection() {
                         height={480}
                         width={1920}
                         priority
-                        className="md:w-[70vw] opacity-70 dark:invert"
+                        className="md:w-[70vw] 2xl:w-[50vw] dark:mix-blend-screen opacity-70 dark:invert"
                     />
                 </div>
             </div>
