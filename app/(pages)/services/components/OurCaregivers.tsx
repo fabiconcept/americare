@@ -13,11 +13,11 @@ export default function OurCaregivers() {
                     alt={"blur shape"}
                     height={800}
                     width={800}
-                    className="w-[70rem] absolute -top-[20rem] -left-[20rem] dark:opacity-50"
+                    className="sm:w-[70rem] w-[80rem] absolute sm:-top-[20rem] -top-[8rem] sm:-left-[20rem] -left-[12rem] dark:opacity-50 max-md:dark:opacity-25"
                 />
                 <div>
                     <div className="mb-12">
-                        <h1 className={clsx(FontFamily.className, "sm:text-[4vw] text-5xl text-primary font-semibold")}>Our caregivers</h1>
+                        <h1 className={clsx(FontFamily.className, "sm:text-[4vw] text-5xl text-primary font-semibold")}>Our Caregivers</h1>
                         <p className="opacity-60 text-[0.97rem] font-semibold">Compassionate Care, Right at Home</p>
                     </div>
 

@@ -13,7 +13,7 @@ export default function AboutUsSection() {
                     alt={"blur shape"}
                     height={800}
                     width={800}
-                    className="w-[70rem] absolute -top-[20rem] -left-[20rem] dark:opacity-25"
+                    className="sm:w-[70rem] w-[80rem] absolute sm:-top-[20rem] -top-[8rem] sm:-left-[20rem] -left-[12rem] dark:opacity-50 max-md:dark:opacity-25"
                 />
                 <div className="sm:mb-12 mb-8">
                     <h1 className={clsx(FontFamily.className, "sm:text-[4vw] sm:text-5xl text-4xl text-primary font-semibold")}>

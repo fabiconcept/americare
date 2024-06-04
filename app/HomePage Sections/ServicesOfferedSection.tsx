@@ -3,6 +3,9 @@ import clsx from "clsx";
 import Image from "next/image";
 import { Parallax, } from "react-parallax";
 import CustomBtn from "../components/CustomBtn";
+import { Playfair_Display } from "next/font/google";
+const FontFamily = Playfair_Display({ subsets: ["latin"], weight: "600" });
+
 
 interface SectionProp { 
     title: string, 
@@ -22,19 +25,19 @@ export default function ServicesOfferedSection({blob, btnText, btnUrl, descripti
                 alt={"blur shape"}
                 height={800}
                 width={800}
-                className="w-[70rem] absolute -top-[20rem] -left-[20rem] dark:opacity-50"
+                className="sm:w-[70rem] w-[80rem] absolute sm:-top-[20rem] -top-[8rem] sm:-left-[20rem] -left-[12rem] dark:opacity-50 max-md:dark:opacity-25"
             />
             <Parallax
-                className="py-12 sm:px-[12.5vw] px-1 grid place-items-center"
+                className="sm:py-12 py-6 sm:px-[12.5vw] px-1 grid place-items-center"
                 strength={500}
                 renderLayer={(percentage) => (
                     <>
-                        <div className="flex gap-12 flex-wrap p-6 relative z-10 dark:mix-blend-screen mix-blend-multiply">
+                        <div className="flex sm:gap-12 gap-6 flex-wrap p-6 relative z-10 dark:mix-blend-screen mix-blend-multiply">
                             <div className="sm:min-w-[20rem] min-w-[15rem] flex-[2] flex flex-col gap-8 relative z-10">
-                                <span className="text-primary font-semibold 2xl:text-7xl sm:text-6xl text-4xl pb-3">
+                                <span className={clsx(FontFamily.className, "text-primary font-semibold 2xl:text-7xl sm:text-6xl text-4xl sm:pb-3 pb-1")}>
                                     {title}
                                 </span>
-                                <div className="pt-3">
+                                <div className="sm:pt-3 pt-2">
                                     <div className="relative 2xl:text-5xl sm:text-4xl text-base sm:leading-[3rem] text-balance">
                                         <Image
                                             src={"https://americare.sirv.com/icons/quote-icon.svg"}
