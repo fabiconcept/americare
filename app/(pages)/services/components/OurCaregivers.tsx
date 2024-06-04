@@ -1,7 +1,7 @@
 import clsx from "clsx";
-import { Macondo } from "next/font/google";
+import { Playfair_Display } from "next/font/google";
 import Image from "next/image";
-const FontFamily = Macondo({ subsets: ["latin"], weight: "400" });
+const FontFamily = Playfair_Display({ subsets: ["latin"], weight: "600" });
 
 
 export default function OurCaregivers() {
