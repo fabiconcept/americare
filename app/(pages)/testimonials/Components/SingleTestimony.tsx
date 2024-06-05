@@ -9,6 +9,7 @@ type TestimonyProp = {
     occupation: string;
     photo: string;
     isOdd: boolean;
+    moreUrl?: string;
 }
 
 export default function SingleTestimony(prop: TestimonyProp) {
@@ -28,7 +29,7 @@ export default function SingleTestimony(prop: TestimonyProp) {
                 <span className="line-clamp-4">
                     &quot;{prop.testimony}&quot;
                 </span>
-                <Link href={"#"} className="text-primary active:rotate-6 origin-left font-semibold underline-offset-4 underline">read more</Link>
+                {prop.moreUrl && <Link href={prop.moreUrl} className="text-primary active:rotate-6 origin-left font-semibold underline-offset-4 underline">read more</Link>}
             </div>
             <div className="flex gap-2 mt-2">
                 <div className="sm:h-11 h-9 sm:w-11 w-9 items-center overflow-hidden rounded-full border grid place-items-center">

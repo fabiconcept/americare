@@ -1,9 +1,12 @@
 import clsx from "clsx";
 import Link from "next/link";
 
-export default function CustomBtn(btnProps: { customClass?: string, text: string, linkHref: string, noBorder?: boolean }) {
+export default function CustomBtn(btnProps: { customClass?: string, text: string, linkHref: string, noBorder?: boolean, external?: boolean }) {
     return (
-        <Link href={btnProps.linkHref} className={clsx(
+        <Link 
+            href={btnProps.linkHref} 
+            target={btnProps.external ? "_blank" : ""}
+            className={clsx(
             btnProps.customClass ? btnProps.customClass : "",
             btnProps.noBorder? "border-transparent": "border-white",
             "smooth dark:bg-black/25 bg-primary/5 sm:py-4 py-2 sm:px-12 px-6 active:rotate-3 hover:text-white cursor-pointer active:scale-90 text-primary outline-primary w-fit select-none border-4 dark:border-darkBg outline-2 outline-dashed relative overflow-hidden h-fit",
