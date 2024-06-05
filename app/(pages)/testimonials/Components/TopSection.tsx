@@ -1,5 +1,4 @@
 "use client"
-import Image from "next/image";
 import { FaStar } from "react-icons/fa6";
 import ScrollToTop from "react-scroll-to-top";
 export default function TopSection() {
