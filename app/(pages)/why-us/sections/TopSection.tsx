@@ -27,11 +27,11 @@ export default function TopSection() {
                 <div className="grid md:grid-cols-3 grid-cols-1 sm:px-[6.25vw] px-6 gap-8 justify-center">
                     <div className="flex flex-col items-center gap-2">
                         <Image
-                            src={"https://americare.sirv.com/doc01.png"}
-                            alt={"blur shape"}
+                            src={"https://americare.sirv.com/nurse01.png"}
+                            alt={"Nurse 01"}
                             height={800}
                             width={800}
-                            className="w-[20rem] -mb-32"
+                            className="w-[20rem] -mb-12"
                         />
                         <span className="text-right self-end py-1 px-3 rounded-3xl border border-black/25 text-sm dark:bg-darkBg/50 backdrop-blur-sm">We offer</span>
                         <div className="w-full flex flex-col h-fit shadow-lg group smooth hover:-translate-y-1 dark:bg-darkBg">
@@ -43,8 +43,8 @@ export default function TopSection() {
                     </div>
                     <div className="flex flex-col items-center gap-2 sm:translate-y-6">
                         <Image
-                            src={"https://americare.sirv.com/doc02.png"}
-                            alt={"blur shape"}
+                            src={"https://americare.sirv.com/nurse02.png"}
+                            alt={"Nurse 02"}
                             height={800}
                             width={800}
                             className="w-[20rem] -mb-12"
@@ -60,11 +60,11 @@ export default function TopSection() {
                     </div>
                     <div className="flex flex-col items-center gap-2">
                         <Image
-                            src={"https://americare.sirv.com/doc03.png"}
-                            alt={"blur shape"}
+                            src={"https://americare.sirv.com/nurse03.png"}
+                            alt={"Nurse 03"}
                             height={800}
                             width={800}
-                            className="w-[15rem] -mb-32"
+                            className="w-[20rem] -mb-12"
                         />
                         <span className="text-right py-1 px-3 self-end rounded-3xl border border-black/25 text-sm dark:bg-darkBg/50 backdrop-blur-sm">We offer</span>
                         <div className="w-full flex flex-col h-fit shadow-lg group smooth hover:-translate-y-1 dark:bg-darkBg">
