@@ -5,7 +5,7 @@ import { WhatWeOffer } from "@/lib/WhatWeOffer";
 
 export default function WhatWeCanDoForYouSection() {
     return (
-        <section className={clsx("dark:bg-darkBg dark:text-white bg-white sm:py-24 py-12")}>
+        <section className={clsx("dark:bg-darkBg dark:text-white bg-white sm:py-24 py-12 grid-bg")}>
             <h1 className={clsx("sm:px-[12.5vw] sm:font-normal font-semibold mb-3 px-6 text-center text-primary 2xl:text-7xl sm:text-6 text-4xl")}>
                 What We Can Do for You
             </h1>

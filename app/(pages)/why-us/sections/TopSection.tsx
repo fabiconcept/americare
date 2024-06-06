@@ -6,7 +6,7 @@ export default function TopSection() {
     return (
         <>
             <ScrollToTop smooth className="grid place-items-center hover:bg-primary active:scale-90 smooth" style={{zIndex: 100}} />
-            <section className="dark:bg-darkBg dark:text-white  h-fit bg-white/90 pb-[5rem]">
+            <section className="dark:bg-darkBg dark:text-white  h-fit bg-white/90 pb-[5rem] grid-bg">
                 <div className="sm:px-[10rem] px-4 pt-[10rem] pb-[2rem] text-center flex flex-col items-center">
                     <span className="flex items-center">
                         <span className="whitespace-nowrap">

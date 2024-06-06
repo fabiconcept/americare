@@ -4,7 +4,7 @@ import Testimonials from "./Components/Testimonials";
 
 export default function page() {
     return (
-        <div>
+        <div className="">
             <NavigationComponent />
             <TopSection />
             <Testimonials />

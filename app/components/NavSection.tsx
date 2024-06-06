@@ -85,7 +85,7 @@ export default function NavigationComponent({ variation, inViewContainer }: { va
                         linkHref="#"
                         noBorder={inViewContainer}
                         customClass={clsx(
-                            inViewContainer ? "border-transparent outline-white text-white" : ""
+                            inViewContainer ? "border-transparent outline-black text-black" : ""
                         )}
                     />
 
