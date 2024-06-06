@@ -7,6 +7,8 @@ import Image from "next/image";
 import { ChangeEvent, FormEvent, useEffect, useMemo, useRef, useState } from "react";
 import toast from "react-hot-toast";
 import { FaUser, FaEnvelope, FaPhone, FaList, FaPaperclip, FaAngleDown, FaStar, FaAsterisk } from "react-icons/fa6";
+import arrImg from "@/lib/arrow.svg";
+
 
 const FontFamily = Playfair_Display({ subsets: ["latin"], weight: "600" });
 
@@ -221,8 +223,15 @@ export default function FormSection() {
                 className="sm:w-[70rem] w-[80rem] absolute sm:-top-[20rem] -top-[8rem] sm:-left-[20rem] -left-[12rem] dark:opacity-50 max-md:dark:opacity-25"
             />
             <div className="sm:mb-12 mb-8">
-                <h1 className={clsx(FontFamily.className, "2xl:text-[3vw] sm:text-5xl text-4xl text-primary font-semibold")}>
+                <h1 className={clsx(FontFamily.className, "2xl:text-[3vw] sm:text-5xl text-4xl text-primary font-semibold relative w-fit")}>
                     Online Application
+                    <Image
+                        src={arrImg}
+                        alt={"Scribble arrow"}
+                        height={80}
+                        width={80}
+                        className="h-full object-cover max-md:scale-105 max-md:group-hover:scale-100 smooth absolute -top-2 -right-[25%]"
+                    />
                 </h1>
                 <p className="sm:text-base text-sm py-3 grid">
                     <span>This section is your chance to shine! </span>
