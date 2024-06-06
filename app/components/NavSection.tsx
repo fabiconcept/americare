@@ -37,7 +37,7 @@ export default function NavigationComponent({ variation, inViewContainer }: { va
         <>
             <div className={clsx(
                 "grid md:grid-cols-[1fr_auto_1fr] grid-cols-[auto_1fr] items-center fixed top-0 left-0 z-50 w-screen py-5 sm:px-9 px-4",
-                inViewContainer ? "" : "backdrop-blur bg-white/5"
+                inViewContainer ? "" : "backdrop-blur dark:bg-white/5 bg-primary/5 border-b dark:border-b-white/10 border-b-primary/10"
             )}>
                 <Link href={"/"}>
                     <Image
