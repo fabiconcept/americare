@@ -15,7 +15,7 @@ export default function JoinTeamSection() {
                             alt={"Scribble arrow"}
                             height={70}
                             width={100}
-                            className="h-full object-cover absolute -top-2 -right-[25%]"
+                            className="h-full object-cover absolute -top-2 sm:block hidden -right-[25%]"
                         />
                     </span> 
                     <span className="text-3xl">and Be Part of Something Special!</span>

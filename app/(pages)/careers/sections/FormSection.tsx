@@ -230,7 +230,7 @@ export default function FormSection() {
                         alt={"Scribble arrow"}
                         height={80}
                         width={80}
-                        className="h-full object-cover max-md:scale-105 max-md:group-hover:scale-100 smooth absolute -top-2 -right-[25%]"
+                        className="h-full object-cover max-md:scale-105 max-md:group-hover:scale-100 smooth absolute -top-2 sm:block hidden -right-[25%]"
                     />
                 </h1>
                 <p className="sm:text-base text-sm py-3 grid">
