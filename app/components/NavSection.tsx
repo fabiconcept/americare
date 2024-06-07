@@ -83,7 +83,7 @@ export default function NavigationComponent({ variation, inViewContainer }: { va
                     <CustomBtn
                         text="Contact us"
                         linkHref="#"
-                        noBorder={inViewContainer}
+                        noBorder={true}
                         inView={inViewContainer}
                         customClass={clsx(
                             inViewContainer ? "border-transparent outline-black text-black" : ""
