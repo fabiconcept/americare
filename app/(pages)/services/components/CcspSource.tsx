@@ -28,7 +28,7 @@ export default function CcspSource() {
                             />
                         </div>
 
-                        <p className="sm:min-w-[25rem] min-w-[20rem] flex-1 flex flex-col gap-4">
+                        <p className="sm:min-w-[30rem] min-w-[20rem] flex-1 flex flex-col gap-4">
                             <span className=" h-fit 2xl:text-3xl sm:text-2xl text-xl sm:font-normal font-semibold opacity-80 relative">
                                 <span className="sm:text-left text-center">
                                     &quot;CCSP and SOURCE are Georgia Medicaid programs offering in-home support to help elderly and disabled individuals avoid long-term care facilities.&quot;
