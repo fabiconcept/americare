@@ -8,7 +8,7 @@ const FontFamily = Playfair_Display({ subsets: ["latin"], weight: "600" });
 
 export default function MeetTeamSection() {
     return (
-        <div className="dark:bg-darkBg bg-white grid-bg dark:text-white text-black sm:py-24 py-12 sm:px-[12.5vw] px-6">
+        <div className="dark:bg-darkBg bg-white grid-bg dark:text-white text-black sm:py-24 py-12 2xl:px-[12.5vw] sm:px-[8vw]  px-6">
             <div>
                 <div className="mb-12">
                     <h1 className={clsx(FontFamily.className, "sm:text-[4vw] text-5xl text-primary font-semibold relative w-fit")}>

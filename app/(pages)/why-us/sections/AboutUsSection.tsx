@@ -7,7 +7,7 @@ const FontFamily = Playfair_Display({ subsets: ["latin"], weight: "600" });
 export default function AboutUsSection() {
     return (
         <>
-            <div className="dark:bg-darkBg dark:text-white py-12 sm:px-[12.5vw] px-6 relative z-10 bg-white">
+            <div className="dark:bg-darkBg dark:text-white py-12 2xl:px-[12.5vw] sm:px-[8vw]  px-6 relative z-10 bg-white">
                 <Image
                     src={"https://americare.sirv.com/icons/bbblurry.svg"}
                     alt={"blur shape"}
