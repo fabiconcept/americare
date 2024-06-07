@@ -36,5 +36,11 @@ export const MeetTeamList:TeamMember[] = [
         photo:"https://americare.sirv.com/team/Jaime%20Rodriguez.JPG",
         id: "31295d8a-337c-582a-bdd5-2622c682e1b0"
     },
+    {
+        name:"Adriana Rodriguez",
+        role:"Human Relation Manager",
+        photo:"https://americare.sirv.com/team/Human%20Relation%20Manager%20-%20Adriana%20Rodriguez.jpg",
+        id: "bcc60f2f-f027-5da4-9632-f7f64c69f5f1"
+    },
 
 ]
