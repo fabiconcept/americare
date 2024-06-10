@@ -5,12 +5,9 @@ import { useInView } from "react-intersection-observer";
 import Lenis from '@studio-freight/lenis';
 import Image from "next/image";
 import { Playfair_Display } from "next/font/google";
-import clsx from "clsx";
-import { FaAngleDown } from "react-icons/fa6";
-import Link from "next/link";
 import ScrollToTop from "react-scroll-to-top";
-import NavigationComponent from "../components/NavSection";
-import CustomBtn from "../components/CustomBtn";
+import NavigationComponent from "../../components/NavSection";
+import CustomBtn from "../../components/CustomBtn";
 
 const FontFamily = Playfair_Display({ subsets: ["latin"], weight: "600" });
 
@@ -51,9 +48,9 @@ export default function HeroSection() {
 
     return (
         <>
-            <ScrollToTop smooth className="grid place-items-center hover:bg-primary active:scale-90 smooth" style={{zIndex: 100}} />
+            <ScrollToTop smooth className="grid place-items-center hover:bg-primary active:scale-90 smooth" style={{ zIndex: 100 }} />
             <NavigationComponent inViewContainer={inViewContainer} variation="home" />
-            
+
             <div ref={containerRef} id="top" className="pb-4 relative z-10 bg-white dark:bg-darkBg dark:text-white text-black">
                 <div
                     className="grid place-items-center"
@@ -75,9 +72,9 @@ export default function HeroSection() {
 
                     <div
                         className="absolute lg:bottom-10 lg:right-24 sm:text-lg text-sm text-white z-40 sm:max-w-md max-w-[90vw]"
-                        style={{ 
+                        style={{
                             transform: `translateY(${itemMove}rem)`,
-                            opacity: `${(5-itemMove)*0.25}`
+                            opacity: `${(5 - itemMove) * 0.25}`
                         }}
                     >
                         <div className="p-4 w-full shadow-lg rounded-lg text-white lg:bg-white/10 bg-primary/30 lg:hover:bg-primary/25 hover:bg-primary/50 hover:animate-none smooth backdrop-blur-lg border-2 border-white/50 animate-floating after:h-24 after:w-24 after:rounded-full after:absolute after:-top-5 after:-left-5 after:bg-primary/25 after:border after:border-primary/25 after:-z-10">
@@ -111,12 +108,12 @@ export default function HeroSection() {
                                 </span>
                             </div>
                             <div className="h-fit grid gap-4">
-                                <CustomBtn 
+                                <CustomBtn
                                     linkHref="#"
                                     text="Contact us"
                                     customClass="w-full text-center"
                                 />
-                                <CustomBtn 
+                                <CustomBtn
                                     linkHref="#"
                                     text="Book Appointment"
                                     customClass="w-full text-center"
