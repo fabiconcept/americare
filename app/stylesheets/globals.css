@@ -84,3 +84,7 @@ img {
   }
   
 }
+
+.clippy {
+  clip-path: polygon(0 0, 100% 0, 100% 25%, 0 25%);
+}

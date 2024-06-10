@@ -10,6 +10,7 @@ import { FaAngleDown } from "react-icons/fa6";
 import Link from "next/link";
 import ScrollToTop from "react-scroll-to-top";
 import NavigationComponent from "../components/NavSection";
+import CustomBtn from "../components/CustomBtn";
 
 const FontFamily = Playfair_Display({ subsets: ["latin"], weight: "600" });
 
@@ -29,7 +30,7 @@ export default function HeroSection() {
         requestAnimationFrame(raf);
     }, []);
 
-    const [containerRef, inViewContainer] = useInView({ threshold: 0.15 });
+    const [containerRef, inViewContainer] = useInView({ threshold: 0.65 });
 
     useEffect(() => {
         const handleScroll = () => {
@@ -53,63 +54,20 @@ export default function HeroSection() {
             <ScrollToTop smooth className="grid place-items-center hover:bg-primary active:scale-90 smooth" style={{zIndex: 100}} />
             <NavigationComponent inViewContainer={inViewContainer} variation="home" />
             
-            <div ref={containerRef} id="top" className="sm:h-[330vh] h-[250vh] relative z-10 bg-white">
+            <div ref={containerRef} id="top" className="pb-4 relative z-10 bg-white dark:bg-darkBg dark:text-white text-black">
                 <div
-                    className="h-screen w-full sticky top-0 grid place-items-center overflow-hidden"
+                    className="grid place-items-center"
                 >
-                    <div className="relative w-full h-full">
-                        <Image
-                            src={"https://americare.sirv.com/parallax/main-bg-green.png"}
-                            alt="background"
-                            height={1728}
-                            width={3072}
-                            priority
-                            style={{ transform: `scale(${itemScale})` }}
-                            className="w-screen lg:object-fill lg:h-auto h-full object-cover opacity-70"
-                        />
+                    <div className="relative">
                         <div
-                            className="absolute h-full pointer-events-none w-full top-0 left-0 bg-black/20 backdrop-blur-[1px] z-10"
-                            style={{ opacity: itemOpacity }}
-                        ></div>
-                        
-                        <div
-                            className="absolute 2xl:top-1/3 sm:top-[33%] top-[35%] left-1/2 -translate-x-1/2 md:-translate-y-[90%] -translate-y-[90%] text-white text-5xl font-semibold scale-110 text-center"
+                            className="text-5xl font-semibold scale-110 text-center sm:mt-[33%] mt-[55%]"
                         >
                             <div
                                 className="relative delay-75 smooth"
-                                style={{ transform: `scale(${itemScale < 1.2 ? itemScale : 1.2})` }}
                             >
-                                <span className={clsx(
-                                    "sm:text-[7vw] text-[13vw] flex gap-2 items-end",
-                                    FontFamily.className
-                                )}>
-                                    AmeriCare
-                                    {<Image
-                                        src={"https://americare.sirv.com/icons/logo-alone-black.svg"}
-                                        alt="AmeriCare Logo"
-                                        height={250}
-                                        width={250}
-                                        priority
-                                        style={{ 
-                                            transform: `translateX(${itemMove*2}rem)`,
-                                            opacity: `${(5 - (itemMove*2)) * 0.25}`
-                                        }}
-                                        className={clsx(
-                                            "w-[5vw] sm:block hidden invert delay-100 smooth",
-                                        )}
-                                    />}
-                                </span>
-                                <Image
-                                    src={"https://americare.sirv.com/icons/path.svg"}
-                                    alt="path"
-                                    height={200}
-                                    width={200}
-                                    priority
-                                    className="absolute sm:bottom-2 -bottom-3 sm:left-6 left-1 w-14"
-                                />
-                                <p className="md:text-[2vw] text-[3.25vw] mt-2 md:ml-0 ml-4 sm:translate-x-20 flex w-fit flex-col">
-                                    <span className="opacity-60">Compassionate Care, Right at Home</span>
-                                    <span className="opacity-60">With Us, You&apos;ll Never Walk Alone</span>
+                                <p className="md:text-[2vw] text-2xl md:ml-0 flex w-fit flex-col sm:gap-1">
+                                    <span>Compassionate Care, Right at Home</span>
+                                    <span>With Us, You&apos;ll Never Walk Alone</span>
                                 </p>
                             </div>
                         </div>
@@ -130,34 +88,58 @@ export default function HeroSection() {
                         </div>
                     </div>
 
-                    <Image
-                            src={"https://americare.sirv.com/parallax/happy-group.png"}
-                            alt="background-png"
-                            height={1728}
-                            width={3072}
-                            priority
-                            className="w-full md:min-h-auto md:h-[90vh] min-h-[80vh] object-cover absolute bottom-0 left-1/2 -translate-x-1/2 z-30"
-                        />
+                    <div className="w-full grid gap-6 mt-[5%] md:px-[10vw] sm:px-[5vw] px-4 2xl:grid-cols-[repeat(auto-fill,minmax(30rem,1fr))] sm:grid-cols-[repeat(auto-fill,minmax(20rem,1fr))]">
+                        <div className="relative 2xl:h-[30rem] h-[20rem] rounded-lg overflow-hidden group">
+                            <Image
+                                src={"https://americare.sirv.com/pexels-rdne-5637731.jpg"}
+                                alt="happy elderly couple"
+                                height={5760}
+                                width={3840}
+                                priority
+                                className="w-screen h-full object-cover delay-75 sm:grayscale-[50%] group-hover:grayscale-0 smooth"
+                            />
 
-
-                    <div className="absolute sm:bottom-6 bottom-1/2 sm:left-6 sm:-translate-x-0 -translate-x-1/2 left-1/2 drop-shadow-xl z-50 text-white text-lg">
-                        <div
-                            className="sm:hidden flex items-center flex-col delay-300 smooth"
-                            style={{
-                                transform: `translateY(calc(-${itemMove}rem + 18rem))`,
-                                opacity: `${(2 + itemMove)-8}`
-                            }}
-                        >
-                            <span>Scroll Down</span>
-                            <FaAngleDown className="animate-bounce" />
+                            <div className="absolute left-0 bottom-0 w-full bg-gradient-to-t from-primary to-transparent p-8 text-5xl">
+                                Navigation the Golden Years.
+                            </div>
                         </div>
-                        <div
-                            className="sm:flex hidden items-center flex-col"
-                        >
-                            <span>Scroll Down</span>
-                            <FaAngleDown className="animate-bounce" />
+                        <div className="relative 2xl:h-[30rem] h-[20rem] grid grid-rows-[1fr_auto] gap-4">
+                            <div className="bg-gradient-to-bl to-green-700 from-primary text-center p-6 font-semibold 2xl:text-xl grid place-items-center rounded-lg relative h-full after:absolute after:top-[1%] after:left-[1%] after:h-[calc(98%)] after:w-[calc(98%)] after:bg-darkBg after:rounded-lg">
+                                <span className="z-10">
+                                    At AmeriCare, we specialize in providing compassionate and dedicated home
+                                    healthcare services for both the young and the elderly.
+                                </span>
+                            </div>
+                            <div className="h-fit grid gap-4">
+                                <CustomBtn 
+                                    linkHref="#"
+                                    text="Contact us"
+                                    customClass="w-full text-center"
+                                />
+                                <CustomBtn 
+                                    linkHref="#"
+                                    text="Book Appointment"
+                                    customClass="w-full text-center"
+                                />
+                            </div>
+                        </div>
+                        <div className="relative 2xl:h-[30rem] h-[20rem] rounded-lg overflow-hidden group">
+                            <Image
+                                src={"https://americare.sirv.com/pexels-ron-lach-10638078.jpg"}
+                                alt="happy teens"
+                                height={4761}
+                                width={3174}
+                                priority
+                                className="w-screen h-full object-cover delay-75 sm:grayscale-[50%] group-hover:grayscale-0 smooth"
+                            />
+
+                            <div className="absolute left-0 bottom-0 w-full bg-gradient-to-t from-primary to-transparent p-8 text-5xl">
+                                Growing Wealth for the next Generation.
+                            </div>
                         </div>
                     </div>
+
+                    <div className="absolute w-full bottom-0 left-0 shadow-[0_-20vh_20vh_#6fad45] h-2"></div>
                 </div>
             </div>
         </>
