@@ -5,12 +5,14 @@ import OurMissionSection from "./HomePage Sections/OurMissionSection";
 import { ServiceOffered } from "@/lib/ServiceOffered";
 import OurServicesSection from "./HomePage Sections/OurServicesSection";
 import JoinTeamSection from "./HomePage Sections/JoinTeamSection";
+import OurServiceSection from "./HomePage Sections/OurServiceSection";
 
 export default function page() {
     return (
         <>
             <BackgroundLayer />
             <HeroSection />
+            <OurServiceSection />
             <OurMissionSection />
             <>
                 {ServiceOffered.map(({ blob, btnText, btnUrl, description, imgAlt, imgSrc, title }) => (
