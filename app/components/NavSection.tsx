@@ -50,7 +50,7 @@ export default function NavigationComponent({ variation, inViewContainer }: { va
                             "sm:w-16 w-16 smooth",
                         )}
                     />
-                    <span className="text-3xl">AmeriCare</span>
+                    <span className="sm:text-3xl text-xl">AmeriCare</span>
                 </Link>
 
                 <div className={clsx(
@@ -87,7 +87,8 @@ export default function NavigationComponent({ variation, inViewContainer }: { va
                         inHero
                         inView={inViewContainer}
                         customClass={clsx(
-                            inViewContainer ? "border-transparent outline-black text-black" : ""
+                            inViewContainer ? "border-transparent outline-black text-black" : "",
+                            "max-md:hidden"
                         )}
                     />
 
