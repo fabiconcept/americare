@@ -5,7 +5,7 @@ import OurMissionSection from "./HomePage Sections/OurMissionSection";
 import { ServiceOffered } from "@/lib/ServiceOffered";
 import OurServicesSection from "./HomePage Sections/OurServicesSection";
 import JoinTeamSection from "./HomePage Sections/JoinTeamSection";
-import OurServiceSection from "./HomePage Sections/OurServiceSection";
+import OurServiceSection from "./HomePage Sections/OurServiceMiniSection";
 
 export default function page() {
     return (

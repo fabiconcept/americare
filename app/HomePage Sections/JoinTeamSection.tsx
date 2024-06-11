@@ -5,7 +5,7 @@ import arrImg from "@/lib/arrow.svg";
 
 export default function JoinTeamSection() {
     return (
-        <section className="dark:bg-darkBg dark:text-white sm:pt-32 pt-24 2xl:px-[12.5vw] sm:px-[8vw]  px-3 bg-white/80 sm:min-h-screen flex flex-col grid-bg">
+        <section className="dark:bg-darkBg dark:text-white sm:pt-32 pt-24 2xl:px-[10vw] sm:px-[8vw]  px-3 bg-white/80 sm:min-h-screen flex flex-col grid-bg">
             <div className="flex-1">
                 <h1 className={clsx("sm:text-6xl 2xl:text-7xl flex flex-col font-black items-center text-primary text-4xl text-center mx-auto sm:max-w-[70vw] max-w-[85vw] text-balance")}>
                     <span className="bg-primary/80 dark:text-darkBg text-white w-fit p-3 rounded-xl relative">

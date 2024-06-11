@@ -28,7 +28,7 @@ export default function ServicesOfferedSection({blob, btnText, btnUrl, descripti
                 className="sm:w-[70rem] w-[100rem] absolute sm:-top-[20rem] -top-[8rem] sm:-left-[20rem] -left-[6rem] dark:opacity-50"
             />
             <Parallax
-                className="sm:py-12 py-6 2xl:px-[12.5vw] sm:px-[8vw]  px-1 grid place-items-center"
+                className="sm:py-12 py-6 2xl:px-[10vw] sm:px-[8vw]  px-1 grid place-items-center"
                 strength={500}
                 renderLayer={(percentage) => (
                     <>

@@ -214,7 +214,7 @@ export default function FormSection() {
     }
 
     return (
-        <form action="" onSubmit={handleSubmit} className="dark:bg-darkBg dark:text-white py-12 2xl:px-[12.5vw] sm:px-[8vw]  px-6 relative bg-white z-10">
+        <form action="" onSubmit={handleSubmit} className="dark:bg-darkBg dark:text-white py-12 2xl:px-[10vw] sm:px-[8vw]  px-6 relative bg-white z-10">
             <Image
                 src={"https://americare.sirv.com/icons/bbblurry.svg"}
                 alt={"blur shape"}

@@ -3,7 +3,7 @@ import Image from "next/image";
 
 export default function InfoTextSection() {
     return (
-        <div className="dark:bg-darkBg grid-bg dark:text-white pb-12 2xl:px-[12.5vw] sm:px-[8vw]  px-6 relative z-10 bg-white">
+        <div className="dark:bg-darkBg grid-bg dark:text-white pb-12 2xl:px-[10vw] sm:px-[8vw]  px-6 relative z-10 bg-white">
             <div className="flex gap-12 flex-wrap">
                 <p className="min-w-[20rem] flex-1 opacity-70">
                     We aim to provide the ideal solution with an informed process. We equip clients and their support systems with information and answers. We assess each situation to provide personal recommendations. We consider the recipient&apos;s unique needs and how to achieve happiness.

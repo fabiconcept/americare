@@ -7,10 +7,10 @@ const FontFamily = Playfair_Display({ subsets: ["latin"], weight: "600" });
 export default function OurMissionSection() {
     return (
         <>
-            <div className="py-24 2xl:px-[12.5vw] sm:px-[8vw]  px-6 relative z-10 dark:bg-darkBg dark:text-white bg-white">
+            <div className="py-24 2xl:px-[10vw] sm:px-[8vw]  px-6 relative z-10 dark:bg-darkBg dark:text-white bg-white">
                 <div className="mb-12">
                     <h1 className={clsx(FontFamily.className, "sm:text-[4vw] text-5xl text-primary font-semibold")}>Our Mission</h1>
-                    <p className="opacity-60 text-[0.97rem] font-semibold">Compassionate Care, Right at Home. With AmeriCare, You&apos;ll Never Walk Alone</p>
+                    <p className="opacity-60 text-[0.97rem] font-semibold">With AmeriCare, You&apos;ll Never Walk Alone</p>
                 </div>
 
                 <div className="flex gap-12 flex-wrap">

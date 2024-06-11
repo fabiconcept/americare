@@ -7,6 +7,7 @@ import Image from "next/image";
 import CustomBtn from "./CustomBtn";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { FaPhone } from "react-icons/fa6";
 
 
 export default function NavigationComponent({ variation, inViewContainer }: { variation?: "home", inViewContainer?: boolean }) {
@@ -50,7 +51,7 @@ export default function NavigationComponent({ variation, inViewContainer }: { va
                             "sm:w-16 w-16 smooth",
                         )}
                     />
-                    <span className="sm:text-3xl text-xl">AmeriCare</span>
+                    <span className="sm:text-3xl text-xl md:block sm:hidden block">AmeriCare</span>
                 </Link>
 
                 <div className={clsx(
@@ -89,6 +90,16 @@ export default function NavigationComponent({ variation, inViewContainer }: { va
                         customClass={clsx(
                             inViewContainer ? "border-transparent outline-black text-black" : "",
                             "max-md:hidden"
+                        )}
+                    />
+                    <CustomBtn
+                        text="(888) 250-5708"
+                        linkHref="#"
+                        noBorder={true}
+                        icon={(<FaPhone />)}
+                        customClass={clsx(
+                            inViewContainer ? "border-transparent outline-black text-black" : "",
+                            "max-[1200px]:block hidden"
                         )}
                     />
 

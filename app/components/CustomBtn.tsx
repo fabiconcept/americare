@@ -1,7 +1,7 @@
 import clsx from "clsx";
 import Link from "next/link";
 
-export default function CustomBtn(btnProps: { customClass?: string, text: string, linkHref: string, noBorder?: boolean, external?: boolean, inView?: boolean, inHero?: boolean }) {
+export default function CustomBtn(btnProps: { customClass?: string, text: string, linkHref: string, noBorder?: boolean, external?: boolean, inView?: boolean, inHero?: boolean, icon?: React.JSX.Element }) {
     return (
         <Link 
             href={btnProps.linkHref} 
@@ -14,7 +14,7 @@ export default function CustomBtn(btnProps: { customClass?: string, text: string
             btnProps.inView ? "outline-white text-white": "",
             btnProps.inHero ? "after:bg-primary after:h-[105%] after:w-full text-white" : "",
         )}>
-            <span className="relative z-10">{btnProps.text}</span>
+            <span className="relative z-10 flex items-center gap-2">{btnProps.icon}{btnProps.text}</span>
         </Link>
     )
 }
