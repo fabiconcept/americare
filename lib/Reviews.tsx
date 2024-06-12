@@ -22,15 +22,15 @@ const Reviews: TestimonyProp[] =  [
         moreUrl: "https://maps.app.goo.gl/JV6wwbiy37N37w8q7"
     },
     {
-        testimony: "A great home health care company with a friendly nursing staff. They have access to great programs to help you pay if you need extra help. The owner is a great person and i think that goes a long way in this business. Thanks Americare, i appreciate you guys.",
-        name: "Christopher Wilkinson",
+        testimony: "Americare provided my family the support and encouragement neccessary. Thank you Americare for all you do.",
+        name: "Benitho Louissaint",
         occupation: "Business man",
         photo: "https://americare.sirv.com/Reviewers/reviewer05.jpg"
     },
     {
-        testimony: "As the owner of Americare Home Health, I may be a tad biased, but I can't help but give my own company a whopping five stars! From its humble beginnings to where we are now, I couldn't be prouder of the journey we've embarked on. Our dedicated staff, led by our incredible nurse Christine and the rest of the team, are the heart and soul of Americare. They're not just caregivers; they're family. And our community? Well, they're the backbone that keeps us going strong. Here's to creating leaders of tomorrow within our team and providing quality care for many more patients in the days ahead. Cheers to Americare!",
-        name: "Calvin Wilkinson",
-        occupation: "CEO",
+        testimony: "The nursing staff made my family comfortable in the worst of times. Thank you Americare.",
+        name: "Zachary Samuel",
+        occupation: "Patient",
         photo: "https://americare.sirv.com/Reviewers/reviewer08.jpg",
         moreUrl: "https://maps.app.goo.gl/k2pP3hfEK8xmsFLH7"
     },
@@ -46,11 +46,33 @@ const Reviews: TestimonyProp[] =  [
         occupation: "Social worker",
         photo: "https://americare.sirv.com/Reviewers/reviewer07.jpg"
     },
+    {
+        testimony: "AmeriCare is a great company! I’ve used them for my grandmother and they have been nothing short of attentive, quick and caring. Since my grandmother has gotten partnered up with a sweet nurse she has been a lot happier and taking care of her has been so much easier on my family!",
+        name: "tyller marie",
+        occupation: "Patient",
+        photo: "https://americare.sirv.com/Reviewers/unnamed%20(1).png",
+        moreUrl: "https://maps.app.goo.gl/HCzTjGx6j18kqW2s6"
+    },
+    {
+        testimony: "Really glad I chose Americare for my mom. The team calmed all my anxieties and ensured me she would get the best care possible. Cannot recommend enough.",
+        name: "Claude Regis",
+        occupation: "Patient",
+        photo: "https://americare.sirv.com/Reviewers/unnamed%20(3).png",
+        moreUrl: "https://maps.app.goo.gl/QcmrrpihdVi8EK2j6"
+    },
+    {
+        testimony: "Americare is like family to me. Thank you for being a shoulder to cry on.",
+        name: "Princess Henderson",
+        occupation: "Patient",
+        photo: "https://americare.sirv.com/Reviewers/unnamed.png",
+        moreUrl: "https://maps.app.goo.gl/QcmrrpihdVi8EK2j6"
+    },
 ]
 
 /*
- 
+
 
 */
 
 export default Reviews
+
