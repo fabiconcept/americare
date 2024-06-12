@@ -3,6 +3,7 @@ import ServicesOfferedSection from "./HomePage Sections/ServicesOfferedSection";
 import HeroSection from "./HomePage Sections/HeroSection";
 import { ServiceOffered } from "@/lib/ServiceOffered";
 import OurServicesSection from "./HomePage Sections/OurServicesSection";
+import MottoSection from "./HomePage Sections/MottoSection";
 import JoinTeamSection from "./HomePage Sections/JoinTeamSection";
 import OurServiceSection from "./HomePage Sections/OurServiceMiniSection";
 
@@ -13,6 +14,7 @@ export default function page() {
             <HeroSection />
             <OurServiceSection />
             <OurServicesSection />
+            <MottoSection />
             <>
                 {ServiceOffered.map(({ blob, btnText, btnUrl, description, imgAlt, imgSrc, title }) => (
                     <ServicesOfferedSection

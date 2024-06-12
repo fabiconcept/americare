@@ -82,6 +82,16 @@ export default function NavigationComponent({ variation, inViewContainer }: { va
 
                 <div className="flex justify-end gap-3 items-center">
                     <CustomBtn
+                        text="(888) 250-5708"
+                        linkHref="#"
+                        noBorder={true}
+                        icon={(<FaPhone />)}
+                        customClass={clsx(
+                            inViewContainer ? "border-transparent outline-black text-black" : "",
+                            "md:block hidden"
+                        )}
+                    />
+                    <CustomBtn
                         text="Contact us"
                         linkHref="#"
                         noBorder={true}
@@ -90,16 +100,6 @@ export default function NavigationComponent({ variation, inViewContainer }: { va
                         customClass={clsx(
                             inViewContainer ? "border-transparent outline-black text-black" : "",
                             "max-md:hidden"
-                        )}
-                    />
-                    <CustomBtn
-                        text="(888) 250-5708"
-                        linkHref="#"
-                        noBorder={true}
-                        icon={(<FaPhone />)}
-                        customClass={clsx(
-                            inViewContainer ? "border-transparent outline-black text-black" : "",
-                            "sm:block hidden"
                         )}
                     />
 
