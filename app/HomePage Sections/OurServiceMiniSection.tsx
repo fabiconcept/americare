@@ -21,7 +21,7 @@ export default function OurServiceSection() {
             <div className="sm:block hidden">
                 <SwiperContainer>
                     <SwiperSlide>
-                        <div className="rounded-xl px-7 flex-1 relative min-h-[25rem] bg-purple-600/10 hover:bg-purple-600/20 dark:bg-primary/10 dark:hover:bg-primary/20 active:scale-95 smooth cursor-pointer group overflow-hidden border border-transparent hover:border-primary/50">
+                        <div className="rounded-xl px-7 flex-1 relative min-h-[25rem] bg-purple-600/10 hover:bg-purple-600/15 dark:bg-primary/10 dark:hover:bg-primary/20 active:scale-95 smooth cursor-pointer group overflow-hidden border border-transparent hover:border-primary/50">
                             <div className='flex flex-col text-center pt-8'>
                                 <span className='text-xl font-semibold'>Personal care</span>
                                 <Link href={""} className='flex gap-2 items-center justify-center opacity-60 group-hover:text-primary smooth'>Get started <FaArrowRight /></Link>
@@ -39,7 +39,7 @@ export default function OurServiceSection() {
                         </div>
                     </SwiperSlide>
                     <SwiperSlide>
-                        <div className="rounded-xl px-7 flex-1 relative min-h-[25rem] bg-blue-600/10 hover:bg-blue-600/20 dark:bg-primary/10 dark:hover:bg-primary/20 active:scale-95 smooth cursor-pointer group overflow-hidden border border-transparent hover:border-primary/50">
+                        <div className="rounded-xl px-7 flex-1 relative min-h-[25rem] bg-blue-600/10 hover:bg-blue-600/15 dark:bg-primary/10 dark:hover:bg-primary/20 active:scale-95 smooth cursor-pointer group overflow-hidden border border-transparent hover:border-primary/50">
                             <div className='flex flex-col text-center pt-8'>
                                 <span className='text-xl font-semibold'>Pediatrics</span>
                                 <Link href={""} className='flex gap-2 items-center justify-center opacity-60 group-hover:text-primary smooth'>Get started <FaArrowRight /></Link>
@@ -57,7 +57,7 @@ export default function OurServiceSection() {
                         </div>
                     </SwiperSlide>
                     <SwiperSlide>
-                        <div className="rounded-xl px-7 flex-1 relative min-h-[25rem] bg-orange-600/10 hover:bg-orange-600/20 dark:bg-primary/10 dark:hover:bg-primary/20 active:scale-95 smooth cursor-pointer group overflow-hidden border border-transparent hover:border-primary/50">
+                        <div className="rounded-xl px-7 flex-1 relative min-h-[25rem] bg-orange-600/10 hover:bg-orange-600/15 dark:bg-primary/10 dark:hover:bg-primary/20 active:scale-95 smooth cursor-pointer group overflow-hidden border border-transparent hover:border-primary/50">
                             <div className='flex flex-col text-center pt-8'>
                                 <span className='text-xl font-semibold'>Skilled Nursing</span>
                                 <Link href={""} className='flex gap-2 items-center justify-center opacity-60 group-hover:text-primary smooth'>Get started <FaArrowRight /></Link>
@@ -75,7 +75,7 @@ export default function OurServiceSection() {
                         </div>
                     </SwiperSlide>
                     <SwiperSlide>
-                        <div className="rounded-xl px-7 flex-1 relative min-h-[25rem] bg-red-600/10 hover:bg-red-600/20 dark:bg-primary/10 dark:hover:bg-primary/20 active:scale-95 smooth cursor-pointer group overflow-hidden border border-transparent hover:border-primary/50">
+                        <div className="rounded-xl px-7 flex-1 relative min-h-[25rem] bg-red-600/10 hover:bg-red-600/15 dark:bg-primary/10 dark:hover:bg-primary/20 active:scale-95 smooth cursor-pointer group overflow-hidden border border-transparent hover:border-primary/50">
                             <div className='flex flex-col text-center pt-8'>
                                 <span className='text-xl font-semibold'>Companionship</span>
                                 <Link href={""} className='flex gap-2 items-center justify-center opacity-60 group-hover:text-primary smooth'>Get started <FaArrowRight /></Link>
@@ -93,7 +93,7 @@ export default function OurServiceSection() {
                         </div>
                     </SwiperSlide>
                     <SwiperSlide>
-                        <div className="rounded-xl px-7 flex-1 relative min-h-[25rem] bg-pink-600/10 hover:bg-pink-600/20 dark:bg-primary/10 dark:hover:bg-primary/20 active:scale-95 smooth cursor-pointer group overflow-hidden border border-transparent hover:border-primary/50">
+                        <div className="rounded-xl px-7 flex-1 relative min-h-[25rem] bg-pink-600/10 hover:bg-pink-600/15 dark:bg-primary/10 dark:hover:bg-primary/20 active:scale-95 smooth cursor-pointer group overflow-hidden border border-transparent hover:border-primary/50">
                             <div className='flex flex-col text-center pt-8'>
                                 <span className='text-xl font-semibold'>Specialty Care</span>
                                 <Link href={""} className='flex gap-2 items-center justify-center opacity-60 group-hover:text-primary smooth'>Get started <FaArrowRight /></Link>
@@ -114,7 +114,7 @@ export default function OurServiceSection() {
             </div>
 
             <div className='sm:hidden grid gap-3'>
-                <div className="rounded-xl px-7 flex-1 relative min-h-[25rem] bg-purple-600/10 hover:bg-purple-600/20 dark:bg-primary/10 dark:hover:bg-primary/20 active:scale-95 smooth cursor-pointer group overflow-hidden border border-transparent hover:border-primary/50">
+                <div className="rounded-xl px-7 flex-1 relative min-h-[25rem] bg-purple-600/10 hover:bg-purple-600/15 dark:bg-primary/10 dark:hover:bg-primary/20 active:scale-95 smooth cursor-pointer group overflow-hidden border border-transparent hover:border-primary/50">
                     <div className='flex flex-col text-center pt-8'>
                         <span className='text-xl font-semibold'>Personal care</span>
                         <Link href={""} className='flex gap-2 items-center justify-center opacity-60 group-hover:text-primary smooth'>Get started <FaArrowRight /></Link>
@@ -130,7 +130,7 @@ export default function OurServiceSection() {
                         />
                     </div>
                 </div>
-                <div className="rounded-xl px-7 flex-1 relative min-h-[25rem] bg-blue-600/10 hover:bg-blue-600/20 dark:bg-primary/10 dark:hover:bg-primary/20 active:scale-95 smooth cursor-pointer group overflow-hidden border border-transparent hover:border-primary/50">
+                <div className="rounded-xl px-7 flex-1 relative min-h-[25rem] bg-blue-600/10 hover:bg-blue-600/15 dark:bg-primary/10 dark:hover:bg-primary/20 active:scale-95 smooth cursor-pointer group overflow-hidden border border-transparent hover:border-primary/50">
                     <div className='flex flex-col text-center pt-8'>
                         <span className='text-xl font-semibold'>Pediatrics</span>
                         <Link href={""} className='flex gap-2 items-center justify-center opacity-60 group-hover:text-primary smooth'>Get started <FaArrowRight /></Link>
@@ -146,7 +146,7 @@ export default function OurServiceSection() {
                         />
                     </div>
                 </div>
-                <div className="rounded-xl px-7 flex-1 relative min-h-[25rem] bg-orange-600/10 hover:bg-orange-600/20 dark:bg-primary/10 dark:hover:bg-primary/20 active:scale-95 smooth cursor-pointer group overflow-hidden border border-transparent hover:border-primary/50">
+                <div className="rounded-xl px-7 flex-1 relative min-h-[25rem] bg-orange-600/10 hover:bg-orange-600/15 dark:bg-primary/10 dark:hover:bg-primary/20 active:scale-95 smooth cursor-pointer group overflow-hidden border border-transparent hover:border-primary/50">
                     <div className='flex flex-col text-center pt-8'>
                         <span className='text-xl font-semibold'>Skilled Nursing</span>
                         <Link href={""} className='flex gap-2 items-center justify-center opacity-60 group-hover:text-primary smooth'>Get started <FaArrowRight /></Link>
@@ -162,7 +162,7 @@ export default function OurServiceSection() {
                         />
                     </div>
                 </div>
-                <div className="rounded-xl px-7 flex-1 relative min-h-[25rem] bg-red-600/10 hover:bg-red-600/20 dark:bg-primary/10 dark:hover:bg-primary/20 active:scale-95 smooth cursor-pointer group overflow-hidden border border-transparent hover:border-primary/50">
+                <div className="rounded-xl px-7 flex-1 relative min-h-[25rem] bg-red-600/10 hover:bg-red-600/15 dark:bg-primary/10 dark:hover:bg-primary/20 active:scale-95 smooth cursor-pointer group overflow-hidden border border-transparent hover:border-primary/50">
                     <div className='flex flex-col text-center pt-8'>
                         <span className='text-xl font-semibold'>Companionship</span>
                         <Link href={""} className='flex gap-2 items-center justify-center opacity-60 group-hover:text-primary smooth'>Get started <FaArrowRight /></Link>
@@ -178,7 +178,7 @@ export default function OurServiceSection() {
                         />
                     </div>
                 </div>
-                <div className="rounded-xl px-7 flex-1 relative min-h-[25rem] bg-pink-600/10 hover:bg-pink-600/20 dark:bg-primary/10 dark:hover:bg-primary/20 active:scale-95 smooth cursor-pointer group overflow-hidden border border-transparent hover:border-primary/50">
+                <div className="rounded-xl px-7 flex-1 relative min-h-[25rem] bg-pink-600/10 hover:bg-pink-600/15 dark:bg-primary/10 dark:hover:bg-primary/20 active:scale-95 smooth cursor-pointer group overflow-hidden border border-transparent hover:border-primary/50">
                     <div className='flex flex-col text-center pt-8'>
                         <span className='text-xl font-semibold'>Specialty Care</span>
                         <Link href={""} className='flex gap-2 items-center justify-center opacity-60 group-hover:text-primary smooth'>Get started <FaArrowRight /></Link>
