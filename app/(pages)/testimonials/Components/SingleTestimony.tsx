@@ -43,7 +43,7 @@ export default function SingleTestimony(prop: TestimonyProp) {
 
                 </div>
                 <div className="flex flex-col">
-                    <span className="font-semibold">{prop.name}</span>
+                    <span className="font-semibold capitalize">{prop.name}</span>
                     <span className="text-sm opacity-60">{prop.occupation}</span>
                 </div>
             </div>
