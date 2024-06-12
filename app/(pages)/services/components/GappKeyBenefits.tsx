@@ -1,38 +1,36 @@
 import clsx from "clsx";
+import Image from "next/image";
+import nurseSvg from "./components/health-medical-plester-svgrepo-com.svg";
+import careSvg from "./components/health-health-insurance-medical-svgrepo-com.svg";
+import familySvg from "./components/family-svgrepo-com.svg";
 
-const benfitsList: { content: string, count: number }[] = [
-    {content: "In-home skilled nursing care", count: 1},
-    {content: "Care coordination and support services", count: 2},
-    {content: "Allows children to stay with their families", count: 3},
+const benefitsList: { title: string, content: string, count: number, svg: string }[] = [
+    { svg: nurseSvg, title: "Skilled Nursing", content: "In-home skilled nursing care", count: 1 },
+    { svg: careSvg, title: "Care Coordination", content: "Care coordination and support services", count: 2 },
+    { svg: familySvg, title: "Family Support", content: "Allows children to stay with their families", count: 3 },
 ]
 
 export default function GappKeyBenefits() {
     return (
-        <section className={clsx("sm:pt-10 pt-6 w-full")}>
-            <h1 className={clsx("sm:px-[10vw] sm:font-normal font-semibold mb-3 px-6 text-center text-primary 2xl:text-7xl sm:text-6 text-4xl")}>
-                Key Benefits
-            </h1>
-            <div className="grid 2xl:grid-cols-[repeat(auto-fill,minmax(30rem,1fr))] sm:grid-cols-[repeat(auto-fill,minmax(20rem,1fr))]">
-                {benfitsList.map((benefitItem, index) => (<Benefits
-                        key={index}
-                        count={index + 1}
-                        content={benefitItem.content}
-                        isOdd={index % 2 === 0}
-                    />)
-                )}
+        <section className={clsx("sm:pt-10 pt-6 w-full mb-12")}>
+            <div className="flex flex-wrap gap-4 justify-center w-full perspective">
+                {benefitsList.map(({ content, count, svg, title }) => (
+                    <div key={count} className="md:w-[30%] rounded-xl gap-3 flex-1 flex flex-col items-center w-[20rem] p-6 text-center dark:bg-white/5 bg-primary/5 smooth rotate-y dark:hover:bg-white/10 hover:bg-primary/10 border hover:border-primary/50 shadow-lg shadow-transparent hover:bg-gradient-to-r from-white/10 to-transparent hover:shadow-primary/5 border-transparent">
+                        <Image
+                            src={svg}
+                            alt="Icon"
+                            height={100}
+                            width={100}
+                            className="sm:w-24 w-20"
+                        />
+
+                        <span className="md:text-2xl sm:text-xl text-primary text-lg font-semibold">{title}</span>
+                        <span>
+                            {content}
+                        </span>
+                    </div>
+                ))}
             </div>
         </section>
-    )
-}
-
-
-function Benefits(prop:{content: string, isOdd?: boolean, count: number }) {
-    return (
-        <div className={clsx(
-            "p-5 flex flex-col gap-3 border-2 border-dotted sm:hover:scale-105 hover:shadow-lg relative hover:z-30 smooth border-primary",
-            prop.isOdd ? "dark:bg-[#CDE2BE]/25 hover:dark:bg-[#CDE2BE]/5 bg-[#CDE2BE]": "dark:bg-[#F0F7EC]/10 hover:dark:bg-[#F0F7EC]/5 bg-[#F0F7EC]"
-        )}>
-            <p className="text-center">{prop.content}</p>
-        </div>
     )
 }

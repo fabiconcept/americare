@@ -9,8 +9,8 @@ export default function OurMissionSection() {
         <>
             <div className="py-24 2xl:px-[10vw] sm:px-[8vw]  px-6 relative z-10 dark:bg-darkBg dark:text-white bg-white">
                 <div className="mb-12">
-                    <h1 className={clsx(FontFamily.className, "sm:text-[4vw] text-5xl text-primary font-semibold")}>Our Mission</h1>
-                    <p className="opacity-60 text-[0.97rem] font-semibold">With AmeriCare, You&apos;ll Never Walk Alone</p>
+                    <h1 className={clsx(FontFamily.className, "sm:text-[4vw] text-5xl text-primary font-semibold")}>Why AmeriCare</h1>
+                    <p className="opacity-60 text-[0.97rem] font-semibold">Compassionate Care, Right At Home</p>
                 </div>
 
                 <div className="flex gap-12 flex-wrap">
@@ -45,22 +45,6 @@ export default function OurMissionSection() {
                         We understand the unique needs and challenges that children and seniors face, and we&apos;re here to provide the highest level of care and support. Our approach is holistic encompassing mental and physical health to support the entire family through our a leading to the best outcomes.
                     </p>
                 </div>
-            </div>
-            <div className="relative">
-                <Image
-                    src={"https://americare.sirv.com/icons/hole-punch.png"}
-                    alt={"Hole Punch"}
-                    height={1920}
-                    width={1200}
-                    className="w-full -mt-1 brightness-105 dark:invisible"
-                />
-                <Image
-                    src={"https://americare.sirv.com/icons/hole-punch-dark.png"}
-                    alt={"Hole Punch"}
-                    height={1920}
-                    width={1200}
-                    className="invisible dark:visible w-full h-[110%] object-cover -mt-1 brightness-100 absolute top-0 left-0 brigh"
-                />
             </div>
         </>
     );

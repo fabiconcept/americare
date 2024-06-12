@@ -8,25 +8,25 @@ type TeamMember = {
 export const MeetTeamList:TeamMember[] = [
     {
         name:"Calvin Wilkinson MPH",
-        role:"CEO",
+        role:"Chief Ececutive Officer - (CEO)",
         photo:"https://americare.sirv.com/team/89cdd9fd-773c-470b-941e-e221a5a83376.JPG",
         id: "c15fdb72-c118-5d87-8d81-ecddb582ae51"
     },
     {
         name:"Christine Regis RN",
         role:"Nursing Supervisor",
-        photo:"https://americare.sirv.com/team/Samantha%20Samuel.png",
+        photo:"https://americare.sirv.com/team/imrs.php%20(1).jpg",
         id: "39a93612-7b83-5d1b-9d5c-095e297a839a"
     },
     {
         name:"Chris Wilkinson",
-        role:"Business Development Director",
+        role:"Vice President of Business Development",
         photo:"https://americare.sirv.com/team/4f8fa970-d8a9-4cff-b69b-eb92b9a12fad.JPG",
         id: "29169592-bd7d-5275-abaf-12c0046f620c"
     },
     {
         name:"Tyler Traylor",
-        role:"Administrative Director",
+        role:"Vice President of Finance",
         photo:"https://americare.sirv.com/team/Tyler-Traylor%20.png",
         id: "31295d8a-337c-582a-bdd5-2622c682e1b0"
     },
@@ -40,6 +40,30 @@ export const MeetTeamList:TeamMember[] = [
         name:"Adriana Rodriguez",
         role:"Human Relation Manager",
         photo:"https://americare.sirv.com/team/Human%20Relation%20Manager%20-%20Adriana%20Rodriguez.jpg",
+        id: "bcc60f2f-f027-5da4-9632-f7f64c69f5f1"
+    },
+    {
+        name:"Jack Duma",
+        role:"Vice President of Operations",
+        photo:"https://americare.sirv.com/team/pexels-sabinakallari-13376011.jpg",
+        id: "bcc60f2f-f027-5da4-9632-f7f64c69f5f1"
+    },
+    {
+        name:"Jorge Ramirez",
+        role:"Business Development Specialist",
+        photo:"https://americare.sirv.com/team/jorge_rameriz_new.jpg",
+        id: "bcc60f2f-f027-5da4-9632-f7f64c69f5f1"
+    },
+    {
+        name:"Erica Taylor",
+        role:"Customer Care Manager",
+        photo:"https://americare.sirv.com/team/pexels-mikhail-nilov-8317651.jpg",
+        id: "bcc60f2f-f027-5da4-9632-f7f64c69f5f1"
+    },
+    {
+        name:"Jesus Marino",
+        role:"Sales Manager",
+        photo:"https://americare.sirv.com/team/middle-age-hispanic-man-wearing%20(1).jpg",
         id: "bcc60f2f-f027-5da4-9632-f7f64c69f5f1"
     },
 
