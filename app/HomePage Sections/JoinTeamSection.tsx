@@ -26,12 +26,12 @@ export default function JoinTeamSection() {
                     <span>Our commitment to compassionate care, ongoing training, and career advancement creates an exceptional work environment where you can thrive both personally and professionally.</span>
                 </p>
                 <div className="w-full mt-3 mx-auto pt-5">
-                </div>
                     <CustomBtn
                         customClass="text-base border-4 overflow-hidden"
                         linkHref={"/careers"}
                         text={"Join us"}
                     />
+                </div>
             </div>
 
             <div className="mt-24">
