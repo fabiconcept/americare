@@ -5,7 +5,7 @@ import CustomBtn from "@/app/components/CustomBtn";
 export default function Testimonials() {
     return (
         <div className="dark:bg-darkBg grid-bg dark:text-white bg-white flex flex-col items-center pb-6">
-            <div className="sm:p-6 p-3 grid 2xl:grid-cols-[repeat(auto-fill,minmax(30rem,1fr))] sm:grid-cols-[repeat(auto-fill,minmax(25rem,1fr))] gap-2">
+            <div className="sm:p-6 p-3 grid 2xl:grid-cols-[repeat(auto-fill,minmax(30rem,1fr))] sm:grid-cols-[repeat(auto-fill,minmax(25rem,1fr))] gap-5">
                 {Reviews.map(({ name, occupation, photo, testimony, moreUrl }, index) => (
                     <SingleTestimony
                         key={name}
