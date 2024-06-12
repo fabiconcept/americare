@@ -100,6 +100,14 @@ img {
   clip-path: polygon(0 0, 100% 0, 100% 25%, 0 25%);
 }
 
+.perspective {
+  perspective: 500px;
+}
+
+.rotate-y:hover {
+  transform: rotateY(2deg);
+}
+
 .hero::after {
   content: "";
   z-index: 11;

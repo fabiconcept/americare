@@ -6,8 +6,8 @@ import affordableSvg from "./components/affordable.svg";
 export default function MottoSection() {
     return (
         <div className="py-24 2xl:px-[10vw] sm:px-[8vw]  px-6 relative z-10 dark:bg-darkBg dark:text-white bg-white">
-            <div className="flex flex-wrap gap-4 justify-center w-full">
-                <div className="md:w-[30rem] rounded-xl gap-3 flex flex-col items-center w-[20rem] p-5 text-center bg-white/5">
+            <div className="flex flex-wrap gap-4 justify-center w-full perspective">
+                <div className="md:w-[30rem] rounded-xl gap-3 flex flex-col items-center w-[20rem] p-5 text-center dark:bg-white/5 bg-primary/5 smooth rotate-y dark:hover:bg-white/10 hover:bg-primary/10 border hover:border-primary/50 border-transparent">
                     <Image
                         src={acessibleSvg}
                         alt="Icon"
@@ -21,7 +21,7 @@ export default function MottoSection() {
                         Same day appointments from the comfort of your home
                     </span>
                 </div>
-                <div className="md:w-[30rem] rounded-xl gap-3 flex flex-col items-center w-[20rem] p-5 text-center bg-white/5">
+                <div className="md:w-[30rem] rounded-xl gap-3 flex flex-col items-center w-[20rem] p-5 text-center dark:bg-white/5 bg-primary/5 smooth rotate-y dark:hover:bg-white/10 hover:bg-primary/10 border hover:border-primary/50 border-transparent">
                     <Image
                         src={allSvg}
                         alt="Icon"
@@ -35,7 +35,7 @@ export default function MottoSection() {
                         Our holistic AmeriCare system keeps you well physically, mentally, and emotionally. 
                     </span>
                 </div>
-                <div className="md:w-[30rem] rounded-xl gap-3 flex flex-col items-center w-[20rem] p-5 text-center bg-white/5">
+                <div className="md:w-[30rem] rounded-xl gap-3 flex flex-col items-center w-[20rem] p-5 text-center dark:bg-white/5 bg-primary/5 smooth rotate-y dark:hover:bg-white/10 hover:bg-primary/10 border hover:border-primary/50 border-transparent">
                     <Image
                         src={affordableSvg}
                         alt="Icon"

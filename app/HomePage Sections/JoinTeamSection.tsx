@@ -25,13 +25,13 @@ export default function JoinTeamSection() {
                     <span>At AmeriCare, we don&apos;t just offer jobs; we provide opportunities to make a real difference in people&apos;s lives. If you&apos;re seeking a fulfilling career in a dynamic, diverse, and people-first home care company, you&apos;ve come to the right place. </span>
                     <span>Our commitment to compassionate care, ongoing training, and career advancement creates an exceptional work environment where you can thrive both personally and professionally.</span>
                 </p>
-                <div className="w-fit mt-3 mx-auto pt-5">
+                <div className="w-full mt-3 mx-auto pt-5">
+                </div>
                     <CustomBtn
                         customClass="text-base border-4 overflow-hidden"
                         linkHref={"/careers"}
                         text={"Join us"}
                     />
-                </div>
             </div>
 
             <div className="mt-24">
