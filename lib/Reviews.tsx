@@ -32,7 +32,6 @@ const Reviews: TestimonyProp[] =  [
         name: "Zachary Samuel",
         occupation: "Patient",
         photo: "https://americare.sirv.com/Reviewers/reviewer08.jpg",
-        moreUrl: "https://maps.app.goo.gl/k2pP3hfEK8xmsFLH7"
     },
     {
         testimony: "When my family member fell ill americare came to help us carry on with our new normal. Thank you to the staff for your patience and kindness.",
@@ -65,7 +64,6 @@ const Reviews: TestimonyProp[] =  [
         name: "Princess Henderson",
         occupation: "Patient",
         photo: "https://americare.sirv.com/Reviewers/unnamed.png",
-        moreUrl: "https://maps.app.goo.gl/QcmrrpihdVi8EK2j6"
     },
 ]
 
