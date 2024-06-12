@@ -18,98 +18,183 @@ export default function OurServiceSection() {
                 <p className="opacity-60 text-[0.97rem] font-semibold">Compassionate Care, Right at Home.</p>
             </div>
 
-            <SwiperContainer>
-                <SwiperSlide>
-                    <div className="rounded-xl px-7 flex-1 relative min-h-[25rem] bg-purple-600/5 hover:bg-purple-600/15 dark:bg-primary/5 dark:hover:bg-primary/15 active:scale-95 smooth cursor-pointer">
-                        <div className='flex flex-col text-center pt-8'>
-                            <span className='text-xl font-semibold'>Personal care</span>
-                            <Link href={""} className='flex gap-2 items-center justify-center opacity-60'>Get started <FaArrowRight /></Link>
-                        </div>
+            <div className="sm:block hidden">
+                <SwiperContainer>
+                    <SwiperSlide>
+                        <div className="rounded-xl px-7 flex-1 relative min-h-[25rem] bg-purple-600/5 hover:bg-purple-600/15 dark:bg-primary/5 dark:hover:bg-primary/15 active:scale-95 smooth cursor-pointer group overflow-hidden border border-transparent hover:border-primary/50">
+                            <div className='flex flex-col text-center pt-8'>
+                                <span className='text-xl font-semibold'>Personal care</span>
+                                <Link href={""} className='flex gap-2 items-center justify-center opacity-60 group-hover:text-primary smooth'>Get started <FaArrowRight /></Link>
+                            </div>
 
-                        <div>
-                            <Image
-                                src={"https://americare.sirv.com/ascendmedicalcom_749290951.png"}
-                                alt=""
-                                height={400}
-                                width={400}
-                                className='absolute bottom-0 left-1/2 -translate-x-1/2'
-                            />
+                            <div>
+                                <Image
+                                    src={"https://americare.sirv.com/ascendmedicalcom_749290951.png"}
+                                    alt=""
+                                    height={400}
+                                    width={400}
+                                    className='absolute bottom-0 left-1/2 -translate-x-1/2 group-hover:scale-125 smooth'
+                                />
+                            </div>
                         </div>
-                    </div>
-                </SwiperSlide>
-                <SwiperSlide>
-                    <div className="rounded-xl px-7 flex-1 relative min-h-[25rem] bg-blue-600/5 hover:bg-blue-600/15 dark:bg-primary/5 dark:hover:bg-primary/15 active:scale-95 smooth cursor-pointer">
-                        <div className='flex flex-col text-center pt-8'>
-                            <span className='text-xl font-semibold'>Mental Health</span>
-                            <Link href={""} className='flex gap-2 items-center justify-center opacity-60'>Get started <FaArrowRight /></Link>
-                        </div>
+                    </SwiperSlide>
+                    <SwiperSlide>
+                        <div className="rounded-xl px-7 flex-1 relative min-h-[25rem] bg-blue-600/5 hover:bg-blue-600/15 dark:bg-primary/5 dark:hover:bg-primary/15 active:scale-95 smooth cursor-pointer group overflow-hidden border border-transparent hover:border-primary/50">
+                            <div className='flex flex-col text-center pt-8'>
+                                <span className='text-xl font-semibold'>Pediatrics</span>
+                                <Link href={""} className='flex gap-2 items-center justify-center opacity-60 group-hover:text-primary smooth'>Get started <FaArrowRight /></Link>
+                            </div>
 
-                        <div>
-                            <Image
-                                src={"https://americare.sirv.com/ascendmedicalcom_951359535.png"}
-                                alt=""
-                                height={500}
-                                width={500}
-                                className='absolute bottom-0 left-1/2 -translate-x-1/2'
-                            />
+                            <div>
+                                <Image
+                                    src={"https://americare.sirv.com/ascendmedicalcom_127873581.png"}
+                                    alt=""
+                                    height={500}
+                                    width={500}
+                                    className='absolute bottom-0 left-1/2 -translate-x-1/2 group-hover:scale-125 smooth'
+                                />
+                            </div>
                         </div>
-                    </div>
-                </SwiperSlide>
-                <SwiperSlide>
-                    <div className="rounded-xl px-7 flex-1 relative min-h-[25rem] bg-orange-600/5 hover:bg-orange-600/15 dark:bg-primary/5 dark:hover:bg-primary/15 active:scale-95 smooth cursor-pointer">
-                        <div className='flex flex-col text-center pt-8'>
-                            <span className='text-xl font-semibold'>Mental Health</span>
-                            <Link href={""} className='flex gap-2 items-center justify-center opacity-60'>Get started <FaArrowRight /></Link>
-                        </div>
+                    </SwiperSlide>
+                    <SwiperSlide>
+                        <div className="rounded-xl px-7 flex-1 relative min-h-[25rem] bg-orange-600/5 hover:bg-orange-600/15 dark:bg-primary/5 dark:hover:bg-primary/15 active:scale-95 smooth cursor-pointer group overflow-hidden border border-transparent hover:border-primary/50">
+                            <div className='flex flex-col text-center pt-8'>
+                                <span className='text-xl font-semibold'>Skilled Nursing</span>
+                                <Link href={""} className='flex gap-2 items-center justify-center opacity-60 group-hover:text-primary smooth'>Get started <FaArrowRight /></Link>
+                            </div>
 
-                        <div>
-                            <Image
-                                src={"https://americare.sirv.com/ascendmedicalcom_777071184.png"}
-                                alt=""
-                                height={500}
-                                width={500}
-                                className='absolute bottom-0 left-1/2 -translate-x-1/2'
-                            />
+                            <div>
+                                <Image
+                                    src={"https://americare.sirv.com/nurse03.png"}
+                                    alt=""
+                                    height={600}
+                                    width={600}
+                                    className='absolute bottom-0 left-1/2 -translate-x-1/2 group-hover:scale-125 smooth'
+                                />
+                            </div>
                         </div>
-                    </div>
-                </SwiperSlide>
-                <SwiperSlide>
-                    <div className="rounded-xl px-7 flex-1 relative min-h-[25rem] bg-red-600/5 hover:bg-red-600/15 dark:bg-primary/5 dark:hover:bg-primary/15 active:scale-95 smooth cursor-pointer">
-                        <div className='flex flex-col text-center pt-8'>
-                            <span className='text-xl font-semibold'>Mental Health</span>
-                            <Link href={""} className='flex gap-2 items-center justify-center opacity-60'>Get started <FaArrowRight /></Link>
-                        </div>
+                    </SwiperSlide>
+                    <SwiperSlide>
+                        <div className="rounded-xl px-7 flex-1 relative min-h-[25rem] bg-red-600/5 hover:bg-red-600/15 dark:bg-primary/5 dark:hover:bg-primary/15 active:scale-95 smooth cursor-pointer group overflow-hidden border border-transparent hover:border-primary/50">
+                            <div className='flex flex-col text-center pt-8'>
+                                <span className='text-xl font-semibold'>Companionship</span>
+                                <Link href={""} className='flex gap-2 items-center justify-center opacity-60 group-hover:text-primary smooth'>Get started <FaArrowRight /></Link>
+                            </div>
 
-                        <div>
-                            <Image
-                                src={"https://americare.sirv.com/ascendmedicalcom_548717604.png"}
-                                alt=""
-                                height={500}
-                                width={500}
-                                className='absolute bottom-0 left-1/2 -translate-x-1/2'
-                            />
+                            <div>
+                                <Image
+                                    src={"https://americare.sirv.com/pngegg.png"}
+                                    alt=""
+                                    height={500}
+                                    width={500}
+                                    className='absolute bottom-0 left-1/2 -translate-x-1/2 group-hover:scale-125 smooth'
+                                />
+                            </div>
                         </div>
-                    </div>
-                </SwiperSlide>
-                <SwiperSlide>
-                    <div className="rounded-xl px-7 flex-1 relative min-h-[25rem] bg-pink-600/5 hover:bg-pink-600/15 dark:bg-primary/5 dark:hover:bg-primary/15 active:scale-95 smooth cursor-pointer">
-                        <div className='flex flex-col text-center pt-8'>
-                            <span className='text-xl font-semibold'>Mental Health</span>
-                            <Link href={""} className='flex gap-2 items-center justify-center opacity-60'>Get started <FaArrowRight /></Link>
-                        </div>
+                    </SwiperSlide>
+                    <SwiperSlide>
+                        <div className="rounded-xl px-7 flex-1 relative min-h-[25rem] bg-pink-600/5 hover:bg-pink-600/15 dark:bg-primary/5 dark:hover:bg-primary/15 active:scale-95 smooth cursor-pointer group overflow-hidden border border-transparent hover:border-primary/50">
+                            <div className='flex flex-col text-center pt-8'>
+                                <span className='text-xl font-semibold'>Specialty Care</span>
+                                <Link href={""} className='flex gap-2 items-center justify-center opacity-60 group-hover:text-primary smooth'>Get started <FaArrowRight /></Link>
+                            </div>
 
-                        <div>
-                            <Image
-                                src={"https://americare.sirv.com/ascendmedicalcom_127873581.png"}
-                                alt=""
-                                height={500}
-                                width={500}
-                                className='absolute bottom-0 left-1/2 -translate-x-1/2'
-                            />
+                            <div>
+                                <Image
+                                    src={"https://americare.sirv.com/doc02.png"}
+                                    alt=""
+                                    height={500}
+                                    width={500}
+                                    className='absolute bottom-0 left-1/2 -translate-x-1/2 group-hover:scale-125 smooth'
+                                />
+                            </div>
                         </div>
+                    </SwiperSlide>
+                </SwiperContainer>
+            </div>
+
+            <div className='sm:hidden grid gap-3'>
+                <div className="rounded-xl px-7 flex-1 relative min-h-[25rem] bg-purple-600/5 hover:bg-purple-600/15 dark:bg-primary/5 dark:hover:bg-primary/15 active:scale-95 smooth cursor-pointer group overflow-hidden border border-transparent hover:border-primary/50">
+                    <div className='flex flex-col text-center pt-8'>
+                        <span className='text-xl font-semibold'>Personal care</span>
+                        <Link href={""} className='flex gap-2 items-center justify-center opacity-60 group-hover:text-primary smooth'>Get started <FaArrowRight /></Link>
                     </div>
-                </SwiperSlide>
-            </SwiperContainer>
+
+                    <div>
+                        <Image
+                            src={"https://americare.sirv.com/ascendmedicalcom_749290951.png"}
+                            alt=""
+                            height={400}
+                            width={400}
+                            className='absolute bottom-0 left-1/2 -translate-x-1/2 group-hover:scale-125 smooth'
+                        />
+                    </div>
+                </div>
+                <div className="rounded-xl px-7 flex-1 relative min-h-[25rem] bg-blue-600/5 hover:bg-blue-600/15 dark:bg-primary/5 dark:hover:bg-primary/15 active:scale-95 smooth cursor-pointer group overflow-hidden border border-transparent hover:border-primary/50">
+                    <div className='flex flex-col text-center pt-8'>
+                        <span className='text-xl font-semibold'>Pediatrics</span>
+                        <Link href={""} className='flex gap-2 items-center justify-center opacity-60 group-hover:text-primary smooth'>Get started <FaArrowRight /></Link>
+                    </div>
+
+                    <div>
+                        <Image
+                            src={"https://americare.sirv.com/ascendmedicalcom_127873581.png"}
+                            alt=""
+                            height={500}
+                            width={500}
+                            className='absolute bottom-0 left-1/2 -translate-x-1/2 group-hover:scale-125 smooth'
+                        />
+                    </div>
+                </div>
+                <div className="rounded-xl px-7 flex-1 relative min-h-[25rem] bg-orange-600/5 hover:bg-orange-600/15 dark:bg-primary/5 dark:hover:bg-primary/15 active:scale-95 smooth cursor-pointer group overflow-hidden border border-transparent hover:border-primary/50">
+                    <div className='flex flex-col text-center pt-8'>
+                        <span className='text-xl font-semibold'>Skilled Nursing</span>
+                        <Link href={""} className='flex gap-2 items-center justify-center opacity-60 group-hover:text-primary smooth'>Get started <FaArrowRight /></Link>
+                    </div>
+
+                    <div>
+                        <Image
+                            src={"https://americare.sirv.com/nurse03.png"}
+                            alt=""
+                            height={600}
+                            width={600}
+                            className='absolute bottom-0 left-1/2 -translate-x-1/2 group-hover:scale-125 smooth'
+                        />
+                    </div>
+                </div>
+                <div className="rounded-xl px-7 flex-1 relative min-h-[25rem] bg-red-600/5 hover:bg-red-600/15 dark:bg-primary/5 dark:hover:bg-primary/15 active:scale-95 smooth cursor-pointer group overflow-hidden border border-transparent hover:border-primary/50">
+                    <div className='flex flex-col text-center pt-8'>
+                        <span className='text-xl font-semibold'>Companionship</span>
+                        <Link href={""} className='flex gap-2 items-center justify-center opacity-60 group-hover:text-primary smooth'>Get started <FaArrowRight /></Link>
+                    </div>
+
+                    <div>
+                        <Image
+                            src={"https://americare.sirv.com/pngegg.png"}
+                            alt=""
+                            height={500}
+                            width={500}
+                            className='absolute bottom-0 left-1/2 -translate-x-1/2 group-hover:scale-125 smooth'
+                        />
+                    </div>
+                </div>
+                <div className="rounded-xl px-7 flex-1 relative min-h-[25rem] bg-pink-600/5 hover:bg-pink-600/15 dark:bg-primary/5 dark:hover:bg-primary/15 active:scale-95 smooth cursor-pointer group overflow-hidden border border-transparent hover:border-primary/50">
+                    <div className='flex flex-col text-center pt-8'>
+                        <span className='text-xl font-semibold'>Specialty Care</span>
+                        <Link href={""} className='flex gap-2 items-center justify-center opacity-60 group-hover:text-primary smooth'>Get started <FaArrowRight /></Link>
+                    </div>
+
+                    <div>
+                        <Image
+                            src={"https://americare.sirv.com/doc02.png"}
+                            alt=""
+                            height={500}
+                            width={500}
+                            className='absolute bottom-0 left-1/2 -translate-x-1/2 group-hover:scale-125 smooth'
+                        />
+                    </div>
+                </div>
+            </div>
         </div>
     )
 }

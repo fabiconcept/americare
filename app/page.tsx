@@ -1,7 +1,6 @@
 import BackgroundLayer from "./HomePage Sections/BackgroundLayer";
 import ServicesOfferedSection from "./HomePage Sections/ServicesOfferedSection";
 import HeroSection from "./HomePage Sections/HeroSection";
-import OurMissionSection from "./HomePage Sections/OurMissionSection";
 import { ServiceOffered } from "@/lib/ServiceOffered";
 import OurServicesSection from "./HomePage Sections/OurServicesSection";
 import JoinTeamSection from "./HomePage Sections/JoinTeamSection";
@@ -13,7 +12,7 @@ export default function page() {
             <BackgroundLayer />
             <HeroSection />
             <OurServiceSection />
-            <OurMissionSection />
+            <OurServicesSection />
             <>
                 {ServiceOffered.map(({ blob, btnText, btnUrl, description, imgAlt, imgSrc, title }) => (
                     <ServicesOfferedSection
@@ -29,7 +28,6 @@ export default function page() {
                 ))}
             </>
 
-            <OurServicesSection />
             <JoinTeamSection />
         </>
     )

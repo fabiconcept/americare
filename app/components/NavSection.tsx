@@ -99,7 +99,7 @@ export default function NavigationComponent({ variation, inViewContainer }: { va
                         icon={(<FaPhone />)}
                         customClass={clsx(
                             inViewContainer ? "border-transparent outline-black text-black" : "",
-                            "max-[1200px]:block hidden"
+                            "sm:block hidden"
                         )}
                     />
 
