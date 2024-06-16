@@ -22,8 +22,8 @@ export default function MedicarePrograms() {
                 />
                 <div>
                     <div className="mb-12">
-                        <h1 className={clsx(FontFamily.className, "sm:text-[4vw] text-5xl text-primary font-semibold")}>Medicare Programs</h1>
-                        <p className="opacity-60 text-[0.97rem] font-semibold">CCSP/SOURCE and GAPP | <Link href={"/"} className="text-primary active:rotate-6 origin-left">AmeriCare</Link> Home Health</p>
+                        <h1 className={clsx(FontFamily.className, "sm:text-[4vw] text-5xl text-primary font-semibold")}>Medicaid Programs</h1>
+                        <p className="opacity-60 text-[0.97rem] font-semibold">CCSP/SOURCE and GAPP | <Link href={"/"} className="active:rotate-6 origin-left">AmeriCare</Link> Home Health</p>
                     </div>
 
                     <div className="">

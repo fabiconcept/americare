@@ -8,11 +8,6 @@ export default function TopSection() {
             <ScrollToTop smooth className="grid place-items-center hover:bg-primary active:scale-90 smooth" style={{zIndex: 100}} />
             <section className="dark:bg-darkBg dark:text-white  h-fit bg-white/90 pb-[5rem] grid-bg">
                 <div className="sm:px-[10rem] px-4 pt-[10rem] pb-[2rem] text-center flex flex-col items-center">
-                    <span className="flex items-center">
-                        <span className="whitespace-nowrap">
-                            Why AmeriCare
-                        </span>
-                    </span>
                     <h1
                         className="text-primary font-semibold 2xl:max-w-[55vw] sm:max-[75vw] text-balance p-3 2xl:text-7xl sm:text-6xl text-4xl">
                         Where <span className="px-4 rounded-[5rem] border dark:border-white/10 border-primary/25 dark:bg-white/10 bg-primary/10 hover:-translate-y-2 hover:dark:bg-white/15 hover:bg-primary/25 smooth">Compassion</span> Meets <span className="px-4 rounded-[5rem] border dark:border-white/10 border-primary/25 dark:bg-white/10 bg-primary/10 hover:-translate-y-2 hover:dark:bg-white/15 hover:bg-primary/25 smooth">Excellent Care</span>
@@ -33,7 +28,6 @@ export default function TopSection() {
                             width={800}
                             className="w-[20rem] -mb-12"
                         />
-                        <span className="text-right self-end py-1 px-3 rounded-3xl border border-black/25 text-sm dark:bg-darkBg/50 backdrop-blur-sm">We offer</span>
                         <div className="w-full flex flex-col h-fit shadow-lg group smooth hover:-translate-y-1 dark:bg-darkBg">
                             <div className="py-2 px-4 border border-dashed border-primary bg-black/5 backdrop-blur text-lg font-semibold">Compassionate Care</div>
                             <div className="flex-1 py-2 px-4 border border-dashed border-transparent group-hover:border-t-transparent smooth group-hover:border-primary  dark:bg-[#F0F7EC]/25 hover:dark:bg-[#F0F7EC]/10 bg-[#F0F7EC] hover-bg">
@@ -49,7 +43,6 @@ export default function TopSection() {
                             width={800}
                             className="w-[20rem] -mb-12"
                         />
-                        <span className="text-right self-end py-1 px-3 rounded-3xl border border-black/25 text-sm dark:bg-darkBg/50 backdrop-blur-sm">We offer</span>
                         <div className="w-full flex flex-col h-fit shadow-lg group smooth hover:-translate-y-1 dark:bg-darkBg bg-white">
                             <div className="py-2 px-4 border border-dashed border-primary bg-black/5 backdrop-blur text-lg font-semibold">Personalized Approach</div>
                             <div className="flex-1 py-2 px-4 border border-dashed border-transparent group-hover:border-t-transparent smooth group-hover:border-primary dark:bg-[#CDE2BE]/25 hover:dark:bg-[#CDE2BE]/10 bg-[#CDE2BE] hover-bg-odd">
