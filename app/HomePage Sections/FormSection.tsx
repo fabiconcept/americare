@@ -182,7 +182,7 @@ export default function FormSection() {
                         <span className="flex gap-1 sm:text-base text-sm">First name <span className="text-primary">:</span> <sup className="text-red-600 sm:text-sm text-xs"><FaAsterisk /></sup> <span className="text-red-500"> {errorObj.firstName.error}</span></span>
                         <div className={clsx(
                             "relative smooth rounded-xl overflow-hidden", 
-                            errorObj.firstName.status === ErrorState.BAD ?"border-2 border-red-500": "border-2 dark:border-white/10 border-black/15 focus-within:shadow-md focus-within:shadow-white/50 group dark:focus-within:border-white/50 focus-within:border-primary/70"
+                            errorObj.firstName.status === ErrorState.BAD ?"border-2 border-red-500": "border-2 dark:border-white/10 border-black/15 focus-within:shadow-md focus-within:shadow-white/50 dark:focus-within:shadow-primary/15 group dark:focus-within:border-white/50 focus-within:border-primary/70"
                         )}>
                             <FaUser className={clsx(
                                 "absolute top-1/2 -translate-y-1/2 pointer-events-none select-none left-4 peer-placeholder-shown:opacity-50 smooth",
@@ -207,10 +207,10 @@ export default function FormSection() {
                     </div>
                     {/* last name */}
                     <div className="flex flex-col gap-2 capitalize">
-                        <span className="flex gap-1 sm:text-base text-sm">Last name <span className="text-primary">:</span> <sup className="text-red-600 sm:text-sm text-xs"><FaAsterisk /></sup> <span className="text-red-500"> {errorObj.phone.error}</span></span>
+                        <span className="flex gap-1 sm:text-base text-sm">Last name <span className="text-primary">:</span> <sup className="text-red-600 sm:text-sm text-xs"><FaAsterisk /></sup> <span className="text-red-500"> {errorObj.lastName.error}</span></span>
                         <div className={clsx(
                             "relative smooth rounded-xl overflow-hidden", 
-                            errorObj.lastName.status === ErrorState.BAD ?"border-2 border-red-500": "border-2 dark:border-white/10 border-black/15 focus-within:shadow-md focus-within:shadow-white/50 group dark:focus-within:border-white/50 focus-within:border-primary/70"
+                            errorObj.lastName.status === ErrorState.BAD ?"border-2 border-red-500": "border-2 dark:border-white/10 border-black/15 focus-within:shadow-md focus-within:shadow-white/50 dark:focus-within:shadow-primary/15 group dark:focus-within:border-white/50 focus-within:border-primary/70"
                         )}>
                             <FaUser className={clsx(
                                 "absolute top-1/2 -translate-y-1/2 pointer-events-none select-none left-4 peer-placeholder-shown:opacity-50 smooth",
@@ -238,7 +238,7 @@ export default function FormSection() {
                         <span className="flex gap-1 sm:text-base text-sm">E-mail <span className="text-primary">:</span> <sup className="text-red-600 sm:text-sm text-xs"><FaAsterisk /></sup> <span className="text-red-500"> {errorObj.email.error}</span></span>
                         <div className={clsx(
                             "relative smooth rounded-xl overflow-hidden", 
-                            errorObj.email.status === ErrorState.BAD ?"border-2 border-red-500": "border-2 dark:border-white/10 border-black/15 focus-within:shadow-md focus-within:shadow-white/50 group dark:focus-within:border-white/50 focus-within:border-primary/70"
+                            errorObj.email.status === ErrorState.BAD ?"border-2 border-red-500": "border-2 dark:border-white/10 border-black/15 focus-within:shadow-md focus-within:shadow-white/50 dark:focus-within:shadow-primary/15 group dark:focus-within:border-white/50 focus-within:border-primary/70"
                         )}>
                             <FaEnvelope className={clsx(
                                 "absolute top-1/2 -translate-y-1/2 pointer-events-none select-none left-4 peer-placeholder-shown:opacity-50 smooth",
@@ -266,7 +266,7 @@ export default function FormSection() {
                         <span className="flex gap-1 sm:text-base text-sm">Phone number <span className="text-primary">:</span> <sup className="text-red-600 sm:text-sm text-xs"><FaAsterisk /></sup> <span className="text-red-500"> {errorObj.phone.error}</span></span>
                         <div className={clsx(
                             "relative smooth rounded-xl overflow-hidden", 
-                            errorObj.phone.status === ErrorState.BAD ?"border-2 border-red-500": "border-2 dark:border-white/10 border-black/15 focus-within:shadow-md focus-within:shadow-white/50 group dark:focus-within:border-white/50 focus-within:border-primary/70"
+                            errorObj.phone.status === ErrorState.BAD ?"border-2 border-red-500": "border-2 dark:border-white/10 border-black/15 focus-within:shadow-md focus-within:shadow-white/50 dark:focus-within:shadow-primary/15 group dark:focus-within:border-white/50 focus-within:border-primary/70"
                         )}>
                             <FaPhone className={clsx(
                                 "absolute top-1/2 -translate-y-1/2 pointer-events-none select-none left-4 peer-placeholder-shown:opacity-50 smooth",
@@ -294,7 +294,7 @@ export default function FormSection() {
                         <span className="flex gap-1 sm:text-base text-sm">Country of Residence <span className="text-primary">:</span> <sup className="text-red-600 sm:text-sm text-xs"><FaAsterisk /></sup> <span className="text-red-500"> {errorObj.country.error}</span></span>
                         <div className={clsx(
                             "relative smooth rounded-xl overflow-hidden cursor-pointer", 
-                            errorObj.country.status === ErrorState.BAD ?"border-2 border-red-500": "border-2 dark:border-white/10 border-black/15 focus-within:shadow-md focus-within:shadow-white/50 group dark:focus-within:border-white/50 focus-within:border-primary/70"
+                            errorObj.country.status === ErrorState.BAD ?"border-2 border-red-500": "border-2 dark:border-white/10 border-black/15 focus-within:shadow-md focus-within:shadow-white/50 dark:focus-within:shadow-primary/15 group dark:focus-within:border-white/50 focus-within:border-primary/70"
                         )}>
                             <FaList className={clsx(
                                 "absolute top-1/2 -translate-y-1/2 pointer-events-none select-none left-4 peer-placeholder-shown:opacity-50 smooth",
@@ -342,7 +342,7 @@ export default function FormSection() {
                         type={goodToGo ? "submit" : "button"}
                     >
                         {goodToGo ? 
-                            <span className="flex gap-2 items-center justify-center">Send application <FaStar className="group-hover:text-yellow-300" /></span> 
+                            <span className="flex gap-2 items-center justify-center">Check Eligibility <FaStar className="group-hover:text-yellow-300" /></span> 
                             : 
                             <span className="flex gap-2 items-center justify-center">Fill the form</span>
                         }

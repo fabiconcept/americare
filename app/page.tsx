@@ -9,10 +9,22 @@ import TestimonialMarquee from "./HomePage Sections/TestimonialMarquee";
 import FormSection from "./HomePage Sections/FormSection";
 import JoinTeamSection from "./HomePage Sections/JoinTeamSection";
 import OurServiceSection from "./HomePage Sections/OurServiceMiniSection";
+import { Toaster } from "react-hot-toast";
 
 export default function page() {
     return (
         <>
+            <Toaster
+                position="bottom-right"
+                toastOptions={
+                    {
+                        style: {
+                            background: '#363636',
+                            color: '#fff',
+                        }
+                    }
+                }
+            />
             <BackgroundLayer />
             <HeroSection />
             <OurServiceSection />
