@@ -117,7 +117,7 @@ export default function FormSection() {
     // Validate Country
     useEffect(() => {
         if(countries === "") {
-            setErrorObj((prev)=>({...prev, country: {error: "Please select your country", status: ErrorState.BAD}}));
+            setErrorObj((prev)=>({...prev, country: {error: "", status: ErrorState.IDLE}}));
             return;
         }
 
@@ -147,7 +147,7 @@ export default function FormSection() {
     }
 
     return (
-        <form action="" onSubmit={handleSubmit} className="dark:bg-darkBg dark:text-white py-12 2xl:px-[10vw] sm:px-[8vw]  px-6 relative bg-white z-10">
+        <form action="" onSubmit={handleSubmit} className="dark:bg-darkBg dark:text-white py-12 2xl:px-[10vw] sm:px-[8vw]  px-6 relative bg-white z-40">
             <Image
                 src={"https://americare.sirv.com/icons/bbblurry.svg"}
                 alt={"blur shape"}
