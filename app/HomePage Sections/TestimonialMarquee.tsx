@@ -10,7 +10,7 @@ export default function TestimonialMarquee() {
                 pauseOnHover
                 speed={30}
             >
-                <div className="flex items-stretch gap-4">
+                <div className="flex items-stretch gap-4 mr-4">
                     {Reviews.map(({ name, occupation, photo, testimony, moreUrl }, index) => (
                         <SingleTestimony
                             key={name}
