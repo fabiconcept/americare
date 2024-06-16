@@ -45,7 +45,7 @@ export const MeetTeamList:TeamMember[] = [
     {
         name:"Jack Duma",
         role:"Vice President of Operations",
-        photo:"https://americare.sirv.com/team/pexels-sabinakallari-13376011.jpg",
+        photo:"https://americare.sirv.com/team/handsome-latino-businessman-lean-transformed.jpeg",
         id: "bcc60f2f-f027-5da4-9632-f7f64c69f5f1"
     },
     {
@@ -57,13 +57,13 @@ export const MeetTeamList:TeamMember[] = [
     {
         name:"Erica Taylor",
         role:"Customer Care Manager",
-        photo:"https://americare.sirv.com/team/pexels-mikhail-nilov-8317651.jpg",
+        photo:"https://americare.sirv.com/team/calm-smiling-mature-woman-portra.jpg",
         id: "bcc60f2f-f027-5da4-9632-f7f64c69f5f1"
     },
     {
         name:"Jesus Marino",
         role:"Sales Manager",
-        photo:"https://americare.sirv.com/team/middle-age-hispanic-man-wearing%20(1).jpg",
+        photo:"https://americare.sirv.com/team/businessperson-male-hispanic-lat.jpg",
         id: "bcc60f2f-f027-5da4-9632-f7f64c69f5f1"
     },
 
