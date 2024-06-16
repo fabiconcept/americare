@@ -30,7 +30,7 @@ export default function Gapp() {
                             </span>
 
                             <CustomBtn
-                                linkHref="#"
+                                linkHref="/#check_eligibility"
                                 text="Check Eligibility"
 
                             />

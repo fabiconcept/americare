@@ -153,6 +153,7 @@ export default function FormSection() {
                 alt={"blur shape"}
                 height={800}
                 width={800}
+                id="check_eligibility"
                 className="sm:w-[70rem] w-[80rem] absolute sm:-top-[20rem] -top-[8rem] sm:-left-[20rem] -left-[12rem] dark:opacity-50 max-md:dark:opacity-25"
             />
             <div className="sm:mb-12 mb-8">
