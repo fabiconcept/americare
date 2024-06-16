@@ -6,6 +6,7 @@ import OurServicesSection from "./HomePage Sections/OurServicesSection";
 import MottoSection from "./HomePage Sections/MottoSection";
 import OurMissionSection from "./HomePage Sections/OurMissionSection";
 import TestimonialMarquee from "./HomePage Sections/TestimonialMarquee";
+import FormSection from "./HomePage Sections/FormSection";
 import JoinTeamSection from "./HomePage Sections/JoinTeamSection";
 import OurServiceSection from "./HomePage Sections/OurServiceMiniSection";
 
@@ -20,7 +21,7 @@ export default function page() {
             <OurMissionSection />
             <TestimonialMarquee />
             <>
-                {ServiceOffered.slice(0).map(({ blob, btnText, btnUrl, description, imgAlt, imgSrc, title }) => (
+                {ServiceOffered.slice(0, 1).map(({ blob, btnText, btnUrl, description, imgAlt, imgSrc, title }) => (
                     <ServicesOfferedSection
                         blob={blob}
                         btnText={btnText}
@@ -33,7 +34,7 @@ export default function page() {
                     />
                 ))}
             </>
-
+            <FormSection />
             <JoinTeamSection />
         </>
     )

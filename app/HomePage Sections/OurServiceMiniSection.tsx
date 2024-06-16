@@ -100,7 +100,7 @@ export default function OurServiceSection() {
 
                             <div>
                                 <Image
-                                    src={"https://americare.sirv.com/doc02.png"}
+                                    src={"https://americare.sirv.com/%5Bremoval.ai%5D_8ae08c71-8381-4896-b076-eadaacc9ef2a-pexels-thirdman-7659872.png"}
                                     alt=""
                                     height={500}
                                     width={500}
@@ -185,11 +185,11 @@ export default function OurServiceSection() {
 
                     <div>
                         <Image
-                            src={"https://americare.sirv.com/doc02.png"}
+                            src={"https://americare.sirv.com/%5Bremoval.ai%5D_8ae08c71-8381-4896-b076-eadaacc9ef2a-pexels-thirdman-7659872.png"}
                             alt=""
-                            height={500}
-                            width={500}
-                            className='absolute bottom-0 left-1/2 -translate-x-1/2 group-hover:scale-125 smooth'
+                            height={400}
+                            width={400}
+                            className='absolute bottom-0 left-1/2 -translate-x-1/2 group-hover:scale-125 smooth -translate-y-24'
                         />
                     </div>
                 </div>
