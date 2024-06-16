@@ -6,7 +6,7 @@ export default function OurServicesSection() {
     return (
         <section className="bg-white py-12 shadow-lg dark:bg-darkBg dark:text-white grid-bg">
             <h1 className="sm:px-[10vw] mb-3 px-3 text-center text-primary sm:text-[4vw] text-5xl">
-                Our services
+                Our Services
             </h1>
             <div className="grid 2xl:grid-cols-[repeat(auto-fill,minmax(30rem,1fr))] sm:grid-cols-[repeat(auto-fill,minmax(25rem,1fr))] sm:px-[3vw] px-3">
                 {OurServicesList.map((serviceItem, index)=>{
