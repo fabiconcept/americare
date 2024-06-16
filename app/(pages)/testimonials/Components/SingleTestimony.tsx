@@ -10,12 +10,14 @@ type TestimonyProp = {
     photo: string;
     isOdd: boolean;
     moreUrl?: string;
+    marquee?: "yes"
 }
 
 export default function SingleTestimony(prop: TestimonyProp) {
     return (
         <div className={clsx(
             "border rounded-lg p-4 flex flex-col gap-3 sm:hover:-translate-y-2 smooth",
+            prop.marquee === "yes" ? "2xl:w-[30rem] min-h-full sm:w-[25rem] w-[calc(100vw-2rem)]" : "",
             prop.isOdd ? "bg-primary/10 max-md:hover:bg-primary/20 border-primary/15":"bg-primary/5 max-md:hover:bg-primary/15 border-primary/10"
         )}>
             <div className="flex items-center gap-2 text-sm text-yellow-400">
