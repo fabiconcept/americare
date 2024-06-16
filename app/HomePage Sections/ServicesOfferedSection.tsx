@@ -94,7 +94,7 @@ export default function ServicesOfferedSection({blob, btnText, btnUrl, descripti
                                 </div>
                                 <CustomBtn
                                     customClass="text-base"
-                                    linkHref="/#check_eligibility"
+                                    linkHref={btnUrl}
                                     text={btnText}
                                 />
                             </div>
