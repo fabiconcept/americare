@@ -82,8 +82,8 @@ export default function NavigationComponent({ variation, inViewContainer }: { va
 
                 <div className="flex justify-end gap-3 items-center">
                     <CustomBtn
-                        text="(888) 250-5708"
-                        linkHref="#"
+                        text="404-494-2187"
+                        linkHref="tel:4044942187"
                         noBorder={true}
                         icon={(<FaPhone />)}
                         customClass={clsx(
