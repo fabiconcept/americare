@@ -6,6 +6,7 @@ import clsx from "clsx";
 import ScrollToTop from "react-scroll-to-top";
 import NavigationComponent from "../components/NavSection";
 import CustomBtn from "../components/CustomBtn";
+import { useEffect, useRef } from "react";
 
 const FontFamily = Playfair_Display({ subsets: ["latin"], weight: "600" });
 
@@ -13,6 +14,34 @@ const FontFamily = Playfair_Display({ subsets: ["latin"], weight: "600" });
 export default function HeroSection() {
 
     const [containerRef, inViewContainer] = useInView({ threshold: 0.75 });
+    const videoRef = useRef<HTMLVideoElement | null>(null);
+
+  const preventFullscreen = (event: Event) => {
+    event.preventDefault();
+    if (document.fullscreenElement) {
+      document.exitFullscreen();
+    }
+  };
+
+  useEffect(() => {
+      const videoElement = videoRef.current;
+      
+    if(!videoElement) return;
+
+    videoElement.addEventListener('webkitbeginfullscreen', preventFullscreen);
+    document.addEventListener('fullscreenchange', preventFullscreen);
+    document.addEventListener('webkitfullscreenchange', preventFullscreen);
+    document.addEventListener('mozfullscreenchange', preventFullscreen);
+    document.addEventListener('msfullscreenchange', preventFullscreen);
+
+    return () => {
+      videoElement.removeEventListener('webkitbeginfullscreen', preventFullscreen);
+      document.removeEventListener('fullscreenchange', preventFullscreen);
+      document.removeEventListener('webkitfullscreenchange', preventFullscreen);
+      document.removeEventListener('mozfullscreenchange', preventFullscreen);
+      document.removeEventListener('msfullscreenchange', preventFullscreen);
+    };
+  }, []);
 
     return (
         <>
@@ -24,7 +53,9 @@ export default function HeroSection() {
                     <video
                         src={"https://americare.sirv.com/bg-video.mp4"}
                         height={1000}
+                        controls={false}
                         width={1000}
+                        ref={videoRef}
                         className="w-full h-full object-cover opacity-40"
                         autoPlay
                         loop
