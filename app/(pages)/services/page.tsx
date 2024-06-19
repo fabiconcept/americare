@@ -1,12 +1,11 @@
-import Image from "next/image";
 import TopSection from "./components/TopSection";
 import OurCaregivers from "./components/OurCaregivers";
 import MedicarePrograms from "./components/MedicarePrograms";
 import InfoTextSection from "./components/InfoTextSection";
-import WhatWeCanDoForYouSection from "./components/WhatWeCanDoForYouSection";
 import NavigationComponent from "@/app/components/NavSection";
 import ServicesOfferedSection from "@/app/HomePage Sections/ServicesOfferedSection";
 import { ServiceOffered } from "@/lib/ServiceOffered";
+import FormSection from "@/app/HomePage Sections/FormSection";
 
 export default function ServicesPage() {
     return (
@@ -31,7 +30,8 @@ export default function ServicesPage() {
                     />
                 ))}
             </>
-                <OurCaregivers />
+                <OurCaregivers /> 
+                <FormSection />
             </div>
         </div>
     )

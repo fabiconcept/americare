@@ -59,7 +59,6 @@ export default function TopSection() {
                             width={800}
                             className="w-[20rem] -mb-12"
                         />
-                        <span className="text-right py-1 px-3 self-end rounded-3xl border border-black/25 text-sm dark:bg-darkBg/50 backdrop-blur-sm">We offer</span>
                         <div className="w-full flex flex-col h-fit shadow-lg group smooth hover:-translate-y-1 dark:bg-darkBg">
                             <div className="py-2 px-4 border border-dashed border-primary bg-black/5 backdrop-blur text-lg font-semibold">Experienced Team</div>
                             <div className="flex-1 py-2 px-4 border border-dashed border-transparent group-hover:border-t-transparent smooth group-hover:border-primary dark:bg-[#F0F7EC]/25 hover:dark:bg-[#F0F7EC]/10 bg-[#F0F7EC] hover-bg">
