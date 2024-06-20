@@ -1,12 +1,12 @@
 "use client"
-import { isValidName, isValidEmail, isValidPhone } from "@/lib";
+import { isValidName, isValidEmail, isValidPhone, isValidAddress } from "@/lib";
 import useDebounce from "@/lib/Hooks/UseDebounce";
 import clsx from "clsx";
 import { Playfair_Display } from "next/font/google";
 import Image from "next/image";
 import { ChangeEvent, FormEvent, useEffect, useMemo,  useState } from "react";
 import toast from "react-hot-toast";
-import { FaUser, FaEnvelope, FaPhone, FaList, FaAngleDown, FaStar, FaAsterisk } from "react-icons/fa6";
+import { FaUser, FaEnvelope, FaPhone, FaList, FaAngleDown, FaStar, FaAsterisk, FaCalendar, FaAddressBook, FaIdCard, FaCalendarDay } from "react-icons/fa6";
 import arrImg from "@/lib/arrow.svg";
 import { countryList } from "@/lib/CountriesList";
 const FontFamily = Playfair_Display({ subsets: ["latin"], weight: "600" });
@@ -32,6 +32,10 @@ export default function FormSection() {
     const [emailText, setEmailText] = useState<string>("");
     const [phoneText, setPhoneText] = useState<string>("");
     const [countries, setCountries] = useState<string>("");
+    const [medId, setMedId] = useState<string>("");
+    const [dob, setDob] = useState<string>("2007-01-01");
+    const [startDate, setStartDate] = useState<string>(new Date().toISOString().slice(0, 16));
+    const [address, setAddress] = useState<string>("");
 
     const [errorObj, setErrorObj] = useState<ErrorObj>({
         firstName: { error: "", status: ErrorState.IDLE },
@@ -39,6 +43,10 @@ export default function FormSection() {
         email: { error: "", status: ErrorState.IDLE },
         phone: { error: "", status: ErrorState.IDLE },
         country: { error: "", status: ErrorState.IDLE },
+        address: { error: "", status: ErrorState.IDLE },
+        dob: { error: "", status: ErrorState.GOOD },
+        medID: { error: "", status: ErrorState.GOOD },
+        startDate: { error: "", status: ErrorState.GOOD },
     });
 
     // Debounced Variables
@@ -46,6 +54,7 @@ export default function FormSection() {
     const debounceLastNameText = useDebounce(lastNameText);
     const debounceEmailText = useDebounce(emailText);
     const debouncePhoneText = useDebounce(phoneText);
+    const debounceAddress = useDebounce(address);
 
     const goodToGo = useMemo(() => {
                const result = Object.keys(errorObj).every((key) => 
@@ -124,7 +133,23 @@ export default function FormSection() {
         setErrorObj((prev)=>({...prev, country: {error: "", status: ErrorState.GOOD}}));
     }, [countries]);
 
-    
+    // Validate Address
+    useEffect(() => {
+        if(debounceAddress === "") {
+            setErrorObj((prev)=>({...prev, address: {error: "", status: ErrorState.IDLE}}));
+            return;
+        }
+
+        const { error, isValid } = isValidAddress(debounceAddress);
+        if(!isValid) {
+            setErrorObj((prev)=>({...prev, address: {error: error, status: ErrorState.BAD}}));
+            return;
+        }
+
+        setErrorObj((prev)=>({...prev, address: {error: "", status: ErrorState.GOOD}}));
+    }, [debounceAddress]);
+
+    // Handle dat processing when submitted
     const performSubmit = async () => { 
         const payload = {
             firstName: debounceFirstNameText,
@@ -135,6 +160,7 @@ export default function FormSection() {
         }
     }
 
+    // Manage Toasts
     const handleSubmit = (e: FormEvent) => { 
         e.preventDefault();
         const promise = performSubmit();
@@ -234,6 +260,34 @@ export default function FormSection() {
                             />
                         </div>
                     </div>
+                    {/* Medicaid ID */}
+                    <div className="flex flex-col gap-2 capitalize">
+                        <span className="flex gap-1 sm:text-base text-sm">Medicaid ID <span className="opacity-60">(optional)</span> <span className="text-red-500"> {errorObj.medID.error}</span></span>
+                        <div className={clsx(
+                            "relative smooth rounded-xl overflow-hidden", 
+                            errorObj.medID.status === ErrorState.BAD ?"border-2 border-red-500": "border-2 dark:border-white/10 border-black/15 focus-within:shadow-md focus-within:shadow-white/50 dark:focus-within:shadow-primary/15 group dark:focus-within:border-white/50 focus-within:border-primary/70"
+                        )}>
+                            <FaIdCard className={clsx(
+                                "absolute top-1/2 -translate-y-1/2 pointer-events-none select-none left-4 peer-placeholder-shown:opacity-50 smooth",
+                                errorObj.medID.status === ErrorState.BAD ? "text-red-600 opacity-100" : "group-focus-within:opacity-100 opacity-50 "
+                                )} 
+                            />
+                            <input 
+                                type="text" 
+                                placeholder="123-ABC-4567"
+                                className={clsx(
+                                    "peer",
+                                    "dark:bg-white/5 bg-primary/5 outline-none",
+                                    "bg-transparent",
+                                    "w-full py-4 px-12 sm:text-lg",
+                                )}
+                                name="medicAid"
+                                required
+                                value={medId}
+                                onChange={(e: ChangeEvent<HTMLInputElement>)=>setMedId(e.target.value)}
+                            />
+                        </div>
+                    </div>
                     {/* Email */}
                     <div className="flex flex-col gap-2">
                         <span className="flex gap-1 sm:text-base text-sm">E-mail <span className="text-primary">:</span> <sup className="text-red-600 sm:text-sm text-xs"><FaAsterisk /></sup> <span className="text-red-500"> {errorObj.email.error}</span></span>
@@ -292,14 +346,14 @@ export default function FormSection() {
                     </div>
                     {/* Date of Birth */}
                     <div className="flex flex-col gap-2 capitalize">
-                        <span className="flex gap-1 sm:text-base text-sm">Date of birth <span className="text-primary">:</span> <sup className="text-red-600 sm:text-sm text-xs"><FaAsterisk /></sup> <span className="text-red-500"> {errorObj.lastName.error}</span></span>
+                        <span className="flex gap-1 sm:text-base text-sm">Date of birth <span className="text-primary">:</span> <sup className="text-red-600 sm:text-sm text-xs"><FaAsterisk /></sup> <span className="text-red-500"> {errorObj.dob.error}</span></span>
                         <div className={clsx(
                             "relative smooth rounded-xl overflow-hidden", 
-                            errorObj.lastName.status === ErrorState.BAD ?"border-2 border-red-500": "border-2 dark:border-white/10 border-black/15 focus-within:shadow-md focus-within:shadow-white/50 dark:focus-within:shadow-primary/15 group dark:focus-within:border-white/50 focus-within:border-primary/70"
+                            errorObj.dob.status === ErrorState.BAD ?"border-2 border-red-500": "border-2 dark:border-white/10 border-black/15 focus-within:shadow-md focus-within:shadow-white/50 dark:focus-within:shadow-primary/15 group dark:focus-within:border-white/50 focus-within:border-primary/70"
                         )}>
-                            <FaUser className={clsx(
+                            <FaCalendarDay className={clsx(
                                 "absolute top-1/2 -translate-y-1/2 pointer-events-none select-none left-4 peer-placeholder-shown:opacity-50 smooth",
-                                errorObj.lastName.status === ErrorState.BAD ? "text-red-600 opacity-100" : "group-focus-within:opacity-100 opacity-50 "
+                                errorObj.dob.status === ErrorState.BAD ? "text-red-600 opacity-100" : "group-focus-within:opacity-100 opacity-50 "
                                 )} 
                             />
                             <input 
@@ -311,10 +365,11 @@ export default function FormSection() {
                                     "bg-transparent appearance-none",
                                     "w-full py-4 px-12 sm:text-lg",
                                 )}
-                                name="lastName"
+                                name="dob"   
+                                max={new Date().toISOString().split('T')[0]}
                                 required
-                                value={lastNameText}
-                                onChange={(e: ChangeEvent<HTMLInputElement>)=>setLastNameText(e.target.value)}
+                                value={dob}
+                                onChange={(e: ChangeEvent<HTMLInputElement>)=>setDob(e.target.value)}
                             />
                         </div>
                     </div>
@@ -356,6 +411,62 @@ export default function FormSection() {
                             <FaAngleDown className="absolute top-1/2 -translate-y-1/2 pointer-events-none select-none right-6 peer-placeholder-shown:opacity-50" />
                         </div>
                     </div>
+                    {/* Patient's Address */}
+                    <div className="flex flex-col gap-2">
+                        <span className="flex gap-1 sm:text-base text-sm">Address <span className="text-primary">:</span> <sup className="text-red-600 sm:text-sm text-xs"><FaAsterisk /></sup> <span className="text-red-500"> {errorObj.address.error}</span></span>
+                        <div className={clsx(
+                            "relative smooth rounded-xl overflow-hidden", 
+                            errorObj.address.status === ErrorState.BAD ?"border-2 border-red-500": "border-2 dark:border-white/10 border-black/15 focus-within:shadow-md focus-within:shadow-white/50 dark:focus-within:shadow-primary/15 group dark:focus-within:border-white/50 focus-within:border-primary/70"
+                        )}>
+                            <FaAddressBook className={clsx(
+                                "absolute top-1/2 -translate-y-1/2 pointer-events-none select-none left-4 peer-placeholder-shown:opacity-50 smooth",
+                                errorObj.address.status === ErrorState.BAD ? "text-red-600 opacity-100" : "group-focus-within:opacity-100 opacity-50 "
+                                )} 
+                            />
+                            <input 
+                                type="text" 
+                                placeholder="123 Main St, City, State ZIP"
+                                className={clsx(
+                                    "peer",
+                                    "dark:bg-white/5 bg-primary/5 outline-none",
+                                    "bg-transparent",
+                                    "w-full py-4 px-12 sm:text-lg",
+                                )}
+                                name="address"
+                                required
+                                value={address}
+                                onChange={(e: ChangeEvent<HTMLInputElement>)=>setAddress(e.target.value)}
+                            />
+                        </div>
+                    </div>
+                    {/* Desired Start date */}
+                    <div className="flex flex-col gap-2 capitalize">
+                        <span className="flex gap-1 sm:text-base text-sm">Desired Start date <span className="text-primary">:</span> <sup className="text-red-600 sm:text-sm text-xs"><FaAsterisk /></sup> <span className="text-red-500"> {errorObj.startDate.error}</span></span>
+                        <div className={clsx(
+                            "relative smooth rounded-xl overflow-hidden", 
+                            errorObj.startDate.status === ErrorState.BAD ?"border-2 border-red-500": "border-2 dark:border-white/10 border-black/15 focus-within:shadow-md focus-within:shadow-white/50 dark:focus-within:shadow-primary/15 group dark:focus-within:border-white/50 focus-within:border-primary/70"
+                        )}>
+                            <FaCalendarDay className={clsx(
+                                "absolute top-1/2 -translate-y-1/2 pointer-events-none select-none left-4 peer-placeholder-shown:opacity-50 smooth",
+                                errorObj.startDate.status === ErrorState.BAD ? "text-red-600 opacity-100" : "group-focus-within:opacity-100 opacity-50 "
+                                )} 
+                            />
+                            <input 
+                                type="datetime-local" 
+                                className={clsx(
+                                    "peer",
+                                    "dark:bg-white/5 bg-primary/5 outline-none",
+                                    "bg-transparent appearance-none",
+                                    "w-full py-4 px-12 sm:text-lg",
+                                )}
+                                name="startDate"
+                                required
+                                value={startDate}
+                                min={new Date().toISOString().slice(0, 16)}
+                                onChange={(e: ChangeEvent<HTMLInputElement>)=>setStartDate(e.target.value)}
+                            />
+                        </div>
+                    </div>
                 </div>
 
                 {/* Submit button */}
@@ -380,5 +491,5 @@ export default function FormSection() {
 
             </section>
         </form>
-    )
+    );
 }

@@ -100,20 +100,23 @@ export default function ServicesOfferedSection({blob, btnText, btnUrl, descripti
                             </div>
                             <div className="sm:min-w-[20rem] min-w-[15rem] flex-1 flex flex-col gap-12">
                                 <span className="opacity-70 flex flex-col gap-4 sm:text-base text-sm" dangerouslySetInnerHTML={description}></span>
-                                <Image
-                                    src={imgSrc}
-                                    alt={imgAlt}
-                                    height={4600}
-                                    width={7360}
-                                    priority
-                                    className={clsx(
-                                        "w-full smooth",
-                                        "duration-500 delay-75"
-                                    )}
+                                <div 
+                                    className={clsx("overflow-hidden rounded-lg h-fit w-fit", "duration-500 delay-75")}
                                     style={{
-                                        transform: `translateY(-${percentage * 2}rem)`
+                                        transform: `translateY(-${percentage * 1}rem)`
                                     }}
-                                />
+                                >
+                                    <Image
+                                        src={imgSrc}
+                                        alt={imgAlt}
+                                        height={4600}
+                                        width={7360}
+                                        priority
+                                        className={clsx(
+                                            "w-full smooth"
+                                        )}
+                                    />
+                                </div>
                             </div>
                         </div>
                     </>

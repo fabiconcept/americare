@@ -28,7 +28,7 @@ export default function CcspSource() {
                                 avoid long-term care facilities.
                             </span>
                             <CustomBtn
-                                linkHref="/#check_eligibility"
+                                linkHref="#check_eligibility"
                                 text="Check Eligibility"
 
                             />
