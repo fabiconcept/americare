@@ -469,7 +469,8 @@ export default function FormSection() {
                                 errorObj.startDate.status === ErrorState.BAD ? "text-red-600 opacity-100" : "group-focus-within:opacity-100 opacity-50 "
                                 )} 
                             />
-                            <input 
+                            <input
+                                title="Choose a desired date to start" 
                                 type="datetime-local" 
                                 className={clsx(
                                     "peer",
