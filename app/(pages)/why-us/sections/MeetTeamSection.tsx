@@ -21,7 +21,6 @@ export default function MeetTeamSection() {
                             className="h-full object-cover max-md:scale-105 max-md:group-hover:scale-100 smooth absolute -top-2 sm:block hidden -right-[25%]"
                         />
                     </h1>
-                    <p className="opacity-60 text-[0.97rem] font-semibold">Meet our diver team of world class creators, designers, and problem solvers</p>
                 </div>
 
 

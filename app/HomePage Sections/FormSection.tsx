@@ -6,9 +6,8 @@ import { Playfair_Display } from "next/font/google";
 import Image from "next/image";
 import { ChangeEvent, FormEvent, useEffect, useMemo,  useState } from "react";
 import toast from "react-hot-toast";
-import { FaUser, FaEnvelope, FaPhone, FaList, FaAngleDown, FaStar, FaAsterisk, FaCalendar, FaAddressBook, FaIdCard, FaCalendarDay } from "react-icons/fa6";
+import { FaUser, FaEnvelope, FaPhone, FaStar, FaAsterisk, FaAddressBook, FaIdCard, FaCalendarDay } from "react-icons/fa6";
 import arrImg from "@/lib/arrow.svg";
-import { countryList } from "@/lib/CountriesList";
 const FontFamily = Playfair_Display({ subsets: ["latin"], weight: "600" });
 
 interface Payload {
@@ -18,7 +17,6 @@ interface Payload {
     email: string;
     phone: string;
     dob: string; // Assuming dob is a string in a date format
-    country: string;
     address: string;
     startDate: string; // Assuming startDate is a string in a date format
 }
@@ -43,7 +41,6 @@ export default function FormSection() {
     const [lastNameText, setLastNameText] = useState<string>("");
     const [emailText, setEmailText] = useState<string>("");
     const [phoneText, setPhoneText] = useState<string>("");
-    const [countries, setCountries] = useState<string>("");
     const [medId, setMedId] = useState<string>("");
     const [dob, setDob] = useState<string>("2007-01-01");
     const [startDate, setStartDate] = useState<string>(new Date().toISOString().slice(0, 16));
@@ -54,7 +51,6 @@ export default function FormSection() {
         lastName: { error: "", status: ErrorState.IDLE },
         email: { error: "", status: ErrorState.IDLE },
         phone: { error: "", status: ErrorState.IDLE },
-        country: { error: "", status: ErrorState.IDLE },
         address: { error: "", status: ErrorState.IDLE },
         dob: { error: "", status: ErrorState.GOOD },
         medID: { error: "", status: ErrorState.GOOD },
@@ -135,15 +131,6 @@ export default function FormSection() {
         setErrorObj((prev)=>({...prev, phone: {error: "", status: ErrorState.GOOD}}));
     }, [debouncePhoneText]);
     
-    // Validate Country
-    useEffect(() => {
-        if(countries === "") {
-            setErrorObj((prev)=>({...prev, country: {error: "", status: ErrorState.IDLE}}));
-            return;
-        }
-
-        setErrorObj((prev)=>({...prev, country: {error: "", status: ErrorState.GOOD}}));
-    }, [countries]);
 
     // Validate Address
     useEffect(() => {
@@ -170,7 +157,6 @@ export default function FormSection() {
             email: debounceEmailText,
             phone: debouncePhoneText,
             dob: dob,
-            country: countries,
             address: address,
             startDate: startDate,
         }
@@ -389,44 +375,6 @@ export default function FormSection() {
                                 value={dob}
                                 onChange={(e: ChangeEvent<HTMLInputElement>)=>setDob(e.target.value)}
                             />
-                        </div>
-                    </div>
-                    {/* Country of residence */}
-                    <div className="flex flex-col gap-2">
-                        <span className="flex gap-1 sm:text-base text-sm">Country of Residence <span className="text-primary">:</span> <sup className="text-red-600 sm:text-sm text-xs"><FaAsterisk /></sup> <span className="text-red-500"> {errorObj.country.error}</span></span>
-                        <div className={clsx(
-                            "relative smooth rounded-xl overflow-hidden cursor-pointer", 
-                            errorObj.country.status === ErrorState.BAD ?"border-2 border-red-500": "border-2 dark:border-white/10 border-black/15 focus-within:shadow-md focus-within:shadow-white/50 dark:focus-within:shadow-primary/15 group dark:focus-within:border-white/50 focus-within:border-primary/70"
-                        )}>
-                            <FaList className={clsx(
-                                "absolute top-1/2 -translate-y-1/2 pointer-events-none select-none left-4 peer-placeholder-shown:opacity-50 smooth",
-                                errorObj.country.status === ErrorState.BAD ? "text-red-600 opacity-100" : "group-focus-within:opacity-100 opacity-50 "
-                                )} 
-                            />
-                            <select 
-                                title="Select positon"
-                                className={clsx(
-                                    "peer",
-                                    "dark:bg-white/5 bg-primary/5 outline-none",
-                                    "bg-transparent appearance-none",
-                                    "w-full py-4 px-12 sm:text-lg",
-                                )}
-                                name="position"
-                                required
-                                value={countries}
-                                onChange={(e: ChangeEvent<HTMLSelectElement>)=>setCountries(e.target.value)}
-                            >
-                                <option key={"none"} className="dark:bg-darkBg dark:text-white text-black bg-white" value={""}>--- Select country ---</option>
-                                {countryList.map((country)=>{
-                                    const countryCode = country[0];
-                                    const countryName = country[1];
-                                    return (
-                                        <option key={countryCode} className="dark:bg-darkBg dark:text-white text-black bg-white" value={countryCode}>{countryName}</option>
-                                    )
-                                })}
-
-                            </select>
-                            <FaAngleDown className="absolute top-1/2 -translate-y-1/2 pointer-events-none select-none right-6 peer-placeholder-shown:opacity-50" />
                         </div>
                     </div>
                     {/* Patient's Address */}
