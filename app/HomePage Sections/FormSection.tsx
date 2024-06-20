@@ -290,6 +290,34 @@ export default function FormSection() {
                             />
                         </div>
                     </div>
+                    {/* Date of Birth */}
+                    <div className="flex flex-col gap-2 capitalize">
+                        <span className="flex gap-1 sm:text-base text-sm">Date of birth <span className="text-primary">:</span> <sup className="text-red-600 sm:text-sm text-xs"><FaAsterisk /></sup> <span className="text-red-500"> {errorObj.lastName.error}</span></span>
+                        <div className={clsx(
+                            "relative smooth rounded-xl overflow-hidden", 
+                            errorObj.lastName.status === ErrorState.BAD ?"border-2 border-red-500": "border-2 dark:border-white/10 border-black/15 focus-within:shadow-md focus-within:shadow-white/50 dark:focus-within:shadow-primary/15 group dark:focus-within:border-white/50 focus-within:border-primary/70"
+                        )}>
+                            <FaUser className={clsx(
+                                "absolute top-1/2 -translate-y-1/2 pointer-events-none select-none left-4 peer-placeholder-shown:opacity-50 smooth",
+                                errorObj.lastName.status === ErrorState.BAD ? "text-red-600 opacity-100" : "group-focus-within:opacity-100 opacity-50 "
+                                )} 
+                            />
+                            <input 
+                                type="date" 
+                                placeholder="Doe"
+                                className={clsx(
+                                    "peer",
+                                    "dark:bg-white/5 bg-primary/5 outline-none",
+                                    "bg-transparent appearance-none",
+                                    "w-full py-4 px-12 sm:text-lg",
+                                )}
+                                name="lastName"
+                                required
+                                value={lastNameText}
+                                onChange={(e: ChangeEvent<HTMLInputElement>)=>setLastNameText(e.target.value)}
+                            />
+                        </div>
+                    </div>
                     {/* Country of residence */}
                     <div className="flex flex-col gap-2">
                         <span className="flex gap-1 sm:text-base text-sm">Country of Residence <span className="text-primary">:</span> <sup className="text-red-600 sm:text-sm text-xs"><FaAsterisk /></sup> <span className="text-red-500"> {errorObj.country.error}</span></span>
