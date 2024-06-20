@@ -48,7 +48,7 @@ export default function HeroSection() {
             <ScrollToTop smooth className="grid place-items-center hover:bg-primary active:scale-90 smooth" style={{zIndex: 100}} />
             <NavigationComponent inViewContainer={inViewContainer} variation="home" />
             
-            <div ref={containerRef} id="top" className="hero pb-[12vw] pt-[7.5vw] isolate relative z-10 bg-white dark:bg-darkBg dark:text-white text-black after:bg-white dark:after:bg-darkBg">
+            <div ref={containerRef} id="top" className="hero pb-[12vw] pt-[7.5vw] isolate relative z-10 bg-primary/25 dark:bg-darkBg dark:text-white text-black after:bg-white dark:after:bg-darkBg">
                 <div className="absolute top-0 left-0 w-full h-full">
                     <video
                         src={"https://americare.sirv.com/bg-video.mp4"}

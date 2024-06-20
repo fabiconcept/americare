@@ -29,16 +29,16 @@ export default function OurServiceSection() {
                             <div>
                                 <Image
                                     src={"https://americare.sirv.com/ascendmedicalcom_749290951.png"}
-                                    alt=""
+                                    alt="Doctor and patient"
                                     height={400}
                                     width={400}
-                                    className='absolute bottom-0 left-1/2 -translate-x-1/2 group-hover:scale-125 smooth'
+                                    className='absolute bottom-0 left-1/2 -translate-x-1/2 group-hover:scale-110 smooth'
                                 />
                             </div>
                         </div>
                     </SwiperSlide>
                     <SwiperSlide>
-                        <div className="rounded-xl px-7 flex-1 relative min-h-[25rem] bg-blue-600/10 hover:bg-blue-600/15 dark:bg-primary/10 dark:hover:bg-primary/20 active:scale-95 smooth cursor-pointer group overflow-hidden border border-transparent hover:border-primary/50">
+                        <div className="rounded-xl px-7 flex-1 relative min-h-[25rem] bg-blue-600/10 hover:bg-blue-600/15 dark:bg-primary/10 dark:hover:bg-primary/20 active:scale-95 smooth cursor-pointer group overflow-hidden border dark:border-white/100 border-transparent hover:border-primary/50">
                             <div className='flex flex-col text-center pt-8'>
                                 <span className='text-xl font-semibold'>Pediatrics</span>
                                 <Link href={""} className='flex gap-2 items-center justify-center opacity-60 group-hover:text-primary smooth'>Get started <FaArrowRight /></Link>
@@ -50,7 +50,7 @@ export default function OurServiceSection() {
                                     alt=""
                                     height={500}
                                     width={500}
-                                    className='absolute bottom-0 left-1/2 -translate-x-1/2 group-hover:scale-125 smooth'
+                                    className='absolute bottom-0 left-1/2 -translate-x-1/2 group-hover:scale-110 smooth'
                                 />
                             </div>
                         </div>
@@ -64,11 +64,11 @@ export default function OurServiceSection() {
 
                             <div>
                                 <Image
-                                    src={"https://americare.sirv.com/nurse03.png"}
-                                    alt=""
+                                    src={"https://americare.sirv.com/nurse01.png"}
+                                    alt="Skilled Nursing"
                                     height={600}
                                     width={600}
-                                    className='absolute bottom-0 left-1/2 -translate-x-1/2 group-hover:scale-125 smooth'
+                                    className='absolute bottom-0 left-1/2 -translate-x-1/2 group-hover:scale-110 smooth'
                                 />
                             </div>
                         </div>
@@ -86,7 +86,7 @@ export default function OurServiceSection() {
                                     alt=""
                                     height={500}
                                     width={500}
-                                    className='absolute bottom-0 left-1/2 -translate-x-1/2 group-hover:scale-125 smooth'
+                                    className='absolute bottom-0 left-1/2 -translate-x-1/2 group-hover:scale-110 smooth'
                                 />
                             </div>
                         </div>
@@ -100,11 +100,11 @@ export default function OurServiceSection() {
 
                             <div>
                                 <Image
-                                    src={"https://americare.sirv.com/%5Bremoval.ai%5D_8ae08c71-8381-4896-b076-eadaacc9ef2a-pexels-thirdman-7659872.png"}
+                                    src={"https://americare.sirv.com/nurse03.png"}
                                     alt=""
-                                    height={500}
-                                    width={500}
-                                    className='absolute bottom-0 left-1/2 -translate-x-1/2 group-hover:scale-125 smooth'
+                                    height={800}
+                                    width={800}
+                                    className='absolute bottom-0 left-1/2 -translate-x-1/2 group-hover:scale-110 smooth'
                                 />
                             </div>
                         </div>
@@ -125,7 +125,7 @@ export default function OurServiceSection() {
                             alt=""
                             height={400}
                             width={400}
-                            className='absolute bottom-0 left-1/2 -translate-x-1/2 group-hover:scale-125 smooth'
+                            className='absolute bottom-0 left-1/2 -translate-x-1/2 group-hover:scale-110 smooth'
                         />
                     </div>
                 </div>
@@ -141,7 +141,7 @@ export default function OurServiceSection() {
                             alt=""
                             height={500}
                             width={500}
-                            className='absolute bottom-0 left-1/2 -translate-x-1/2 group-hover:scale-125 smooth'
+                            className='absolute bottom-0 left-1/2 -translate-x-1/2 group-hover:scale-110 smooth'
                         />
                     </div>
                 </div>
@@ -153,11 +153,11 @@ export default function OurServiceSection() {
 
                     <div>
                         <Image
-                            src={"https://americare.sirv.com/nurse03.png"}
-                            alt=""
+                            src={"https://americare.sirv.com/nurse01.png"}
+                            alt="Skilled Nursing"
                             height={600}
                             width={600}
-                            className='absolute bottom-0 left-1/2 -translate-x-1/2 group-hover:scale-125 smooth'
+                            className='absolute bottom-0 object-contain left-1/2 -translate-x-1/2 group-hover:scale-110 smooth'
                         />
                     </div>
                 </div>
@@ -173,7 +173,7 @@ export default function OurServiceSection() {
                             alt=""
                             height={500}
                             width={500}
-                            className='absolute bottom-0 left-1/2 -translate-x-1/2 group-hover:scale-125 smooth'
+                            className='absolute bottom-0 left-1/2 -translate-x-1/2 group-hover:scale-110 smooth'
                         />
                     </div>
                 </div>
@@ -185,11 +185,11 @@ export default function OurServiceSection() {
 
                     <div>
                         <Image
-                            src={"https://americare.sirv.com/%5Bremoval.ai%5D_8ae08c71-8381-4896-b076-eadaacc9ef2a-pexels-thirdman-7659872.png"}
+                            src={"https://americare.sirv.com/nurse03.png"}
                             alt=""
-                            height={400}
-                            width={400}
-                            className='absolute bottom-0 left-1/2 -translate-x-1/2 group-hover:scale-125 smooth -translate-y-24'
+                            height={800}
+                            width={800}
+                            className='absolute bottom-0 left-1/2 -translate-x-1/2 group-hover:scale-110 smooth translate-y-24'
                         />
                     </div>
                 </div>

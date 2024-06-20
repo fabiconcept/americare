@@ -11,6 +11,18 @@ import arrImg from "@/lib/arrow.svg";
 import { countryList } from "@/lib/CountriesList";
 const FontFamily = Playfair_Display({ subsets: ["latin"], weight: "600" });
 
+interface Payload {
+    firstName: string;
+    lastName: string;
+    medId?: string; // Assuming medId can be either a string or a number
+    email: string;
+    phone: string;
+    dob: string; // Assuming dob is a string in a date format
+    country: string;
+    address: string;
+    startDate: string; // Assuming startDate is a string in a date format
+}
+
 enum ErrorState {
     IDLE =  "idle",
     GOOD = "good",
@@ -151,13 +163,19 @@ export default function FormSection() {
 
     // Handle dat processing when submitted
     const performSubmit = async () => { 
-        const payload = {
+        const payload: Payload = {
             firstName: debounceFirstNameText,
             lastName: debounceLastNameText,
+            medId: medId,
             email: debounceEmailText,
             phone: debouncePhoneText,
+            dob: dob,
             country: countries,
+            address: address,
+            startDate: startDate,
         }
+
+        console.log(payload);
     }
 
     // Manage Toasts
