@@ -92,3 +92,11 @@ export function isValidAddress(address: string): ValidationResult {
 
     return { isValid: true, error: '' };
 }
+
+export const generateFileName = (file: File): string =>{
+    const filename = `${new Date().toISOString().slice(0, 10).replace(/-/g, '')}-${new Date().toISOString().slice(11, 16).replace(/:/g, '')}${
+        String.fromCharCode(97 + Math.floor(Math.random() * 26) + (Math.random() > 0.5 ? 0 : -32))
+      }.${file.type.split('/').pop()}`;
+
+      return filename
+}

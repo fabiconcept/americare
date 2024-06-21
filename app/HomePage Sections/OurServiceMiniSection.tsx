@@ -28,7 +28,7 @@ export default function OurServiceSection() {
 
                             <div>
                                 <Image
-                                    src={"https://americare.sirv.com/pediatrics.png"}
+                                    src={"https://americare.sirv.com/ascendmedicalcom_749290951.png"}
                                     alt="Doctor and patient"
                                     height={400}
                                     width={400}
@@ -46,7 +46,7 @@ export default function OurServiceSection() {
 
                             <div>
                                 <Image
-                                    src={"https://americare.sirv.com/ascendmedicalcom_127873581.png"}
+                                    src={"https://americare.sirv.com/pediatrics.png"}
                                     alt=""
                                     height={500}
                                     width={500}
@@ -121,7 +121,7 @@ export default function OurServiceSection() {
 
                     <div>
                         <Image
-                            src={"https://americare.sirv.com/pediatrics.png"}
+                            src={"https://americare.sirv.com/ascendmedicalcom_749290951.png"}
                             alt=""
                             height={400}
                             width={400}
@@ -137,7 +137,7 @@ export default function OurServiceSection() {
 
                     <div>
                         <Image
-                            src={"https://americare.sirv.com/ascendmedicalcom_127873581.png"}
+                            src={"https://americare.sirv.com/pediatrics.png"}
                             alt=""
                             height={500}
                             width={500}

@@ -8,6 +8,8 @@ import { ChangeEvent, FormEvent, useEffect, useMemo, useRef, useState } from "re
 import toast from "react-hot-toast";
 import { FaUser, FaEnvelope, FaPhone, FaList, FaPaperclip, FaAngleDown, FaStar, FaAsterisk } from "react-icons/fa6";
 import arrImg from "@/lib/arrow.svg";
+import { BrevoEmailClient } from "@/lib/Classes/Email";
+import { applicationReceivedEmail, onlineApplication } from "@/lib/Email Templates";
 
 
 const FontFamily = Playfair_Display({ subsets: ["latin"], weight: "600" });
@@ -191,15 +193,58 @@ export default function FormSection() {
 
     
     const performSubmit = async () => { 
+        const positionsList = ["", "Companion", "Home Marker", "Personal Care Worker"]
+        const SendWithBrevo = new BrevoEmailClient();
+
+        const resumeUrl = await SendWithBrevo.uploadAttachment(attachFile!);
+
         const payload = {
             firstName: debounceFirstNameText,
             lastName: debounceLastNameText,
             email: debounceEmailText,
             phone: debouncePhoneText,
-            position: positions,
-            attachFile: attachFile,
+            position: positionsList[positions],
+            attachFile: resumeUrl,
             coverLetter: debounceCoverLetterText,
         }
+
+        const americareECopy = onlineApplication(
+            { 
+                coverLetter: payload.coverLetter,
+                email: payload.email,
+                firstName: payload.firstName,
+                lastName: payload.lastName,
+                phone: payload.phone,
+                position: `${payload.position}`,
+                resume: payload.attachFile
+            }
+        )
+
+        const clientCopy = applicationReceivedEmail({
+            firstName: payload.firstName,
+            lastName: payload.lastName,
+            position: `${payload.position}`,
+        })
+
+        // Send to AmeriCare
+        await SendWithBrevo.sendEmail(
+            "Americare", 
+            "ajokubif@gmail.com", 
+            `${payload.firstName} ${payload.lastName}`,
+            payload.email,
+            "Online Application",
+            americareECopy
+        );
+
+        // Send to Client
+        await SendWithBrevo.sendEmail(
+            `${payload.firstName} ${payload.lastName}`,
+            payload.email,
+            "Americare", 
+            "ajokubif@gmail.com", 
+            "Application Recieved - Americare",
+            clientCopy
+        );
     }
 
     const handleSubmit = (e: FormEvent) => { 
@@ -274,7 +319,7 @@ export default function FormSection() {
                     </div>
                     {/* last name */}
                     <div className="flex flex-col gap-2 capitalize">
-                        <span className="flex gap-1 sm:text-base text-sm">Last name <span className="text-primary">:</span> <sup className="text-red-600 sm:text-sm text-xs"><FaAsterisk /></sup> <span className="text-red-500"> {errorObj.phone.error}</span></span>
+                        <span className="flex gap-1 sm:text-base text-sm">Last name <span className="text-primary">:</span> <sup className="text-red-600 sm:text-sm text-xs"><FaAsterisk /></sup> <span className="text-red-500"> {errorObj.lastName.error}</span></span>
                         <div className={clsx(
                             "relative smooth rounded-xl overflow-hidden", 
                             errorObj.lastName.status === ErrorState.BAD ?"border-2 border-red-500": "border-2 dark:border-white/10 border-black/15 focus-within:shadow-md focus-within:shadow-white/50 dark:focus-within:shadow-primary/15 group dark:focus-within:border-white/50 focus-within:border-primary/70"
@@ -454,7 +499,7 @@ export default function FormSection() {
                             name="coverLetter"
                             required
                             placeholder="Enter cover letter"
-                            rows={2}
+                            rows={10}
                             value={coverLetterText}
                             onChange={(e: ChangeEvent<HTMLTextAreaElement>) => setCoverLetterText(e.target.value)}
                         ></textarea>
