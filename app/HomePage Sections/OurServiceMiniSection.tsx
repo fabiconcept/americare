@@ -37,6 +37,7 @@ export default function OurServiceSection() {
                             </div>
                         </div>
                     </SwiperSlide>
+
                     <SwiperSlide>
                         <div className="rounded-xl px-7 flex-1 relative min-h-[25rem] bg-blue-600/10 hover:bg-blue-600/15 dark:bg-primary/10 dark:hover:bg-primary/20 active:scale-95 smooth cursor-pointer group overflow-hidden border dark:border-white/100 border-transparent hover:border-primary/50">
                             <div className='flex flex-col text-center pt-8'>
@@ -55,6 +56,7 @@ export default function OurServiceSection() {
                             </div>
                         </div>
                     </SwiperSlide>
+
                     <SwiperSlide>
                         <div className="rounded-xl px-7 flex-1 relative min-h-[25rem] bg-orange-600/10 hover:bg-orange-600/15 dark:bg-primary/10 dark:hover:bg-primary/20 active:scale-95 smooth cursor-pointer group overflow-hidden border border-transparent hover:border-primary/50">
                             <div className='flex flex-col text-center pt-8'>
@@ -73,6 +75,7 @@ export default function OurServiceSection() {
                             </div>
                         </div>
                     </SwiperSlide>
+
                     <SwiperSlide>
                         <div className="rounded-xl px-7 flex-1 relative min-h-[25rem] bg-red-600/10 hover:bg-red-600/15 dark:bg-primary/10 dark:hover:bg-primary/20 active:scale-95 smooth cursor-pointer group overflow-hidden border border-transparent hover:border-primary/50">
                             <div className='flex flex-col text-center pt-8'>
@@ -91,6 +94,7 @@ export default function OurServiceSection() {
                             </div>
                         </div>
                     </SwiperSlide>
+                    
                     <SwiperSlide>
                         <div className="rounded-xl px-7 flex-1 relative min-h-[25rem] bg-green-600/10 hover:bg-pink-600/15 dark:bg-primary/10 dark:hover:bg-primary/20 active:scale-95 smooth cursor-pointer group overflow-hidden border border-transparent hover:border-primary/50">
                             <div className='flex flex-col text-center pt-8'>
