@@ -213,7 +213,7 @@ export default function FormSection() {
             payload.email,
             ORGANISATION_NAME,
             ORGANISATION_EMAIL,
-            "Confirmation: Eligibility Form Data Received  - Americare",
+            "Confirmation: Eligibility Form Data Received  - AmeriCare",
             clientCopy
         );
 

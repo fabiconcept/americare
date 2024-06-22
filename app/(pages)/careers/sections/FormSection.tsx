@@ -252,7 +252,7 @@ export default function FormSection() {
             payload.email,
             ORGANISATION_NAME,
             ORGANISATION_EMAIL,
-            "Application Recieved - Americare",
+            "Application Recieved - AmeriCare",
             clientCopy
         );
 
