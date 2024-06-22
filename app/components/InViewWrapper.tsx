@@ -4,9 +4,10 @@ import { motion, Variants } from 'framer-motion';
 
 type PropType = { 
     children: JSX.Element, 
-    animation: Variants, 
+    animation: Variants,
+    className: string 
 }
-const InViewWrapper = ({ children, animation}: PropType) => {
+const InViewWrapper = ({ children, animation, className }: PropType) => {
     const { ref, inView } = useInView({
         threshold: 0.1,
         rootMargin: "0px",
@@ -19,7 +20,7 @@ const InViewWrapper = ({ children, animation}: PropType) => {
             initial="hidden"
             animate={inView ? 'visible' : 'hidden'}
             variants={animation}
-            className='w-auto'
+            className={className}
         >
             {children}
         </motion.div>

@@ -23,6 +23,11 @@ export default function OurServiceSection() {
         visible: { opacity: 1, translateX: 0, transition: { duration: 0.5 }},
     };
 
+    const cardInAlt: Variants = {
+        hidden: { opacity: 0, translateX: -100, },
+        visible: { opacity: 1, translateX: 0, transition: { duration: 0.5 }},
+    };
+
     return (
         <div className="py-24 2xl:px-[10vw] sm:px-[8vw] overflow-x-hidden  px-6 relative z-10 dark:bg-darkBg dark:text-white bg-white grid-bg">
             <InViewWrapper animation={fadeIn}>
@@ -53,7 +58,7 @@ export default function OurServiceSection() {
                             </SwiperSlide>
 
                             <SwiperSlide>
-                                <div className="rounded-xl px-7 flex-1 relative min-h-[25rem] bg-blue-600/10 hover:bg-blue-600/15 dark:bg-primary/10 dark:hover:bg-primary/20 active:scale-95 smooth cursor-pointer group overflow-hidden border dark:border-white/100 border-transparent hover:border-primary/50">
+                                <div className="rounded-xl px-7 flex-1 relative min-h-[25rem] bg-blue-600/10 hover:bg-blue-600/15 dark:bg-primary/10 dark:hover:bg-primary/20 active:scale-95 smooth cursor-pointer group overflow-hidden border border-transparent hover:border-primary/50">
                                     <div className='flex flex-col text-center pt-8'>
                                         <span className='text-xl font-semibold'>Pediatrics</span>
                                         <Link href={""} className='flex gap-2 items-center justify-center opacity-60 group-hover:text-primary smooth'>Get started <FaArrowRight /></Link>
@@ -149,7 +154,7 @@ export default function OurServiceSection() {
                                 </div>
                             </div>
                         </InViewWrapper>
-                        <InViewWrapper animation={cardIn}>
+                        <InViewWrapper animation={cardInAlt}>
                             <div className="rounded-xl px-7 flex-1 relative min-h-[25rem] bg-blue-600/10 hover:bg-blue-600/15 dark:bg-primary/10 dark:hover:bg-primary/20 active:scale-95 smooth cursor-pointer group overflow-hidden border border-transparent hover:border-primary/50">
                                 <div className='flex flex-col text-center pt-8'>
                                     <span className='text-xl font-semibold'>Pediatrics</span>
@@ -185,7 +190,7 @@ export default function OurServiceSection() {
                                 </div>
                             </div>
                         </InViewWrapper>
-                        <InViewWrapper animation={cardIn}>
+                        <InViewWrapper animation={cardInAlt}>
                             <div className="rounded-xl px-7 flex-1 relative min-h-[25rem] bg-red-600/10 hover:bg-red-600/15 dark:bg-primary/10 dark:hover:bg-primary/20 active:scale-95 smooth cursor-pointer group overflow-hidden border border-transparent hover:border-primary/50">
                                 <div className='flex flex-col text-center pt-8'>
                                     <span className='text-xl font-semibold'>Companionship</span>
