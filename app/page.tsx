@@ -8,8 +8,9 @@ import OurMissionSection from "./HomePage Sections/OurMissionSection";
 import TestimonialMarquee from "./HomePage Sections/TestimonialMarquee";
 import FormSection from "./HomePage Sections/FormSection";
 import JoinTeamSection from "./HomePage Sections/JoinTeamSection";
-import OurServiceSection from "./HomePage Sections/OurServiceMiniSection";
+import OurServiceMiniSection from "./HomePage Sections/OurServiceMiniSection";
 import { Toaster } from "react-hot-toast";
+
 
 export default function page() {
     return (
@@ -27,7 +28,7 @@ export default function page() {
             />
             <BackgroundLayer />
             <HeroSection />
-            <OurServiceSection />
+            <OurServiceMiniSection />
             <OurServicesSection />
             <MottoSection />
             <OurMissionSection />
