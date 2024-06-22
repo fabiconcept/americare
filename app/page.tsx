@@ -1,4 +1,3 @@
-import BackgroundLayer from "./HomePage Sections/BackgroundLayer";
 import ServicesOfferedSection from "./HomePage Sections/ServicesOfferedSection";
 import HeroSection from "./HomePage Sections/HeroSection";
 import { ServiceOffered } from "@/lib/ServiceOffered";
@@ -26,7 +25,6 @@ export default function page() {
                     }
                 }
             />
-            <BackgroundLayer />
             <HeroSection />
             <OurServiceMiniSection />
             <OurServicesSection />
