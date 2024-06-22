@@ -12,6 +12,8 @@ import { BrevoEmailClient } from "@/lib/Classes/Email";
 import { applicationReceivedEmail, onlineApplication } from "@/lib/Email Templates";
 import { FaTimes } from "react-icons/fa";
 import PopUp from "@/app/components/PopUp";
+import InViewWrapper from "@/app/components/InViewWrapper";
+import { Variants } from "framer-motion";
 
 
 const FontFamily = Playfair_Display({ subsets: ["latin"], weight: "600" });
@@ -230,7 +232,7 @@ export default function FormSection() {
             position: `${payload.position}`,
         })
 
-        
+
         const ORGANISATION_EMAIL = process.env.NEXT_PUBLIC_ORGANISATION_EMAIL!
         const ORGANISATION_NAME = process.env.NEXT_PUBLIC_ORGANISATION_NAME!
 
@@ -280,12 +282,17 @@ export default function FormSection() {
         setPositions(Positions.None);
         setCoverLetterText('');
         setAttachFile(null);
-        if(fileUploadRef.current) fileUploadRef.current.value = ''; // Reset the file input field
+        if (fileUploadRef.current) fileUploadRef.current.value = ''; // Reset the file input field
     };
-    
+
     const closeFunction = () => {
         setShowThanks(!showThanks);
     }
+
+    const fadeIn: Variants = {
+        hidden: { opacity: 0, translateY: 50 },
+        visible: { opacity: 1, translateY: 0, transition: { duration: 0.5 } },
+    };
 
     return (
         <>
@@ -321,291 +328,294 @@ export default function FormSection() {
                 </div>
             </PopUp>
 
-            <form action="" onSubmit={handleSubmit} className={clsx(isLoading ? "pointer-events-none" : "", "dark:bg-darkBg dark:text-white py-12 2xl:px-[10vw] sm:px-[8vw]  px-6 relative bg-white z-10")}>
-                <Image
-                    src={"https://americare.sirv.com/icons/bbblurry.svg"}
-                    alt={"blur shape"}
-                    height={800}
-                    width={800}
-                    className="sm:w-[70rem] w-[80rem] absolute sm:-top-[20rem] -top-[8rem] sm:-left-[20rem] -left-[12rem] dark:opacity-50 max-md:dark:opacity-25"
-                />
-                <div className="sm:mb-12 mb-8">
-                    <h1 className={clsx(FontFamily.className, "2xl:text-[3vw] sm:text-5xl text-4xl text-primary font-semibold relative w-fit")}>
-                        Online Application
-                        <Image
-                            src={arrImg}
-                            alt={"Scribble arrow"}
-                            height={80}
-                            width={80}
-                            className="h-full object-cover max-md:scale-105 max-md:group-hover:scale-100 smooth absolute -top-2 sm:block hidden -right-[25%]"
-                        />
-                    </h1>
-                    <p className="sm:text-base text-sm py-3 grid">
-                        <span>This section is your chance to shine! </span>
-                        <span className="opacity-50">
-                            Here, you can tell us about your skills, experience, and why you&apos;d be a great fit for us.
-                        </span>
-                    </p>
-                </div>
+            <InViewWrapper animation={fadeIn}>
+                <form action="" onSubmit={handleSubmit} className={clsx(isLoading ? "pointer-events-none" : "", "dark:bg-darkBg dark:text-white py-12 2xl:px-[10vw] sm:px-[8vw]  px-6 relative bg-white z-10")}>
 
-                <section>
-                    {/* Form input area */}
-                    <div className="grid grid-cols-[repeat(auto-fill,minmax(clamp(20rem,35vw,40rem),1fr))] sm:gap-[2rem_1rem] gap-4">
-                        {/* first name */}
-                        <div className="flex flex-col gap-2 capitalize">
-                            <span className="flex gap-1 sm:text-base text-sm">First name <span className="text-primary">:</span> <sup className="text-red-600 sm:text-sm text-xs"><FaAsterisk /></sup> <span className="text-red-500"> {errorObj.firstName.error}</span></span>
-                            <div className={clsx(
-                                "relative smooth rounded-xl overflow-hidden",
-                                errorObj.firstName.status === ErrorState.BAD ? "border-2 border-red-500" : "border-2 dark:border-white/10 border-black/15 focus-within:shadow-md focus-within:shadow-white/50 dark:focus-within:shadow-primary/15 group dark:focus-within:border-white/50 focus-within:border-primary/70"
-                            )}>
-                                <FaUser className={clsx(
-                                    "absolute top-1/2 -translate-y-1/2 pointer-events-none select-none left-4 peer-placeholder-shown:opacity-50 smooth",
-                                    errorObj.firstName.status === ErrorState.BAD ? "text-red-600 opacity-100" : "group-focus-within:opacity-100 opacity-50 "
-                                )}
-                                />
-                                <input
-                                    type="text"
-                                    placeholder="John"
-                                    className={clsx(
-                                        "peer",
-                                        "dark:bg-white/5 bg-primary/5 outline-none",
-                                        "bg-transparent",
-                                        "w-full py-4 px-12 sm:text-lg",
-                                    )}
-                                    name="firstName"
-                                    required
-                                    value={firstNameText}
-                                    onChange={(e: ChangeEvent<HTMLInputElement>) => setFirstNameText(e.target.value)}
-                                />
-                            </div>
-                        </div>
-                        {/* last name */}
-                        <div className="flex flex-col gap-2 capitalize">
-                            <span className="flex gap-1 sm:text-base text-sm">Last name <span className="text-primary">:</span> <sup className="text-red-600 sm:text-sm text-xs"><FaAsterisk /></sup> <span className="text-red-500"> {errorObj.lastName.error}</span></span>
-                            <div className={clsx(
-                                "relative smooth rounded-xl overflow-hidden",
-                                errorObj.lastName.status === ErrorState.BAD ? "border-2 border-red-500" : "border-2 dark:border-white/10 border-black/15 focus-within:shadow-md focus-within:shadow-white/50 dark:focus-within:shadow-primary/15 group dark:focus-within:border-white/50 focus-within:border-primary/70"
-                            )}>
-                                <FaUser className={clsx(
-                                    "absolute top-1/2 -translate-y-1/2 pointer-events-none select-none left-4 peer-placeholder-shown:opacity-50 smooth",
-                                    errorObj.lastName.status === ErrorState.BAD ? "text-red-600 opacity-100" : "group-focus-within:opacity-100 opacity-50 "
-                                )}
-                                />
-                                <input
-                                    type="text"
-                                    placeholder="Doe"
-                                    className={clsx(
-                                        "peer",
-                                        "dark:bg-white/5 bg-primary/5 outline-none",
-                                        "bg-transparent",
-                                        "w-full py-4 px-12 sm:text-lg",
-                                    )}
-                                    name="lastName"
-                                    required
-                                    value={lastNameText}
-                                    onChange={(e: ChangeEvent<HTMLInputElement>) => setLastNameText(e.target.value)}
-                                />
-                            </div>
-                        </div>
-                        {/* Email */}
-                        <div className="flex flex-col gap-2">
-                            <span className="flex gap-1 sm:text-base text-sm">E-mail <span className="text-primary">:</span> <sup className="text-red-600 sm:text-sm text-xs"><FaAsterisk /></sup> <span className="text-red-500"> {errorObj.email.error}</span></span>
-                            <div className={clsx(
-                                "relative smooth rounded-xl overflow-hidden",
-                                errorObj.email.status === ErrorState.BAD ? "border-2 border-red-500" : "border-2 dark:border-white/10 border-black/15 focus-within:shadow-md focus-within:shadow-white/50 dark:focus-within:shadow-primary/15 group dark:focus-within:border-white/50 focus-within:border-primary/70"
-                            )}>
-                                <FaEnvelope className={clsx(
-                                    "absolute top-1/2 -translate-y-1/2 pointer-events-none select-none left-4 peer-placeholder-shown:opacity-50 smooth",
-                                    errorObj.email.status === ErrorState.BAD ? "text-red-600 opacity-100" : "group-focus-within:opacity-100 opacity-50 "
-                                )}
-                                />
-                                <input
-                                    type="email"
-                                    placeholder="example@gmail.com"
-                                    className={clsx(
-                                        "peer",
-                                        "dark:bg-white/5 bg-primary/5 outline-none",
-                                        "bg-transparent",
-                                        "w-full py-4 px-12 sm:text-lg",
-                                    )}
-                                    name="email"
-                                    required
-                                    value={emailText}
-                                    onChange={(e: ChangeEvent<HTMLInputElement>) => setEmailText(e.target.value)}
-                                />
-                            </div>
-                        </div>
-                        {/* phone number */}
-                        <div className="flex flex-col gap-2">
-                            <span className="flex gap-1 sm:text-base text-sm">Phone number <span className="text-primary">:</span> <sup className="text-red-600 sm:text-sm text-xs"><FaAsterisk /></sup> <span className="text-red-500"> {errorObj.phone.error}</span></span>
-                            <div className={clsx(
-                                "relative smooth rounded-xl overflow-hidden",
-                                errorObj.phone.status === ErrorState.BAD ? "border-2 border-red-500" : "border-2 dark:border-white/10 border-black/15 focus-within:shadow-md focus-within:shadow-white/50 dark:focus-within:shadow-primary/15 group dark:focus-within:border-white/50 focus-within:border-primary/70"
-                            )}>
-                                <FaPhone className={clsx(
-                                    "absolute top-1/2 -translate-y-1/2 pointer-events-none select-none left-4 peer-placeholder-shown:opacity-50 smooth",
-                                    errorObj.phone.status === ErrorState.BAD ? "text-red-600 opacity-100" : "group-focus-within:opacity-100 opacity-50 "
-                                )}
-                                />
-                                <input
-                                    type="text"
-                                    placeholder="(555) 555 5555"
-                                    className={clsx(
-                                        "peer",
-                                        "dark:bg-white/5 bg-primary/5 outline-none",
-                                        "bg-transparent",
-                                        "w-full py-4 px-12 sm:text-lg",
-                                    )}
-                                    name="phoneNumber"
-                                    required
-                                    value={phoneText}
-                                    onChange={(e: ChangeEvent<HTMLInputElement>) => setPhoneText(e.target.value)}
-                                />
-                            </div>
-                        </div>
-                        {/* Position applying for */}
-                        <div className="flex flex-col gap-2">
-                            <span className="flex gap-1 sm:text-base text-sm">Position applying for <span className="text-primary">:</span> <sup className="text-red-600 sm:text-sm text-xs"><FaAsterisk /></sup> <span className="text-red-500"> {errorObj.position.error}</span></span>
-                            <div className={clsx(
-                                "relative smooth rounded-xl overflow-hidden cursor-pointer",
-                                errorObj.position.status === ErrorState.BAD ? "border-2 border-red-500" : "border-2 dark:border-white/10 border-black/15 focus-within:shadow-md focus-within:shadow-white/50 dark:focus-within:shadow-primary/15 group dark:focus-within:border-white/50 focus-within:border-primary/70"
-                            )}>
-                                <FaList className={clsx(
-                                    "absolute top-1/2 -translate-y-1/2 pointer-events-none select-none left-4 peer-placeholder-shown:opacity-50 smooth",
-                                    errorObj.position.status === ErrorState.BAD ? "text-red-600 opacity-100" : "group-focus-within:opacity-100 opacity-50 "
-                                )}
-                                />
-                                <select
-                                    title="Select positon"
-                                    className={clsx(
-                                        "peer",
-                                        "dark:bg-white/5 bg-primary/5 outline-none",
-                                        "bg-transparent appearance-none",
-                                        "w-full py-4 px-12 sm:text-lg",
-                                    )}
-                                    name="position"
-                                    required
-                                    value={positions}
-                                    onChange={(e: ChangeEvent<HTMLSelectElement>) => setPositions(Number(e.target.value) as Positions)}
-                                >
-                                    <option className="dark:bg-darkBg dark:text-white text-black bg-white" value={Positions.None}>Please choose an option</option>
-                                    <option className="dark:bg-darkBg dark:text-white text-black bg-white" value={Positions.Companion}>Companion</option>
-                                    <option className="dark:bg-darkBg dark:text-white text-black bg-white" value={Positions.HomeMarker}>Home maker</option>
-                                    <option className="dark:bg-darkBg dark:text-white text-black bg-white" value={Positions.PersonalCareWorker}>Personal care worker</option>
-
-                                </select>
-                                <FaAngleDown className="absolute top-1/2 -translate-y-1/2 pointer-events-none select-none right-6 peer-placeholder-shown:opacity-50" />
-                            </div>
-                        </div>
-                        {/* Attach resume */}
-                        <div className="flex flex-col gap-2">
-                            <span className="flex gap-1 sm:text-base text-sm">Attach resume <span className="text-primary">:</span> <sup className="text-red-600 sm:text-sm text-xs"><FaAsterisk /></sup> <span className="text-red-500"> {errorObj.attachFile.error}</span></span>
-                            <div className={clsx(
-                                "relative smooth rounded-xl overflow-hidden",
-                                errorObj.attachFile.status === ErrorState.BAD ? "border-2 border-red-500" : "border-2 dark:border-white/10 border-black/15 focus-within:shadow-md focus-within:shadow-white/50 dark:focus-within:shadow-primary/15 group dark:focus-within:border-white/50 focus-within:border-primary/70",
-                                "flex gap-2"
-                            )}>
-                                <FaPaperclip className={clsx(
-                                    "absolute top-1/2 -translate-y-1/2 pointer-events-none select-none left-4 peer-placeholder-shown:opacity-50 smooth",
-                                    errorObj.attachFile.status === ErrorState.BAD ? "text-red-600 opacity-100" : "group-focus-within:opacity-100 opacity-50 "
-                                )}
-                                />
-                                <div
-                                    className={clsx(
-                                        "peer",
-                                        "dark:bg-white/5 bg-primary/5 outline-none",
-                                        "bg-transparent",
-                                        "w-full py-4 px-14 sm:text-lg",
-                                    )}
-                                >
-                                    <p className="max-w-[70%] truncate">
-                                        {attachFile ? attachFile.name : "No file selected"}
-                                    </p>
-                                </div>
-                                <input
-                                    type="file"
-                                    hidden
-                                    accept=".pdf"
-                                    ref={fileUploadRef}
-                                    name="file"
-                                    required
-                                    onChange={(e: ChangeEvent<HTMLInputElement>) => handleFileChange(e.target.files)}
-                                />
-                                <span className="z-20 absolute top-1/2 -translate-y-1/2 select-none right-3 px-3 py-2  bg-primary/10 rounded-xl cursor-pointer hover:bg-primary/50 smooth active:scale-90 border dark:border-white/10 hover:dark:border-white/25 border-darkBg/10 hover:border-darkBg/25" onClick={handleClickFileUplaod}>Import file</span>
-                            </div>
-                        </div>
-                    </div>
-                    {/* Cover letter */}
-                    <div className="flex flex-col gap-2 mt-6">
-                        <p className="flex items-center justify-between">
-                            <span className="flex gap-1 sm:text-base text-sm">Cover letter <span className="text-primary">:</span> <sup className="text-red-600 sm:text-sm text-xs"><FaAsterisk /></sup> <span className="text-red-500"> {errorObj.coverLetter.error}</span></span>
-
-                            <span className={clsx(
-                                "",
-                                coverLengthWordCound > 500 ? "text-red-600" : ""
-                            )}>
-                                {coverLengthWordCound}/500
+                    <Image
+                        src={"https://americare.sirv.com/icons/bbblurry.svg"}
+                        alt={"blur shape"}
+                        height={800}
+                        width={800}
+                        className="sm:w-[70rem] w-[80rem] absolute sm:-top-[20rem] -top-[8rem] sm:-left-[20rem] -left-[12rem] dark:opacity-50 max-md:dark:opacity-25"
+                    />
+                    <div className="sm:mb-12 mb-8">
+                        <h1 className={clsx(FontFamily.className, "2xl:text-[3vw] sm:text-5xl text-4xl text-primary font-semibold relative w-fit")}>
+                            Online Application
+                            <Image
+                                src={arrImg}
+                                alt={"Scribble arrow"}
+                                height={80}
+                                width={80}
+                                className="h-full object-cover max-md:scale-105 max-md:group-hover:scale-100 smooth absolute -top-2 sm:block hidden -right-[25%]"
+                            />
+                        </h1>
+                        <p className="sm:text-base text-sm py-3 grid">
+                            <span>This section is your chance to shine! </span>
+                            <span className="opacity-50">
+                                Here, you can tell us about your skills, experience, and why you&apos;d be a great fit for us.
                             </span>
                         </p>
-                        <div className={clsx(
-                            "relative smooth rounded-xl overflow-hidden",
-                            errorObj.coverLetter.status === ErrorState.BAD ? "border-2 border-red-500" : "border-2 dark:border-white/10 border-black/15 focus-within:shadow-md focus-within:shadow-white/50 dark:focus-within:shadow-primary/15 group dark:focus-within:border-white/50 focus-within:border-primary/70"
-                        )}>
-                            <textarea
-                                className={clsx(
-                                    "peer",
-                                    "dark:bg-white/5 bg-primary/5 outline-none",
-                                    "bg-transparent",
-                                    "w-full py-4 px-8 sm:text-lg resize-none outline-none min-h-[calc(2lh+2rem)] max-h-[calc(4lh+2rem)]",
-                                )}
-                                name="coverLetter"
-                                required
-                                placeholder="Enter cover letter"
-                                rows={10}
-                                value={coverLetterText}
-                                onChange={(e: ChangeEvent<HTMLTextAreaElement>) => setCoverLetterText(e.target.value)}
-                            ></textarea>
-                        </div>
                     </div>
-                    {/* Submit button */}
-                    {<div className="flex flex-col gap-2 mt-6 group sm:w-fit">
-                        <button
-                            className={clsx(
-                                "smooth border-2 border-dashed",
-                                "border-primary text-primary bg-transparent",
-                                goodToGo ? "grayscale-0 hover:bg-primary hover:text-white hover:border-dotted active:scale-90" : "grayscale cursor-not-allowed",
-                                "sm:w-fit py-4 px-8 sm:text-lg rounded-lg outline-none",
-                                isLoading && "opacity-65"
-                            )}
 
-                            type={goodToGo && !isLoading ? "submit" : "button"}
-                        >
-                            {goodToGo ?
-                                <span>
-                                    {!isLoading ?
-                                        <span className="flex gap-2 items-center justify-center">
-                                            Send application <FaStar className="group-hover:text-yellow-300" />
-                                        </span>
-                                        :
-                                        <span className="flex gap-2 items-center justify-center">
-                                            <Image
-                                                src={"https://americare.sirv.com/icons/spinner.svg"}
-                                                alt="spinner"
-                                                height={20}
-                                                width={20}
-                                                className="dark:invert-0 invert"
-                                            />
-                                            submitting
-                                        </span>
-                                    }
+                    <section>
+                        {/* Form input area */}
+                        <div className="grid grid-cols-[repeat(auto-fill,minmax(clamp(20rem,35vw,40rem),1fr))] sm:gap-[2rem_1rem] gap-4">
+                            {/* first name */}
+                            <div className="flex flex-col gap-2 capitalize">
+                                <span className="flex gap-1 sm:text-base text-sm">First name <span className="text-primary">:</span> <sup className="text-red-600 sm:text-sm text-xs"><FaAsterisk /></sup> <span className="text-red-500"> {errorObj.firstName.error}</span></span>
+                                <div className={clsx(
+                                    "relative smooth rounded-xl overflow-hidden",
+                                    errorObj.firstName.status === ErrorState.BAD ? "border-2 border-red-500" : "border-2 dark:border-white/10 border-black/15 focus-within:shadow-md focus-within:shadow-white/50 dark:focus-within:shadow-primary/15 group dark:focus-within:border-white/50 focus-within:border-primary/70"
+                                )}>
+                                    <FaUser className={clsx(
+                                        "absolute top-1/2 -translate-y-1/2 pointer-events-none select-none left-4 peer-placeholder-shown:opacity-50 smooth",
+                                        errorObj.firstName.status === ErrorState.BAD ? "text-red-600 opacity-100" : "group-focus-within:opacity-100 opacity-50 "
+                                    )}
+                                    />
+                                    <input
+                                        type="text"
+                                        placeholder="John"
+                                        className={clsx(
+                                            "peer",
+                                            "dark:bg-white/5 bg-primary/5 outline-none",
+                                            "bg-transparent",
+                                            "w-full py-4 px-12 sm:text-lg",
+                                        )}
+                                        name="firstName"
+                                        required
+                                        value={firstNameText}
+                                        onChange={(e: ChangeEvent<HTMLInputElement>) => setFirstNameText(e.target.value)}
+                                    />
+                                </div>
+                            </div>
+                            {/* last name */}
+                            <div className="flex flex-col gap-2 capitalize">
+                                <span className="flex gap-1 sm:text-base text-sm">Last name <span className="text-primary">:</span> <sup className="text-red-600 sm:text-sm text-xs"><FaAsterisk /></sup> <span className="text-red-500"> {errorObj.lastName.error}</span></span>
+                                <div className={clsx(
+                                    "relative smooth rounded-xl overflow-hidden",
+                                    errorObj.lastName.status === ErrorState.BAD ? "border-2 border-red-500" : "border-2 dark:border-white/10 border-black/15 focus-within:shadow-md focus-within:shadow-white/50 dark:focus-within:shadow-primary/15 group dark:focus-within:border-white/50 focus-within:border-primary/70"
+                                )}>
+                                    <FaUser className={clsx(
+                                        "absolute top-1/2 -translate-y-1/2 pointer-events-none select-none left-4 peer-placeholder-shown:opacity-50 smooth",
+                                        errorObj.lastName.status === ErrorState.BAD ? "text-red-600 opacity-100" : "group-focus-within:opacity-100 opacity-50 "
+                                    )}
+                                    />
+                                    <input
+                                        type="text"
+                                        placeholder="Doe"
+                                        className={clsx(
+                                            "peer",
+                                            "dark:bg-white/5 bg-primary/5 outline-none",
+                                            "bg-transparent",
+                                            "w-full py-4 px-12 sm:text-lg",
+                                        )}
+                                        name="lastName"
+                                        required
+                                        value={lastNameText}
+                                        onChange={(e: ChangeEvent<HTMLInputElement>) => setLastNameText(e.target.value)}
+                                    />
+                                </div>
+                            </div>
+                            {/* Email */}
+                            <div className="flex flex-col gap-2">
+                                <span className="flex gap-1 sm:text-base text-sm">E-mail <span className="text-primary">:</span> <sup className="text-red-600 sm:text-sm text-xs"><FaAsterisk /></sup> <span className="text-red-500"> {errorObj.email.error}</span></span>
+                                <div className={clsx(
+                                    "relative smooth rounded-xl overflow-hidden",
+                                    errorObj.email.status === ErrorState.BAD ? "border-2 border-red-500" : "border-2 dark:border-white/10 border-black/15 focus-within:shadow-md focus-within:shadow-white/50 dark:focus-within:shadow-primary/15 group dark:focus-within:border-white/50 focus-within:border-primary/70"
+                                )}>
+                                    <FaEnvelope className={clsx(
+                                        "absolute top-1/2 -translate-y-1/2 pointer-events-none select-none left-4 peer-placeholder-shown:opacity-50 smooth",
+                                        errorObj.email.status === ErrorState.BAD ? "text-red-600 opacity-100" : "group-focus-within:opacity-100 opacity-50 "
+                                    )}
+                                    />
+                                    <input
+                                        type="email"
+                                        placeholder="example@gmail.com"
+                                        className={clsx(
+                                            "peer",
+                                            "dark:bg-white/5 bg-primary/5 outline-none",
+                                            "bg-transparent",
+                                            "w-full py-4 px-12 sm:text-lg",
+                                        )}
+                                        name="email"
+                                        required
+                                        value={emailText}
+                                        onChange={(e: ChangeEvent<HTMLInputElement>) => setEmailText(e.target.value)}
+                                    />
+                                </div>
+                            </div>
+                            {/* phone number */}
+                            <div className="flex flex-col gap-2">
+                                <span className="flex gap-1 sm:text-base text-sm">Phone number <span className="text-primary">:</span> <sup className="text-red-600 sm:text-sm text-xs"><FaAsterisk /></sup> <span className="text-red-500"> {errorObj.phone.error}</span></span>
+                                <div className={clsx(
+                                    "relative smooth rounded-xl overflow-hidden",
+                                    errorObj.phone.status === ErrorState.BAD ? "border-2 border-red-500" : "border-2 dark:border-white/10 border-black/15 focus-within:shadow-md focus-within:shadow-white/50 dark:focus-within:shadow-primary/15 group dark:focus-within:border-white/50 focus-within:border-primary/70"
+                                )}>
+                                    <FaPhone className={clsx(
+                                        "absolute top-1/2 -translate-y-1/2 pointer-events-none select-none left-4 peer-placeholder-shown:opacity-50 smooth",
+                                        errorObj.phone.status === ErrorState.BAD ? "text-red-600 opacity-100" : "group-focus-within:opacity-100 opacity-50 "
+                                    )}
+                                    />
+                                    <input
+                                        type="text"
+                                        placeholder="(555) 555 5555"
+                                        className={clsx(
+                                            "peer",
+                                            "dark:bg-white/5 bg-primary/5 outline-none",
+                                            "bg-transparent",
+                                            "w-full py-4 px-12 sm:text-lg",
+                                        )}
+                                        name="phoneNumber"
+                                        required
+                                        value={phoneText}
+                                        onChange={(e: ChangeEvent<HTMLInputElement>) => setPhoneText(e.target.value)}
+                                    />
+                                </div>
+                            </div>
+                            {/* Position applying for */}
+                            <div className="flex flex-col gap-2">
+                                <span className="flex gap-1 sm:text-base text-sm">Position applying for <span className="text-primary">:</span> <sup className="text-red-600 sm:text-sm text-xs"><FaAsterisk /></sup> <span className="text-red-500"> {errorObj.position.error}</span></span>
+                                <div className={clsx(
+                                    "relative smooth rounded-xl overflow-hidden cursor-pointer",
+                                    errorObj.position.status === ErrorState.BAD ? "border-2 border-red-500" : "border-2 dark:border-white/10 border-black/15 focus-within:shadow-md focus-within:shadow-white/50 dark:focus-within:shadow-primary/15 group dark:focus-within:border-white/50 focus-within:border-primary/70"
+                                )}>
+                                    <FaList className={clsx(
+                                        "absolute top-1/2 -translate-y-1/2 pointer-events-none select-none left-4 peer-placeholder-shown:opacity-50 smooth",
+                                        errorObj.position.status === ErrorState.BAD ? "text-red-600 opacity-100" : "group-focus-within:opacity-100 opacity-50 "
+                                    )}
+                                    />
+                                    <select
+                                        title="Select positon"
+                                        className={clsx(
+                                            "peer",
+                                            "dark:bg-white/5 bg-primary/5 outline-none",
+                                            "bg-transparent appearance-none",
+                                            "w-full py-4 px-12 sm:text-lg",
+                                        )}
+                                        name="position"
+                                        required
+                                        value={positions}
+                                        onChange={(e: ChangeEvent<HTMLSelectElement>) => setPositions(Number(e.target.value) as Positions)}
+                                    >
+                                        <option className="dark:bg-darkBg dark:text-white text-black bg-white" value={Positions.None}>Please choose an option</option>
+                                        <option className="dark:bg-darkBg dark:text-white text-black bg-white" value={Positions.Companion}>Companion</option>
+                                        <option className="dark:bg-darkBg dark:text-white text-black bg-white" value={Positions.HomeMarker}>Home maker</option>
+                                        <option className="dark:bg-darkBg dark:text-white text-black bg-white" value={Positions.PersonalCareWorker}>Personal care worker</option>
+
+                                    </select>
+                                    <FaAngleDown className="absolute top-1/2 -translate-y-1/2 pointer-events-none select-none right-6 peer-placeholder-shown:opacity-50" />
+                                </div>
+                            </div>
+                            {/* Attach resume */}
+                            <div className="flex flex-col gap-2">
+                                <span className="flex gap-1 sm:text-base text-sm">Attach resume <span className="text-primary">:</span> <sup className="text-red-600 sm:text-sm text-xs"><FaAsterisk /></sup> <span className="text-red-500"> {errorObj.attachFile.error}</span></span>
+                                <div className={clsx(
+                                    "relative smooth rounded-xl overflow-hidden",
+                                    errorObj.attachFile.status === ErrorState.BAD ? "border-2 border-red-500" : "border-2 dark:border-white/10 border-black/15 focus-within:shadow-md focus-within:shadow-white/50 dark:focus-within:shadow-primary/15 group dark:focus-within:border-white/50 focus-within:border-primary/70",
+                                    "flex gap-2"
+                                )}>
+                                    <FaPaperclip className={clsx(
+                                        "absolute top-1/2 -translate-y-1/2 pointer-events-none select-none left-4 peer-placeholder-shown:opacity-50 smooth",
+                                        errorObj.attachFile.status === ErrorState.BAD ? "text-red-600 opacity-100" : "group-focus-within:opacity-100 opacity-50 "
+                                    )}
+                                    />
+                                    <div
+                                        className={clsx(
+                                            "peer",
+                                            "dark:bg-white/5 bg-primary/5 outline-none",
+                                            "bg-transparent",
+                                            "w-full py-4 px-14 sm:text-lg",
+                                        )}
+                                    >
+                                        <p className="max-w-[70%] truncate">
+                                            {attachFile ? attachFile.name : "No file selected"}
+                                        </p>
+                                    </div>
+                                    <input
+                                        type="file"
+                                        hidden
+                                        accept=".pdf"
+                                        ref={fileUploadRef}
+                                        name="file"
+                                        required
+                                        onChange={(e: ChangeEvent<HTMLInputElement>) => handleFileChange(e.target.files)}
+                                    />
+                                    <span className="z-20 absolute top-1/2 -translate-y-1/2 select-none right-3 px-3 py-2  bg-primary/10 rounded-xl cursor-pointer hover:bg-primary/50 smooth active:scale-90 border dark:border-white/10 hover:dark:border-white/25 border-darkBg/10 hover:border-darkBg/25" onClick={handleClickFileUplaod}>Import file</span>
+                                </div>
+                            </div>
+                        </div>
+                        {/* Cover letter */}
+                        <div className="flex flex-col gap-2 mt-6">
+                            <p className="flex items-center justify-between">
+                                <span className="flex gap-1 sm:text-base text-sm">Cover letter <span className="text-primary">:</span> <sup className="text-red-600 sm:text-sm text-xs"><FaAsterisk /></sup> <span className="text-red-500"> {errorObj.coverLetter.error}</span></span>
+
+                                <span className={clsx(
+                                    "",
+                                    coverLengthWordCound > 500 ? "text-red-600" : ""
+                                )}>
+                                    {coverLengthWordCound}/500
                                 </span>
-                                :
-                                <span className="flex gap-2 items-center justify-center">Fill the form</span>
-                            }
-                        </button>
-                    </div>}
-                </section>
-            </form>
+                            </p>
+                            <div className={clsx(
+                                "relative smooth rounded-xl overflow-hidden",
+                                errorObj.coverLetter.status === ErrorState.BAD ? "border-2 border-red-500" : "border-2 dark:border-white/10 border-black/15 focus-within:shadow-md focus-within:shadow-white/50 dark:focus-within:shadow-primary/15 group dark:focus-within:border-white/50 focus-within:border-primary/70"
+                            )}>
+                                <textarea
+                                    className={clsx(
+                                        "peer",
+                                        "dark:bg-white/5 bg-primary/5 outline-none",
+                                        "bg-transparent",
+                                        "w-full py-4 px-8 sm:text-lg resize-none outline-none min-h-[calc(2lh+2rem)] max-h-[calc(4lh+2rem)]",
+                                    )}
+                                    name="coverLetter"
+                                    required
+                                    placeholder="Enter cover letter"
+                                    rows={10}
+                                    value={coverLetterText}
+                                    onChange={(e: ChangeEvent<HTMLTextAreaElement>) => setCoverLetterText(e.target.value)}
+                                ></textarea>
+                            </div>
+                        </div>
+                        {/* Submit button */}
+                        {<div className="flex flex-col gap-2 mt-6 group sm:w-fit">
+                            <button
+                                className={clsx(
+                                    "smooth border-2 border-dashed",
+                                    "border-primary text-primary bg-transparent",
+                                    goodToGo ? "grayscale-0 hover:bg-primary hover:text-white hover:border-dotted active:scale-90" : "grayscale cursor-not-allowed",
+                                    "sm:w-fit py-4 px-8 sm:text-lg rounded-lg outline-none",
+                                    isLoading && "opacity-65"
+                                )}
+
+                                type={goodToGo && !isLoading ? "submit" : "button"}
+                            >
+                                {goodToGo ?
+                                    <span>
+                                        {!isLoading ?
+                                            <span className="flex gap-2 items-center justify-center">
+                                                Send application <FaStar className="group-hover:text-yellow-300" />
+                                            </span>
+                                            :
+                                            <span className="flex gap-2 items-center justify-center">
+                                                <Image
+                                                    src={"https://americare.sirv.com/icons/spinner.svg"}
+                                                    alt="spinner"
+                                                    height={20}
+                                                    width={20}
+                                                    className="dark:invert-0 invert"
+                                                />
+                                                submitting
+                                            </span>
+                                        }
+                                    </span>
+                                    :
+                                    <span className="flex gap-2 items-center justify-center">Fill the form</span>
+                                }
+                            </button>
+                        </div>}
+                    </section>
+                </form>
+            </InViewWrapper>
         </>
     )
 }
