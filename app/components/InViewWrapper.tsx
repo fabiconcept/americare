@@ -5,7 +5,7 @@ import { motion, Variants } from 'framer-motion';
 type PropType = { 
     children: JSX.Element, 
     animation: Variants,
-    className: string 
+    className?: string 
 }
 const InViewWrapper = ({ children, animation, className }: PropType) => {
     const { ref, inView } = useInView({
