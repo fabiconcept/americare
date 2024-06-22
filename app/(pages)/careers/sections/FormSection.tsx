@@ -290,7 +290,7 @@ export default function FormSection() {
     return (
         <>
             <PopUp closeFunction={closeFunction} isVisible={showThanks}>
-                <div className="relative flex flex-col dark:bg-darkBg sm:max-w-[40rem] max-w-[calc(100%-1rem)] bg-white overflow-hidden sm:rounded-t-2xl rounded-b-2xl border dark:border-white/25 border-primary/5 shadow-2xl shadow-black/10">
+                <div className="relative max-sm:-translate-y-[3.25rem] flex flex-col dark:bg-darkBg sm:max-w-[40rem] max-w-full bg-white overflow-hidden sm:rounded-t-2xl rounded-b-2xl border dark:border-white/25 border-primary/5 shadow-2xl shadow-black/10">
                     <div className="grid place-items-center relative">
                         <Image
                             src="https://americare.sirv.com/icons/Team%20spirit.png"
@@ -301,8 +301,8 @@ export default function FormSection() {
                             className="w-[20rem] translate-y-2"
                         />
                     </div>
-                    <div className="p-8 text-center mt-3 max-xl:text-sm">
-                        <h2 className="text-4xl font-bold p-2 text-primary">Application Recieved!</h2>
+                    <div className="sm:p-8 p-6 text-center mt-3 max-xl:text-sm">
+                        <h2 className="sm:text-4xl text-3xl font-bold p-2 text-primary">Application Recieved!</h2>
                         <p className="dark:text-white text-black">
                             Thanks for submitting your application! We&apos;ll review it and get back to you within 24 hours.
                         </p>

@@ -42,6 +42,7 @@ interface ErrorObj {
 
 export default function FormSection() {
     const [firstNameText, setFirstNameText] = useState<string>("");
+    const [firstNameTextPop, setFirstNameTextPop] = useState<string>("");
     const [lastNameText, setLastNameText] = useState<string>("");
     const [emailText, setEmailText] = useState<string>("");
     const [phoneText, setPhoneText] = useState<string>("");
@@ -211,7 +212,7 @@ export default function FormSection() {
 
         setShowThanks(true);
         handleReset();
-
+        setFirstNameTextPop(payload.firstName);
         setIsLoading(false);
     }
 
@@ -229,6 +230,7 @@ export default function FormSection() {
     }
 
     const closeFunction = () => {
+        setFirstNameTextPop("");
         setShowThanks(!showThanks);
     }
 
@@ -247,7 +249,7 @@ export default function FormSection() {
     return (
         <>
             <PopUp closeFunction={closeFunction} isVisible={showThanks}>
-                <div className="relative flex flex-col dark:bg-darkBg sm:max-w-[40rem] max-w-[calc(100%-1rem)] bg-white overflow-hidden rounded-xl border dark:border-white/25 border-primary/5 shadow-2xl shadow-black/10">
+                <div className="relative max-sm:-translate-y-[3.25rem] flex flex-col dark:bg-darkBg sm:max-w-[40rem] max-w-full bg-white overflow-hidden rounded-xl border dark:border-white/25 border-primary/5 shadow-2xl shadow-black/10">
                     <div className="grid place-items-center relative">
                         <Image
                             src="https://americare.sirv.com/icons/Team%20spirit.png"
@@ -258,8 +260,8 @@ export default function FormSection() {
                             className="w-[20rem] translate-y-2"
                         />
                     </div>
-                    <div className="p-8 text-center mt-3 max-xl:text-sm">
-                        <h2 className="text-4xl font-bold p-2 text-primary">Thank you {firstNameText}!</h2>
+                    <div className="sm:p-8 p-6 text-center mt-3 max-xl:text-sm">
+                        <h2 className="sm:text-4xl text-3xl font-bold p-2 text-primary">Thank you {firstNameTextPop}!</h2>
                         <p className="dark:text-white text-black">
                             Thank you for reaching out to us! We have received your message and the details you submitted. Our team will review your message and contact you within 24 hours. We appreciate your patience and look forward to connecting with you soon!
                         </p>
@@ -387,7 +389,6 @@ export default function FormSection() {
                                         "w-full py-4 px-12 sm:text-lg",
                                     )}
                                     name="medicAid"
-                                    required
                                     value={medId}
                                     onChange={(e: ChangeEvent<HTMLInputElement>) => setMedId(e.target.value)}
                                 />
