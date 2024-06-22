@@ -62,7 +62,7 @@ export const eligibilityCheck = ({ address, dob, email, firstName, lastName, pho
                     }
 
                     .header img {
-                        height: 80px;
+                        height: 60px;
                     }
 
                     .header h2 {
@@ -98,7 +98,6 @@ export const eligibilityCheck = ({ address, dob, email, firstName, lastName, pho
                 <div class="container">
                     <div class="header">
                         <img src="https://americare.sirv.com/icons/logo-png.png" alt="Company Logo">
-                        <h2>Eligibility Check</h2>
                     </div>
                     <div class="content">
                         <p style="text-align: center; font-size: 1.15rem">New submission from ${username}</p>
@@ -162,7 +161,7 @@ export const onlineApplication = ({ email, firstName, lastName, phone, coverLett
                     }
 
                     .header img {
-                        height: 80px;
+                        height: 60px;
                     }
 
                     .header h2 {
@@ -175,7 +174,7 @@ export const onlineApplication = ({ email, firstName, lastName, phone, coverLett
                     }
 
                     .content p {
-                        font-size: 1.25rem;
+                        font-size: 1rem;
                         text-align: left;
                         margin: 0;
                         padding: 0 0 1rem 0;
@@ -210,7 +209,7 @@ export const onlineApplication = ({ email, firstName, lastName, phone, coverLett
                             <p><b>Position applying for:</b> <span>${position}</span></p>
                             <p><b>Attached resume:</b> <span>${resume}</span></p>
                             <br>
-                            <p><b>Cover letter:</b> <br/><span style="font-size: 0.95rem">${coverLetter}</span></p>
+                            <p><b>Cover letter:</b> <br/><span style="font-size: 0.95rem; "><pre>${coverLetter}</pre></span></p>
                         </div>
                     </div>
                 </div>
@@ -279,14 +278,14 @@ export const applicationReceivedEmail = ({
             </div>
             <div class="content">
                 <p>Dear ${firstName} ${lastName},</p>
-                <p>Thank you for applying for the <strong>${position}</strong> position at Americare. We have received your application and our team is currently reviewing it.</p>
+                <p>Thank you for applying for the <strong>${position}</strong> position at AmeriCare. We have received your application and our team is currently reviewing it.</p>
                 <p>We appreciate your interest in joining our team and will be in touch with you shortly regarding the next steps in the application process.</p>
                 <p>If you have any questions in the meantime, please feel free to reach out to us.</p>
                 <p>Best regards,</p>
                 <p>The Hiring Team</p>
             </div>
             <div class="footer">
-                <p>&copy; 2024 Americare. All rights reserved.</p>
+                <p>&copy; 2024 AmeriCare. All rights reserved.</p>
             </div>
             </div>
         </body>
@@ -348,10 +347,10 @@ export const generateAcknowledgementEmail = (firstName: string) => `
             <p>Thank you for reaching out to us and submitting your eligibility check form. We have received your information and our team will review it shortly.</p>
             <p>We appreciate your interest and will get back to you soon.</p>
             <p>Best regards,</p>
-            <p><strong>Americare</strong></p>
+            <p><strong>AmeriCare</strong></p>
         </div>
         <div class="footer">
-            &copy; ${new Date().getFullYear()} Americare. All rights reserved.
+            &copy; ${new Date().getFullYear()} AmeriCare. All rights reserved.
         </div>
         </div>
     </body>

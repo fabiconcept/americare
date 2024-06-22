@@ -100,3 +100,29 @@ export const generateFileName = (file: File): string =>{
 
       return filename
 }
+
+export function formatDateTime(dateString: string): string {
+    const date = new Date(dateString);
+
+    // Month names array
+    const monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun",
+                        "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+
+    // Get components of the date
+    const month = monthNames[date.getMonth()];
+    const day = date.getDate();
+    const year = date.getFullYear();
+
+    // Format time (HH:MM AM/PM)
+    let hours = date.getHours();
+    const minutes = (date.getMinutes() < 10 ? '0' : '') + date.getMinutes();
+    const ampm = hours >= 12 ? 'PM' : 'AM';
+    hours = hours % 12;
+    hours = hours ? hours : 12; // Handle midnight
+    const time = hours + ':' + minutes + ' ' + ampm;
+
+    // Construct formatted date string
+    const formattedDateTime = `${month} ${day}, ${year} (${time})`;
+
+    return formattedDateTime;
+}

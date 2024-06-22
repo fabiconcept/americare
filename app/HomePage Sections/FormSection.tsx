@@ -1,5 +1,5 @@
 "use client"
-import { isValidName, isValidEmail, isValidPhone, isValidAddress } from "@/lib";
+import { isValidName, isValidEmail, isValidPhone, isValidAddress, formatDateTime } from "@/lib";
 import useDebounce from "@/lib/Hooks/UseDebounce";
 import clsx from "clsx";
 import { Playfair_Display } from "next/font/google";
@@ -9,7 +9,9 @@ import toast from "react-hot-toast";
 import { FaUser, FaEnvelope, FaPhone, FaStar, FaAsterisk, FaAddressBook, FaIdCard, FaCalendarDay } from "react-icons/fa6";
 import arrImg from "@/lib/arrow.svg";
 import PopUp from "../components/PopUp";
-import { FaCheckCircle, FaTimes } from "react-icons/fa";
+import { FaTimes } from "react-icons/fa";
+import { BrevoEmailClient } from "@/lib/Classes/Email";
+import { eligibilityCheck, generateAcknowledgementEmail } from "@/lib/Email Templates";
 const FontFamily = Playfair_Display({ subsets: ["latin"], weight: "600" });
 
 interface Payload {
@@ -47,7 +49,8 @@ export default function FormSection() {
     const [dob, setDob] = useState<string>("2007-01-01");
     const [startDate, setStartDate] = useState<string>(new Date().toISOString().slice(0, 16));
     const [address, setAddress] = useState<string>("");
-    const [showThanks, setShowThanks] = useState<boolean>(true);
+    const [showThanks, setShowThanks] = useState<boolean>(false);
+    const [isLoading, setIsLoading] = useState<boolean>(false);
 
     const [errorObj, setErrorObj] = useState<ErrorObj>({
         firstName: { error: "", status: ErrorState.IDLE },
@@ -153,6 +156,7 @@ export default function FormSection() {
 
     // Handle dat processing when submitted
     const performSubmit = async () => {
+        setIsLoading(true)
         const payload: Payload = {
             firstName: debounceFirstNameText,
             lastName: debounceLastNameText,
@@ -161,32 +165,89 @@ export default function FormSection() {
             phone: debouncePhoneText,
             dob: dob,
             address: address,
-            startDate: startDate,
+            startDate: formatDateTime(startDate),
         }
 
-        console.log(payload);
+        const SendWithBrevo = new BrevoEmailClient();
+        
+        const ORGANISATION_EMAIL = process.env.NEXT_PUBLIC_ORGANISATION_EMAIL!
+        const ORGANISATION_NAME = process.env.NEXT_PUBLIC_ORGANISATION_NAME!
+
+        const americareECopy = eligibilityCheck(
+            {
+                email: payload.email,
+                firstName: payload.firstName,
+                lastName: payload.lastName,
+                phone: payload.phone,
+                address: payload.address,
+                dob: payload.dob,
+                startDate: payload.startDate,
+                medID: payload.medId
+            }
+        );
+
+        const clientCopy = generateAcknowledgementEmail(payload.firstName);
+
+        // Send to AmeriCare
+        await SendWithBrevo.sendEmail(
+            ORGANISATION_NAME,
+            ORGANISATION_EMAIL,
+            `${payload.firstName} ${payload.lastName}`,
+            payload.email,
+            "Eligibility Check",
+            americareECopy
+        );
+
+
+        // Send to Client
+        await SendWithBrevo.sendEmail(
+            `${payload.firstName} ${payload.lastName}`,
+            payload.email,
+            ORGANISATION_NAME,
+            ORGANISATION_EMAIL,
+            "Confirmation: Eligibility Form Data Received  - Americare",
+            clientCopy
+        );
+
+        setShowThanks(true);
+        handleReset();
+
+        setIsLoading(false);
     }
 
     // Manage Toasts
     const handleSubmit = (e: FormEvent) => {
         e.preventDefault();
+        if (isLoading) return;
         const promise = performSubmit();
 
         toast.promise(promise, {
-            error: "Opps! Failed to submit application",
-            loading: "Submitting application...",
-            success: "Application submitted ✨✔🚀"
-        })
+            loading: "Submitting information...",
+            success: "Form submitted successfully! ✨✔🚀",
+            error: "Oops! Failed to submit the form. Please try again.",
+        });
     }
 
     const closeFunction = () => {
         setShowThanks(!showThanks);
     }
 
+    const handleReset = () => {
+        setFirstNameText('');
+        setLastNameText('');
+        setEmailText('');
+        setPhoneText('');
+        setMedId('');
+        setDob('');
+        setAddress('');
+        setStartDate(new Date().toISOString().slice(0, 16)); // Set start date to the current datetime
+    };
+    
+
     return (
         <>
-            {showThanks && <PopUp closeFunction={closeFunction}>
-                <div className="relative flex flex-col dark:bg-darkBg sm:max-w-[40rem] max-w-[20rem] bg-white overflow-hidden rounded-xl border dark:border-white/25 border-primary/5 shadow-2xl shadow-black/10">
+            <PopUp closeFunction={closeFunction} isVisible={showThanks}>
+                <div className="relative flex flex-col dark:bg-darkBg sm:max-w-[40rem] max-w-[calc(100%-1rem)] bg-white overflow-hidden rounded-xl border dark:border-white/25 border-primary/5 shadow-2xl shadow-black/10">
                     <div className="grid place-items-center relative">
                         <Image
                             src="https://americare.sirv.com/icons/Team%20spirit.png"
@@ -197,13 +258,13 @@ export default function FormSection() {
                             className="w-[20rem] translate-y-2"
                         />
                     </div>
-                    <div className="p-8 text-center mt-3 text-sm">
+                    <div className="p-8 text-center mt-3 max-xl:text-sm">
                         <h2 className="text-4xl font-bold p-2 text-primary">Thank you {firstNameText}!</h2>
-                        <p>
+                        <p className="dark:text-white text-black">
                             Thank you for reaching out to us! We have received your message and the details you submitted. Our team will review your message and contact you within 24 hours. We appreciate your patience and look forward to connecting with you soon!
                         </p>
                         <div onClick={closeFunction} className={clsx(
-                            "mx-auto mt-3 font-semibold smooth text-primary dark:bg-primary/25 dark:text-white bg-primary/5 sm:py-3 py-2 sm:px-10 whitespace-nowrap px-6 active:rotate-3 hover:text-white cursor-pointer active:scale-90 outline-primary w-fit select-none border-4 outline-2 outline-dashed relative overflow-hidden h-fit",
+                            "mx-auto mt-5 font-semibold smooth text-primary dark:bg-primary/25 dark:text-white bg-primary/5 sm:py-3 py-2 sm:px-10 whitespace-nowrap px-6 active:rotate-3 hover:text-white cursor-pointer active:scale-90 outline-primary w-fit select-none border-4 dark:border-darkBg border-white outline-2 outline-dashed relative overflow-hidden h-fit",
                             "after:h-2 after:w-2 sm:rounded-xl rounded-lg hover:after:bg-primary hover:after:h-[105%] hover:after:w-full smooth-after after:absolute after:top-1/2 after:left-1/2 after:-translate-x-1/2 after:-translate-y-1/2",
                         )}>
                             <span className="relative z-50">Okay</span>
@@ -211,11 +272,11 @@ export default function FormSection() {
                         </div>
                     </div>
 
-                    <span onClick={closeFunction} className="absolute top-2 right-2 text-lg text-primary hover:text-red-600 cursor-pointer">
+                    <span onClick={closeFunction} className="absolute smooth top-4 right-4 text-3xl text-primary hover:text-red-600 cursor-pointer">
                         <FaTimes />
                     </span>
                 </div>
-            </PopUp>}
+            </PopUp>
 
             <form action="" onSubmit={handleSubmit} className="dark:bg-darkBg dark:text-white py-12 2xl:px-[10vw] sm:px-[8vw]  px-6 relative bg-white z-40">
                 <Image
@@ -484,12 +545,30 @@ export default function FormSection() {
                                 "border-primary text-primary bg-transparent",
                                 goodToGo ? "grayscale-0 hover:bg-primary hover:text-white hover:border-dotted active:scale-90" : "grayscale cursor-not-allowed",
                                 "sm:w-fit py-4 px-8 sm:text-lg rounded-lg outline-none",
+                                isLoading && "opacity-65"
                             )}
 
-                            type={goodToGo ? "submit" : "button"}
+                            type={goodToGo && !isLoading ? "submit" : "button"}
                         >
                             {goodToGo ?
-                                <span className="flex gap-2 items-center justify-center">Check Eligibility <FaStar className="group-hover:text-yellow-300" /></span>
+                                <span>
+                                    {!isLoading ?
+                                        <span className="flex gap-2 items-center justify-center">
+                                            Send application <FaStar className="group-hover:text-yellow-300" />
+                                        </span>
+                                        :
+                                        <span className="flex gap-2 items-center justify-center">
+                                            <Image
+                                                src={"https://americare.sirv.com/icons/spinner.svg"}
+                                                alt="spinner"
+                                                height={20}
+                                                width={20}
+                                                className="dark:invert-0 invert"
+                                            />
+                                            submitting
+                                        </span>
+                                    }
+                                </span>
                                 :
                                 <span className="flex gap-2 items-center justify-center">Fill the form</span>
                             }
