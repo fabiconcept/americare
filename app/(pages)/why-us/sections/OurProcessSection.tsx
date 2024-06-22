@@ -1,28 +1,35 @@
 import { OurProcessList } from "@/lib/OurProcess";
 import ProcessItem from "./components/ProcessItem";
 import clsx from "clsx";
-
+import { Variants } from "framer-motion";
+import InViewWrapper from "@/app/components/InViewWrapper";
 
 export default function OurProcessSection() {
+    const fadeIn: Variants = {
+        hidden: { opacity: 0, translateY: 50 },
+        visible: { opacity: 1, translateY: 0, transition: { duration: 0.5 } },
+    };
     return (
-        <section className={clsx("dark:bg-darkBg dark:text-white bg-white sm:py-24 py-12 grid-bg")}>
-            <h1 className={clsx("sm:px-[10vw] sm:font-normal font-semibold mb-3 px-6 text-center text-primary sm:text-[4vw] text-5xl")}>
-                Our Process
-            </h1>
-            <p className="opacity-50 mb-5 sm:text-base text-sm mx-auto 2xl:px-[10vw] sm:px-[8vw]  px-6">
-                AmeriCare&apos;s commitment to excellence is reflected in our structured and comprehensive four-step process, tailored to meet the unique needs of each client in the home healthcare industry:
-            </p>
-            <div className="grid 2xl:grid-cols-[repeat(auto-fill,minmax(30rem,1fr))] sm:grid-cols-[repeat(auto-fill,minmax(25rem,1fr))] sm:px-[3vw] px-2">
-                {OurProcessList.map((processItem, index)=>(
-                    <ProcessItem 
-                        key={index}
-                        count={index+1}
-                        title={processItem.title}
-                        content={processItem.content}
-                        isOdd={index % 2 === 0}
-                    />
-                ))}
-            </div>
-        </section>
+        <InViewWrapper animation={fadeIn} className={clsx("dark:bg-darkBg dark:text-white bg-white sm:py-24 py-12 grid-bg")}>
+            <>
+                <h1 className={clsx("sm:px-[10vw] sm:font-normal font-semibold mb-3 px-6 text-center text-primary sm:text-[4vw] text-5xl")}>
+                    Our Process
+                </h1>
+                <p className="opacity-50 mb-5 sm:text-base text-sm mx-auto 2xl:px-[10vw] sm:px-[8vw]  px-6">
+                    AmeriCare&apos;s commitment to excellence is reflected in our structured and comprehensive four-step process, tailored to meet the unique needs of each client in the home healthcare industry:
+                </p>
+                <div className="grid 2xl:grid-cols-[repeat(auto-fill,minmax(30rem,1fr))] sm:grid-cols-[repeat(auto-fill,minmax(25rem,1fr))] sm:px-[3vw] px-2">
+                    {OurProcessList.map((processItem, index) => (
+                        <ProcessItem
+                            key={index}
+                            count={index + 1}
+                            title={processItem.title}
+                            content={processItem.content}
+                            isOdd={index % 2 === 0}
+                        />
+                    ))}
+                </div>
+            </>
+        </InViewWrapper>
     )
 }
