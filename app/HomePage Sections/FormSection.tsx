@@ -55,9 +55,9 @@ export default function FormSection() {
     const [showThanks, setShowThanks] = useState<boolean>(false);
     const [isLoading, setIsLoading] = useState<boolean>(false);
 
-    const cardIn: Variants = {
-        hidden: { opacity: 0, translateX: 100, },
-        visible: { opacity: 1, translateX: 0, transition: { duration: 0.5 } },
+    const fadeIn: Variants = {
+        hidden: { opacity: 0, translateY: 50 },
+        visible: { opacity: 1, translateY: 0, transition: { duration: 0.5 } },
     };
 
     const [errorObj, setErrorObj] = useState<ErrorObj>({
@@ -287,8 +287,8 @@ export default function FormSection() {
                 </div>
             </PopUp>
 
-            <form action="" onSubmit={handleSubmit} className="dark:bg-darkBg dark:text-white py-12 2xl:px-[10vw] sm:px-[8vw]  px-6 relative bg-white z-40 overflow-x-hidden">
-                <InViewWrapper animation={cardIn}>
+            <form action="" onSubmit={handleSubmit} className="dark:bg-darkBg dark:text-white py-12 2xl:px-[10vw] sm:px-[8vw]  px-6 relative bg-white z-40">
+                <InViewWrapper animation={fadeIn}>
                     <>
                         <Image
                             src={"https://americare.sirv.com/icons/bbblurry.svg"}
