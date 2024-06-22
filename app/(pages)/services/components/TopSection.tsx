@@ -1,17 +1,23 @@
 "use client"
+import InViewWrapper from "@/app/components/InViewWrapper";
+import { Variants } from "framer-motion";
 import ScrollToTop from "react-scroll-to-top";
 
 export default function TopSection() {
+    const fadeIn: Variants = {
+        hidden: { opacity: 0, translateY: 50 },
+        visible: { opacity: 1, translateY: 0, transition: { duration: 0.5 } },
+    };
     return (
         <>
             <ScrollToTop smooth className="grid place-items-center hover:bg-primary active:scale-90 smooth" style={{zIndex: 100}} />
             <div className="dark:bg-darkBg dark:text-white bg-white pt-[10rem] pb-[6rem] grid-bg">
-                <div className="sm:px-[10rem] px-4 pb-[2rem] text-center flex flex-col items-center">
+                <InViewWrapper animation={fadeIn} className="sm:px-[10rem] px-4 pb-[2rem] text-center flex flex-col items-center">
                     <h1
                         className="text-primary font-semibold 2xl:max-w-[55vw] sm:max-[75vw] text-balance p-3 2xl:text-7xl sm:text-6xl text-4xl">
                         Empowering home healthcare for <span className="px-4 rounded-[5rem] border dark:border-white/10 border-primary/25 dark:bg-white/10 bg-primary/10 hover:-translate-y-2 hover:dark:bg-white/15 hover:bg-primary/25 smooth">seniors</span> & <span className="px-4 rounded-[5rem] border dark:border-white/10 border-primary/25 dark:bg-white/10 bg-primary/10 hover:-translate-y-2 hover:dark:bg-white/15 hover:bg-primary/25 smooth">children</span>
                     </h1>
-                </div>
+                </InViewWrapper>
             </div>
         </>
     )
