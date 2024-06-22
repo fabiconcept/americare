@@ -22,7 +22,7 @@ export default function OurCaregivers() {
     };
     return (
         <>
-            <div className="dark:bg-darkBg dark:text-white grid place-items-center sm:py-24 py-12 2xl:px-[10vw] sm:px-[8vw]  px-6 relative z-40 bg-white">
+            <div className="dark:bg-darkBg dark:text-white grid place-items-center sm:py-24 py-12 2xl:px-[10vw] sm:px-[8vw]  px-6 relative z-40 bg-white overflow-x-hidden">
                 <Image
                     src={"https://americare.sirv.com/icons/bbblurry.svg"}
                     alt={"blur shape"}

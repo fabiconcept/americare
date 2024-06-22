@@ -10,7 +10,7 @@ export default function OurProcessSection() {
         visible: { opacity: 1, translateY: 0, transition: { duration: 0.5 } },
     };
     return (
-        <InViewWrapper animation={fadeIn} className={clsx("dark:bg-darkBg dark:text-white bg-white sm:py-24 py-12 grid-bg")}>
+        <InViewWrapper animation={fadeIn} className={clsx("dark:bg-darkBg dark:text-white bg-white sm:py-24 py-12 grid-bg  overflow-x-hidden")}>
             <>
                 <h1 className={clsx("sm:px-[10vw] sm:font-normal font-semibold mb-3 px-6 text-center text-primary sm:text-[4vw] text-5xl")}>
                     Our Process

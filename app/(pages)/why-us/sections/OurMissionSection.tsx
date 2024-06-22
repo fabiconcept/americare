@@ -17,7 +17,7 @@ export default function OurMissionSection() {
     };
     return (
         <>
-            <div className="dark:bg-darkBg dark:text-white grid place-items-center sm:py-24 py-12 2xl:px-[10vw] sm:px-[8vw]  px-6 relative z-10 bg-white">
+            <div className="dark:bg-darkBg dark:text-white grid place-items-center sm:py-24 py-12 2xl:px-[10vw] sm:px-[8vw]  px-6 relative z-10 bg-white overflow-x-hidden">
                 <div>
                     <InViewWrapper animation={cardIn} className="mb-12">
                         <h1 className={clsx(FontFamily.className, "sm:text-[4vw] text-5xl text-primary font-semibold")}>Our Mission</h1>
