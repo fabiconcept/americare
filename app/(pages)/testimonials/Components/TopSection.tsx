@@ -1,11 +1,17 @@
 "use client"
+import InViewWrapper from "@/app/components/InViewWrapper";
+import { Variants } from "framer-motion";
 import ScrollToTop from "react-scroll-to-top";
 
 export default function TopSection() {
+    const fadeIn: Variants = {
+        hidden: { opacity: 0, translateY: 50 },
+        visible: { opacity: 1, translateY: 0, transition: { duration: 0.5 } },
+    };
     return (
         <>
-        <ScrollToTop smooth className="grid place-items-center hover:bg-primary active:scale-90 smooth" style={{zIndex: 100}} />
-            <div className="dark:bg-darkBg dark:text-white bg-white pt-[10rem] pb-[4rem]">
+            <ScrollToTop smooth className="grid place-items-center hover:bg-primary active:scale-90 smooth" style={{ zIndex: 100 }} />
+            <InViewWrapper animation={fadeIn} className="dark:bg-darkBg dark:text-white bg-white pt-[10rem] pb-[4rem]">
                 <div className="sm:px-[10rem] px-4 pb-[2rem] text-center flex flex-col items-center">
                     <h1
                         className="text-primary font-semibold 2xl:max-w-[55vw] md:max-w-[75vw] w-[90vw] text-balance p-3 2xl:text-7xl sm:text-6xl text-4xl">
@@ -17,7 +23,7 @@ export default function TopSection() {
                         </span>
                     </span>
                 </div>
-            </div>
+            </InViewWrapper>
         </>
     )
 }
