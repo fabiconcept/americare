@@ -20,7 +20,7 @@ export default function RootLayout({
 }>) {
     return (
         <html lang="en">
-            <body className={clsx(FontFamily.className, "overflow-x-hidden sm:text-base text-sm")}>
+            <body className={clsx(FontFamily.className, "overflow-x-hidden sm:text-base text-sm dark:bg-darkBg bg-white")}>
                 <NextTopLoader color="#000" />
                 {children}
                 <FooterSection />
