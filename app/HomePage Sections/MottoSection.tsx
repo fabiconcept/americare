@@ -16,7 +16,7 @@ export default function MottoSection() {
     };
 
     return (
-        <div className="py-24 2xl:px-[10vw] sm:px-[8vw]  px-6 relative z-10 dark:bg-darkBg dark:text-white bg-white">
+        <div className="py-24 2xl:px-[10vw] sm:px-[8vw]  px-6 relative z-10 dark:bg-darkBg dark:text-white bg-white overflow-x-hidden">
             <div className="flex flex-wrap gap-4 justify-center w-full perspective">
                 <InViewWrapper animation={cardIn} className="md:min-w-[30%] min-w-[20rem] rounded-xl gap-3 flex-1 flex flex-col items-center p-6 text-center dark:bg-white/5 bg-primary/5 smooth rotate-y dark:hover:bg-white/10 hover:bg-primary/10 border hover:border-primary/50 shadow-lg shadow-transparent hover:bg-gradient-to-r from-white/10 to-transparent hover:shadow-primary/5 border-transparent">
                     <>

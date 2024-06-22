@@ -12,6 +12,8 @@ import PopUp from "../components/PopUp";
 import { FaTimes } from "react-icons/fa";
 import { BrevoEmailClient } from "@/lib/Classes/Email";
 import { eligibilityCheck, generateAcknowledgementEmail } from "@/lib/Email Templates";
+import { Variants } from "framer-motion";
+import InViewWrapper from "../components/InViewWrapper";
 const FontFamily = Playfair_Display({ subsets: ["latin"], weight: "600" });
 
 interface Payload {
@@ -52,6 +54,11 @@ export default function FormSection() {
     const [address, setAddress] = useState<string>("");
     const [showThanks, setShowThanks] = useState<boolean>(false);
     const [isLoading, setIsLoading] = useState<boolean>(false);
+
+    const cardIn: Variants = {
+        hidden: { opacity: 0, translateX: 100, },
+        visible: { opacity: 1, translateX: 0, transition: { duration: 0.5 } },
+    };
 
     const [errorObj, setErrorObj] = useState<ErrorObj>({
         firstName: { error: "", status: ErrorState.IDLE },
@@ -170,7 +177,7 @@ export default function FormSection() {
         }
 
         const SendWithBrevo = new BrevoEmailClient();
-        
+
         const ORGANISATION_EMAIL = process.env.NEXT_PUBLIC_ORGANISATION_EMAIL!
         const ORGANISATION_NAME = process.env.NEXT_PUBLIC_ORGANISATION_NAME!
 
@@ -244,7 +251,7 @@ export default function FormSection() {
         setAddress('');
         setStartDate(new Date().toISOString().slice(0, 16)); // Set start date to the current datetime
     };
-    
+
 
     return (
         <>
@@ -280,303 +287,307 @@ export default function FormSection() {
                 </div>
             </PopUp>
 
-            <form action="" onSubmit={handleSubmit} className="dark:bg-darkBg dark:text-white py-12 2xl:px-[10vw] sm:px-[8vw]  px-6 relative bg-white z-40">
-                <Image
-                    src={"https://americare.sirv.com/icons/bbblurry.svg"}
-                    alt={"blur shape"}
-                    height={800}
-                    width={800}
-                    id="check_eligibility"
-                    className="sm:w-[70rem] w-[80rem] absolute sm:-top-[20rem] -top-[8rem] sm:-left-[20rem] -left-[12rem] dark:opacity-50 max-md:dark:opacity-25"
-                />
-                <div className="sm:mb-12 mb-8">
-                    <h1 className={clsx(FontFamily.className, "2xl:text-[3vw] sm:text-5xl text-4xl text-primary font-semibold relative w-fit")}>
-                        Check Eligibility
+            <form action="" onSubmit={handleSubmit} className="dark:bg-darkBg dark:text-white py-12 2xl:px-[10vw] sm:px-[8vw]  px-6 relative bg-white z-40 overflow-x-hidden">
+                <InViewWrapper animation={cardIn}>
+                    <>
                         <Image
-                            src={arrImg}
-                            alt={"Scribble arrow"}
-                            height={80}
-                            width={80}
-                            className="h-full object-cover max-md:scale-105 max-md:group-hover:scale-100 smooth absolute -top-2 sm:block hidden -right-[25%]"
+                            src={"https://americare.sirv.com/icons/bbblurry.svg"}
+                            alt={"blur shape"}
+                            height={800}
+                            width={800}
+                            id="check_eligibility"
+                            className="sm:w-[70rem] w-[80rem] absolute sm:-top-[20rem] -top-[8rem] sm:-left-[20rem] -left-[12rem] dark:opacity-50 max-md:dark:opacity-25"
                         />
-                    </h1>
-                    <p className="sm:text-base text-sm py-3 grid">
-                        <span>You&apos;re likely to be eligible if you have Medicaid. </span>
-                        <span className="opacity-50">
-                            Fill out the form below to see haw fast you can get started with pay & benefits.
-                        </span>
-                    </p>
-                </div>
+                        <div className="sm:mb-12 mb-8">
+                            <h1 className={clsx(FontFamily.className, "2xl:text-[3vw] sm:text-5xl text-4xl text-primary font-semibold relative w-fit")}>
+                                Check Eligibility
+                                <Image
+                                    src={arrImg}
+                                    alt={"Scribble arrow"}
+                                    height={80}
+                                    width={80}
+                                    className="h-full object-cover max-md:scale-105 max-md:group-hover:scale-100 smooth absolute -top-2 sm:block hidden -right-[25%]"
+                                />
+                            </h1>
+                            <p className="sm:text-base text-sm py-3 grid">
+                                <span>You&apos;re likely to be eligible if you have Medicaid. </span>
+                                <span className="opacity-50">
+                                    Fill out the form below to see haw fast you can get started with pay & benefits.
+                                </span>
+                            </p>
+                        </div>
 
-                <section>
-                    {/* Form input area */}
-                    <div className="grid grid-cols-[repeat(auto-fill,minmax(clamp(20rem,35vw,40rem),1fr))] sm:gap-[2rem_1rem] gap-4">
-                        {/* first name */}
-                        <div className="flex flex-col gap-2 capitalize">
-                            <span className="flex gap-1 sm:text-base text-sm">First name <span className="text-primary">:</span> <sup className="text-red-600 sm:text-sm text-xs"><FaAsterisk /></sup> <span className="text-red-500"> {errorObj.firstName.error}</span></span>
-                            <div className={clsx(
-                                "relative smooth rounded-xl overflow-hidden",
-                                errorObj.firstName.status === ErrorState.BAD ? "border-2 border-red-500" : "border-2 dark:border-white/10 border-black/15 focus-within:shadow-md focus-within:shadow-white/50 dark:focus-within:shadow-primary/15 group dark:focus-within:border-white/50 focus-within:border-primary/70"
-                            )}>
-                                <FaUser className={clsx(
-                                    "absolute top-1/2 -translate-y-1/2 pointer-events-none select-none left-4 peer-placeholder-shown:opacity-50 smooth",
-                                    errorObj.firstName.status === ErrorState.BAD ? "text-red-600 opacity-100" : "group-focus-within:opacity-100 opacity-50 "
-                                )}
-                                />
-                                <input
-                                    type="text"
-                                    placeholder="John"
-                                    className={clsx(
-                                        "peer",
-                                        "dark:bg-white/5 bg-primary/5 outline-none",
-                                        "bg-transparent",
-                                        "w-full py-4 px-12 sm:text-lg",
-                                    )}
-                                    name="firstName"
-                                    required
-                                    value={firstNameText}
-                                    onChange={(e: ChangeEvent<HTMLInputElement>) => setFirstNameText(e.target.value)}
-                                />
+                        <section>
+                            {/* Form input area */}
+                            <div className="grid grid-cols-[repeat(auto-fill,minmax(clamp(20rem,35vw,40rem),1fr))] sm:gap-[2rem_1rem] gap-4">
+                                {/* first name */}
+                                <div className="flex flex-col gap-2 capitalize">
+                                    <span className="flex gap-1 sm:text-base text-sm">First name <span className="text-primary">:</span> <sup className="text-red-600 sm:text-sm text-xs"><FaAsterisk /></sup> <span className="text-red-500"> {errorObj.firstName.error}</span></span>
+                                    <div className={clsx(
+                                        "relative smooth rounded-xl overflow-hidden",
+                                        errorObj.firstName.status === ErrorState.BAD ? "border-2 border-red-500" : "border-2 dark:border-white/10 border-black/15 focus-within:shadow-md focus-within:shadow-white/50 dark:focus-within:shadow-primary/15 group dark:focus-within:border-white/50 focus-within:border-primary/70"
+                                    )}>
+                                        <FaUser className={clsx(
+                                            "absolute top-1/2 -translate-y-1/2 pointer-events-none select-none left-4 peer-placeholder-shown:opacity-50 smooth",
+                                            errorObj.firstName.status === ErrorState.BAD ? "text-red-600 opacity-100" : "group-focus-within:opacity-100 opacity-50 "
+                                        )}
+                                        />
+                                        <input
+                                            type="text"
+                                            placeholder="John"
+                                            className={clsx(
+                                                "peer",
+                                                "dark:bg-white/5 bg-primary/5 outline-none",
+                                                "bg-transparent",
+                                                "w-full py-4 px-12 sm:text-lg",
+                                            )}
+                                            name="firstName"
+                                            required
+                                            value={firstNameText}
+                                            onChange={(e: ChangeEvent<HTMLInputElement>) => setFirstNameText(e.target.value)}
+                                        />
+                                    </div>
+                                </div>
+                                {/* last name */}
+                                <div className="flex flex-col gap-2 capitalize">
+                                    <span className="flex gap-1 sm:text-base text-sm">Last name <span className="text-primary">:</span> <sup className="text-red-600 sm:text-sm text-xs"><FaAsterisk /></sup> <span className="text-red-500"> {errorObj.lastName.error}</span></span>
+                                    <div className={clsx(
+                                        "relative smooth rounded-xl overflow-hidden",
+                                        errorObj.lastName.status === ErrorState.BAD ? "border-2 border-red-500" : "border-2 dark:border-white/10 border-black/15 focus-within:shadow-md focus-within:shadow-white/50 dark:focus-within:shadow-primary/15 group dark:focus-within:border-white/50 focus-within:border-primary/70"
+                                    )}>
+                                        <FaUser className={clsx(
+                                            "absolute top-1/2 -translate-y-1/2 pointer-events-none select-none left-4 peer-placeholder-shown:opacity-50 smooth",
+                                            errorObj.lastName.status === ErrorState.BAD ? "text-red-600 opacity-100" : "group-focus-within:opacity-100 opacity-50 "
+                                        )}
+                                        />
+                                        <input
+                                            type="text"
+                                            placeholder="Doe"
+                                            className={clsx(
+                                                "peer",
+                                                "dark:bg-white/5 bg-primary/5 outline-none",
+                                                "bg-transparent",
+                                                "w-full py-4 px-12 sm:text-lg",
+                                            )}
+                                            name="lastName"
+                                            required
+                                            value={lastNameText}
+                                            onChange={(e: ChangeEvent<HTMLInputElement>) => setLastNameText(e.target.value)}
+                                        />
+                                    </div>
+                                </div>
+                                {/* Medicaid ID */}
+                                <div className="flex flex-col gap-2 capitalize">
+                                    <span className="flex gap-1 sm:text-base text-sm">Medicaid ID <span className="opacity-60">(optional)</span> <span className="text-red-500"> {errorObj.medID.error}</span></span>
+                                    <div className={clsx(
+                                        "relative smooth rounded-xl overflow-hidden",
+                                        errorObj.medID.status === ErrorState.BAD ? "border-2 border-red-500" : "border-2 dark:border-white/10 border-black/15 focus-within:shadow-md focus-within:shadow-white/50 dark:focus-within:shadow-primary/15 group dark:focus-within:border-white/50 focus-within:border-primary/70"
+                                    )}>
+                                        <FaIdCard className={clsx(
+                                            "absolute top-1/2 -translate-y-1/2 pointer-events-none select-none left-4 peer-placeholder-shown:opacity-50 smooth",
+                                            errorObj.medID.status === ErrorState.BAD ? "text-red-600 opacity-100" : "group-focus-within:opacity-100 opacity-50 "
+                                        )}
+                                        />
+                                        <input
+                                            type="text"
+                                            placeholder="123-ABC-4567"
+                                            className={clsx(
+                                                "peer",
+                                                "dark:bg-white/5 bg-primary/5 outline-none",
+                                                "bg-transparent",
+                                                "w-full py-4 px-12 sm:text-lg",
+                                            )}
+                                            name="medicAid"
+                                            value={medId}
+                                            onChange={(e: ChangeEvent<HTMLInputElement>) => setMedId(e.target.value)}
+                                        />
+                                    </div>
+                                </div>
+                                {/* Email */}
+                                <div className="flex flex-col gap-2">
+                                    <span className="flex gap-1 sm:text-base text-sm">E-mail <span className="text-primary">:</span> <sup className="text-red-600 sm:text-sm text-xs"><FaAsterisk /></sup> <span className="text-red-500"> {errorObj.email.error}</span></span>
+                                    <div className={clsx(
+                                        "relative smooth rounded-xl overflow-hidden",
+                                        errorObj.email.status === ErrorState.BAD ? "border-2 border-red-500" : "border-2 dark:border-white/10 border-black/15 focus-within:shadow-md focus-within:shadow-white/50 dark:focus-within:shadow-primary/15 group dark:focus-within:border-white/50 focus-within:border-primary/70"
+                                    )}>
+                                        <FaEnvelope className={clsx(
+                                            "absolute top-1/2 -translate-y-1/2 pointer-events-none select-none left-4 peer-placeholder-shown:opacity-50 smooth",
+                                            errorObj.email.status === ErrorState.BAD ? "text-red-600 opacity-100" : "group-focus-within:opacity-100 opacity-50 "
+                                        )}
+                                        />
+                                        <input
+                                            type="email"
+                                            placeholder="example@gmail.com"
+                                            className={clsx(
+                                                "peer",
+                                                "dark:bg-white/5 bg-primary/5 outline-none",
+                                                "bg-transparent",
+                                                "w-full py-4 px-12 sm:text-lg",
+                                            )}
+                                            name="email"
+                                            required
+                                            value={emailText}
+                                            onChange={(e: ChangeEvent<HTMLInputElement>) => setEmailText(e.target.value)}
+                                        />
+                                    </div>
+                                </div>
+                                {/* phone number */}
+                                <div className="flex flex-col gap-2">
+                                    <span className="flex gap-1 sm:text-base text-sm">Phone number <span className="text-primary">:</span> <sup className="text-red-600 sm:text-sm text-xs"><FaAsterisk /></sup> <span className="text-red-500"> {errorObj.phone.error}</span></span>
+                                    <div className={clsx(
+                                        "relative smooth rounded-xl overflow-hidden",
+                                        errorObj.phone.status === ErrorState.BAD ? "border-2 border-red-500" : "border-2 dark:border-white/10 border-black/15 focus-within:shadow-md focus-within:shadow-white/50 dark:focus-within:shadow-primary/15 group dark:focus-within:border-white/50 focus-within:border-primary/70"
+                                    )}>
+                                        <FaPhone className={clsx(
+                                            "absolute top-1/2 -translate-y-1/2 pointer-events-none select-none left-4 peer-placeholder-shown:opacity-50 smooth",
+                                            errorObj.phone.status === ErrorState.BAD ? "text-red-600 opacity-100" : "group-focus-within:opacity-100 opacity-50 "
+                                        )}
+                                        />
+                                        <input
+                                            type="text"
+                                            placeholder="(555) 555 5555"
+                                            className={clsx(
+                                                "peer",
+                                                "dark:bg-white/5 bg-primary/5 outline-none",
+                                                "bg-transparent",
+                                                "w-full py-4 px-12 sm:text-lg",
+                                            )}
+                                            name="phoneNumber"
+                                            required
+                                            value={phoneText}
+                                            onChange={(e: ChangeEvent<HTMLInputElement>) => setPhoneText(e.target.value)}
+                                        />
+                                    </div>
+                                </div>
+                                {/* Date of Birth */}
+                                <div className="flex flex-col gap-2 capitalize">
+                                    <span className="flex gap-1 sm:text-base text-sm">Date of birth <span className="text-primary">:</span> <sup className="text-red-600 sm:text-sm text-xs"><FaAsterisk /></sup> <span className="text-red-500"> {errorObj.dob.error}</span></span>
+                                    <div className={clsx(
+                                        "relative smooth rounded-xl overflow-hidden",
+                                        errorObj.dob.status === ErrorState.BAD ? "border-2 border-red-500" : "border-2 dark:border-white/10 border-black/15 focus-within:shadow-md focus-within:shadow-white/50 dark:focus-within:shadow-primary/15 group dark:focus-within:border-white/50 focus-within:border-primary/70"
+                                    )}>
+                                        <FaCalendarDay className={clsx(
+                                            "absolute top-1/2 -translate-y-1/2 pointer-events-none select-none left-4 peer-placeholder-shown:opacity-50 smooth",
+                                            errorObj.dob.status === ErrorState.BAD ? "text-red-600 opacity-100" : "group-focus-within:opacity-100 opacity-50 "
+                                        )}
+                                        />
+                                        <input
+                                            type="date"
+                                            placeholder="Doe"
+                                            className={clsx(
+                                                "peer",
+                                                "dark:bg-white/5 bg-primary/5 outline-none",
+                                                "bg-transparent appearance-none",
+                                                "w-full py-4 px-12 sm:text-lg",
+                                            )}
+                                            name="dob"
+                                            max={new Date().toISOString().split('T')[0]}
+                                            required
+                                            value={dob}
+                                            onChange={(e: ChangeEvent<HTMLInputElement>) => setDob(e.target.value)}
+                                        />
+                                    </div>
+                                </div>
+                                {/* Patient's Address */}
+                                <div className="flex flex-col gap-2">
+                                    <span className="flex gap-1 sm:text-base text-sm">Address <span className="text-primary">:</span> <sup className="text-red-600 sm:text-sm text-xs"><FaAsterisk /></sup> <span className="text-red-500"> {errorObj.address.error}</span></span>
+                                    <div className={clsx(
+                                        "relative smooth rounded-xl overflow-hidden",
+                                        errorObj.address.status === ErrorState.BAD ? "border-2 border-red-500" : "border-2 dark:border-white/10 border-black/15 focus-within:shadow-md focus-within:shadow-white/50 dark:focus-within:shadow-primary/15 group dark:focus-within:border-white/50 focus-within:border-primary/70"
+                                    )}>
+                                        <FaAddressBook className={clsx(
+                                            "absolute top-1/2 -translate-y-1/2 pointer-events-none select-none left-4 peer-placeholder-shown:opacity-50 smooth",
+                                            errorObj.address.status === ErrorState.BAD ? "text-red-600 opacity-100" : "group-focus-within:opacity-100 opacity-50 "
+                                        )}
+                                        />
+                                        <input
+                                            type="text"
+                                            placeholder="123 Main St, City, State ZIP"
+                                            className={clsx(
+                                                "peer",
+                                                "dark:bg-white/5 bg-primary/5 outline-none",
+                                                "bg-transparent",
+                                                "w-full py-4 px-12 sm:text-lg",
+                                            )}
+                                            name="address"
+                                            required
+                                            value={address}
+                                            onChange={(e: ChangeEvent<HTMLInputElement>) => setAddress(e.target.value)}
+                                        />
+                                    </div>
+                                </div>
+                                {/* Desired Start date */}
+                                <div className="flex flex-col gap-2 capitalize">
+                                    <span className="flex gap-1 sm:text-base text-sm">Desired Start date <span className="text-primary">:</span> <sup className="text-red-600 sm:text-sm text-xs"><FaAsterisk /></sup> <span className="text-red-500"> {errorObj.startDate.error}</span></span>
+                                    <div className={clsx(
+                                        "relative smooth rounded-xl overflow-hidden",
+                                        errorObj.startDate.status === ErrorState.BAD ? "border-2 border-red-500" : "border-2 dark:border-white/10 border-black/15 focus-within:shadow-md focus-within:shadow-white/50 dark:focus-within:shadow-primary/15 group dark:focus-within:border-white/50 focus-within:border-primary/70"
+                                    )}>
+                                        <FaCalendarDay className={clsx(
+                                            "absolute top-1/2 -translate-y-1/2 pointer-events-none select-none left-4 peer-placeholder-shown:opacity-50 smooth",
+                                            errorObj.startDate.status === ErrorState.BAD ? "text-red-600 opacity-100" : "group-focus-within:opacity-100 opacity-50 "
+                                        )}
+                                        />
+                                        <input
+                                            title="Choose a desired date to start"
+                                            type="datetime-local"
+                                            className={clsx(
+                                                "peer",
+                                                "dark:bg-white/5 bg-primary/5 outline-none",
+                                                "bg-transparent appearance-none",
+                                                "w-full py-4 px-12 sm:text-lg",
+                                            )}
+                                            name="startDate"
+                                            required
+                                            value={startDate}
+                                            min={new Date().toISOString().slice(0, 16)}
+                                            onChange={(e: ChangeEvent<HTMLInputElement>) => setStartDate(e.target.value)}
+                                        />
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                        {/* last name */}
-                        <div className="flex flex-col gap-2 capitalize">
-                            <span className="flex gap-1 sm:text-base text-sm">Last name <span className="text-primary">:</span> <sup className="text-red-600 sm:text-sm text-xs"><FaAsterisk /></sup> <span className="text-red-500"> {errorObj.lastName.error}</span></span>
-                            <div className={clsx(
-                                "relative smooth rounded-xl overflow-hidden",
-                                errorObj.lastName.status === ErrorState.BAD ? "border-2 border-red-500" : "border-2 dark:border-white/10 border-black/15 focus-within:shadow-md focus-within:shadow-white/50 dark:focus-within:shadow-primary/15 group dark:focus-within:border-white/50 focus-within:border-primary/70"
-                            )}>
-                                <FaUser className={clsx(
-                                    "absolute top-1/2 -translate-y-1/2 pointer-events-none select-none left-4 peer-placeholder-shown:opacity-50 smooth",
-                                    errorObj.lastName.status === ErrorState.BAD ? "text-red-600 opacity-100" : "group-focus-within:opacity-100 opacity-50 "
-                                )}
-                                />
-                                <input
-                                    type="text"
-                                    placeholder="Doe"
-                                    className={clsx(
-                                        "peer",
-                                        "dark:bg-white/5 bg-primary/5 outline-none",
-                                        "bg-transparent",
-                                        "w-full py-4 px-12 sm:text-lg",
-                                    )}
-                                    name="lastName"
-                                    required
-                                    value={lastNameText}
-                                    onChange={(e: ChangeEvent<HTMLInputElement>) => setLastNameText(e.target.value)}
-                                />
-                            </div>
-                        </div>
-                        {/* Medicaid ID */}
-                        <div className="flex flex-col gap-2 capitalize">
-                            <span className="flex gap-1 sm:text-base text-sm">Medicaid ID <span className="opacity-60">(optional)</span> <span className="text-red-500"> {errorObj.medID.error}</span></span>
-                            <div className={clsx(
-                                "relative smooth rounded-xl overflow-hidden",
-                                errorObj.medID.status === ErrorState.BAD ? "border-2 border-red-500" : "border-2 dark:border-white/10 border-black/15 focus-within:shadow-md focus-within:shadow-white/50 dark:focus-within:shadow-primary/15 group dark:focus-within:border-white/50 focus-within:border-primary/70"
-                            )}>
-                                <FaIdCard className={clsx(
-                                    "absolute top-1/2 -translate-y-1/2 pointer-events-none select-none left-4 peer-placeholder-shown:opacity-50 smooth",
-                                    errorObj.medID.status === ErrorState.BAD ? "text-red-600 opacity-100" : "group-focus-within:opacity-100 opacity-50 "
-                                )}
-                                />
-                                <input
-                                    type="text"
-                                    placeholder="123-ABC-4567"
-                                    className={clsx(
-                                        "peer",
-                                        "dark:bg-white/5 bg-primary/5 outline-none",
-                                        "bg-transparent",
-                                        "w-full py-4 px-12 sm:text-lg",
-                                    )}
-                                    name="medicAid"
-                                    value={medId}
-                                    onChange={(e: ChangeEvent<HTMLInputElement>) => setMedId(e.target.value)}
-                                />
-                            </div>
-                        </div>
-                        {/* Email */}
-                        <div className="flex flex-col gap-2">
-                            <span className="flex gap-1 sm:text-base text-sm">E-mail <span className="text-primary">:</span> <sup className="text-red-600 sm:text-sm text-xs"><FaAsterisk /></sup> <span className="text-red-500"> {errorObj.email.error}</span></span>
-                            <div className={clsx(
-                                "relative smooth rounded-xl overflow-hidden",
-                                errorObj.email.status === ErrorState.BAD ? "border-2 border-red-500" : "border-2 dark:border-white/10 border-black/15 focus-within:shadow-md focus-within:shadow-white/50 dark:focus-within:shadow-primary/15 group dark:focus-within:border-white/50 focus-within:border-primary/70"
-                            )}>
-                                <FaEnvelope className={clsx(
-                                    "absolute top-1/2 -translate-y-1/2 pointer-events-none select-none left-4 peer-placeholder-shown:opacity-50 smooth",
-                                    errorObj.email.status === ErrorState.BAD ? "text-red-600 opacity-100" : "group-focus-within:opacity-100 opacity-50 "
-                                )}
-                                />
-                                <input
-                                    type="email"
-                                    placeholder="example@gmail.com"
-                                    className={clsx(
-                                        "peer",
-                                        "dark:bg-white/5 bg-primary/5 outline-none",
-                                        "bg-transparent",
-                                        "w-full py-4 px-12 sm:text-lg",
-                                    )}
-                                    name="email"
-                                    required
-                                    value={emailText}
-                                    onChange={(e: ChangeEvent<HTMLInputElement>) => setEmailText(e.target.value)}
-                                />
-                            </div>
-                        </div>
-                        {/* phone number */}
-                        <div className="flex flex-col gap-2">
-                            <span className="flex gap-1 sm:text-base text-sm">Phone number <span className="text-primary">:</span> <sup className="text-red-600 sm:text-sm text-xs"><FaAsterisk /></sup> <span className="text-red-500"> {errorObj.phone.error}</span></span>
-                            <div className={clsx(
-                                "relative smooth rounded-xl overflow-hidden",
-                                errorObj.phone.status === ErrorState.BAD ? "border-2 border-red-500" : "border-2 dark:border-white/10 border-black/15 focus-within:shadow-md focus-within:shadow-white/50 dark:focus-within:shadow-primary/15 group dark:focus-within:border-white/50 focus-within:border-primary/70"
-                            )}>
-                                <FaPhone className={clsx(
-                                    "absolute top-1/2 -translate-y-1/2 pointer-events-none select-none left-4 peer-placeholder-shown:opacity-50 smooth",
-                                    errorObj.phone.status === ErrorState.BAD ? "text-red-600 opacity-100" : "group-focus-within:opacity-100 opacity-50 "
-                                )}
-                                />
-                                <input
-                                    type="text"
-                                    placeholder="(555) 555 5555"
-                                    className={clsx(
-                                        "peer",
-                                        "dark:bg-white/5 bg-primary/5 outline-none",
-                                        "bg-transparent",
-                                        "w-full py-4 px-12 sm:text-lg",
-                                    )}
-                                    name="phoneNumber"
-                                    required
-                                    value={phoneText}
-                                    onChange={(e: ChangeEvent<HTMLInputElement>) => setPhoneText(e.target.value)}
-                                />
-                            </div>
-                        </div>
-                        {/* Date of Birth */}
-                        <div className="flex flex-col gap-2 capitalize">
-                            <span className="flex gap-1 sm:text-base text-sm">Date of birth <span className="text-primary">:</span> <sup className="text-red-600 sm:text-sm text-xs"><FaAsterisk /></sup> <span className="text-red-500"> {errorObj.dob.error}</span></span>
-                            <div className={clsx(
-                                "relative smooth rounded-xl overflow-hidden",
-                                errorObj.dob.status === ErrorState.BAD ? "border-2 border-red-500" : "border-2 dark:border-white/10 border-black/15 focus-within:shadow-md focus-within:shadow-white/50 dark:focus-within:shadow-primary/15 group dark:focus-within:border-white/50 focus-within:border-primary/70"
-                            )}>
-                                <FaCalendarDay className={clsx(
-                                    "absolute top-1/2 -translate-y-1/2 pointer-events-none select-none left-4 peer-placeholder-shown:opacity-50 smooth",
-                                    errorObj.dob.status === ErrorState.BAD ? "text-red-600 opacity-100" : "group-focus-within:opacity-100 opacity-50 "
-                                )}
-                                />
-                                <input
-                                    type="date"
-                                    placeholder="Doe"
-                                    className={clsx(
-                                        "peer",
-                                        "dark:bg-white/5 bg-primary/5 outline-none",
-                                        "bg-transparent appearance-none",
-                                        "w-full py-4 px-12 sm:text-lg",
-                                    )}
-                                    name="dob"
-                                    max={new Date().toISOString().split('T')[0]}
-                                    required
-                                    value={dob}
-                                    onChange={(e: ChangeEvent<HTMLInputElement>) => setDob(e.target.value)}
-                                />
-                            </div>
-                        </div>
-                        {/* Patient's Address */}
-                        <div className="flex flex-col gap-2">
-                            <span className="flex gap-1 sm:text-base text-sm">Address <span className="text-primary">:</span> <sup className="text-red-600 sm:text-sm text-xs"><FaAsterisk /></sup> <span className="text-red-500"> {errorObj.address.error}</span></span>
-                            <div className={clsx(
-                                "relative smooth rounded-xl overflow-hidden",
-                                errorObj.address.status === ErrorState.BAD ? "border-2 border-red-500" : "border-2 dark:border-white/10 border-black/15 focus-within:shadow-md focus-within:shadow-white/50 dark:focus-within:shadow-primary/15 group dark:focus-within:border-white/50 focus-within:border-primary/70"
-                            )}>
-                                <FaAddressBook className={clsx(
-                                    "absolute top-1/2 -translate-y-1/2 pointer-events-none select-none left-4 peer-placeholder-shown:opacity-50 smooth",
-                                    errorObj.address.status === ErrorState.BAD ? "text-red-600 opacity-100" : "group-focus-within:opacity-100 opacity-50 "
-                                )}
-                                />
-                                <input
-                                    type="text"
-                                    placeholder="123 Main St, City, State ZIP"
-                                    className={clsx(
-                                        "peer",
-                                        "dark:bg-white/5 bg-primary/5 outline-none",
-                                        "bg-transparent",
-                                        "w-full py-4 px-12 sm:text-lg",
-                                    )}
-                                    name="address"
-                                    required
-                                    value={address}
-                                    onChange={(e: ChangeEvent<HTMLInputElement>) => setAddress(e.target.value)}
-                                />
-                            </div>
-                        </div>
-                        {/* Desired Start date */}
-                        <div className="flex flex-col gap-2 capitalize">
-                            <span className="flex gap-1 sm:text-base text-sm">Desired Start date <span className="text-primary">:</span> <sup className="text-red-600 sm:text-sm text-xs"><FaAsterisk /></sup> <span className="text-red-500"> {errorObj.startDate.error}</span></span>
-                            <div className={clsx(
-                                "relative smooth rounded-xl overflow-hidden",
-                                errorObj.startDate.status === ErrorState.BAD ? "border-2 border-red-500" : "border-2 dark:border-white/10 border-black/15 focus-within:shadow-md focus-within:shadow-white/50 dark:focus-within:shadow-primary/15 group dark:focus-within:border-white/50 focus-within:border-primary/70"
-                            )}>
-                                <FaCalendarDay className={clsx(
-                                    "absolute top-1/2 -translate-y-1/2 pointer-events-none select-none left-4 peer-placeholder-shown:opacity-50 smooth",
-                                    errorObj.startDate.status === ErrorState.BAD ? "text-red-600 opacity-100" : "group-focus-within:opacity-100 opacity-50 "
-                                )}
-                                />
-                                <input
-                                    title="Choose a desired date to start"
-                                    type="datetime-local"
-                                    className={clsx(
-                                        "peer",
-                                        "dark:bg-white/5 bg-primary/5 outline-none",
-                                        "bg-transparent appearance-none",
-                                        "w-full py-4 px-12 sm:text-lg",
-                                    )}
-                                    name="startDate"
-                                    required
-                                    value={startDate}
-                                    min={new Date().toISOString().slice(0, 16)}
-                                    onChange={(e: ChangeEvent<HTMLInputElement>) => setStartDate(e.target.value)}
-                                />
-                            </div>
-                        </div>
-                    </div>
 
-                    {/* Submit button */}
-                    {<div className="flex flex-col gap-2 mt-6 group sm:w-fit">
-                        <button
-                            className={clsx(
-                                "smooth border-2 border-dashed",
-                                "border-primary text-primary bg-transparent",
-                                goodToGo ? "grayscale-0 hover:bg-primary hover:text-white hover:border-dotted active:scale-90" : "grayscale cursor-not-allowed",
-                                "sm:w-fit py-4 px-8 sm:text-lg rounded-lg outline-none",
-                                isLoading && "opacity-65"
-                            )}
+                            {/* Submit button */}
+                            {<div className="flex flex-col gap-2 mt-6 group sm:w-fit">
+                                <button
+                                    className={clsx(
+                                        "smooth border-2 border-dashed",
+                                        "border-primary text-primary bg-transparent",
+                                        goodToGo ? "grayscale-0 hover:bg-primary hover:text-white hover:border-dotted active:scale-90" : "grayscale cursor-not-allowed",
+                                        "sm:w-fit py-4 px-8 sm:text-lg rounded-lg outline-none",
+                                        isLoading && "opacity-65"
+                                    )}
 
-                            type={goodToGo && !isLoading ? "submit" : "button"}
-                        >
-                            {goodToGo ?
-                                <span>
-                                    {!isLoading ?
-                                        <span className="flex gap-2 items-center justify-center">
-                                            Send application <FaStar className="group-hover:text-yellow-300" />
+                                    type={goodToGo && !isLoading ? "submit" : "button"}
+                                >
+                                    {goodToGo ?
+                                        <span>
+                                            {!isLoading ?
+                                                <span className="flex gap-2 items-center justify-center">
+                                                    Send application <FaStar className="group-hover:text-yellow-300" />
+                                                </span>
+                                                :
+                                                <span className="flex gap-2 items-center justify-center">
+                                                    <Image
+                                                        src={"https://americare.sirv.com/icons/spinner.svg"}
+                                                        alt="spinner"
+                                                        height={20}
+                                                        width={20}
+                                                        className="dark:invert-0 invert"
+                                                    />
+                                                    submitting
+                                                </span>
+                                            }
                                         </span>
                                         :
-                                        <span className="flex gap-2 items-center justify-center">
-                                            <Image
-                                                src={"https://americare.sirv.com/icons/spinner.svg"}
-                                                alt="spinner"
-                                                height={20}
-                                                width={20}
-                                                className="dark:invert-0 invert"
-                                            />
-                                            submitting
-                                        </span>
+                                        <span className="flex gap-2 items-center justify-center">Fill the form</span>
                                     }
-                                </span>
-                                :
-                                <span className="flex gap-2 items-center justify-center">Fill the form</span>
-                            }
-                        </button>
-                    </div>}
+                                </button>
+                            </div>}
 
-                </section>
+                        </section>
+                    </>
+                </InViewWrapper>
             </form>
         </>
 

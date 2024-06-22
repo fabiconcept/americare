@@ -11,7 +11,7 @@ export default function OurServicesSection() {
     };
 
     return (
-        <section className="bg-white py-12 shadow-lg dark:bg-darkBg dark:text-white grid-bg">
+        <section className="bg-white py-12 shadow-lg dark:bg-darkBg dark:text-white grid-bg overflow-x-hidden">
             <InViewWrapper animation={fadeIn}>
                 <>
 

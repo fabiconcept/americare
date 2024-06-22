@@ -23,7 +23,7 @@ export default function OurMissionSection() {
     };
     return (
         <>
-            <div className="py-24 2xl:px-[10vw] sm:px-[8vw]  px-6 relative z-10 dark:bg-darkBg dark:text-white bg-white">
+            <div className="py-24 2xl:px-[10vw] sm:px-[8vw]  px-6 relative z-10 dark:bg-darkBg dark:text-white bg-white overflow-x-hidden">
                 <InViewWrapper animation={fadeIn} className="mb-12">
                     <h1 className={clsx(FontFamily.className, "sm:text-[4vw] text-5xl text-primary font-semibold")}>Why AmeriCare</h1>
                 </InViewWrapper>
