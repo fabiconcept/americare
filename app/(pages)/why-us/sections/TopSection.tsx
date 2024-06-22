@@ -37,7 +37,7 @@ export default function TopSection() {
                     </div>
                 </InViewWrapper>
 
-                <div className="grid md:grid-cols-3 grid-cols-1 sm:px-[6.25vw] px-6 gap-8 justify-center">
+                <div className="grid md:grid-cols-3 grid-cols-1 sm:px-[6.25vw] px-6 gap-8 justify-center overflow-x-hidden">
                     <InViewWrapper animation={cardIn} className="flex flex-col items-center gap-2">
                         <>
                             <Image
