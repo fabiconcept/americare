@@ -43,7 +43,7 @@ export default function NavigationComponent({ variation, inViewContainer }: { va
     return (
         <>
             <InViewWrapper animation={fadeIn} className={clsx(
-                "grid md:grid-cols-[1fr_auto_1fr] grid-cols-[auto_1fr] items-center fixed top-0 left-0 z-50 w-screen py-5 sm:px-9 px-4",
+                "grid grid-cols-[1fr_auto_1fr] max-xl:grid-cols-[auto_1fr] items-center fixed top-0 left-0 z-50 w-screen py-5 sm:px-9 px-4",
                 inViewContainer ? "" : "backdrop-blur dark:bg-white/5 bg-primary/5 border-b dark:border-b-white/10 border-b-primary/10"
             )}>
                 <>
@@ -62,7 +62,7 @@ export default function NavigationComponent({ variation, inViewContainer }: { va
                     </Link>
 
                     <div className={clsx(
-                        "md:flex hidden items-end gap-1 h-fit dark:text-white text-black 2xl:text-lg",
+                        "flex max-xl:hidden items-end gap-1 h-fit dark:text-white text-black 2xl:text-lg",
                         variation && inViewContainer ? "text-white" : ""
                     )}>
                         <Link className={clsx(
@@ -96,7 +96,7 @@ export default function NavigationComponent({ variation, inViewContainer }: { va
                             icon={(<FaPhone />)}
                             customClass={clsx(
                                 inViewContainer ? "border-transparent outline-black text-black" : "",
-                                "md:block hidden"
+                                "max-lg:hidden"
                             )}
                         />
                         <CustomBtn
@@ -107,12 +107,12 @@ export default function NavigationComponent({ variation, inViewContainer }: { va
                             inView={inViewContainer}
                             customClass={clsx(
                                 inViewContainer ? "border-transparent outline-black text-black" : "",
-                                "max-md:hidden"
+                                "max-sm:hidden"
                             )}
                         />
 
                         <div className={clsx(
-                            "md:hidden h-5 place-items-center grid gap-2 cursor-pointer active:scale-90 smooth relative",
+                            "hidden h-5 place-items-center max-xl:grid gap-2 cursor-pointer active:scale-90 smooth relative",
                             inViewContainer && "invert brightness-0"
                         )}
 
@@ -138,7 +138,7 @@ export default function NavigationComponent({ variation, inViewContainer }: { va
                 transition={{ duration: 0.25 }}
                 animate={controls}
                 initial={"hidden"}
-                className="fixed smooth top-0 right-0 z-[49] h-screen w-screen dark:bg-black/50 bg-white/50 backdrop-blur-md md:hidden grid place-items-center dark:text-white text-black"
+                className="fixed smooth top-0 right-0 z-[49] h-screen w-screen dark:bg-black/50 bg-white/50 backdrop-blur-md hidden max-xl:grid place-items-center dark:text-white text-black"
             >
                 <div className="grid gap-3 text-xl">
                     <Link className={clsx(
