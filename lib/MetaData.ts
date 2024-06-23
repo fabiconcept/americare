@@ -122,7 +122,7 @@ export const generalMetadata: Metadata = {
     icons: {
         // Consider using a favicon generator for various icon sizes
         icon: 'https://americare.sirv.com/icons/Favicons/android-chrome-192x192.png',
-        shortcut: 'icons/android-chrome-512x512.png',
+        shortcut: 'https://americare.sirv.com/icons/Favicons/android-chrome-512x512.png',
         apple: 'https://americare.sirv.com/icons/Favicons/android-chrome-512x512.png',
         other: {
             rel: 'https://americare.sirv.com/icons/Favicons/favicon.ico',
