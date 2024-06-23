@@ -2,7 +2,7 @@ import { Metadata } from "next";
 
 export const generalMetadata: Metadata = {
     title: 'Compassionate Home Healthcare | AmeriCare Atlanta',
-    description: 'AmeriCare provides personalized, compassionate home healthcare for seniors and medically fragile children. We offer a structured approach to ensure a perfect match with qualified caregivers, delivering quality care that enhances well-being. Free in-home assessment.',
+    description: 'AmeriCare provides personalized, compassionate home healthcare for seniors and medically fragile children. Our structured approach ensures a perfect match with qualified caregivers, delivering quality care to enhance well-being. Free in-home assessment.',
     keywords: [
         'home healthcare Atlanta',
         'elderly care Atlanta',
@@ -101,7 +101,7 @@ export const generalMetadata: Metadata = {
     creator: 'Calvin Wilkinson MPH',  // Company name as creator
     openGraph: {
         title: 'Compassionate Home Healthcare | AmeriCare Atlanta',  // Consistent title
-        description: 'AmeriCare provides personalized, compassionate home healthcare for seniors and medically fragile children. We offer a structured approach to ensure a perfect match with qualified caregivers, delivering quality care that enhances well-being. Free in-home assessment.',  // Consistent description
+        description: 'AmeriCare provides personalized, compassionate home healthcare for seniors and medically fragile children. Our structured approach ensures a perfect match with qualified caregivers, delivering quality care to enhance well-being. Free in-home assessment.',  // Consistent description
         url: 'https://americareinhome.com/',  // Replace with your actual website URL
         locale: 'en_US',  // Assuming US English content
         images: [
@@ -116,7 +116,7 @@ export const generalMetadata: Metadata = {
     twitter: {
         card: 'summary_large_image',
         title: 'Compassionate Home Healthcare | AmeriCare Atlanta',  // Consistent title
-        description: 'AmeriCare provides personalized, compassionate home healthcare for seniors and medically fragile children. We offer a structured approach to ensure a perfect match with qualified caregivers, delivering quality care that enhances well-being. Free in-home assessment.',  // Consistent description
+        description: 'AmeriCare provides personalized, compassionate home healthcare for seniors and medically fragile children. Our structured approach ensures a perfect match with qualified caregivers, delivering quality care to enhance well-being. Free in-home assessment.',  // Consistent description
         images: ['https://americare.sirv.com/rusty-watson-yIGinlYA6t8-unsplash.jpg'],  // Replace with the same image URL as openGraph
     },
     icons: {
