@@ -5,6 +5,11 @@ import MeetTeamSection from "./sections/MeetTeamSection";
 import OurVisionSection from "./sections/OurVisionSection";
 import OurProcessSection from "./sections/OurProcessSection";
 import NavigationComponent from "@/app/components/NavSection";
+import { generalMetadata } from "@/lib/MetaData";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {...generalMetadata, title: "Why AmeriCare | AmeriCare Atlanta"};
+
 
 export default function WhyUsPage() {
     return (
