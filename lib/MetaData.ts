@@ -1,6 +1,6 @@
 import { Metadata } from "next";
 
-export const metadata: Metadata = {
+export const generalMetadata: Metadata = {
     title: 'Home | AmeriCare Atlanta',
     description: 'AmeriCare provides personalized, compassionate home healthcare for seniors and medically fragile children. We offer a structured approach to ensure a perfect match with qualified caregivers, delivering quality care that enhances well-being. Free in-home assessment.',
     keywords: [
@@ -97,18 +97,18 @@ export const metadata: Metadata = {
         'in-home medical care',
         'licensed home health providers'  // Include relevant keywords from your list
     ],
-    authors: [],  // Not provided in the information
+    authors: [{name: "AmeriCare", url: "https://americareinhome.com/"}, {name: "Fabiconcept", url: "fabiconcept.online"}],  // Not provided in the information
     creator: 'Calvin Wilkinson MPH',  // Company name as creator
     openGraph: {
         title: 'Home | AmeriCare Atlanta',  // Consistent title
         description: 'AmeriCare provides personalized, compassionate home healthcare for seniors and medically fragile children. We offer a structured approach to ensure a perfect match with qualified caregivers, delivering quality care that enhances well-being. Free in-home assessment.',  // Consistent description
-        url: 'https://americare.com',  // Replace with your actual website URL
+        url: 'https://americareinhome.com/',  // Replace with your actual website URL
         locale: 'en_US',  // Assuming US English content
         images: [
             {
-                url: 'https://your-website.com/path/to/image.jpg', // Replace with a relevant AmeriCare image URL
-                width: 1200,  // Adjust width for optimal display
-                height: 630,  // Adjust height for optimal display
+                url: 'https://americare.sirv.com/cdc-GnLuuG9crEY-unsplash.jpg', // Replace with a relevant AmeriCare image URL
+                width: 12112,  // Adjust width for optimal display
+                height: 8008,  // Adjust height for optimal display
                 alt: 'AmeriCare Caregiver Assisting Senior Client',  // Descriptive alt text
             },
         ],
@@ -117,16 +117,16 @@ export const metadata: Metadata = {
         card: 'summary_large_image',
         title: 'Home | AmeriCare Atlanta',  // Consistent title
         description: 'AmeriCare provides personalized, compassionate home healthcare for seniors and medically fragile children. We offer a structured approach to ensure a perfect match with qualified caregivers, delivering quality care that enhances well-being. Free in-home assessment.',  // Consistent description
-        images: ['https://your-website.com/path/to/image.jpg'],  // Replace with the same image URL as openGraph
+        images: ['https://americare.sirv.com/rusty-watson-yIGinlYA6t8-unsplash.jpg'],  // Replace with the same image URL as openGraph
     },
     icons: {
         // Consider using a favicon generator for various icon sizes
-        icon: 'icons/android-chrome-192x192.png',
+        icon: 'https://americare.sirv.com/icons/Favicons/android-chrome-192x192.png',
         shortcut: 'icons/android-chrome-512x512.png',
-        apple: 'icons/apple-touch-icon.png',
+        apple: 'https://americare.sirv.com/icons/Favicons/android-chrome-512x512.png',
         other: {
-            rel: 'icons/favicon-16x16.png',
-            url: 'icons/favicon-32x32.png',
+            rel: 'https://americare.sirv.com/icons/Favicons/favicon.ico',
+            url: 'https://americare.sirv.com/icons/Favicons/favicon.ico',
         },
     },
     robots: {  // You can adjust these settings as needed for SEO strategy
