@@ -8,7 +8,7 @@ const FontFamily = Playfair_Display({ subsets: ["latin"], weight: "600" });
 export default function OurCaregivers() {
     return (
         <>
-            <div className="dark:bg-darkBg dark:text-white grid place-items-center sm:py-24 py-12 2xl:px-[10vw] sm:px-[8vw]  px-6 relative z-40 bg-white overflow-x-hidden">
+            <div className="dark:bg-darkBg dark:text-white grid place-items-center sm:py-24 py-12 2xl:px-[10vw] sm:px-[8vw]  px-6 relative z-40 bg-white">
                 <Image
                     src={"https://americare.sirv.com/icons/bbblurry.svg"}
                     alt={"blur shape"}
@@ -24,7 +24,7 @@ export default function OurCaregivers() {
                         </>
                     </InViewWrapper>
 
-                    <div className="flex gap-12 flex-wrap dark:mix-blend-screen mix-blend-multiply">
+                    <div className="flex gap-12 flex-wrap dark:mix-blend-screen mix-blend-multiply overflow-x-hidden">
                         <InViewWrapper animation={cardIn} className="min-w-[20rem] flex-[2]">
                             <>
                                 <p className=" h-fit 2xl:text-5xl sm:text-4xl text-2xl sm:font-normal font-semibold opacity-80 relative">
