@@ -7,26 +7,12 @@ import { SwiperSlide } from 'swiper/react';
 import Link from 'next/link';
 import { FaArrowRight } from 'react-icons/fa6';
 import Image from 'next/image';
-import { Variants } from 'framer-motion';
+import { fadeIn, cardIn, cardInAlt } from "@/lib/AnimationVariants";
 import InViewWrapper from '../components/InViewWrapper';
 const FontFamily = Playfair_Display({ subsets: ["latin"], weight: "600" });
 
 
 export default function OurServiceSection() {
-    const fadeIn: Variants = {
-        hidden: { opacity: 0, translateY: 50 },
-        visible: { opacity: 1, translateY: 0, transition: { duration: 0.5 } },
-    };
-    
-    const cardIn: Variants = {
-        hidden: { opacity: 0, translateX: 100, },
-        visible: { opacity: 1, translateX: 0, transition: { duration: 0.5 }},
-    };
-
-    const cardInAlt: Variants = {
-        hidden: { opacity: 0, translateX: -100, },
-        visible: { opacity: 1, translateX: 0, transition: { duration: 0.5 }},
-    };
 
     return (
         <div className="py-24 2xl:px-[10vw] sm:px-[8vw] overflow-x-hidden  px-6 relative z-10 dark:bg-darkBg dark:text-white bg-white grid-bg">

@@ -2,18 +2,10 @@ import Image from "next/image";
 import acessibleSvg from "./components/acessible.svg";
 import allSvg from "./components/all.svg";
 import affordableSvg from "./components/affordable.svg";
-import { Variants } from "framer-motion";
+import { cardIn, cardInAlt } from "@/lib/AnimationVariants";
 import InViewWrapper from "../components/InViewWrapper";
 
 export default function MottoSection() {
-    const cardIn: Variants = {
-        hidden: { opacity: 0, translateX: 100, },
-        visible: { opacity: 1, translateX: 0, transition: { duration: 0.5 } },
-    };
-    const cardInAlt: Variants = {
-        hidden: { opacity: 0, translateX: -100, },
-        visible: { opacity: 1, translateX: 0, transition: { duration: 0.5 } },
-    };
 
     return (
         <div className="py-24 2xl:px-[10vw] sm:px-[8vw]  px-6 relative z-10 dark:bg-darkBg dark:text-white bg-white overflow-x-hidden">

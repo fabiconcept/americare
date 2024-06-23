@@ -1,15 +1,10 @@
 "use client"
 import InViewWrapper from "@/app/components/InViewWrapper";
-import { Variants } from "framer-motion";
+import { fadeIn } from "@/lib/AnimationVariants";
 import Image from "next/image";
 import ScrollToTop from "react-scroll-to-top";
 
 export default function TopSection() {
-    const fadeIn: Variants = {
-        hidden: { opacity: 0, translateY: 50 },
-        visible: { opacity: 1, translateY: 0, transition: { duration: 0.5 } },
-    };
-
     return (
         <>
         <ScrollToTop smooth className="grid place-items-center hover:bg-primary active:scale-90 smooth" style={{zIndex: 100}} />

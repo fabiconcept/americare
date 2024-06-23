@@ -1,14 +1,10 @@
 import { OurServicesList } from "@/lib/OurServicesList";
 import ServiceItem from "./components/ServiceItem";
 import CustomBtn from "../components/CustomBtn";
-import { Variants } from "framer-motion";
+import { fadeIn } from "@/lib/AnimationVariants";
 import InViewWrapper from "../components/InViewWrapper";
 
 export default function OurServicesSection() {
-    const fadeIn: Variants = {
-        hidden: { opacity: 0, translateY: 50 },
-        visible: { opacity: 1, translateY: 0, transition: { duration: 0.5 } },
-    };
 
     return (
         <section className="bg-white py-12 shadow-lg dark:bg-darkBg dark:text-white grid-bg overflow-x-hidden">

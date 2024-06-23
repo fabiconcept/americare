@@ -1,21 +1,12 @@
 import InViewWrapper from "@/app/components/InViewWrapper";
+import { cardIn, cardInAlt } from "@/lib/AnimationVariants";
 import clsx from "clsx";
-import { Variants } from "framer-motion";
 import { Playfair_Display } from "next/font/google";
 import Image from "next/image";
 const FontFamily = Playfair_Display({ subsets: ["latin"], weight: "600" });
 
 
 export default function OurVisionSection() {
-    const cardIn: Variants = {
-        hidden: { opacity: 0, translateX: 100, },
-        visible: { opacity: 1, translateX: 0, transition: { duration: 0.5 } },
-    };
-    const cardInAlt: Variants = {
-        hidden: { opacity: 0, translateX: -100, },
-        visible: { opacity: 1, translateX: 0, transition: { duration: 0.5 } },
-    };
-
     return (
         <>
             <div className="dark:bg-darkBg dark:text-white grid place-items-center sm:py-24 py-12 2xl:px-[10vw] sm:px-[8vw]  px-6 relative z-10 bg-white overflow-x-hidden">

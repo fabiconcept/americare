@@ -1,5 +1,5 @@
-import { Variants } from "framer-motion";
 import InViewWrapper from "@/app/components/InViewWrapper";
+import { cardIn, cardInAlt } from "@/lib/AnimationVariants";
 import Image from "next/image";
 
 type TeamMemberProps = {
@@ -10,14 +10,6 @@ type TeamMemberProps = {
 }
 
 export default function TeamMember(prop: TeamMemberProps) {
-    const cardIn: Variants = {
-        hidden: { opacity: 0, translateX: 100, },
-        visible: { opacity: 1, translateX: 0, transition: { duration: 0.5 } },
-    };
-    const cardInAlt: Variants = {
-        hidden: { opacity: 0, translateX: -100, },
-        visible: { opacity: 1, translateX: 0, transition: { duration: 0.5 } },
-    };
     return (
         <InViewWrapper animation={prop.isOdd ? cardIn : cardInAlt} className="h-[20rem] relative grid place-items-center overflow-hidden rounded-lg group">
             <>

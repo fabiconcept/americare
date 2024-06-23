@@ -3,8 +3,8 @@ import Image from "next/image";
 import nurseSvg from "./components/health-medical-plester-svgrepo-com.svg";
 import careSvg from "./components/health-health-insurance-medical-svgrepo-com.svg";
 import familySvg from "./components/family-svgrepo-com.svg";
-import { Variants } from "framer-motion";
 import InViewWrapper from "@/app/components/InViewWrapper";
+import { cardIn, cardInAlt } from "@/lib/AnimationVariants";
 
 const benefitsList: { title: string, content: string, count: number, svg: string }[] = [
     { svg: nurseSvg, title: "Skilled Nursing", content: "In-home skilled nursing care", count: 1 },
@@ -13,14 +13,6 @@ const benefitsList: { title: string, content: string, count: number, svg: string
 ]
 
 export default function GappKeyBenefits() {
-    const cardIn: Variants = {
-        hidden: { opacity: 0, translateX: 100, },
-        visible: { opacity: 1, translateX: 0, transition: { duration: 0.5 } },
-    };
-    const cardInAlt: Variants = {
-        hidden: { opacity: 0, translateX: -100, },
-        visible: { opacity: 1, translateX: 0, transition: { duration: 0.5 } },
-    };
     return (
         <section className={clsx("sm:pt-10 pt-6 w-full mb-12")}>
             <div className="flex flex-wrap gap-4 justify-center w-full perspective">

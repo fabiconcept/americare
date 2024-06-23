@@ -1,14 +1,10 @@
 import { OurProcessList } from "@/lib/OurProcess";
 import ProcessItem from "./components/ProcessItem";
 import clsx from "clsx";
-import { Variants } from "framer-motion";
 import InViewWrapper from "@/app/components/InViewWrapper";
+import { fadeIn } from "@/lib/AnimationVariants";
 
 export default function OurProcessSection() {
-    const fadeIn: Variants = {
-        hidden: { opacity: 0, translateY: 50 },
-        visible: { opacity: 1, translateY: 0, transition: { duration: 0.5 } },
-    };
     return (
         <InViewWrapper animation={fadeIn} className={clsx("dark:bg-darkBg dark:text-white bg-white sm:py-24 py-12 grid-bg  overflow-x-hidden")}>
             <>

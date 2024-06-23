@@ -1,27 +1,13 @@
 import CustomBtn from "@/app/components/CustomBtn";
 import InViewWrapper from "@/app/components/InViewWrapper";
+import { cardIn, cardInAlt, fadeIn } from "@/lib/AnimationVariants";
 import clsx from "clsx";
-import { Variants } from "framer-motion";
 import { Playfair_Display } from "next/font/google";
 import Image from "next/image";
 const FontFamily = Playfair_Display({ subsets: ["latin"], weight: "600" });
 
 
 export default function Gapp() {
-    const fadeIn: Variants = {
-        hidden: { opacity: 0, translateY: 50 },
-        visible: { opacity: 1, translateY: 0, transition: { duration: 0.5 } },
-    };
-
-        
-    const cardIn: Variants = {
-        hidden: { opacity: 0, translateX: 100, },
-        visible: { opacity: 1, translateX: 0, transition: { duration: 0.5 }},
-    };
-    const cardInAlt: Variants = {
-        hidden: { opacity: 0, translateX: 100, },
-        visible: { opacity: 1, translateX: 0, transition: { duration: 0.5 }},
-    };
     return (
         <>
             <InViewWrapper animation={fadeIn}  className="grid place-items-center sm:py-6 py-4 relative z-10">

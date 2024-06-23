@@ -2,8 +2,8 @@ import clsx from "clsx";
 import Image from "next/image";
 import Link from "next/link";
 import { FaStar } from "react-icons/fa6";
-import { Variants } from "framer-motion";
 import InViewWrapper from "@/app/components/InViewWrapper";
+import { cardIn, cardInAlt } from "@/lib/AnimationVariants";
 
 type TestimonyProp = {
     testimony: string;
@@ -12,20 +12,12 @@ type TestimonyProp = {
     photo: string;
     isOdd: boolean;
     moreUrl?: string;
-    marquee?: "yes"
+    marquee?: "yes",
 }
 
 export default function SingleTestimony(prop: TestimonyProp) {
-    const cardIn: Variants = {
-        hidden: { opacity: 0, translateX: 100, },
-        visible: { opacity: 1, translateX: 0, transition: { duration: 0.5 } },
-    };
-    const cardInAlt: Variants = {
-        hidden: { opacity: 0, translateX: -100, },
-        visible: { opacity: 1, translateX: 0, transition: { duration: 0.5 } },
-    };
     return (
-        <InViewWrapper animation={prop.isOdd ? cardIn : cardInAlt} className={clsx(
+        <InViewWrapper animation={prop.marquee !== "yes" ? (prop.isOdd ? cardIn : cardInAlt) : {}} className={clsx(
             "border rounded-lg p-4 flex flex-col gap-3 sm:hover:-translate-y-2 smooth",
             prop.marquee === "yes" ? "2xl:w-[30rem] min-h-full sm:w-[25rem] w-[calc(100vw-2rem)]" : "",
             prop.isOdd ? "bg-primary/10 max-md:hover:bg-primary/20 border-primary/15" : "bg-primary/5 max-md:hover:bg-primary/15 border-primary/10"

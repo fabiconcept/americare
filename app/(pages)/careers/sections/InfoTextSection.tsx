@@ -1,12 +1,7 @@
 import InViewWrapper from "@/app/components/InViewWrapper";
-import { Variants } from "framer-motion";
+import { fadeIn } from "@/lib/AnimationVariants";
 
 export default function InfoTextSection() {
-    const fadeIn: Variants = {
-        hidden: { opacity: 0, translateY: 50 },
-        visible: { opacity: 1, translateY: 0, transition: { duration: 0.5 } },
-    };
-
     return (
         <div className="dark:bg-darkBg dark:text-white pb-12 2xl:px-[10vw] sm:px-[8vw]  px-6 relative z-10 bg-white">
             <div className="flex gap-12 flex-wrap">

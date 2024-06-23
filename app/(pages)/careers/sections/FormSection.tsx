@@ -13,7 +13,7 @@ import { applicationReceivedEmail, onlineApplication } from "@/lib/Email Templat
 import { FaTimes } from "react-icons/fa";
 import PopUp from "@/app/components/PopUp";
 import InViewWrapper from "@/app/components/InViewWrapper";
-import { Variants } from "framer-motion";
+import { fadeIn } from "@/lib/AnimationVariants";
 
 
 const FontFamily = Playfair_Display({ subsets: ["latin"], weight: "600" });
@@ -288,11 +288,6 @@ export default function FormSection() {
     const closeFunction = () => {
         setShowThanks(!showThanks);
     }
-
-    const fadeIn: Variants = {
-        hidden: { opacity: 0, translateY: 50 },
-        visible: { opacity: 1, translateY: 0, transition: { duration: 0.5 } },
-    };
 
     return (
         <>

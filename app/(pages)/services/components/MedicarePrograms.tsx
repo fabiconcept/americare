@@ -6,16 +6,12 @@ import Gapp from "./Gapp";
 import CcspKeyBenefits from "./CcspKeyBenefits";
 import GappKeyBenefits from "./GappKeyBenefits";
 import Link from "next/link";
-import { Variants } from "framer-motion";
 import InViewWrapper from "@/app/components/InViewWrapper";
+import { fadeIn } from "@/lib/AnimationVariants";
 const FontFamily = Playfair_Display({ subsets: ["latin"], weight: "600" });
 
 
 export default function MedicarePrograms() {
-    const fadeIn: Variants = {
-        hidden: { opacity: 0, translateY: 50 },
-        visible: { opacity: 1, translateY: 0, transition: { duration: 0.5 } },
-    };
 
     return (
         <>

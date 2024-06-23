@@ -4,14 +4,10 @@ import CustomBtn from "./CustomBtn";
 import Link from "next/link";
 import { FaFacebookF, FaLinkedin } from "react-icons/fa6";
 import { FaMailBulk, FaPhoneSquareAlt } from "react-icons/fa";
-import { Variants } from "framer-motion";
+import { fadeIn } from "@/lib/AnimationVariants";
 import InViewWrapper from "./InViewWrapper";
 
 export default function FooterSection() {
-    const fadeIn: Variants = {
-        hidden: { opacity: 0, translateY: 100 },
-        visible: { opacity: 1, translateY: 0, transition: { duration: 0.5 } },
-    };
 
     return (
         <div className={clsx(

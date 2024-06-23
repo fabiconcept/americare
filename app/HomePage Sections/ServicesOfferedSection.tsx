@@ -4,7 +4,7 @@ import Image from "next/image";
 import { Parallax, } from "react-parallax";
 import CustomBtn from "../components/CustomBtn";
 import { Playfair_Display } from "next/font/google";
-import { Variants } from "framer-motion";
+import { fadeIn, cardIn, cardInAlt } from "@/lib/AnimationVariants";
 import InViewWrapper from "../components/InViewWrapper";
 const FontFamily = Playfair_Display({ subsets: ["latin"], weight: "600" });
 
@@ -20,19 +20,6 @@ interface SectionProp {
 }
 
 export default function ServicesOfferedSection({ blob, btnText, btnUrl, description, imgAlt, imgSrc, title }: SectionProp) {
-    const cardIn: Variants = {
-        hidden: { opacity: 0, translateX: 100, },
-        visible: { opacity: 1, translateX: 0, transition: { duration: 0.5 } },
-    };
-    const cardInAlt: Variants = {
-        hidden: { opacity: 0, translateX: -100, },
-        visible: { opacity: 1, translateX: 0, transition: { duration: 0.5 } },
-    };
-
-    const fadeIn: Variants = {
-        hidden: { opacity: 0, translateY: 50 },
-        visible: { opacity: 1, translateY: 0, transition: { duration: 0.5 } },
-    };
     return (
         <div className="dark:bg-darkBg sm:py-12 py-6 dark:text-white bg-white relative 2xl:box-border box-content sm:h-[100vh] sm:min-h-[fit-content] md:max-h-[70rem] z-20 overflow-x-hidden">
             <InViewWrapper animation={fadeIn}>

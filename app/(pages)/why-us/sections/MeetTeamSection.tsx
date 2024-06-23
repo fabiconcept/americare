@@ -4,15 +4,11 @@ import TeamMember from "./components/TeamMember";
 import { MeetTeamList } from "@/lib/MeetTeamList";
 import Image from "next/image";
 import arrImg from "@/lib/arrow.svg";
-import { Variants } from "framer-motion";
 import InViewWrapper from "@/app/components/InViewWrapper";
+import { cardIn } from "@/lib/AnimationVariants";
 const FontFamily = Playfair_Display({ subsets: ["latin"], weight: "600" });
 
 export default function MeetTeamSection() {
-    const cardIn: Variants = {
-        hidden: { opacity: 0, translateX: 100, },
-        visible: { opacity: 1, translateX: 0, transition: { duration: 0.5 }},
-    };
     
     return (
         <div className="dark:bg-darkBg bg-white grid-bg dark:text-white text-black sm:py-24 py-12 2xl:px-[10vw] sm:px-[8vw] px-6 overflow-x-hidden">

@@ -6,12 +6,9 @@ import clsx from "clsx";
 import { Variants } from "framer-motion";
 import InViewWrapper from "../components/InViewWrapper";
 const FontFamily = Playfair_Display({ subsets: ["latin"], weight: "600" });
+import { fadeIn } from "@/lib/AnimationVariants";
 
 export default function TestimonialMarquee() {
-    const fadeIn: Variants = {
-        hidden: { opacity: 0, translateY: 50 },
-        visible: { opacity: 1, translateY: 0, transition: { duration: 0.5 } },
-    };
     
     const SlideIn: Variants = {
         hidden: { opacity: 0, translateX: 100 },

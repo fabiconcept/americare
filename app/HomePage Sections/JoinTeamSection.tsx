@@ -2,14 +2,10 @@ import clsx from "clsx";
 import CustomBtn from "../components/CustomBtn";
 import Image from "next/image";
 import arrImg from "@/lib/arrow.svg";
-import { Variants } from "framer-motion";
+import { fadeIn } from "@/lib/AnimationVariants";
 import InViewWrapper from "../components/InViewWrapper";
 
 export default function JoinTeamSection() {
-    const fadeIn: Variants = {
-        hidden: { opacity: 0, translateY: 50 },
-        visible: { opacity: 1, translateY: 0, transition: { duration: 0.5 } },
-    };
     return (
         <section className="dark:bg-darkBg dark:text-white sm:py-32 py-24 2xl:px-[10vw] sm:px-[8vw]  px-3 bg-white/80 flex flex-col grid-bg">
             <InViewWrapper animation={fadeIn} className="flex-1">

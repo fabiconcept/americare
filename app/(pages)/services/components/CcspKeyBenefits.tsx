@@ -3,8 +3,8 @@ import Image from "next/image";
 import personalSvg from "./components/health-svgrepo-com.svg";
 import supportSvg from "./components/health-care-love-svgrepo-com.svg";
 import dayHealthSvg from "./components/health-insurance-premium-svgrepo-com.svg";
-import { Variants } from "framer-motion";
 import InViewWrapper from "@/app/components/InViewWrapper";
+import { cardIn, cardInAlt } from "@/lib/AnimationVariants";
 
 const benefitsList: { title: string, content: string, count: number, svg: any }[] = [
     { title: "Personalized Care", content: "Personalized care tailored to individual needs", count: 1, svg: personalSvg },
@@ -13,14 +13,6 @@ const benefitsList: { title: string, content: string, count: number, svg: any }[
 ]
 
 export default function CcspKeyBenefits() {
-    const cardIn: Variants = {
-        hidden: { opacity: 0, translateX: 100, },
-        visible: { opacity: 1, translateX: 0, transition: { duration: 0.5 } },
-    };
-    const cardInAlt: Variants = {
-        hidden: { opacity: 0, translateX: -100, },
-        visible: { opacity: 1, translateX: 0, transition: { duration: 0.5 } },
-    };
     return (
         <section className={clsx("sm:py-10 py-6 w-full mb-12")}>
             <div className="flex flex-wrap gap-4 justify-center w-full perspective overflow-x-hidden">
