@@ -53,7 +53,7 @@ export default function OurServiceSection() {
                                     <div>
                                         <Image
                                             src={"https://americare.sirv.com/pediatrics.png"}
-                                            alt=""
+                                            alt="pediatrics"
                                             height={500}
                                             width={500}
                                             className='absolute bottom-0 left-1/2 -translate-x-1/2 group-hover:scale-110 smooth'
@@ -91,7 +91,7 @@ export default function OurServiceSection() {
                                     <div>
                                         <Image
                                             src={"https://americare.sirv.com/pngegg.png"}
-                                            alt=""
+                                            alt="Companionship"
                                             height={500}
                                             width={500}
                                             className='absolute bottom-0 left-1/2 -translate-x-1/2 group-hover:scale-110 smooth'
@@ -110,7 +110,7 @@ export default function OurServiceSection() {
                                     <div>
                                         <Image
                                             src={"https://americare.sirv.com/nurse03.png"}
-                                            alt=""
+                                            alt="Specialty Care"
                                             height={800}
                                             width={800}
                                             className='absolute bottom-0 left-1/2 -translate-x-1/2 group-hover:scale-110 smooth'
@@ -132,7 +132,7 @@ export default function OurServiceSection() {
                                 <div>
                                     <Image
                                         src={"https://americare.sirv.com/ascendmedicalcom_749290951.png"}
-                                        alt=""
+                                        alt="Personal care"
                                         height={400}
                                         width={400}
                                         className='absolute bottom-0 left-1/2 -translate-x-1/2 group-hover:scale-110 smooth'
@@ -150,7 +150,7 @@ export default function OurServiceSection() {
                                 <div>
                                     <Image
                                         src={"https://americare.sirv.com/pediatrics.png"}
-                                        alt=""
+                                        alt="Pediatrics"
                                         height={500}
                                         width={500}
                                         className='absolute bottom-0 left-1/2 -translate-x-1/2 group-hover:scale-110 smooth'
@@ -186,7 +186,7 @@ export default function OurServiceSection() {
                                 <div>
                                     <Image
                                         src={"https://americare.sirv.com/pngegg.png"}
-                                        alt=""
+                                        alt="Companionship"
                                         height={500}
                                         width={500}
                                         className='absolute bottom-0 left-1/2 -translate-x-1/2 group-hover:scale-110 smooth'
@@ -204,7 +204,7 @@ export default function OurServiceSection() {
                                 <div>
                                     <Image
                                         src={"https://americare.sirv.com/nurse03.png"}
-                                        alt=""
+                                        alt="Specialty Care"
                                         height={800}
                                         width={800}
                                         className='absolute bottom-0 left-1/2 -translate-x-1/2 group-hover:scale-110 smooth'
