@@ -6,6 +6,10 @@ import NavigationComponent from "@/app/components/NavSection";
 import ServicesOfferedSection from "@/app/HomePage Sections/ServicesOfferedSection";
 import { ServiceOffered } from "@/lib/ServiceOffered";
 import FormSection from "@/app/HomePage Sections/FormSection";
+import { generalMetadata } from "@/lib/MetaData";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {...generalMetadata, title: "Services | AmeriCare Atlanta"};
 
 export default function ServicesPage() {
     return (

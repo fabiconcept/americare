@@ -3,6 +3,10 @@ import InfoTextSection from "./sections/InfoTextSection";
 import FormSection from "./sections/FormSection";
 import { Toaster } from "react-hot-toast"
 import NavigationComponent from "@/app/components/NavSection";
+import { Metadata } from "next";
+import { generalMetadata } from "@/lib/MetaData";
+
+export const metadata: Metadata = {...generalMetadata, title: "Career | AmeriCare Atlanta"};
 
 export default function CareersPage() {
     return (
