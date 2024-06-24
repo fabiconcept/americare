@@ -8,7 +8,7 @@ type TeamMember = {
 export const MeetTeamList:TeamMember[] = [
     {
         name:"Calvin Wilkinson MPH",
-        role:"Chief Ececutive Officer - (CEO)",
+        role:"Chief Executive Officer - (CEO)",
         photo:"https://americare.sirv.com/team/89cdd9fd-773c-470b-941e-e221a5a83376.JPG",
         id: "c15fdb72-c118-5d87-8d81-ecddb582ae51"
     },

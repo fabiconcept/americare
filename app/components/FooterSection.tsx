@@ -53,11 +53,11 @@ export default function FooterSection() {
                             <div>
                                 <span className="mt-6 flex gap-1 group items-end flex-wrap">
                                     <FaPhoneSquareAlt className="text-3xl smooth group-hover:text-primary" />
-                                    Call <Link className="text-primary" href={"tel:+1770656-9593"}>(770) 656-9593</Link> <span className="whitespace-normal">For</span> <span className="whitespace-normal">A</span> <span className="whitespace-normal">Free</span> <span className="whitespace-normal">Consultation!</span>
+                                    Call <Link className="text-primary" href={"tel:4044942187"}>(404)-494-2187</Link> <span className="whitespace-normal">For</span> <span className="whitespace-normal">A</span> <span className="whitespace-normal">Free</span> <span className="whitespace-normal">Consultation!</span>
                                 </span>
                                 <span className="mt-3 flex gap-1 group items-end">
                                     <FaMailBulk className="text-3xl smooth group-hover:text-primary" />
-                                    Email: <Link className="text-primary" href={"mailto:contact@americareinhome.com"}>contact@americareinhome.com</Link>.
+                                    Email: <Link className="text-primary" href={"mailto:support@americareinhome.com"}>support@americareinhome.com</Link>.
                                 </span>
                             </div>
                         </div>
