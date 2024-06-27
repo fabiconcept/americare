@@ -1,4 +1,6 @@
+import InViewWrapper from '@/app/components/InViewWrapper';
 import NavigationComponent from '@/app/components/NavSection';
+import { fadeIn } from '@/lib/AnimationVariants';
 import { generalMetadata } from '@/lib/MetaData';
 import clsx from 'clsx';
 import { Metadata } from 'next';
@@ -13,7 +15,7 @@ export default function ThankYouPage() {
     return (
         <div className='grid place-items-center pt-32'>
             <NavigationComponent />
-            <div className="min-h-screen">
+            <InViewWrapper animation={fadeIn} className="min-h-screen">
                 <div className="relative flex flex-col dark:bg-darkBg sm:max-w-[40rem] max-w-[calc(100vw-4rem)] bg-white overflow-hidden rounded-xl border dark:border-white/25 border-primary/5 shadow-2xl shadow-black/10 py-8">
                     <div className="grid place-items-center relative">
                         <Image
@@ -40,7 +42,7 @@ export default function ThankYouPage() {
                         </Link>
                     </div>
                 </div>
-            </div>
+            </InViewWrapper>
         </div>
     )
 }
